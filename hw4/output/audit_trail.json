@@ -1,0 +1,73 @@
+[
+  {
+    "run_id": "8e038e95722e",
+    "timestamp": "2026-10-07T07:04:36+00:00",
+    "stop_reason": "completed",
+    "tool_calls": [
+      {
+        "tool": "get_product_info",
+        "args": "Yale vs Harvard shirt",
+        "result": "found"
+      },
+      {
+        "tool": "get_stock",
+        "args": "Yale vs Harvard shirt, size L",
+        "result": "found, total stock 2"
+      }
+    ],
+    "cards_shown": 0,
+    "error_type": null
+  },
+  {
+    "run_id": "79b7c2774b7b",
+    "timestamp": "2026-10-07T07:04:40+00:00",
+    "stop_reason": "completed",
+    "tool_calls": [
+      {
+        "tool": "search_catalogue",
+        "args": "hoodie",
+        "result": "found, 27 matches"
+      }
+    ],
+    "cards_shown": 8,
+    "error_type": null
+  },
+  {
+    "run_id": "2c8acc2f5282",
+    "timestamp": "2026-10-07T07:04:57+00:00",
+    "stop_reason": "no_tools_used",
+    "tool_calls": [],
+    "cards_shown": 0,
+    "error_type": null
+  },
+  {
+    "run_id": "ea88b7ff3845",
+    "timestamp": "2026-10-07T07:06:54+00:00",
+    "stop_reason": "no_tools_used",
+    "tool_calls": [],
+    "cards_shown": 0,
+    "error_type": null
+  },
+  {
+    "run_id": "d51d3e2cec96",
+    "timestamp": "2026-10-07T07:07:03+00:00",
+    "stop_reason": "completed",
+    "tool_calls": [
+      {
+        "tool": "search_catalogue",
+        "args": "jacket",
+        "result": "found, 8 matches"
+      }
+    ],
+    "cards_shown": 8,
+    "error_type": null
+  },
+  {
+    "run_id": "3c5b65bd4be4",
+    "timestamp": "2026-10-07T07:07:21+00:00",
+    "stop_reason": "no_tools_used",
+    "tool_calls": [],
+    "cards_shown": 0,
+    "error_type": null
+  }
+]

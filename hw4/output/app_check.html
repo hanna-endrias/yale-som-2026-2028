@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Campus Customs — App Check</title>
+<style>
+  :root {
+    --yale-blue: #00356b;
+    --mid-blue: #286dc0;
+    --light-blue: #63aaff;
+    --ink: #1b2a3a;
+    --muted: #55657a;
+    --line: #d9e2ee;
+    --page: #f4f7fb;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--page);
+    color: var(--ink);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+  }
+
+  header {
+    background: var(--yale-blue);
+    color: #fff;
+    padding: 40px 24px 32px;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    margin: 0 0 6px;
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  .subtitle {
+    margin: 0;
+    color: #c9daf0;
+  }
+
+  main {
+    padding: 32px 24px 56px;
+  }
+
+  section {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 24px 28px 28px;
+    margin-bottom: 32px;
+  }
+
+  .check-number {
+    display: inline-block;
+    margin-bottom: 6px;
+    padding: 2px 10px;
+    border-radius: 999px;
+    background: #e6f0fb;
+    color: var(--yale-blue);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+  }
+
+  h2 {
+    margin: 0 0 16px;
+    color: var(--yale-blue);
+    font-size: 1.35rem;
+    line-height: 1.3;
+  }
+
+  figure {
+    margin: 0 0 16px;
+  }
+
+  figure:last-of-type {
+    margin-bottom: 0;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+  }
+
+  figcaption {
+    margin-top: 6px;
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+
+  .caption {
+    margin: 16px 0 0;
+    padding-left: 14px;
+    border-left: 4px solid var(--light-blue);
+  }
+
+  footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.85rem;
+    padding: 0 24px 40px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <h1>Campus Customs — App Check</h1>
+    <p class="subtitle">Three tests of the finished site, with screenshots.</p>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+
+    <section>
+      <span class="check-number">CHECK 1</span>
+      <h2>Honest stock and price from the database</h2>
+      <figure>
+        <img src="app_check_images/inventory_level_website.png" alt="Product page for the Hype And Vice Yale University Premium Crewneck showing a $58.00 price and a stock table: XS 2, S 2, M sold out, L 2, XL 12, XXL 8.">
+        <figcaption>On the website: the Hype And Vice Yale University Premium Crewneck product page.</figcaption>
+      </figure>
+      <figure>
+        <img src="app_check_images/inventory_check_database.png" alt="A direct lookup of the same crewneck using the agent's get_stock and get_product_info tools, showing XS 2, S 2, M 0 (sold out), L 2, XL 12, XXL 8, total 26, and a price of $58.00.">
+        <figcaption>Direct lookup: the same item checked with the agent's database tools (get_stock and get_product_info).</figcaption>
+      </figure>
+      <p class="caption">The site's price ($58.00) and per-size stock (XS 2, S 2, M sold out, L 2, XL 12, XXL 8) match a direct read of the database exactly, so the numbers shoppers see are real, not invented.</p>
+    </section>
+
+    <section>
+      <span class="check-number">CHECK 2</span>
+      <h2>Chat search shows product cards</h2>
+      <figure>
+        <img src="app_check_images/dynamic_search_website.png" alt="The chat answering 'what crewnecks are available?' with 'We've got 30 crewnecks — here are 8 to start', while matching crewneck cards appear in a 'From the chat' strip at the top of the page and inside the chat.">
+      </figure>
+      <p class="caption">Asking "what crewnecks are available?" made 8 real crewneck cards appear at the top of the page (and in the chat), pulled straight from the catalogue with their real names, images, and prices.</p>
+    </section>
+
+    <section>
+      <span class="check-number">CHECK 3</span>
+      <h2>Usability improvement: Product filters and collapsible chat results</h2>
+      <figure>
+        <img src="app_check_images/usability_feature_website.png" alt="The Products page with category filter chips and counts (All 102, Hoodies 27, Quarter zips 11, Crewnecks 29, Tees and long sleeves 27, Jackets and fleece 8), a search box, a sort menu, and the chat results collapsed to a one-line thumbnail strip above.">
+      </figure>
+      <p class="caption">The Products page now has category chips with counts, a search box, and sorting so shoppers can narrow 102 items quickly, and the chat's results collapse to a one-line thumbnail strip ("8 items from the chat") so they don't crowd the page.</p>
+    </section>
+
+  </div>
+</main>
+
+<footer>Campus Customs · MGT 409 Homework 4</footer>
+
+</body>
+</html>

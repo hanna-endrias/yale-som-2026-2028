@@ -1,0 +1,33 @@
+# Secrets: the real API key lives here (commit .env.example instead)
+.env
+.env.*
+!.env.example
+
+# Local-only data pack: the database and product images are not committed
+data/
+# Backup in case a copy of the database ends up outside data/
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Frontend (frontend/.gitignore also covers these)
+node_modules/
+frontend/dist/
+# Vite's starter README; the project README is hw4/README.md
+frontend/README.md
+
+# Temporary and backup files the audit trail can create
+output/audit_trail.json.tmp
+output/audit_trail.unreadable-*.json
+
+# OS and editor clutter
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

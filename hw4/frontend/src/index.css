@@ -1,0 +1,893 @@
+/* Campus Customs — "playful bulldog" look on a Yale-blue page (B1).
+   The page is Yale Blue with white text; anything people read closely or look at
+   (product cards, detail panels, forms, the chat) sits on a white "island". */
+
+:root {
+  --yale-blue: #00356b;
+  --yale-blue-deep: #002650;
+  --yale-mid: #286dc0;
+  --yale-light: #63aaff;
+  --ink: #12253d; /* text on white islands */
+  --ink-soft: #4a5d74;
+  --line: #d9e2ee; /* borders on white */
+  --sticker: #ffd54a; /* sticker yellow, used sparingly */
+  --on-blue-soft: #c9daf0; /* secondary text on blue */
+  --radius: 16px;
+  --radius-sm: 10px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Nunito', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  color: #fff;
+  background: var(--yale-blue);
+  line-height: 1.55;
+}
+
+a {
+  color: inherit;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.error {
+  color: #ffb4b4;
+}
+
+.success {
+  color: #a6f0c0;
+}
+
+.hint {
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+}
+
+/* White "island" for text-heavy areas on the blue page */
+.island,
+.form-page,
+.product-detail {
+  background: #fff;
+  color: var(--ink);
+  border-radius: var(--radius);
+  padding: 24px 28px;
+}
+
+.island .error,
+.form-page .error,
+.product-detail .error {
+  color: #b00020;
+}
+
+.form-page .success {
+  color: #1b6e2b;
+}
+
+.prose {
+  max-width: 760px;
+  margin: 0 auto; /* centered on the page (About Us) */
+}
+
+.prose h1 {
+  text-align: center;
+}
+
+/* Sticker-style highlight: a light-blue pill, slightly tilted, like a sticker on a laptop */
+.sticker {
+  display: inline-block;
+  background: var(--yale-light);
+  color: var(--yale-blue);
+  padding: 0 0.35em;
+  border-radius: 999px;
+  transform: rotate(-2deg);
+  box-shadow: 2px 3px 0 var(--yale-blue-deep);
+}
+
+.island .sticker,
+.form-page .sticker {
+  box-shadow: 2px 3px 0 var(--line);
+}
+
+/* Buttons */
+.button,
+.auth-form button,
+.chat-input button {
+  display: inline-block;
+  padding: 10px 22px;
+  border: 2px solid #fff;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--yale-blue);
+  font: inherit;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.button:hover,
+.auth-form button:hover:not(:disabled),
+.chat-input button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 0 var(--yale-blue-deep);
+}
+
+/* Inside white islands the main button is blue */
+.auth-form button,
+.chat-input button {
+  background: var(--yale-blue);
+  border-color: var(--yale-blue);
+  color: #fff;
+}
+
+.auth-form button:disabled,
+.chat-input button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+/* Text-style button (Log out, Clear, Hide cards…) */
+.link-button {
+  border: none;
+  background: none;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: var(--yale-light);
+  text-underline-offset: 3px;
+}
+
+.link-button:hover {
+  color: var(--yale-light);
+}
+
+/* Nav bar */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 24px;
+  border-bottom: 2px solid var(--yale-mid);
+}
+
+.brand {
+  font-weight: 800;
+  font-size: 1.3rem;
+  text-decoration: none;
+}
+
+.brand::before {
+  content: '🐾 ';
+}
+
+.navbar nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+}
+
+.navbar nav a {
+  text-decoration: none;
+  font-weight: 700;
+  padding: 2px 0;
+  border-bottom: 3px solid transparent;
+}
+
+.navbar nav a:hover {
+  border-bottom-color: var(--yale-mid);
+}
+
+.navbar nav a.active {
+  border-bottom-color: var(--yale-light);
+}
+
+/* Home */
+.hero {
+  padding: 40px 0 32px;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  margin: 0 0 12px;
+}
+
+.hero p {
+  font-size: 1.15rem;
+  color: var(--on-blue-soft);
+  max-width: 640px;
+  margin: 0 0 24px;
+}
+
+.welcome-back {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.welcome-back h2 {
+  margin: 0 0 4px;
+  font-size: 1.6rem;
+}
+
+.welcome-back p {
+  margin: 0;
+  color: var(--ink-soft);
+}
+
+.welcome-back-card {
+  width: 200px;
+}
+
+.welcome-back .product-card {
+  border: 1px solid var(--line);
+}
+
+/* Product grid + cards: white tiles on blue, lifting a little on hover */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 22px;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius);
+  overflow: hidden;
+  text-decoration: none;
+  background: #fff;
+  color: var(--ink);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px) rotate(-0.6deg);
+  box-shadow: 0 8px 0 var(--yale-blue-deep);
+}
+
+.product-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  background: #eef3f9;
+}
+
+.product-card-body {
+  padding: 12px 14px 14px;
+}
+
+.product-card h3 {
+  margin: 0 0 4px;
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.price {
+  font-weight: 800;
+  color: var(--yale-mid);
+  margin: 0 0 8px;
+}
+
+/* Show the full description but cap it at 3 lines so cards line up. */
+.clamp {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  overflow: hidden;
+}
+
+/* Single product page: large image on one side, text on the other (a white island) */
+.product-detail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-top: 16px;
+}
+
+.product-detail img {
+  width: 100%;
+  border-radius: var(--radius-sm);
+  background: #eef3f9;
+}
+
+.product-detail h1 {
+  margin-top: 0;
+  color: var(--yale-blue);
+}
+
+.product-detail .price {
+  font-size: 1.4rem;
+}
+
+.garment-type {
+  color: var(--ink-soft);
+  text-transform: capitalize;
+}
+
+.stock-table {
+  border-collapse: collapse;
+}
+
+.stock-table th,
+.stock-table td {
+  border: 1px solid var(--line);
+  padding: 6px 16px;
+  text-align: left;
+}
+
+.stock-table th {
+  background: #eef3f9;
+}
+
+.stock-table .sold-out {
+  color: #9aa7b6;
+}
+
+@media (max-width: 700px) {
+  .product-detail {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Log in / Create Account forms */
+.form-page {
+  max-width: 460px;
+}
+
+.form-page h1 {
+  margin-top: 0;
+  color: var(--yale-blue);
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 360px;
+}
+
+.auth-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-weight: 700;
+}
+
+.auth-form input {
+  padding: 9px 10px;
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-sm);
+  font: inherit;
+  font-weight: 400;
+}
+
+.auth-form input:focus {
+  outline: none;
+  border-color: var(--yale-mid);
+  box-shadow: 0 0 0 3px rgba(99, 170, 255, 0.35);
+}
+
+/* Floating chat (bottom-right): toggle button and white panel */
+.chat-toggle {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px 8px 10px;
+  border: 2px solid var(--yale-blue);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--yale-blue);
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 4px 0 var(--yale-blue-deep);
+  transition: transform 0.15s ease;
+}
+
+.chat-toggle:hover {
+  transform: translateY(-2px) rotate(-1deg);
+}
+
+.chat-panel {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 380px;
+  height: 560px;
+  max-height: calc(100vh - 48px);
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius);
+  background: #fff;
+  color: var(--ink);
+  box-shadow: 0 10px 30px rgba(0, 20, 50, 0.45);
+  overflow: hidden;
+}
+
+.chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: var(--yale-blue);
+  color: #fff;
+  font-weight: 800;
+}
+
+.chat-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.chat-title .bulldog {
+  background: #fff;
+  border-radius: 50%;
+  padding: 2px;
+}
+
+.chat-header button {
+  border: none;
+  background: none;
+  color: #fff;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px;
+}
+
+/* Keep line breaks from the agent's reply */
+.chat-message {
+  padding: 8px 12px;
+  border-radius: 14px;
+  margin-bottom: 8px;
+  white-space: pre-wrap;
+}
+
+.chat-message.assistant {
+  background: #eef3f9;
+  border-bottom-left-radius: 4px;
+}
+
+.chat-message.user {
+  background: var(--yale-blue);
+  color: #fff;
+  margin-left: 40px;
+  border-bottom-right-radius: 4px;
+}
+
+.chat-message.error {
+  background: #fdecee;
+  color: #b00020;
+}
+
+.chat-message.typing {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+.typing-dots {
+  display: inline-flex;
+  gap: 4px;
+}
+
+.typing-dots span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--yale-mid);
+  animation: dot-bounce 1.1s infinite ease-in-out;
+}
+
+.typing-dots span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.typing-dots span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+/* The hint only appears once the wait gets long */
+.typing-hint {
+  opacity: 0;
+  animation: fade-in 0.4s ease 3s forwards;
+}
+
+.chat-input {
+  display: flex;
+  gap: 8px;
+  padding: 10px;
+  border-top: 1px solid var(--line);
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1.5px solid var(--line);
+  border-radius: 999px;
+  font: inherit;
+}
+
+.chat-input input:focus {
+  outline: none;
+  border-color: var(--yale-mid);
+}
+
+.chat-input button {
+  padding: 8px 16px;
+}
+
+/* Product cards inside a chat reply: same ProductCard, sized for the small panel */
+.chat-products {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin: 0 0 12px;
+}
+
+.chat-products .product-card {
+  border: 1px solid var(--line);
+}
+
+.chat-products .product-card:hover {
+  box-shadow: 0 4px 0 var(--line);
+}
+
+.chat-products .product-card-body {
+  padding: 8px;
+}
+
+.chat-products .product-card h3 {
+  font-size: 0.85rem;
+}
+
+.chat-products .price {
+  margin-bottom: 4px;
+}
+
+.chat-products .clamp {
+  font-size: 0.8rem;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+}
+
+/* "From the chat" strip at the top of the page */
+.chat-results {
+  margin-bottom: 24px;
+  padding: 14px 18px 18px;
+  border: 2px dashed var(--yale-light);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.chat-results-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+}
+
+.chat-results-header h2 {
+  margin: 0 0 12px;
+  font-size: 1.15rem;
+}
+
+.chat-results-query {
+  font-weight: 400;
+  color: var(--on-blue-soft);
+}
+
+.chat-results-actions {
+  display: flex;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.chat-results-row {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 180px;
+  gap: 14px;
+  overflow-x: auto;
+  padding: 4px 4px 10px;
+}
+
+.chat-results-row .product-card h3 {
+  font-size: 0.9rem;
+}
+
+.chat-results-row .clamp {
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+}
+
+/* Collapsed strip: thumbnails + count on one line */
+.chat-results-collapsed {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.chat-results-thumbs {
+  display: flex;
+  gap: 4px;
+}
+
+.chat-results-thumbs img {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid #fff;
+  background: #eef3f9;
+}
+
+.chat-results:has(.chat-results-collapsed) {
+  padding-bottom: 14px;
+}
+
+/* Products page filters: category chips, search, sort */
+.product-filters {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.category-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  padding: 6px 14px;
+  border: 2px solid var(--yale-light);
+  border-radius: 999px;
+  background: transparent;
+  color: #fff;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.chip:hover {
+  transform: rotate(-2deg);
+}
+
+.chip.active {
+  background: #fff;
+  border-color: #fff;
+  color: var(--yale-blue);
+}
+
+.chip-count {
+  color: var(--on-blue-soft);
+  margin-left: 2px;
+}
+
+.chip.active .chip-count {
+  color: var(--yale-mid);
+}
+
+.filter-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.product-search {
+  flex: 1;
+  min-width: 220px;
+  padding: 9px 14px;
+  border: 2px solid transparent;
+  border-radius: 999px;
+  font: inherit;
+}
+
+.product-search:focus {
+  outline: none;
+  border-color: var(--yale-light);
+}
+
+.sort-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.sort-control select {
+  padding: 8px 10px;
+  border: none;
+  border-radius: 999px;
+  font: inherit;
+}
+
+.result-count {
+  color: var(--on-blue-soft);
+  font-size: 0.9rem;
+  margin: 8px 0 16px;
+}
+
+/* ---------- Bulldog mascot ---------- */
+.bulldog {
+  flex-shrink: 0;
+  overflow: visible;
+}
+
+.bulldog-head {
+  transform-origin: 32px 40px;
+  transform-box: view-box;
+}
+
+.bulldog-ear {
+  transform-box: view-box;
+  transition: transform 0.3s ease;
+}
+
+.bulldog-ear-left {
+  transform-origin: 18px 20px;
+}
+
+.bulldog-ear-right {
+  transform-origin: 46px 20px;
+}
+
+.bulldog-thinking .bulldog-head {
+  animation: head-tilt 1.2s ease-in-out infinite;
+}
+
+.bulldog-thinking .bulldog-eyes {
+  transform: translate(-2px, -2px);
+}
+
+.bulldog-thought circle {
+  animation: dot-bounce 1.1s infinite ease-in-out;
+}
+
+.bulldog-thought circle:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.bulldog-happy .bulldog-head {
+  animation: happy-bounce 0.5s ease-in-out 3;
+}
+
+.bulldog-sad .bulldog-ear-left {
+  transform: rotate(-25deg);
+}
+
+.bulldog-sad .bulldog-ear-right {
+  transform: rotate(25deg);
+}
+
+.bulldog-sad .bulldog-head {
+  transform: translateY(2px);
+}
+
+/* ---------- Paw-print trail over product cards ---------- */
+.paw-print {
+  position: fixed;
+  z-index: 50;
+  width: 16px;
+  height: 16px;
+  margin: -8px 0 0 -8px;
+  pointer-events: none;
+  background: no-repeat center / contain
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%2363aaff'%3E%3Cellipse cx='10' cy='13' rx='4.5' ry='3.8'/%3E%3Cellipse cx='4' cy='8' rx='1.8' ry='2.3'/%3E%3Cellipse cx='8' cy='4.5' rx='1.8' ry='2.4'/%3E%3Cellipse cx='12' cy='4.5' rx='1.8' ry='2.4'/%3E%3Cellipse cx='16' cy='8' rx='1.8' ry='2.3'/%3E%3C/svg%3E");
+  transform: rotate(var(--paw-rotate, 0deg));
+  animation: paw-fade 0.9s ease-out forwards;
+}
+
+/* ---------- Animations ---------- */
+@keyframes dot-bounce {
+  0%,
+  80%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+  40% {
+    transform: translateY(-4px);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes head-tilt {
+  0%,
+  100% {
+    transform: rotate(-8deg);
+  }
+  50% {
+    transform: rotate(8deg);
+  }
+}
+
+@keyframes happy-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px) scale(1.05);
+  }
+}
+
+@keyframes paw-fade {
+  from {
+    opacity: 0.9;
+    transform: rotate(var(--paw-rotate, 0deg)) scale(0.6);
+  }
+  30% {
+    transform: rotate(var(--paw-rotate, 0deg)) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: rotate(var(--paw-rotate, 0deg)) scale(1);
+  }
+}
+
+/* Respect visitors who turn off motion: no animations or hover tilts. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .typing-hint {
+    opacity: 1;
+  }
+  .product-card:hover,
+  .chip:hover,
+  .chat-toggle:hover,
+  .button:hover {
+    transform: none;
+  }
+}
