@@ -12,6 +12,17 @@ stock questions from the real database and shows matching products as cards.
 - A Portkey API key (the assistant calls OpenAI's `gpt-5.6-luna` through Portkey)
 - The data pack: `campus_customs.db` and the `products/` image folder (not in this repo)
 
+## 0. Get the code
+
+This project lives in the `hw4/` folder of the repo:
+
+```bash
+git clone https://github.com/hanna-endrias/yale-som-2026-2028.git
+cd yale-som-2026-2028/hw4
+```
+
+All the steps below run from this `hw4/` folder.
+
 ## 1. Place the data pack
 
 Put the data pack in a `data/` folder at the top level of the project:
