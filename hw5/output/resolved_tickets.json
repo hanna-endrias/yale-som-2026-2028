@@ -1,0 +1,347 @@
+{
+  "shop_date": "2026-08-31",
+  "model": "gpt-6-luna via Portkey",
+  "cash": {
+    "starting_checking_balance": 3400.0,
+    "payments": [
+      {
+        "id": 1,
+        "kind": "rent",
+        "ref_id": 1,
+        "amount": 2400.0,
+        "account": "checking",
+        "paid_at": "2026-08-31",
+        "approved_by": "Hanna"
+      },
+      {
+        "id": 2,
+        "kind": "invoice",
+        "ref_id": 501,
+        "amount": 840.0,
+        "account": "checking",
+        "paid_at": "2026-08-31",
+        "approved_by": "Hanna"
+      },
+      {
+        "id": 3,
+        "kind": "purchase_order",
+        "ref_id": 2,
+        "amount": 8.0,
+        "account": "checking",
+        "paid_at": "2026-08-31",
+        "approved_by": "Hanna"
+      }
+    ],
+    "total_paid": 3248.0,
+    "ending_checking_balance": 152.0,
+    "matches_cash_accounts": true
+  },
+  "tickets": [
+    {
+      "id": 101,
+      "type": "customer_order",
+      "requester": "Tauhid Zaman",
+      "subject": "Bulldog tee",
+      "final_status": "resolved",
+      "status_after_agent_run": "waiting_on_approval",
+      "outcome": "Size S was out of stock. The team requested payment of overdue invoice #501 ($840) to unblock Bulldog Print Co, plus a reprint of 1 size S tee ($8), and drafted a note offering sizes M, L, or XL. Hanna approved both payments.",
+      "agent_contributions": [
+        {
+          "agent": "Boss",
+          "asked_by": null,
+          "contribution": "Approve request #1 to pay Bulldog Print Co invoice #501, then approve request #2 to order 1 CC-TEE-WHITE size S. Size S is unavailable now; the restock is not confirmed, and the customer draft offers available sizes M, L, and XL as alternatives.",
+          "actions": [
+            "Set ticket status to waiting_on_approval"
+          ]
+        },
+        {
+          "agent": "Inventory",
+          "asked_by": "Boss",
+          "contribution": "Size S has 0 on hand and is short 1; sizes M, L, and XL are available as alternatives with quantities 5, 3, and 2. Bulldog Print Co is evidenced as having reprinted this SKU before, but cannot ship while invoice #501 remains unpaid; after that invoice is paid and an order is approved, its 5-day lead time applies, and no calendar arrival date can be stated until approval timing is known.",
+          "actions": []
+        },
+        {
+          "agent": "Accounting",
+          "asked_by": "Boss",
+          "contribution": "No approvals existed. Requested payment approval #1 for invoice #501 ($840.0) and purchase-order approval #2 for 1 unit ($8.0); the PO is pending and vendor-blocked until invoice #501 is paid.",
+          "actions": [
+            "Created approval request #1 for invoice #501, amount $840.0, pending.",
+            "Created approval request #2 for CC-TEE-WHITE size S, quantity 1, amount $8.0, pending; vendor-blocked by invoice #501."
+          ]
+        },
+        {
+          "agent": "Customer Service",
+          "asked_by": "Boss",
+          "contribution": "Saved a draft to Tauhid Zaman explaining size S is unavailable, restock timing and availability are unconfirmed, and offering M, L, and XL as alternatives.",
+          "actions": [
+            "Saved draft #1 to Tauhid Zaman (not sent)."
+          ]
+        }
+      ],
+      "delegations": [
+        "Boss -> Inventory",
+        "Boss -> Accounting",
+        "Boss -> Customer Service"
+      ],
+      "tools_used": {
+        "Boss": [
+          "get_ticket",
+          "update_ticket_status"
+        ],
+        "Inventory": [
+          "get_ticket",
+          "check_inventory_shortfall",
+          "get_vendor_status"
+        ],
+        "Accounting": [
+          "get_ticket",
+          "get_cash_position",
+          "check_inventory_shortfall",
+          "get_vendor_status",
+          "request_payment_approval",
+          "request_purchase_order"
+        ],
+        "Customer Service": [
+          "get_ticket",
+          "check_inventory_shortfall",
+          "save_customer_draft"
+        ]
+      },
+      "human_approvals": [
+        {
+          "request_id": 1,
+          "kind": "invoice",
+          "amount": 840.0,
+          "what": "Pay invoice #501",
+          "requested_by": "Accounting",
+          "status": "approved",
+          "decided_by": "Hanna",
+          "decided_at": "2026-10-14T20:16:20+00:00",
+          "payment_id": 2
+        },
+        {
+          "request_id": 2,
+          "kind": "purchase_order",
+          "amount": 8.0,
+          "what": "Purchase 1 x CC-TEE-WHITE size S from vendor 1",
+          "requested_by": "Accounting",
+          "status": "approved",
+          "decided_by": "Hanna",
+          "decided_at": "2026-10-14T20:16:26+00:00",
+          "payment_id": 3
+        }
+      ],
+      "resolved_by": {
+        "who": "Hanna",
+        "how": "Last pending request (#2) approved by Hanna.",
+        "at": "2026-10-14T20:16:26+00:00"
+      },
+      "customer_drafts": [
+        {
+          "draft_id": 1,
+          "to": "Tauhid Zaman",
+          "subject": "Your Bulldog tee order",
+          "sent": false
+        }
+      ],
+      "cash_change": -848.0,
+      "run": {
+        "run_id": "a92d5af09ce3",
+        "model_requests": 21,
+        "tokens": 98400,
+        "other_attempts": [
+          {
+            "run_id": "d56ceba70264",
+            "what_happened": "Stopped at the first model call (API endpoint error); no tools ran. Fixed by switching to the Responses API."
+          }
+        ]
+      }
+    },
+    {
+      "id": 102,
+      "type": "rent_notice",
+      "requester": "Elm City Properties",
+      "subject": "Rent due",
+      "final_status": "resolved",
+      "status_after_agent_run": "waiting_on_approval",
+      "outcome": "Rent of $2,400 on lease 1 (due 2026-09-02) was requested by Facilities through Accounting. Hanna approved it, and the lease's next due date moved to 2026-10-02. No reply to the landlord was needed.",
+      "agent_contributions": [
+        {
+          "agent": "Boss",
+          "asked_by": null,
+          "contribution": "Keep ticket 102 waiting for human approval of rent request #3; no duplicate request is needed. The owner should review and approve request #3 to pay $2400.0 to Elm City Properties for lease 1 before the 2026-09-02 due date.",
+          "actions": [
+            "Set ticket status to waiting_on_approval"
+          ]
+        },
+        {
+          "agent": "Accounting",
+          "asked_by": "Facilities",
+          "contribution": "Created rent payment approval request #3 for $2400.0 on lease 1; it is pending human approval. The projected balance if approved is $152.0.",
+          "actions": [
+            "Created approval request #3: rent for lease 1, $2400.0, pending."
+          ]
+        },
+        {
+          "agent": "Facilities",
+          "asked_by": "Boss",
+          "contribution": "Lease 1 is the Chapel Street shop with landlord Elm City Properties; monthly rent is 2400.0, due 2026-09-02 (2 days away from tool-reported today 2026-08-31). Cash covers rent and rent plus open invoices; rent approval request #3 is pending human approval.",
+          "actions": [
+            "Asked Accounting to prepare rent approval request; Accounting reports request #3 pending."
+          ]
+        },
+        {
+          "agent": "Accounting",
+          "asked_by": "Boss",
+          "contribution": "Checking balance is $3400.0. Rent is due 2026-09-02, in 2 days, and is first in the payment priority; approval request #3 for $2400.0 is already pending, so no duplicate was created. The human action is to review and approve request #3 to pay lease 1 rent.",
+          "actions": []
+        }
+      ],
+      "delegations": [
+        "Boss -> Facilities",
+        "Facilities -> Accounting",
+        "Boss -> Accounting"
+      ],
+      "tools_used": {
+        "Boss": [
+          "get_ticket",
+          "update_ticket_status"
+        ],
+        "Facilities": [
+          "get_ticket",
+          "get_lease_status",
+          "get_cash_position"
+        ],
+        "Accounting": [
+          "get_ticket",
+          "get_cash_position",
+          "request_payment_approval"
+        ]
+      },
+      "human_approvals": [
+        {
+          "request_id": 3,
+          "kind": "rent",
+          "amount": 2400.0,
+          "what": "Pay rent on lease 1",
+          "requested_by": "Accounting",
+          "status": "approved",
+          "decided_by": "Hanna",
+          "decided_at": "2026-10-14T20:16:00+00:00",
+          "payment_id": 1
+        }
+      ],
+      "resolved_by": {
+        "who": "Hanna",
+        "how": "Last pending request (#3) approved by Hanna.",
+        "at": "2026-10-14T20:16:00+00:00"
+      },
+      "customer_drafts": [],
+      "cash_change": -2400.0,
+      "run": {
+        "run_id": "3c4742f78a95",
+        "model_requests": 17,
+        "tokens": 74085,
+        "other_attempts": []
+      }
+    },
+    {
+      "id": 103,
+      "type": "price_override",
+      "requester": "Yale AI Club",
+      "subject": "Bulk hoodie discount",
+      "final_status": "resolved",
+      "status_after_agent_run": "needs_human",
+      "outcome": "Only 8 of the 20 size M hoodies are in stock and no hoodie supplier is recorded, so the team offered the 8 at list price ($58 each, $464, no discount) and requested no restock. Hanna marked the ticket resolved; no money moved.",
+      "agent_contributions": [
+        {
+          "agent": "Boss",
+          "asked_by": null,
+          "contribution": "Offer the 8 size M hoodies currently in stock at the $58.0 list price each, with no discount. Do not confirm the remaining 12 or a 20-unit discounted order yet; sourcing is unconfirmed. Customer Service saved draft #2 for human review and sending.",
+          "actions": [
+            "Set ticket status to needs_human"
+          ]
+        },
+        {
+          "agent": "Inventory",
+          "asked_by": "Boss",
+          "contribution": "Size M has 8 on hand against 20 requested, leaving a shortfall of 12. No vendor is linked to this SKU in the database; Bulldog Print Co is only a possible match based on its apparel-reprint specialty, and it currently cannot ship because invoice #501 is open and overdue.",
+          "actions": []
+        },
+        {
+          "agent": "Inventory",
+          "asked_by": "Accounting",
+          "contribution": "Stock is 8 M hoodies, leaving 12 short. No invoice description in the database mentions CC-HOOD-NAVY, so no vendor is established as its supplier; Bulldog Print Co is only a possible lead from its apparel-reprint specialty, but it is currently blocked from shipping.",
+          "actions": []
+        },
+        {
+          "agent": "Accounting",
+          "asked_by": "Boss",
+          "contribution": "The 20-unit offer passes policy at 20% off: $46.4 per hoodie, $928.0 total, and 52.6% margin. Only 8 size M are on hand (12 short); cash leaves $152.0 available for new orders after pending obligations, and no confirmed vendor path exists, so no purchase order was requested.",
+          "actions": []
+        },
+        {
+          "agent": "Customer Service",
+          "asked_by": "Boss",
+          "contribution": "Saved a draft offering 8 size M hoodies at $58 each and explaining that availability for the rest and timing are not yet confirmed.",
+          "actions": [
+            "Saved draft #2 to Yale AI Club (not sent)."
+          ]
+        }
+      ],
+      "delegations": [
+        "Boss -> Inventory",
+        "Boss -> Accounting",
+        "Accounting -> Inventory",
+        "Boss -> Customer Service"
+      ],
+      "tools_used": {
+        "Boss": [
+          "get_ticket",
+          "update_ticket_status"
+        ],
+        "Inventory": [
+          "get_ticket",
+          "check_inventory_shortfall",
+          "get_vendor_status"
+        ],
+        "Accounting": [
+          "get_ticket",
+          "check_discount",
+          "check_inventory_shortfall",
+          "get_cash_position"
+        ],
+        "Customer Service": [
+          "get_ticket",
+          "save_customer_draft"
+        ]
+      },
+      "human_approvals": [],
+      "resolved_by": {
+        "who": "Hanna",
+        "how": "Resolved by Hanna.",
+        "at": "2026-10-14T20:30:46+00:00"
+      },
+      "customer_drafts": [
+        {
+          "draft_id": 2,
+          "to": "Yale AI Club",
+          "subject": "Your Yale hoodies",
+          "sent": false
+        }
+      ],
+      "cash_change": 0,
+      "run": {
+        "run_id": "683701cd5299",
+        "model_requests": 24,
+        "tokens": 112098,
+        "other_attempts": [
+          {
+            "run_id": "4b5f1f74b8c0",
+            "what_happened": "Stopped by the operator after a model request hung for over 9 minutes; nothing was written. Re-run with a 120-second request timeout."
+          }
+        ]
+      }
+    }
+  ]
+}
