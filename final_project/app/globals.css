@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+/* Tailwind theme -> brand CSS vars (emitted by config/generateCssVars.ts in app/layout.tsx).
+   Components use semantic names (bg-background, text-accent-text), never raw hex. */
+@theme inline {
+  --color-background: var(--brand-color-background);
+  --color-text: var(--brand-color-text);
+  --color-panel: var(--brand-color-panel);
+  --color-muted: var(--brand-color-muted);
+  --color-border: var(--brand-color-border);
+  --color-accent-text: var(--brand-color-accent-text);
+  --color-accent-hover: var(--brand-color-accent-hover);
+  --color-button: var(--brand-color-button);
+  --color-button-hover: var(--brand-color-button-hover);
+  --color-on-button: var(--brand-color-on-button);
+  --color-focus: var(--brand-color-focus);
+
+  --font-heading: var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-instrument-sans), ui-sans-serif, system-ui, sans-serif;
+
+  --text-xs: var(--brand-text-xs);
+  --text-sm: var(--brand-text-sm);
+  --text-base: var(--brand-text-base);
+  --text-lg: var(--brand-text-lg);
+  --text-xl: var(--brand-text-xl);
+  --text-2xl: var(--brand-text-2xl);
+
+  --spacing-xs: var(--brand-space-xs);
+  --spacing-sm: var(--brand-space-sm);
+  --spacing-md: var(--brand-space-md);
+  --spacing-lg: var(--brand-space-lg);
+  --spacing-xl: var(--brand-space-xl);
+
+  --radius-sm: var(--brand-radius-sm);
+  --radius-md: var(--brand-radius-md);
+  --radius-lg: var(--brand-radius-lg);
+}

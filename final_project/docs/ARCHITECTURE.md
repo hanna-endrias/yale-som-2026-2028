@@ -41,8 +41,8 @@ export const brand = {
 } as const;
 ```
 
-- `config/generateCssVars.ts` turns `brand.themes[theme]`, `brand.type`, `brand.spacing`, and `brand.radius` into CSS custom properties (`--color-background`, `--font-heading`, `--space-md`, etc.), injected via `app/layout.tsx` / `app/globals.css`.
-- `tailwind.config.ts` maps its theme extension to these CSS vars (`colors.background: 'var(--color-background)'`, etc.) instead of hardcoded hex values, so every Tailwind-styled component automatically follows the brand config.
+- `config/generateCssVars.ts` turns `brand.themes[theme]`, `brand.type`, `brand.spacing`, and `brand.radius` into `--brand-*` CSS custom properties (`--brand-color-background`, `--brand-space-md`, etc.), injected as a `<style>` block in `app/layout.tsx` (light in `:root`, dark under `prefers-color-scheme: dark`).
+- Tailwind v4 is configured in CSS, not `tailwind.config.ts`: an `@theme inline` block in `app/globals.css` maps Tailwind's theme to these vars (`--color-background: var(--brand-color-background)`, etc.) instead of hardcoded hex values, so every Tailwind-styled component automatically follows the brand config. Fonts load via `next/font/google` in `app/layout.tsx`.
 - Components reference semantic role names (`bg-background`, `text-accent`), never raw hex — themes share identical role keys, matching the reference site's own convention.
 - Changing a color, font, or size anywhere in the app means editing `config/brand.ts` once; nothing else changes.
 
