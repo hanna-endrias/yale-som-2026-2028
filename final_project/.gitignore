@@ -22,3 +22,6 @@ Thumbs.db
 .next/
 next-env.d.ts
 *.tsbuildinfo
+
+# devloop scratch screenshots
+.devloop/
