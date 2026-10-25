@@ -1,4 +1,18 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+/* dark: utilities (used by shadcn primitives) follow <html data-theme>, incl. "system". */
+@custom-variant dark {
+  &:is([data-theme="dark"] *) {
+    @slot;
+  }
+  @media (prefers-color-scheme: dark) {
+    &:is([data-theme="system"] *) {
+      @slot;
+    }
+  }
+}
 
 /* Tailwind theme -> brand CSS vars (emitted by config/generateCssVars.ts in app/layout.tsx).
    Components use semantic names (bg-background, text-accent-text), never raw hex. */
@@ -6,7 +20,6 @@
   --color-background: var(--brand-color-background);
   --color-text: var(--brand-color-text);
   --color-panel: var(--brand-color-panel);
-  --color-muted: var(--brand-color-muted);
   --color-border: var(--brand-color-border);
   --color-accent-text: var(--brand-color-accent-text);
   --color-accent-hover: var(--brand-color-accent-hover);
@@ -14,6 +27,25 @@
   --color-button-hover: var(--brand-color-button-hover);
   --color-on-button: var(--brand-color-on-button);
   --color-focus: var(--brand-color-focus);
+  --color-destructive: var(--brand-color-destructive);
+
+  /* shadcn role names -> the same brand tokens, so components/ui/* follow config/brand.ts.
+     brand `muted` is a text color, so it maps to muted-foreground; bg-muted is the panel. */
+  --color-foreground: var(--brand-color-text);
+  --color-muted: var(--brand-color-panel);
+  --color-muted-foreground: var(--brand-color-muted);
+  --color-card: var(--brand-color-panel);
+  --color-card-foreground: var(--brand-color-text);
+  --color-popover: var(--brand-color-background);
+  --color-popover-foreground: var(--brand-color-text);
+  --color-primary: var(--brand-color-button);
+  --color-primary-foreground: var(--brand-color-on-button);
+  --color-secondary: var(--brand-color-panel);
+  --color-secondary-foreground: var(--brand-color-text);
+  --color-accent: var(--brand-color-panel);
+  --color-accent-foreground: var(--brand-color-text);
+  --color-input: var(--brand-color-border);
+  --color-ring: var(--brand-color-focus);
 
   --font-heading: var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
   --font-body: var(--font-instrument-sans), ui-sans-serif, system-ui, sans-serif;
@@ -31,7 +63,21 @@
   --spacing-lg: var(--brand-space-lg);
   --spacing-xl: var(--brand-space-xl);
 
+  /* max-w-sm etc. would otherwise resolve to the brand spacing tokens above. */
+  --max-width-xs: var(--container-xs);
+  --max-width-sm: var(--container-sm);
+  --max-width-md: var(--container-md);
+  --max-width-lg: var(--container-lg);
+  --max-width-xl: var(--container-xl);
+
   --radius-sm: var(--brand-radius-sm);
   --radius-md: var(--brand-radius-md);
   --radius-lg: var(--brand-radius-lg);
+  --radius-xl: var(--brand-radius-lg);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
 }

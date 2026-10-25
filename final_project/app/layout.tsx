@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import { Instrument_Sans, Nunito } from 'next/font/google';
+import { cookies } from 'next/headers';
+import { themeChoices, type ThemeChoice } from '@/config/brand';
 import { brandStyleSheet } from '@/config/generateCssVars';
 import './globals.css';
 
@@ -12,9 +14,12 @@ export const metadata: Metadata = {
   description: 'Track what people say about a business, brand, or handle.',
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const saved = (await cookies()).get('theme')?.value as ThemeChoice | undefined;
+  const theme = saved && themeChoices.includes(saved) ? saved : 'system';
+
   return (
-    <html lang="en" className={`${nunito.variable} ${instrumentSans.variable}`}>
+    <html lang="en" data-theme={theme} className={`${nunito.variable} ${instrumentSans.variable}`}>
       <head>
         <style dangerouslySetInnerHTML={{ __html: brandStyleSheet() }} />
       </head>

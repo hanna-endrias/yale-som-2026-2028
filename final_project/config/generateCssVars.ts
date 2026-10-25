@@ -18,7 +18,9 @@ export function generateCssVars(theme: ThemeName): string {
     .join(' ');
 }
 
+// Light on :root, dark when <html data-theme="dark">, and dark under the OS setting for "system".
 export function brandStyleSheet(): string {
   return `:root { ${generateCssVars('light')} }
-@media (prefers-color-scheme: dark) { :root { ${generateCssVars('dark')} } }`;
+[data-theme="dark"] { ${generateCssVars('dark')} }
+@media (prefers-color-scheme: dark) { [data-theme="system"] { ${generateCssVars('dark')} } }`;
 }

@@ -33,8 +33,8 @@ Existing social-listening / ORM tools (Birdeye, Podium, ReviewTrackers, Brandwat
 1. **Sign up / log in** — real account creation.
 2. **Add a subject** — a business, brand, or handle to track. Required: a **name**. Recommended: a short **description** giving search context (what it is, what it does, why someone would mention it — used to disambiguate search results). Optional: **location** (for a physical business), **website**, and other identifying details (e.g. a social handle) as relevant to that kind of subject.
 3. **Select a subject** — an owner may track multiple subjects; the UI makes clear which one is currently active.
-4. **Run a fetch** — pick a time range and a cadence chunk size (e.g. "last 30 days, daily"); this backfills "seed" data by running one search per cadence window within the range. The Fetch Agent searches for mentions published in that window, extracts a snippet and source URL per mention, tags sentiment, and stores them.
-5. **Chat with that subject's agent** — an Analyst Agent, scoped only to the selected subject's stored mentions, with template starter prompts so an owner doesn't have to guess what to ask (see `ARCHITECTURE.md` for the chat UI and exact prompts). Clicking one kicks off a chat turn pre-filled with that question; the owner can still type a free-form question.
+4. **Run a fetch** — pick a time range and a cadence chunk size (e.g. "last 30 days, daily"), and optionally a fetcher prompt from the prompt library or a one-time prompt to focus the search; this backfills "seed" data by running one search per cadence window within the range. The Fetch Agent searches for mentions published in that window, extracts a snippet and source URL per mention, tags sentiment, and stores them.
+5. **Chat with that subject's agent** — an Analyst Agent, scoped only to the selected subject's stored mentions, with starter prompts so an owner doesn't have to guess what to ask. The starters are the analyst prompts in the owner's editable prompt library (three defaults are included; see `ARCHITECTURE.md` for the chat UI and the library). Clicking one kicks off a chat turn pre-filled with that question; the owner can still type a free-form question.
 6. **Multi-tenancy** — an owner only ever sees and queries their own subjects' data; no tool call can read another owner's rows.
 
 ## 4. Technical validation (web search through Portkey)
@@ -48,8 +48,7 @@ Tested directly against the course's `PORTKEY_API_KEY` and `gpt-6-luna`:
 
 ## 5. Tokenomics plan
 
-- Token usage is already returned per call in the Responses API's `usage` object (confirmed live: input / output / cached / reasoning token breakdown). This will be logged per fetch run and per chat turn.
-- Dollar cost will additionally be pulled from **Portkey's analytics/logs API**, which tracks per-request cost at the gateway level. Caveat (per Portkey's own docs): unsupported/custom models can show $0.00 in its cost tracking, so token-count-based cost estimation (using published per-token pricing for the underlying model) is the reliable fallback for the report's cost numbers.
+- Token usage is already returned per call in the Responses API's `usage` object (confirmed live: input / output / cached / reasoning token breakdown). This is logged per fetch run and per chat turn, with an estimated dollar cost computed from those token counts (see `ARCHITECTURE.md` §3).
 - Cost levers already designed into the product: the cadence chunk size trades off coverage against token spend (finer cadence = more fetch calls = more tokens); the report will show measured cost per fetch run, per chat turn, and projected cost per user per month at 100 and 10,000 users once the app is built and real numbers are available.
 
 ## 6. Safety plan
