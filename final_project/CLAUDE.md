@@ -16,12 +16,13 @@ npm run check:env    # one ping to the configured LLM; expect "✓ gpt-6-luna re
 npm run db:generate  # after editing db/schema.ts → writes a new SQL file to db/migrations/
 npm run db:reset     # delete the SQLite DB (recreated + reseeded on next start)
 npm run db:seed      # reset and reseed now, prints row counts
-npm run fixture:capture  # re-runs the real Friend fetch (SPENDS TOKENS, ~12 web searches); rewrites db/fixtures/friend.json
-npm run fixture:chat -- <sessionId>  # save a local chat as db/fixtures/friend-chat.json (run before db:seed)
+npm run fixture:list                 # saved seed subjects vs. live DB subjects (ids, counts, saved or not)
+npm run fixture:save -- <subjectId> [--name slug]  # live subject (done runs, mentions, costs, scoped prompts, chats) → db/fixtures/subjects/<slug>.json
+npm run fixture:remove -- <slug...>  # delete a saved fixture AND that subject from the live DB
 npm run slides:build [-- --theme dark]  # slides/deck.html → self-contained slides.html
 ```
 
-Stop the dev server before `db:reset` / `db:seed` (it holds the SQLite file open). Test logins: `owner1@test.com` / `test1234` (seeded Friend subject + example chat, no tokens spent on start) and `owner2@test.com` / `test1234` (empty; use for tenant-isolation checks). `.claude/launch.json` defines `perspectives-dev` (port 3000) and `slides-preview` (port 4000) for the preview tools.
+Stop the dev server before `db:reset` / `db:seed` (it holds the SQLite file open). Test logins: `owner1@test.com` / `test1234` (seeded subjects from `db/fixtures/subjects/` — Friend + example chat, Slay the Spire 2 — no tokens spent on start) and `owner2@test.com` / `test1234` (empty; use for tenant-isolation checks). `.claude/launch.json` defines `perspectives-dev` (port 3000) and `slides-preview` (port 4000) for the preview tools.
 
 ## Architecture
 
@@ -43,7 +44,7 @@ Stop the dev server before `db:reset` / `db:seed` (it holds the SQLite file open
 
 **Token cost.** `lib/cost.ts` turns AI SDK usage into one `token_usage` row per chat turn (all tool-loop steps plus the visualizer call) and one per fetch window, priced from `config/llm.ts` (prices are placeholders, not billed amounts). `TokenCostBadge` displays them.
 
-**Database.** `db/client.ts` `getDb()` opens lazily, caches on `globalThis` (survives HMR), enables WAL + foreign keys, applies pending migrations from `db/migrations/` on every start, and seeds when `users` is empty (`db/seed.ts`, from `db/fixtures/*.json` — all real fetched data). Default path `data/perspectives.db` (gitignored), override with `DATABASE_PATH` in `.env`. All FKs cascade on delete.
+**Database.** `db/client.ts` `getDb()` opens lazily, caches on `globalThis` (survives HMR), enables WAL + foreign keys, applies pending migrations from `db/migrations/` on every start, and seeds when `users` is empty (`db/seed.ts`: the two test owners, then every `db/fixtures/subjects/*.json` alphabetically via `db/fixtures.ts` — all real fetched data, saved from the app with `fixture:save`; the `seed-data` skill wraps save/list/remove). Default path `data/perspectives.db` (gitignored), override with `DATABASE_PATH` in `.env`. All FKs cascade on delete.
 
 **Env.** `.env` needs `PORTKEY_API_KEY` and `SESSION_SECRET` (signs the stateless HMAC session cookie; dev falls back to an insecure secret, production throws). `instrumentation.ts` logs missing values at startup.
 

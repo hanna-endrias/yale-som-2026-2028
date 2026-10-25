@@ -29,7 +29,7 @@ One-line pitch: Ask an AI analyst how your launch landed online, for the cost of
 ### 5. Backfill a launch window in one run
 - Points: Friend around its NYC subway ads
 - Visual: screenshot — fetch-runs
-- Numbers: 12 weekly searches, 50 mentions (db/fixtures/friend.json)
+- Numbers: 12 weekly searches, 50 mentions (db/fixtures/subjects/friend.json)
 
 ### 6. Ask in plain words, get a chart of your data
 - Points: the analyst calls its tools and draws a weekly chart
