@@ -255,6 +255,10 @@ All FKs cascade on delete (deleting a user, subject, prompt or session removes e
 
 **Token cost.** `lib/cost.ts` `usageRow()` turns an AI SDK usage object into a `token_usage` row, and `estimateCost()` computes `estimated_cost_usd` at log time from `config/llm.ts` pricing (cached input tokens at the cached rate). One row is written per chat turn (ref_id = the assistant message) and one per fetch window (ref_id = the fetch run; summed per run). `components/common/TokenCostBadge.tsx` renders `1,234 tok · ~$0.0012` (or `—` when no cost was recorded) under each assistant message — from the stream's finish metadata live, and from a `token_usage` join on reload — and on each fetch-history row.
 
+**Where cost comes from, and how to extend it.** Cost is an estimate, not a billed amount: the token counts the model returns with each call, multiplied by the per-1M-token prices in `config/llm.ts` `pricing`, keyed by model name. Those prices are placeholders until they're checked against the provider's price list. To extend it:
+- **New model or provider:** add its prices to `pricing` under the model name. `estimateCost()` looks up the active model, so nothing else changes.
+- **Different cost source** (e.g. per-request cost from Portkey's analytics/logs API): replace the body of `estimateCost()` / `usageRow()`. `token_usage.estimated_cost_usd` is the only stored cost field, so the badge and per-run totals pick it up unchanged.
+
 ---
 
 ## 3b. Prompts

@@ -48,8 +48,7 @@ Tested directly against the course's `PORTKEY_API_KEY` and `gpt-6-luna`:
 
 ## 5. Tokenomics plan
 
-- Token usage is already returned per call in the Responses API's `usage` object (confirmed live: input / output / cached / reasoning token breakdown). This will be logged per fetch run and per chat turn.
-- Dollar cost will additionally be pulled from **Portkey's analytics/logs API**, which tracks per-request cost at the gateway level. Caveat (per Portkey's own docs): unsupported/custom models can show $0.00 in its cost tracking, so token-count-based cost estimation (using published per-token pricing for the underlying model) is the reliable fallback for the report's cost numbers.
+- Token usage is already returned per call in the Responses API's `usage` object (confirmed live: input / output / cached / reasoning token breakdown). This is logged per fetch run and per chat turn, with an estimated dollar cost computed from those token counts (see `ARCHITECTURE.md` §3).
 - Cost levers already designed into the product: the cadence chunk size trades off coverage against token spend (finer cadence = more fetch calls = more tokens); the report will show measured cost per fetch run, per chat turn, and projected cost per user per month at 100 and 10,000 users once the app is built and real numbers are available.
 
 ## 6. Safety plan
