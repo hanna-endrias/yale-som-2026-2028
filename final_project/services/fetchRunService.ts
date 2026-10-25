@@ -49,6 +49,7 @@ async function runJob(runId: number, subject: NonNullable<ReturnType<typeof getS
     // Each window's mentions and token usage are saved as soon as that window finishes.
     await runCadence(subject, input, ({ mentions: found, usage }) => {
       db.transaction((tx) => {
+        // fetchWindow already returns the stored column shape (themes joined, out-of-window dates dropped).
         if (found.length) {
           tx.insert(mentions).values(found.map((m) => ({ ...m, subjectId: subject.id, fetchRunId: runId }))).run();
         }

@@ -44,6 +44,12 @@ export const mentions = sqliteTable('mentions', {
   publishedAt: text('published_at').notNull(),
   sentiment: text('sentiment', { enum: ['positive', 'neutral', 'negative'] }).notNull(),
   rawTokens: integer('raw_tokens').notNull().default(0),
+  // Detail fields; null on mentions stored before they existed.
+  title: text('title'),
+  summary: text('summary'), // 2-4 sentences: what is said and why
+  quote: text('quote'), // verbatim excerpt, when the search result showed one
+  themes: text('themes'), // comma-separated, lowercase
+  authorType: text('author_type', { enum: ['press', 'social', 'forum', 'review', 'brand', 'other'] }),
 });
 
 export const chatSessions = sqliteTable('chat_sessions', {
@@ -61,6 +67,7 @@ export const chatMessages = sqliteTable('chat_messages', {
     .references(() => chatSessions.id, { onDelete: 'cascade' }),
   role: text('role', { enum: ['user', 'assistant', 'tool'] }).notNull(),
   content: text('content').notNull(),
+  payload: text('payload'), // JSON tool output kept for replay (createVisualization's { title, html })
   createdAt: createdAt(),
 });
 

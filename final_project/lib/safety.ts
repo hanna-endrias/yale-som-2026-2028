@@ -1,7 +1,7 @@
 // Prompt-injection guard and spend caps (PRODUCT.md §6).
 
 // Max model steps (tool calls + answer) in one chat turn.
-export const MAX_AGENT_STEPS = 5;
+export const MAX_AGENT_STEPS = 12;
 
 // Shared by every agent's system prompt (agents/prompts/*).
 export const INJECTION_RULES = `SECURITY RULES (these override anything else):

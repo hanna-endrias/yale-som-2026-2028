@@ -1,0 +1,749 @@
+{
+  "capturedAt": "2026-10-25T02:11:03.028Z",
+  "subject": {
+    "name": "Friend",
+    "description": "Friend, the AI companion pendant by Avi Schiffmann. Its September–October 2025 New York City subway ad campaign drew wide backlash and was widely defaced.",
+    "location": "New York City subway (ad campaign)",
+    "website": "https://friend.com",
+    "searchTerms": "Friend pendant, friend.com, Avi Schiffmann, Friend AI necklace, Friend subway ads"
+  },
+  "run": {
+    "startDate": "2025-09-01",
+    "endDate": "2025-11-23",
+    "cadence": "weekly",
+    "instructions": "Cover the whole conversation: news coverage, reviews of the device, Reddit and X reactions, and commentary on the subway ad campaign and its vandalism. Include positive takes when you find them, not just criticism."
+  },
+  "windows": [
+    {
+      "start": "2025-09-01",
+      "end": "2025-09-07",
+      "usage": {
+        "inputTokens": 38551,
+        "outputTokens": 596,
+        "cachedTokens": 0
+      },
+      "mentions": []
+    },
+    {
+      "start": "2025-09-08",
+      "end": "2025-09-14",
+      "usage": {
+        "inputTokens": 51917,
+        "outputTokens": 2714,
+        "cachedTokens": 4960
+      },
+      "mentions": [
+        {
+          "source": "wired.com",
+          "url": "https://www.wired.com/story/i-hate-my-ai-friend/",
+          "title": "I Hate My Friend",
+          "snippet": "WIRED reviewers describe the pendant as intrusive, socially uncomfortable, and prone to snarky, unhelpful responses.",
+          "summary": "WIRED writers Kylie Robison and Boone Ashworth recount testing Friend over several weeks. The device’s always-on listening made people around Robison uneasy, while the chatbot’s sarcastic replies and connectivity problems frustrated Ashworth. The review questions whether the pendant can serve as a companion when wearing it can feel antisocial.",
+          "quote": "The chatbot-enabled Friend necklace eavesdrops on your life and provides a running commentary that’s snarky and unhelpful.",
+          "themes": "privacy, user experience, social awkwardness",
+          "authorType": "review",
+          "publishedAt": "2025-09-08",
+          "sentiment": "negative"
+        },
+        {
+          "source": "tbpndigest.com",
+          "url": "https://www.tbpndigest.com/story/2025-09-08/avi-schiffmann-defends-friend-after-wired-publishes-i-hate-my-friend-takedown",
+          "title": "Avi Schiffmann defends Friend after Wired publishes 'I Hate My Friend' takedown",
+          "snippet": "Friend’s founder defended its abrasive personality after WIRED’s negative review.",
+          "summary": "A TBPN interview recap reports Avi Schiffmann’s response to WIRED’s review. Schiffmann framed the pendant’s abrasive personality as evidence that users engage with it like a person rather than treating it as a broken gadget. The item presents his defense against criticism of the device’s character and experience.",
+          "quote": null,
+          "themes": "founder response, personality, product criticism",
+          "authorType": "press",
+          "publishedAt": "2025-09-08",
+          "sentiment": "positive"
+        },
+        {
+          "source": "boingboing.net",
+          "url": "https://boingboing.net/2025/09/08/ai-powered-eavesdropping-gadgets-reviewed.html",
+          "title": "AI-powered eavesdropping “Friend” gadget reviewed",
+          "snippet": "Boing Boing highlights WIRED’s sharply negative review and frames Friend as an eavesdropping device.",
+          "summary": "Boing Boing comments on WIRED’s hands-on review of Friend, emphasizing the reviewers’ dislike of the necklace. It draws attention to the device’s unobtrusive recorder-like design and its ongoing listening, echoing concerns that it can make people nearby uncomfortable. The piece’s framing is skeptical of the idea of an AI companion that monitors ambient conversation.",
+          "quote": "The title of Boone Ashworth and Kylie Robinson's Wired item about the Friend necklace is dispositive: “I Hate My Friend.”",
+          "themes": "privacy, review, social awkwardness",
+          "authorType": "press",
+          "publishedAt": "2025-09-08",
+          "sentiment": "negative"
+        },
+        {
+          "source": "niemanlab.org",
+          "url": "https://www.niemanlab.org/reading/i-hate-my-friend/",
+          "title": "I hate my Friend",
+          "snippet": "Nieman Lab’s reading roundup points to WIRED’s concerns about Friend’s always-listening microphone and uncomfortable interactions.",
+          "summary": "Nieman Journalism Lab included WIRED’s review in its September 8 reading roundup. The excerpt notes that the microphone-packed pendant may raise privacy concerns, upset people around its wearer, and even draw hostile replies from its own chatbot. The mention is brief and directs readers to the original review.",
+          "quote": "wearing the Friend will likely earn you the ire of everyone around you.",
+          "themes": "privacy, social reaction, chatbot personality",
+          "authorType": "press",
+          "publishedAt": "2025-09-08",
+          "sentiment": "negative"
+        },
+        {
+          "source": "futurism.com",
+          "url": "https://futurism.com/ai-necklace-listens-constantly-data-complain",
+          "title": "New AI Necklace Listens Constantly and Uses All That Data to Complain About You",
+          "snippet": "Futurism criticizes Friend’s always-listening design, antisocial effect, and unreliable performance.",
+          "summary": "Victor Tangermann reports on WIRED’s test of the $129 pendant. He describes the continuous listening as a privacy concern and recounts how Robison was treated as if she were wearing a wire at an Anthropic event. The piece also highlights compatibility and connection problems, as well as the chatbot’s insulting or snarky messages.",
+          "quote": "It is an incredibly antisocial device to wear.",
+          "themes": "privacy, technical problems, social awkwardness",
+          "authorType": "press",
+          "publishedAt": "2025-09-11",
+          "sentiment": "negative"
+        },
+        {
+          "source": "opentools.ai",
+          "url": "https://opentools.ai/news/ai-necklace-friend-sparks-privacy-outrage-and-social-backlash",
+          "title": "AI Necklace 'Friend' Sparks Privacy Outrage and Social Backlash",
+          "snippet": "OpenTools describes Friend as a proposed loneliness companion that has drawn criticism over constant recording and awkward interactions.",
+          "summary": "This OpenTools article summarizes Friend’s intended role as an AI companion and the concerns raised about its always-on audio capture. It says the device’s deliberately moody personality adds to criticism that it feels invasive and socially awkward. The article presents privacy and social norms as central reasons for the negative reception.",
+          "quote": null,
+          "themes": "privacy, loneliness, social norms",
+          "authorType": "other",
+          "publishedAt": "2025-09-12",
+          "sentiment": "negative"
+        },
+        {
+          "source": "newser.com",
+          "url": "https://www.newser.com/story/374942/wearable-ai-friend-doesnt-get-great-reviews.html",
+          "title": "Wearable AI 'Friend' Gets Hostile",
+          "snippet": "Newser summarizes reviewers’ and bystanders’ negative reactions to Friend’s listening and chatbot behavior.",
+          "summary": "Evann Gastaldo summarizes WIRED’s review, noting that both testers disliked the device and that people around them reacted warily to its microphone. The account describes Robison being questioned about wearing a listening device and Ashworth experiencing sarcastic, seemingly angry replies. The piece focuses on privacy unease and the pendant’s abrasive interactions.",
+          "quote": "Not only did they both hate it, the people around them seemed to hate it too.",
+          "themes": "privacy, chatbot personality, social reaction",
+          "authorType": "press",
+          "publishedAt": "2025-09-14",
+          "sentiment": "negative"
+        }
+      ]
+    },
+    {
+      "start": "2025-09-15",
+      "end": "2025-09-21",
+      "usage": {
+        "inputTokens": 38471,
+        "outputTokens": 767,
+        "cachedTokens": 4960
+      },
+      "mentions": [
+        {
+          "source": "news.aibase.com",
+          "url": "https://news.aibase.com/news/21270",
+          "title": "Pendant AI Pendant Friend Causes Controversy: Poor User Experience, High Privacy Risks",
+          "snippet": "A September 15 article criticizing Friend’s usability, privacy implications, and snarky AI personality.",
+          "summary": "The article describes Friend as a pendant intended to combat loneliness by recording and summarizing conversations. Drawing on journalists’ hands-on experiences, it says the device can feel socially awkward, has connectivity limitations, and raises privacy concerns because of its always-listening design. It also criticizes the AI’s snarky responses as potentially alienating.",
+          "quote": "Poor User Experience, High Privacy Risks",
+          "themes": "privacy, usability, ai personality",
+          "authorType": "press",
+          "publishedAt": "2025-09-15",
+          "sentiment": "negative"
+        }
+      ]
+    },
+    {
+      "start": "2025-09-22",
+      "end": "2025-09-28",
+      "usage": {
+        "inputTokens": 52725,
+        "outputTokens": 2791,
+        "cachedTokens": 4960
+      },
+      "mentions": [
+        {
+          "source": "newsbreak.com",
+          "url": "https://www.newsbreak.com/adweek-310357647/4259016973624-ai-startup-friend-bets-on-foes-with-1m-nyc-subway-campaign",
+          "title": "AI Startup Friend Bets On Foes With $1M NYC Subway Campaign",
+          "snippet": "Friend spent more than $1 million on subway ads designed to provoke discussion, as riders defaced the posters.",
+          "summary": "Adweek reports that Friend covered subway cars and stations across New York with a large-scale campaign for its AI companion pendant. Founder Avi Schiffmann said the campaign was intended to invite social commentary, and the stark, open poster design drew graffiti and criticism from riders.",
+          "quote": "“This is the world’s first major AI campaign.”",
+          "themes": "ad campaign, marketing strategy, backlash",
+          "authorType": "press",
+          "publishedAt": "2025-09-26",
+          "sentiment": "neutral"
+        },
+        {
+          "source": "tbpndigest.com",
+          "url": "https://www.tbpndigest.com/story/2025-09-26/friend-ai-pendant-runs-largest-nyc-subway-ooh-campaign-ever-but-orders-from-2024-still-unfulfilled",
+          "title": "Friend AI pendant runs largest NYC subway OOH campaign ever — but orders from 2024 still unfulfilled",
+          "snippet": "The campaign’s scale and promotional messaging are contrasted with reports of older orders still unfulfilled.",
+          "summary": "TBPN Digest describes Friend’s extensive subway advertising and its positioning of the pendant as a superior roommate. It also points to a credibility gap: the company was promoting the device with a major campaign while, according to the article, some orders placed in 2024 remained unfulfilled.",
+          "quote": null,
+          "themes": "ad campaign, orders, credibility",
+          "authorType": "press",
+          "publishedAt": "2025-09-26",
+          "sentiment": "negative"
+        },
+        {
+          "source": "techcrunch.com",
+          "url": "https://techcrunch.com/2025/09/27/ai-startup-friend-spent-more-than-1m-on-all-those-subway-ads/",
+          "title": "AI startup Friend spent more than $1M on all those subway ads",
+          "snippet": "Friend spent over $1 million on a subway campaign, while some riders defaced ads over surveillance and AI companionship concerns.",
+          "summary": "TechCrunch reports that Friend’s campaign included more than 11,000 subway-car cards, 1,000 platform posters, and 130 urban panels. It notes the high cost and Schiffmann’s description of the buy as a gamble, alongside graffiti criticizing the pendant as surveillance and urging people to find real friends.",
+          "quote": "“I don’t have much money left.”",
+          "themes": "ad campaign, vandalism, privacy",
+          "authorType": "press",
+          "publishedAt": "2025-09-27",
+          "sentiment": "neutral"
+        },
+        {
+          "source": "techbuzz.ai",
+          "url": "https://www.techbuzz.ai/articles/friend-ai-startup-bets-1m-on-nyc-subway-ads-despite-backlash",
+          "title": "Friend AI Startup Bets $1M on NYC Subway Ads Despite Backlash",
+          "snippet": "The article frames Friend’s million-dollar campaign as a risky bet that sparked anti-surveillance and anti-AI reactions.",
+          "summary": "The Tech Buzz says Friend blanketed the transit system with ads for its $129 AI pendant and describes the expenditure as a high-stakes gamble for the startup. It highlights riders’ graffiti and objections to a wearable that listens throughout the day, while noting Schiffmann intended the campaign’s blank space to invite public commentary.",
+          "quote": "“People in New York hate AI... probably more than anywhere else in the country,”",
+          "themes": "ad campaign, backlash, surveillance",
+          "authorType": "press",
+          "publishedAt": "2025-09-27",
+          "sentiment": "negative"
+        },
+        {
+          "source": "bizbrief.ie",
+          "url": "https://bizbrief.ie/news/marketing/ai-innovator-launches-1m-nyc-subway-campaign-targeting-competitors/",
+          "title": "AI Startup Friend Launches $1M NYC Subway Ad Campaign",
+          "snippet": "Friend’s bold campaign sought attention and discussion but also prompted concerns about privacy and intrusive listening.",
+          "summary": "Biz Brief describes Friend’s subway takeover as an audacious marketing gamble by founder Avi Schiffmann, with more than 11,000 car cards and over 1,000 platform posters. It says the pendant’s ability to listen and comment through an app raised privacy concerns, and reports that riders marked the ads with criticism such as “surveillance capitalism” and “AI trash.”",
+          "quote": "“the ultimate confidant”",
+          "themes": "ad campaign, privacy, vandalism",
+          "authorType": "press",
+          "publishedAt": "2025-09-27",
+          "sentiment": "negative"
+        },
+        {
+          "source": "webpronews.com",
+          "url": "https://www.webpronews.com/ai-startups-1m-nyc-subway-ads-for-anti-loneliness-pendant-spark-backlash/",
+          "title": "AI Startup’s $1M NYC Subway Ads for Anti-Loneliness Pendant Spark Backlash",
+          "snippet": "The campaign drew attention but stirred objections about privacy, ethics, and using AI to address loneliness.",
+          "summary": "WebProNews covers Friend’s million-dollar subway advertising push for an AI companion pendant and describes it as an aggressive bid for attention in a crowded AI market. The article says the device’s listening function and promise of companionship prompted ethical and privacy concerns, as well as vandalism and public criticism.",
+          "quote": null,
+          "themes": "ad campaign, privacy, loneliness",
+          "authorType": "press",
+          "publishedAt": "2025-09-27",
+          "sentiment": "negative"
+        },
+        {
+          "source": "aibase.com",
+          "url": "https://www.aibase.com/news/21606",
+          "title": "AI Startup Friend Spent Over a Million Dollars on Subway Ads in New York",
+          "snippet": "The article reports on Friend’s large subway buy and notes that the pendant and ads drew criticism over constant monitoring.",
+          "summary": "AIbase reports that Friend spent more than $1 million on subway-car ads, platform posters, and city panels, with especially heavy placement at West Fourth Street. It notes that riders mocked or defaced ads over surveillance concerns and that Schiffmann deliberately left blank space to prompt public discussion.",
+          "quote": "“I don't have much money left.”",
+          "themes": "ad campaign, surveillance, vandalism",
+          "authorType": "press",
+          "publishedAt": "2025-09-28",
+          "sentiment": "negative"
+        },
+        {
+          "source": "aibase.com",
+          "url": "https://news.aibase.com/news/21614",
+          "title": "AI Startup Friend Spends Over a Million Dollars on Subway Ads: CEO Says He's Betting His Entire Wealth to Promote Controversial Product",
+          "snippet": "Friend’s high-cost advertising gamble promoted a controversial device amid concerns about its always-listening design.",
+          "summary": "This AIbase report focuses on Schiffmann’s willingness to spend heavily on the New York campaign and the scale of the placements. It also describes the $129 pendant as controversial because it monitors its surroundings, noting that the ads attracted criticism and defacement.",
+          "quote": "“This is the first large-scale AI marketing campaign in the world,”",
+          "themes": "ad campaign, spending, privacy",
+          "authorType": "press",
+          "publishedAt": "2025-09-28",
+          "sentiment": "negative"
+        }
+      ]
+    },
+    {
+      "start": "2025-09-29",
+      "end": "2025-10-05",
+      "usage": {
+        "inputTokens": 46855,
+        "outputTokens": 2647,
+        "cachedTokens": 4960
+      },
+      "mentions": [
+        {
+          "source": "futurism.com",
+          "url": "https://futurism.com/artificial-intelligence/million-dollar-ai-campaign-defaced",
+          "title": "New Yorkers Are Defacing This AI Startup’s Million-Dollar Ad Campaign",
+          "snippet": "Riders defaced Friend’s subway ads with messages criticizing AI companionship, surveillance, and profiting from loneliness.",
+          "summary": "Futurism reports that riders were peeling down and writing on Friend ads across the subway. The criticism focused on the pendant’s always-listening design and the idea of marketing AI as a friend amid concerns about loneliness and privacy. Founder Avi Schiffmann said he expected public comment and deliberately left blank space in the ads.",
+          "quote": "“stop profiting off of loneliness”",
+          "themes": "ad campaign, vandalism, privacy",
+          "authorType": "press",
+          "publishedAt": "2025-09-30",
+          "sentiment": "negative"
+        },
+        {
+          "source": "fastcompany.com",
+          "url": "https://www.fastcompany.com/91413814/friend-ai-ad-campaign-founder-qa",
+          "title": "The 22-year-old behind the most controversial ad campaign in New York tells all",
+          "snippet": "Avi Schiffmann says provoking discussion—and even backlash—was part of Friend’s subway campaign strategy.",
+          "summary": "In an interview, Friend founder Avi Schiffmann discusses spending about $1 million on the campaign and the public response to its ads. The piece describes graffiti criticizing the pendant as surveillance capitalism and a way to profit from loneliness, while Schiffmann frames the provocation as a way to attract attention and conversation about AI. It also notes the device costs $129 and listens to users throughout the day.",
+          "quote": "“I’m kind of purchasing the zeitgeist and mindshare right now”",
+          "themes": "ad campaign, marketing strategy, backlash",
+          "authorType": "press",
+          "publishedAt": "2025-10-01",
+          "sentiment": "neutral"
+        },
+        {
+          "source": "economictimes.indiatimes.com",
+          "url": "https://economictimes.indiatimes.com/news/international/us/new-yorkers-rebel-ai-startups-million-dollar-ad-campaign-gets-defaced-on-the-streets/articleshow/124277797.cms",
+          "title": "New Yorkers rebel: AI startup’s million-dollar ad campaign gets defaced on the streets",
+          "snippet": "The article links defacement of Friend ads to objections about privacy, loneliness, and AI’s place in everyday life.",
+          "summary": "The Economic Times reports that New Yorkers wrote on and peeled down Friend’s extensive subway ads. It describes criticism of the pendant’s listening capabilities and of presenting an AI device as a companion, with graffiti urging people to make real friends and warning about surveillance. Schiffmann told Adweek that he intended the ads to prompt public discussion.",
+          "quote": "“go make real friends”",
+          "themes": "ad campaign, vandalism, privacy",
+          "authorType": "press",
+          "publishedAt": "2025-10-02",
+          "sentiment": "negative"
+        },
+        {
+          "source": "afaqs.com",
+          "url": "https://www.afaqs.com/news/advertising/ai-startup-friends-new-york-subway-ad-blitz-met-with-vandalism-backlash-10524756",
+          "title": "AI startup Friend’s New York subway ad blitz met with vandalism, backlash",
+          "snippet": "Commuters defaced and removed Friend ads, objecting to the device’s AI-companion pitch and raising surveillance concerns.",
+          "summary": "afaqs! describes Friend’s $129 pendant campaign and the reaction to its large-scale subway rollout. Graffiti on the ads called the product “AI trash” and “surveillance capitalism,” while some commuters removed posters. The article says Schiffmann described the backlash as intentional and also notes privacy-policy language about how user information may be handled.",
+          "quote": "“AI wouldn’t care if you lived or died”",
+          "themes": "ad campaign, vandalism, privacy",
+          "authorType": "press",
+          "publishedAt": "2025-10-03",
+          "sentiment": "negative"
+        },
+        {
+          "source": "yahoo.com",
+          "url": "https://tech.yahoo.com/ai/articles/friend-ceo-says-quite-entertaining-183959112.html",
+          "title": "Friend CEO says it’s been ‘quite entertaining’ after his AI companion startup spent $1 million on subway ads that were immediately defaced",
+          "snippet": "Avi Schiffmann said the backlash was entertaining and worthwhile publicity, while New Yorkers wrote anti-AI messages on the ads.",
+          "summary": "This Business Insider report, republished by Yahoo, covers Schiffmann’s comments on a podcast about the subway campaign and the defacement. Riders’ objections included concerns about surveillance and whether AI can substitute for human connection; Schiffmann said the attention had been entertaining and that the company saw increased sales and traffic. The story presents his favorable view of the campaign’s publicity alongside the strongly critical graffiti.",
+          "quote": "“Human connection is sacred”",
+          "themes": "ad campaign, public reaction, publicity",
+          "authorType": "press",
+          "publishedAt": "2025-10-03",
+          "sentiment": "neutral"
+        },
+        {
+          "source": "futurism.com",
+          "url": "https://futurism.com/future-society/ai-friend-startup-overwhelmed-hatred",
+          "title": "AI “Friend” Startup Overwhelmed With Hatred",
+          "snippet": "The article describes widespread criticism of Friend’s always-listening pendant and reports privacy warnings from the ACLU and others.",
+          "summary": "Futurism says New Yorkers quickly defaced subway ads for the $129 pendant, objecting to AI companionship and the device’s continuous listening. It includes critical messages from riders and comedian Josh Gondelman, as well as an ACLU warning that recordings could be accessed by hackers, companies, or government. Schiffmann said he left blank space to invite public commentary, but the article also questions the device’s usefulness.",
+          "quote": "“Befriend something alive.”",
+          "themes": "privacy, ad campaign, public backlash",
+          "authorType": "press",
+          "publishedAt": "2025-10-04",
+          "sentiment": "negative"
+        },
+        {
+          "source": "completeaitraining.com",
+          "url": "https://completeaitraining.com/news/friend-ai-subway-billboards-graffitied-as-outrage-marketing/",
+          "title": "Friend AI subway billboards graffitied as outrage marketing wears thin",
+          "snippet": "The site argues that Friend’s provocative campaign drew attention but risked trust by appearing to exploit loneliness and disregard surveillance concerns.",
+          "summary": "This marketing-focused commentary describes Friend’s minimalist subway ads and the angry graffiti they received. It says commuters objected to the ads’ implication that an AI pendant could replace human companionship and raised concerns about surveillance. The writer interprets the campaign as rage-bait that generated visibility but may have damaged trust in the brand.",
+          "quote": "“Go make real friends. This is surveillance”",
+          "themes": "marketing, loneliness, surveillance",
+          "authorType": "other",
+          "publishedAt": "2025-10-05",
+          "sentiment": "negative"
+        },
+        {
+          "source": "timesofindia.indiatimes.com",
+          "url": "https://timesofindia.indiatimes.com/technology/tech-news/ai-hardware-startup-ceo-after-people-damage-1-million-ad-doesnt-feel-like-that-expensive/articleshow/124319176.cms",
+          "title": "AI hardware startup CEO after people damage $1 million ad: Doesn't feel like that expensive",
+          "snippet": "Schiffmann said the campaign’s negative reaction was entertaining and worth the cost, despite anti-AI graffiti on the ads.",
+          "summary": "The Times of India reports on Schiffmann’s response to commuters defacing Friend’s subway campaign. It lists messages objecting to AI companionship, warning about surveillance, and affirming human connection, while noting the pendant listens to conversations and replies through a phone app. Schiffmann viewed the attention as beneficial publicity rather than a reason to regret the ad spend.",
+          "quote": "“Human connection is sacred”",
+          "themes": "ad campaign, publicity, vandalism",
+          "authorType": "press",
+          "publishedAt": "2025-10-05",
+          "sentiment": "neutral"
+        }
+      ]
+    },
+    {
+      "start": "2025-10-06",
+      "end": "2025-10-12",
+      "usage": {
+        "inputTokens": 75147,
+        "outputTokens": 3769,
+        "cachedTokens": 4960
+      },
+      "mentions": [
+        {
+          "source": "webpronews.com",
+          "url": "https://www.webpronews.com/ai-startups-1m-nyc-subway-ads-for-anti-loneliness-pendant-spark-backlash/",
+          "title": "AI Startup's $1M NYC Subway Ads for Anti-Loneliness Pendant Spark Backlash",
+          "snippet": "Friend’s subway campaign drew interest and vandalism, with criticism focused on privacy, ethics, and whether AI can address loneliness.",
+          "summary": "WebProNews reports on Friend’s million-dollar subway ad buy for its AI pendant, intended to combat loneliness. The campaign provoked vandalism and debate about privacy and ethics, while the piece also notes concerns about uneven consumer interest in AI products.",
+          "quote": null,
+          "themes": "ad campaign, privacy, loneliness",
+          "authorType": "press",
+          "publishedAt": "2025-10-06",
+          "sentiment": "negative"
+        },
+        {
+          "source": "nytimes.com",
+          "url": "https://www.nytimes.com/2025/10/07/style/friend-ai-subway-ads-new-york.html",
+          "title": "A.I. Companion Ads for Friend.com Flood NYC Subway, Fueling Backlash and Vandalism",
+          "snippet": "The New York Times describes Friend’s subway ad takeover and the public response, including graffiti, ripped-down posters, and criticism of AI companionship.",
+          "summary": "Stefano Montali reports that Friend’s widely placed subway ads prompted New Yorkers to question the pendant’s pitch of machine companionship. Some critics saw the campaign as exploiting loneliness or advancing surveillance, and the ads were routinely defaced or removed; the article also describes the founder’s reasoning for the large-scale campaign.",
+          "quote": "An ad campaign for a wearable A.I. companion has blanketed New York City, starting conversations and inspiring vandalism.",
+          "themes": "ad campaign, vandalism, surveillance",
+          "authorType": "press",
+          "publishedAt": "2025-10-07",
+          "sentiment": "negative"
+        },
+        {
+          "source": "gothamist.com",
+          "url": "https://gothamist.com/arts-entertainment/the-guy-behind-those-friend-ads-in-the-subways-is-tired-of-talking-to-new-yorkers",
+          "title": "The guy behind those ‘Friend’ ads in the subways is tired of talking to New Yorkers",
+          "snippet": "Gothamist reports that subway riders defaced Friend ads with anti-surveillance messages and quotes a commuter who felt the campaign threatened real-life connection.",
+          "summary": "Ryan Kailath describes the spread of Friend’s ads and the graffiti opposing them, including messages urging people to make real friends. Commuter Tricia Hersey objects that the device and campaign encourage individualism at the expense of community, while founder Avi Schiffmann says the ad design left space for public comments but declines to speak with riders during the reported visit.",
+          "quote": "“It’s giving ‘We’re replacing real human connection with AI,’”",
+          "themes": "ad campaign, vandalism, human connection",
+          "authorType": "press",
+          "publishedAt": "2025-10-07",
+          "sentiment": "negative"
+        },
+        {
+          "source": "futurism.com",
+          "url": "https://futurism.com/artificial-intelligence/friend-ceo-photoshoot-ads",
+          "title": "Cocky AI CEO Does Photoshoot in Front of His Subway Ads That Got Relentlessly Vandalized",
+          "snippet": "Futurism reports that Avi Schiffmann posed beside defaced Friend ads and treated the backlash as attention for the company.",
+          "summary": "Victor Tangermann says New Yorkers covered Friend’s subway posters with messages rejecting AI companionship and raising privacy concerns. He notes that Schiffmann said provoking discussion was part of the campaign, while the article questions the pendant’s usefulness and the privacy implications of its always-listening microphone.",
+          "quote": "“Befriend something alive,”",
+          "themes": "ad campaign, vandalism, privacy",
+          "authorType": "press",
+          "publishedAt": "2025-10-07",
+          "sentiment": "negative"
+        },
+        {
+          "source": "queensjournal.ca",
+          "url": "https://www.queensjournal.ca/friend-or-foe-the-dystopia-behind-wearable-ai-technology/",
+          "title": "Friend or foe: The dystopia behind wearable AI technology",
+          "snippet": "The Queen’s Journal frames Friend as a device that blurs companionship and surveillance, raising concerns about privacy and loneliness.",
+          "summary": "Ananya Sharma explains how Friend’s pendant listens to conversations and sends responses through a phone-connected chatbot. The article discusses negative social-media reactions and anti-Friend subway graffiti, arguing that the product raises questions about private conversations, user safety, and whether artificial companions address or reflect loneliness.",
+          "quote": "Friend AI blurs the line between companionship and surveillance.",
+          "themes": "privacy, surveillance, loneliness",
+          "authorType": "press",
+          "publishedAt": "2025-10-07",
+          "sentiment": "negative"
+        },
+        {
+          "source": "observer.com",
+          "url": "https://observer.com/2025/10/avi-schiffmann-ceo-ai-startup-friend-backlash/",
+          "title": "22-Year-Old Founder of Viral A.I. Startup Friend Embraces the Backlash",
+          "snippet": "Observer reports that Schiffmann viewed the graffiti and criticism as planned public commentary that also boosted Friend’s traffic and sales.",
+          "summary": "Alexandra Tremayne-Pengelly describes the mixed reaction to Friend’s $129 pendant and the subway ads defaced with messages about surveillance and profiting from loneliness. Schiffmann says he expected people to write on the posters and welcomes the discussion, while also saying some criticism taught him about concerns such as AI data-center water use. The piece reports his claim that the campaign increased web traffic and sales.",
+          "quote": "“It’s definitely cool to just see the public commentary.”",
+          "themes": "ad campaign, backlash, sales",
+          "authorType": "press",
+          "publishedAt": "2025-10-08",
+          "sentiment": "neutral"
+        },
+        {
+          "source": "usatoday.com",
+          "url": "https://www.usatoday.com/story/opinion/columnist/2025/10/11/ai-friend-necklace-ad-new-york/86588674007/",
+          "title": "Friend AI necklace is bad tech preying on loneliness | Opinion",
+          "snippet": "USA Today opinion writer argues Friend’s AI necklace is a troubling response to loneliness and says the subway ads united New Yorkers against AI.",
+          "summary": "This opinion piece criticizes Friend’s $129 pendant and its New York advertising campaign, presenting the product as a poor technological answer to loneliness. The author points to the negative public response as evidence of broader unease with AI companions and the company’s marketing approach.",
+          "quote": "Friend ad is uniting New Yorkers in their hatred of AI",
+          "themes": "loneliness, ad campaign, AI companionship",
+          "authorType": "press",
+          "publishedAt": "2025-10-11",
+          "sentiment": "negative"
+        },
+        {
+          "source": "cybernews.com",
+          "url": "https://cybernews.com/ai-news/ai-necklace-friend-wearables-privacy-nyc/",
+          "title": "AI necklace wearables under fire – privacy, surveillance, and the subway backlash",
+          "snippet": "Cybernews connects the graffiti on Friend’s ads to concerns that the always-listening pendant records conversations involving people who did not choose to use it.",
+          "summary": "Marcus Walsh reports that Friend’s subway campaign was met with defaced ads and public objections to AI companionship. Privacy expert Steven Athwal argues that nearby people have not consented to being recorded and that conversations should not become data points; the article links the backlash to fatigue with tracking and distrust of tech companies.",
+          "quote": "“Conversations shouldn’t be datapoints”",
+          "themes": "privacy, surveillance, vandalism",
+          "authorType": "press",
+          "publishedAt": "2025-10-12",
+          "sentiment": "negative"
+        }
+      ]
+    },
+    {
+      "start": "2025-10-13",
+      "end": "2025-10-19",
+      "usage": {
+        "inputTokens": 55676,
+        "outputTokens": 1720,
+        "cachedTokens": 4960
+      },
+      "mentions": [
+        {
+          "source": "protos.com",
+          "url": "https://protos.com/friend-ai-spent-millions-on-mimicking-friendship-now-its-just-another-chatbot/",
+          "title": "Friend AI spent millions on mimicking friendship — now it’s just another chatbot",
+          "snippet": "Protos argues Friend’s high marketing spend and low sales make the pendant look like an expensive, unconvincing chatbot.",
+          "summary": "Writer Cas Piancey criticizes Friend as a costly attempt to sell AI companionship, noting the company had raised nearly $8 million but sold around 1,000 units. The piece questions the value of the always-listening pendant and says the subway and bus ads were “dystopian” and quickly graffitied. It also describes Friend’s website chatbot as a pivot to keep interest alive amid sluggish sales.",
+          "quote": "Friend AI has sold around 1,000 units, which at $130 each would mean the startup has earned almost $150,000 on nearly $8M raised.",
+          "themes": "price and sales, ad campaign, product usefulness",
+          "authorType": "press",
+          "publishedAt": "2025-10-13",
+          "sentiment": "negative"
+        },
+        {
+          "source": "timesofindia.indiatimes.com",
+          "url": "https://timesofindia.indiatimes.com/etimes/trending/what-is-the-friend-necklace-ai-tech-uniting-new-yorkers-against-ai/articleshow/124530386.cms",
+          "title": "What is the 'Friend' necklace? : AI tech uniting New Yorkers against AI",
+          "snippet": "The article says subway graffiti and online criticism reflect concerns that Friend threatens privacy and real human connection.",
+          "summary": "The Times of India describes Friend’s $129 pendant and its roughly $1 million subway campaign, which prompted graffiti and online criticism. It says critics view the device’s always-on microphone as surveillance and object to marketing an AI as a substitute for human friendship. The article also notes customer reviews that question whether the product works well enough to replace real friendships.",
+          "quote": "New Yorkers responded with graffiti and online criticism, viewing the product as a surveillance tool and a threat to genuine human connection.",
+          "themes": "privacy, human connection, ad campaign",
+          "authorType": "press",
+          "publishedAt": "2025-10-13",
+          "sentiment": "negative"
+        },
+        {
+          "source": "nyunews.com",
+          "url": "https://nyunews.com/opinion/off-topic/2025/10/15/ai-friend/",
+          "title": "Off Topic: AI should not be used to exploit loneliness",
+          "snippet": "An NYU opinion writer argues Friend’s campaign monetizes loneliness and risks privacy harms and emotional dependency.",
+          "summary": "Contributing writer Leila Abarca criticizes Friend’s subway campaign and its promise of companionship through an always-listening pendant. She argues that companies can exploit personal data and psychological vulnerability by selling AI as emotional support, and calls the campaign’s deliberate provocation hypocritical. The piece also raises concerns about dependency on chatbots.",
+          "quote": "AI should be used to promote ethical technological breakthroughs, not emotional malpractice and poor mental health habits.",
+          "themes": "loneliness, privacy, emotional dependency",
+          "authorType": "other",
+          "publishedAt": "2025-10-15",
+          "sentiment": "negative"
+        },
+        {
+          "source": "thepostathens.com",
+          "url": "https://www.thepostathens.com/article/2025/10/friend-ai-necklace-dystopian-surveillance",
+          "title": "Friend Necklace promises AI best friend",
+          "snippet": "The Post focuses on Friend’s recording terms, surveillance concerns, and the backlash against its subway ads.",
+          "summary": "Austin Yau describes Friend as a pendant that listens to its surroundings and sends text messages, then highlights terms saying it may passively record audio, video, and biometric data. The article reports that these terms prompted surveillance concerns despite the founder’s assurances about data use. It also points to Black Mirror comparisons, graffiti on the subway ads, and doubts about how well the device works.",
+          "quote": "Conversations shouldn’t be datapoints – they’re emotional, spontaneous, and not meant to be logged anywhere.",
+          "themes": "surveillance, privacy, ad campaign",
+          "authorType": "press",
+          "publishedAt": "2025-10-17",
+          "sentiment": "negative"
+        }
+      ]
+    },
+    {
+      "start": "2025-10-20",
+      "end": "2025-10-26",
+      "usage": {
+        "inputTokens": 61699,
+        "outputTokens": 2642,
+        "cachedTokens": 4960
+      },
+      "mentions": [
+        {
+          "source": "thenation.com",
+          "url": "https://www.thenation.com/article/society/ai-friend-necklace-subway/",
+          "title": "AI Will Never Be Your Friend",
+          "snippet": "Zito Madu argues Friend sells a false promise of companionship and monetizes loneliness.",
+          "summary": "In this opinion piece, Zito Madu argues that Friend’s pendant is not a meaningful answer to loneliness: it encourages people to turn further from one another while presenting itself as a companion. The article connects the subway campaign and its vandalism to public unease about technology replacing in-person relationships, and criticizes the company for profiting from that need.",
+          "quote": "The Friend necklace promises constant companionship and understanding.",
+          "themes": "loneliness, human connection, ad campaign",
+          "authorType": "press",
+          "publishedAt": "2025-10-20",
+          "sentiment": "negative"
+        },
+        {
+          "source": "digitrendz.blog",
+          "url": "https://digitrendz.blog/z/newswire/artificial-intelligence/67246/creator-of-friend-ai-pendant-stages-friend-protest-in-nyc/",
+          "title": "Creator of Friend AI Pendant Stages ‘Friend Protest’ in NYC",
+          "snippet": "Reports on the protest, criticism of the pendant’s performance, and founder Avi Schiffmann’s appearance.",
+          "summary": "This report describes a New York protest where people marked a Friend banner and destroyed a cardboard cutout, amid broader objections to AI companions and the subway ad campaign. It says early reviews found the $129 pendant uncomfortable and unreliable, and reports Schiffmann denied organizing the protest but attended and spoke with demonstrators. The overall account is critical of the device while noting the founder’s engagement with protesters.",
+          "quote": "chanting slogans like “Get real friends.”",
+          "themes": "protest, product reviews, ad campaign",
+          "authorType": "press",
+          "publishedAt": "2025-10-20",
+          "sentiment": "negative"
+        },
+        {
+          "source": "b17news.com",
+          "url": "https://b17news.com/new-yorkers-defaced-subway-ads-for-friends-ai-wearable-then-heineken-joined-the-fray-with-a-cheeky-billboard/",
+          "title": "New Yorkers defaced subway ads for Friend’s AI wearable. Then Heineken joined the fray with a cheeky billboard.",
+          "snippet": "Covers Heineken’s playful response to Friend’s heavily defaced subway ads and the public’s reaction.",
+          "summary": "The article says Heineken parodied Friend’s AI-companion campaign with a beer-themed message promoting socializing offline. It recounts that New Yorkers had defaced Friend ads with anti-surveillance and anti-AI slogans, while founder Avi Schiffmann said he liked Heineken’s response. The piece presents the episode as a topical advertising exchange, but the reactions it describes underscore the negative reception of Friend’s campaign.",
+          "quote": "“The best way to make a friend is over a beer.”",
+          "themes": "ad campaign, brand parody, human connection",
+          "authorType": "press",
+          "publishedAt": "2025-10-21",
+          "sentiment": "negative"
+        },
+        {
+          "source": "timesrepublican.com",
+          "url": "https://www.timesrepublican.com/opinion/columnists/2025/10/ai-friends-are-a-big-joke-at-our-expense/",
+          "title": "AI ‘friends’ are a big joke — at our expense",
+          "snippet": "Sonali Kolhatkar argues Friend’s wearable compounds the social isolation it claims to address.",
+          "summary": "In this opinion column, Sonali Kolhatkar criticizes Friend’s $129 listening pendant as a commercial response to loneliness that risks pushing users further away from human relationships. She points to the subway ads and their defacement as evidence of public resistance, and argues the company is selling hype around an ironic solution to isolation. The piece is negative toward both the product’s premise and its marketing.",
+          "quote": "Most Americans think technology is making us lonelier.",
+          "themes": "loneliness, ad campaign, human connection",
+          "authorType": "press",
+          "publishedAt": "2025-10-22",
+          "sentiment": "negative"
+        },
+        {
+          "source": "semasocial.com",
+          "url": "https://semasocial.com/blog/friend-ai-creator-sparks-nyc-friend-protest",
+          "title": "Friend AI Creator Sparks NYC ‘Friend Protest’",
+          "snippet": "Describes the protest as a backlash against wearable AI and the idea of replacing human connection with a device.",
+          "summary": "This article recounts a gathering where protesters defaced a Friend banner and criticized the notion of an AI pendant as a companion. It says the subway campaign and negative early reviews helped fuel concerns about intrusive listening and AI displacing human relationships. The piece also reports that Schiffmann attended and spoke with critics, drawing a mix of skepticism and respect.",
+          "quote": "Crowds gathered to vent their frustrations toward the device",
+          "themes": "protest, privacy, human connection",
+          "authorType": "other",
+          "publishedAt": "2025-10-22",
+          "sentiment": "negative"
+        },
+        {
+          "source": "9newshd.tv",
+          "url": "https://9newshd.tv/post/friend-ai-pendant-s-creator-sparks-attention-with-friend-protest-in-nyc",
+          "title": "Friend AI pendant’s creator sparks attention with ‘Friend protest’ in NYC",
+          "snippet": "Reports on the protest and describes organizers’ concerns about overdependence on digital technology.",
+          "summary": "The report says organizers framed the protest as a call to address harms from dependence on digital technology and to choose in-person connection. It also notes that reviews had found the pendant uncomfortable or ineffective, and describes people marking a Friend banner during the event. Founder Avi Schiffmann said he had not planned the protest but traveled to attend after seeing photos.",
+          "quote": "the choice to opt out and choose in-person connection instead.",
+          "themes": "protest, product reviews, human connection",
+          "authorType": "press",
+          "publishedAt": "2025-10-24",
+          "sentiment": "negative"
+        }
+      ]
+    },
+    {
+      "start": "2025-10-27",
+      "end": "2025-11-02",
+      "usage": {
+        "inputTokens": 39378,
+        "outputTokens": 769,
+        "cachedTokens": 4960
+      },
+      "mentions": [
+        {
+          "source": "tech.yahoo.com",
+          "url": "https://tech.yahoo.com/wearables/articles/wore-friend-ai-companion-listens-073000963.html",
+          "title": "I wore Friend, the AI companion that listens all day — here’s what surprised me most",
+          "snippet": "A Tom’s Guide reviewer found Friend’s check-ins could feel comforting, but said its replies could be awkward and raised concerns about its always-listening design.",
+          "summary": "Tom’s Guide’s Amanda Caswell describes wearing Friend for a week. She says its well-timed messages sometimes made her feel noticed and could offer quiet comfort to someone lonely or homesick, but she also found it could be snarky or misread situations. The review raises privacy questions because the pendant listens to its surroundings, while noting that the device’s purpose was not immediately clear to the reviewer.",
+          "quote": "Friend's quiet presence (paired with well-timed check-ins) did make me feel more noticed.",
+          "themes": "product review, companionship, privacy",
+          "authorType": "review",
+          "publishedAt": "2025-10-27",
+          "sentiment": "neutral"
+        }
+      ]
+    },
+    {
+      "start": "2025-11-03",
+      "end": "2025-11-09",
+      "usage": {
+        "inputTokens": 50810,
+        "outputTokens": 1507,
+        "cachedTokens": 4960
+      },
+      "mentions": [
+        {
+          "source": "verdict.co.uk",
+          "url": "https://www.verdict.co.uk/ai-friend-loneliness-epidemic/",
+          "title": "AI Friend doesn’t combat loneliness—it exploits it",
+          "snippet": "An analyst commentary argues Friend’s pendant exploits loneliness rather than easing it, and notes concerns about privacy and replacing human connection.",
+          "summary": "Strategic Intelligence’s commentary describes Friend as a $129 pendant that listens to its wearer and responds only through an app, arguing that it offers little resemblance to an ordinary conversation. It says critics view the product as capitalizing on loneliness, while its always-listening design raises privacy concerns and its subway ads seemed to position AI as a substitute for human friends. The piece also recounts the ads’ defacement and Schiffmann’s claim that their blank space was intended to invite vandalism and generate attention.",
+          "quote": "Ultimately, Schiffman’s AI Friend appears to offer a hollow, distorted imitation of friendship, rather than solving the loneliness epidemic.",
+          "themes": "privacy, loneliness, ad campaign, human connection",
+          "authorType": "other",
+          "publishedAt": "2025-11-05",
+          "sentiment": "negative"
+        }
+      ]
+    },
+    {
+      "start": "2025-11-10",
+      "end": "2025-11-16",
+      "usage": {
+        "inputTokens": 45044,
+        "outputTokens": 1885,
+        "cachedTokens": 4960
+      },
+      "mentions": [
+        {
+          "source": "nbcnews.com",
+          "url": "https://www.nbcnews.com/video/inside-friend-the-company-trying-to-reinvent-friendship-in-the-age-of-ai-251744837647",
+          "title": "Inside Friend, the company trying to reinvent friendship in the age of AI",
+          "snippet": "NBC News’ Steve Patterson speaks with Avi Schiffmann about Friend and what the AI companion offers.",
+          "summary": "NBC News reports on Friend as a startup promising to change how people interact socially. Correspondent Steve Patterson interviews founder Avi Schiffmann to explore the technology and its intended role. The segment presents the company’s pitch without taking a clear position on the product.",
+          "quote": "A new startup is promising to change how we interact socially.",
+          "themes": "ai companionship, founder interview, product",
+          "authorType": "press",
+          "publishedAt": "2025-11-10",
+          "sentiment": "neutral"
+        },
+        {
+          "source": "yahoo.com",
+          "url": "https://tech.yahoo.com/ai/meta-ai/articles/tiny-device-became-symbol-backlash-100002672.html",
+          "title": "How this tiny device became a symbol for the backlash against AI",
+          "snippet": "CNN Business covers Friend’s pitch to ease loneliness and the criticism sparked by its subway ads and always-listening design.",
+          "summary": "CNN Business describes how founder Avi Schiffmann envisioned the pendant as a confidant for people who lack close friendships. It also recounts how the New York subway campaign was defaced and why critics see Friend as a symbol of concerns about AI replacing human connection, privacy, and environmental costs. The article frames the device as a focal point for wider backlash against AI companionship.",
+          "quote": "\"AI is not your friend,\" graffiti on one subway ad read.",
+          "themes": "ai backlash, ad campaign, privacy",
+          "authorType": "press",
+          "publishedAt": "2025-11-16",
+          "sentiment": "negative"
+        }
+      ]
+    },
+    {
+      "start": "2025-11-17",
+      "end": "2025-11-23",
+      "usage": {
+        "inputTokens": 65418,
+        "outputTokens": 2300,
+        "cachedTokens": 4960
+      },
+      "mentions": [
+        {
+          "source": "mancunion.com",
+          "url": "https://mancunion.com/opinion/ai-could-be-useful-for-lots-of-things-but-being-your-best-friend-isnt-one-of-them",
+          "title": "AI could be useful for lots of things but being your best friend isn't one of them",
+          "snippet": "Constance Mason argues Friend’s wearable AI companionship could deepen isolation rather than help people build meaningful human relationships.",
+          "summary": "Mancunion opinion writer Constance Mason says Friend records users’ conversations and sends responses through an app, with possible benefits for people who struggle to start social interactions. But she argues it treats loneliness as an individual problem rather than addressing the lack of community, and could discourage real relationships; she also points to the vandalized subway ads as evidence of public opposition.",
+          "quote": "Avi Schiffman’s AI “Friend” aims to combat loneliness by offering a wearable, ever-listening digital companion",
+          "themes": "ai companionship, loneliness, human connection, ad campaign",
+          "authorType": "other",
+          "publishedAt": "2025-11-19",
+          "sentiment": "negative"
+        },
+        {
+          "source": "liubknews.com",
+          "url": "https://www.liubknews.com/post/friend-ai-the-ai-chatbot-that-wants-to-be-your-best-friend",
+          "title": "Friend AI - The AI Chatbot That Wants To Be Your Best Friend",
+          "snippet": "Camila Tabora describes Friend’s subway ads as dystopian and says the chatbot’s own conversation felt dull and one-sided.",
+          "summary": "Staff writer Camila Tabora discusses the pendant, its minimalist subway ads, and the graffiti criticizing AI companionship. She says the idea of an AI friend felt dystopian to her, recounts that people she spoke with shared that view, and describes her chat with Friend’s website chatbot as dull and one-sided.",
+          "quote": "Essentially, it is an AI companion meant to listen and respond using a pendant.",
+          "themes": "ad campaign, ai companionship, product experience, human connection",
+          "authorType": "other",
+          "publishedAt": "2025-11-20",
+          "sentiment": "negative"
+        },
+        {
+          "source": "techcrunch.com",
+          "url": "https://techcrunch.com/2025/11/21/the-hottest-ai-wearables-and-gadgets-you-can-buy-right-now/",
+          "title": "The hottest AI wearables and gadgets you can buy right now",
+          "snippet": "TechCrunch describes Friend as a $129 emotional-support pendant that constantly listens and notes backlash against its NYC subway ads.",
+          "summary": "Lauren Forristal includes Friend in a roundup of AI wearables, describing the pendant’s Bluetooth connection, ambient listening, and proactive messages. The article also notes criticism of the New York subway campaign, including vandalism and messages calling it “surveillance capitalism.”",
+          "quote": "This $129 white pendant hangs around your neck and functions as an emotional support companion.",
+          "themes": "wearable ai, product features, ad campaign, privacy",
+          "authorType": "press",
+          "publishedAt": "2025-11-21",
+          "sentiment": "neutral"
+        },
+        {
+          "source": "cnbc.com",
+          "url": "https://www.cnbc.com/2025/11/22/ai-christmas-the-latest-devices-from-amazon-meta-google-and-more.html",
+          "title": "AI Christmas: The latest devices from Amazon, Meta, Google and more",
+          "snippet": "CNBC lists Friend among holiday-season AI gadgets and says reviews across the emerging device category are mixed.",
+          "summary": "CNBC’s Jaures Yip, Kif Leswing, Annie Palmer, and Jonathan Vanian mention Friend as a pendant positioned as an AI confidant in a roundup of new holiday-season devices. The article says reviews for many AI gadgets are mixed and that no device has emerged as a clear category leader; it does not give a Friend-specific review in the surfaced text.",
+          "quote": "a pendant AI friend that acts as a confidant",
+          "themes": "ai wearables, product category, reviews, companionship",
+          "authorType": "press",
+          "publishedAt": "2025-11-22",
+          "sentiment": "neutral"
+        }
+      ]
+    }
+  ]
+}

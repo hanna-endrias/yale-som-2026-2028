@@ -1,29 +1,58 @@
 import { getToolName, isToolUIPart, type UIMessage } from 'ai';
+import ReactMarkdown, { type Components } from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import TokenCostBadge from '@/components/common/TokenCostBadge';
+import type { AssistantMetadata } from '@/services/chatService';
+import VisualizationFrame from './VisualizationFrame';
 
-// Matches markdown links [label](url) and bare http(s) URLs.
-const LINK_RE = /\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)|(https?:\/\/[^\s)\]]+[^\s.,;:!?)\]])/g;
+const isVisualization = (o: unknown): o is { title: string; html: string } =>
+  typeof o === 'object' && o !== null && typeof (o as { html?: unknown }).html === 'string';
 
-// Turns links in agent text into clickable anchors; everything else stays plain text.
-function linkify(text: string) {
-  const out: React.ReactNode[] = [];
-  let last = 0;
-  for (const match of text.matchAll(LINK_RE)) {
-    const [whole, label, mdUrl, bareUrl] = match;
-    out.push(text.slice(last, match.index));
-    const href = mdUrl ?? bareUrl;
-    out.push(
-      <a key={match.index} href={href} target="_blank" rel="noopener noreferrer" className="text-accent-text underline hover:text-accent-hover">
-        {label ?? href}
-      </a>,
+// Links become citation pills; a URL that isn't a stored mention of this subject is flagged.
+function citationLink(unverified: Set<string>): Components['a'] {
+  return function CitationLink({ href, children }) {
+    const bad = !!href && unverified.has(href);
+    return (
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        title={bad ? `Not found in stored mentions: ${href}` : href}
+        data-testid="citation"
+        data-verified={!bad}
+        className={`mx-[1px] inline-flex items-center gap-[2px] rounded-sm border px-xs align-baseline text-xs no-underline hover:bg-panel ${
+          bad ? 'border-destructive text-destructive' : 'border-border text-accent-text hover:text-accent-hover'
+        }`}
+      >
+        {bad && <span aria-label="unverified source">⚠</span>}
+        {children}
+      </a>
     );
-    last = match.index + whole.length;
-  }
-  out.push(text.slice(last));
-  return out;
+  };
 }
 
-// One message: user turns as a right-aligned bubble; agent turns as text plus tool-call badges.
+// Tailwind styles for markdown elements (there is no typography plugin).
+const BASE: Components = {
+  h1: ({ children }) => <h3 className="mt-sm text-lg font-semibold">{children}</h3>,
+  h2: ({ children }) => <h3 className="mt-sm text-lg font-semibold">{children}</h3>,
+  h3: ({ children }) => <h4 className="mt-sm font-semibold">{children}</h4>,
+  h4: ({ children }) => <h4 className="mt-sm font-semibold">{children}</h4>,
+  p: ({ children }) => <p className="leading-relaxed">{children}</p>,
+  ul: ({ children }) => <ul className="ml-md list-disc space-y-xs">{children}</ul>,
+  ol: ({ children }) => <ol className="ml-md list-decimal space-y-xs">{children}</ol>,
+  blockquote: ({ children }) => <blockquote className="border-l-2 border-border pl-sm text-muted-foreground">{children}</blockquote>,
+  code: ({ children }) => <code className="rounded-sm bg-panel px-xs text-sm">{children}</code>,
+  table: ({ children }) => (
+    <div className="overflow-x-auto rounded-md border border-border">
+      <table className="w-full border-collapse text-sm">{children}</table>
+    </div>
+  ),
+  thead: ({ children }) => <thead className="bg-panel text-left">{children}</thead>,
+  th: ({ children }) => <th className="border-b border-border px-sm py-xs font-semibold">{children}</th>,
+  td: ({ children }) => <td className="border-b border-border px-sm py-xs align-top">{children}</td>,
+};
+
+// One message: user turns as a right-aligned bubble; agent turns as markdown, tool-call badges and charts.
 export default function ChatMessageBubble({ message }: { message: UIMessage }) {
   if (message.role === 'user') {
     const text = message.parts.map((p) => (p.type === 'text' ? p.text : '')).join('');
@@ -33,33 +62,38 @@ export default function ChatMessageBubble({ message }: { message: UIMessage }) {
   }
 
   // Set by chatService: on the stream's finish part, and from token_usage on reload.
-  const usage = message.metadata as { tokens: number; costUsd: number } | undefined;
+  const meta = message.metadata as AssistantMetadata | undefined;
+  const components = { ...BASE, a: citationLink(new Set(meta?.unverifiedUrls ?? [])) };
   return (
-    <div className="flex max-w-[85%] flex-col gap-xs self-start" data-testid="assistant-message">
+    <div className="flex w-full max-w-[85%] flex-col gap-xs self-start" data-testid="assistant-message">
       {message.parts.map((part, i) => {
         if (part.type === 'text') {
           return (
-            <p key={i} className="whitespace-pre-wrap">
-              {linkify(part.text)}
-            </p>
+            <div key={i} className="flex flex-col gap-sm">
+              <ReactMarkdown remarkPlugins={[remarkGfm]} components={components}>
+                {part.text}
+              </ReactMarkdown>
+            </div>
           );
         }
         if (isToolUIPart(part)) {
           const done = part.state === 'output-available';
           const failed = part.state === 'output-error';
           return (
-            <span
-              key={i}
-              data-testid="tool-call"
-              className="self-start rounded-sm border border-border px-xs text-xs text-muted-foreground"
-            >
-              tool: {getToolName(part)} {failed ? '✗' : done ? '✓' : '…'}
-            </span>
+            <div key={i} className="flex flex-col gap-xs">
+              <span
+                data-testid="tool-call"
+                className="self-start rounded-sm border border-border px-xs text-xs text-muted-foreground"
+              >
+                tool: {getToolName(part)} {failed ? '✗' : done ? '✓' : '…'}
+              </span>
+              {done && isVisualization(part.output) && <VisualizationFrame title={part.output.title} html={part.output.html} />}
+            </div>
           );
         }
         return null;
       })}
-      {usage && <TokenCostBadge tokens={usage.tokens} costUsd={usage.costUsd} />}
+      {meta && <TokenCostBadge tokens={meta.tokens} costUsd={meta.costUsd} />}
     </div>
   );
 }
