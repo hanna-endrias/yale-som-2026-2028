@@ -1,5 +1,5 @@
 {
-  "savedAt": "2026-10-25T03:52:40.509Z",
+  "savedAt": "2026-10-25T05:10:54.012Z",
   "owner": "owner1@test.com",
   "subject": {
     "name": "Slay the Spire 2",
@@ -686,6 +686,437 @@
           "authorType": "press"
         }
       ]
+    },
+    {
+      "startDate": "2026-03-21",
+      "endDate": "2026-03-21",
+      "cadence": "daily",
+      "instructions": null,
+      "usage": [
+        {
+          "inputTokens": 38223,
+          "outputTokens": 2320,
+          "cachedTokens": 0,
+          "estimatedCostUsd": 0.07097875
+        }
+      ],
+      "mentions": [
+        {
+          "source": "youtube.com",
+          "url": "https://www.youtube.com/watch?v=YkJGEXIk5rU",
+          "snippet": "A daily challenge run featuring The Silent and a discard-focused Sly deck.",
+          "publishedAt": "2026-03-21",
+          "sentiment": "positive",
+          "rawTokens": 0,
+          "title": "Slay The Spire 2 Daily Challenge #6 - March 21, 2026",
+          "summary": "The Daily Spire shares a Slay the Spire 2 daily challenge run. The creator praises The Silent and says a Sly deck built around discards is powerful, making this a positive gameplay-focused mention.",
+          "quote": "The Silent is really good in this game and the sly deck with lots of discards is so powerful.",
+          "themes": "daily challenge, the silent, discard deck",
+          "authorType": "social"
+        },
+        {
+          "source": "youtube.com",
+          "url": "https://www.youtube.com/watch?v=r5Xf_UR4szQ",
+          "snippet": "A long gameplay session showing Ascension 10 runs with several characters.",
+          "publishedAt": "2026-03-21",
+          "sentiment": "neutral",
+          "rawTokens": 0,
+          "title": "Slay the Spire 2 Ascension 10 Runs [Show #1848 (2026-03-21)]",
+          "summary": "Baalorlord posts a session featuring Slay the Spire 2 Ascension 10 runs, including Ironclad, Silent, Necrobinder, and Defect. The result is a gameplay showcase rather than an explicit review or evaluation of the game.",
+          "quote": null,
+          "themes": "gameplay, ascension 10, characters",
+          "authorType": "social"
+        },
+        {
+          "source": "gamespark.jp",
+          "url": "https://www.gamespark.jp/article/2026/03/21/164176.html",
+          "snippet": "Reports that a beta balance patch prompted nearly 10,000 negative Steam reviews in one day, with many complaints tied to nerfs and changes to powerful combos.",
+          "publishedAt": "2026-03-21",
+          "sentiment": "neutral",
+          "rawTokens": 0,
+          "title": "大ヒット『Slay the Spire 2』に1日で1万件近い否定的レビュー―中国語ユーザーからの苦情が多い理由とは…",
+          "summary": "Game*Spark reports that a large beta balance update led to a surge of negative Steam reviews, particularly following changes that weakened cards and infinite-combo builds. It also describes disagreement over the complaints and notes that Chinese-language players may have fewer channels for feedback. The article covers player dissatisfaction but presents the context rather than giving a direct verdict on the game.",
+          "quote": "3月20日だけで9,781件もの否定的レビューが寄せられていた",
+          "themes": "balance patch, negative reviews, player feedback",
+          "authorType": "press"
+        },
+        {
+          "source": "automaton-media.com",
+          "url": "https://automaton-media.com/articles/newsjp/slay-the-spire-2-20260321-431063/",
+          "snippet": "Covers backlash to the beta update’s balance changes and Mega Crit’s explanation of its Early Access and beta-patching approach.",
+          "publishedAt": "2026-03-21",
+          "sentiment": "neutral",
+          "rawTokens": 0,
+          "title": "『Slay the Spire 2』アプデ配信後に、“1日で約1万件”の不評レビュー殺到。開発元は「まだ早期アクセスだしベータ版だから」と説明",
+          "summary": "AUTOMATON says the v0.100.0 beta update triggered roughly 10,000 negative reviews in a day, with complaints focused on nerfs to cards and builds that enabled infinite combos. It explains that Mega Crit responded by describing the purpose of Early Access and asking players to provide feedback through the game. The piece reports the controversy without taking a clear side on the game itself.",
+          "quote": "同日だけで約1万件の「おすすめしない」レビューが投稿されるなど、大きな波紋を広げている。",
+          "themes": "balance patch, review backlash, early access",
+          "authorType": "press"
+        },
+        {
+          "source": "switchbladegaming.com",
+          "url": "https://www.switchbladegaming.com/strategy-games/slay-the-spire-2-vs-1/",
+          "snippet": "Compares the sequel’s new Runes system and updated presentation with the original’s more mature balance, deeper character development, and extensive mod library.",
+          "publishedAt": "2026-03-21",
+          "sentiment": "neutral",
+          "rawTokens": 0,
+          "title": "Slay the Spire 2 vs Slay the Spire 1: Is the Sequel Worth It?",
+          "summary": "Michael R. weighs whether players should move to Slay the Spire 2 or stick with the original. The article sees strategic depth in the sequel’s Runes system and a modernized presentation, while noting that the first game has more developed characters, years of balance refinement, and a much larger mod library. Its verdict is mixed rather than an unconditional recommendation.",
+          "quote": "The answer is not as simple as “buy the sequel.”",
+          "themes": "comparison, game systems, recommendation",
+          "authorType": "review"
+        },
+        {
+          "source": "skypenguin.net",
+          "url": "https://skypenguin.net/2026/03/21/post-139755/",
+          "snippet": "Explains how to play the Steam-only sequel on a phone using Steam Link, while warning about control limitations, data use, and the need to keep the PC running.",
+          "publishedAt": "2026-03-21",
+          "sentiment": "neutral",
+          "rawTokens": 0,
+          "title": "スマートフォンで遊ぶ方法 Slay the Spire 2 Steam Link【スレスパ2】",
+          "summary": "The author tests playing Slay the Spire 2 remotely on a smartphone through Steam Link. The post says the game can be played this way despite not having a dedicated phone release, but notes that touch controls can be awkward, streaming uses substantial data, and the host PC must remain on. It is a practical, neutral guide rather than a review.",
+          "quote": "『Slay the Spire 2』でもこの機能を使用することで、スマートフォンでのゲームプレイが可能なことを確認できました。",
+          "themes": "steam link, mobile play, controls",
+          "authorType": "other"
+        },
+        {
+          "source": "bilibili.com",
+          "url": "https://www.bilibili.com/list/ml166232406?bvid=BV1W3APzGEBq&oid=116266996074057",
+          "snippet": "A video post presents a mod for quickly drawing maps in Slay the Spire 2.",
+          "publishedAt": "2026-03-21",
+          "sentiment": "positive",
+          "rawTokens": 0,
+          "title": "【杀戮尖塔2】游戏内一键快速地图绘画mod",
+          "summary": "The post introduces a map-drawing mod for Slay the Spire 2 and describes it as easy and quick to use. It directs viewers to the mod’s conversion page and Nexus Mods listing. This is a positive mention of a community-made tool, not an evaluation of the game overall.",
+          "quote": "做了一个无门槛、快速且方便使用的地图绘画mod~",
+          "themes": "modding, map tool, community",
+          "authorType": "social"
+        }
+      ]
+    },
+    {
+      "startDate": "2026-03-22",
+      "endDate": "2026-03-22",
+      "cadence": "daily",
+      "instructions": null,
+      "usage": [
+        {
+          "inputTokens": 29806,
+          "outputTokens": 1971,
+          "cachedTokens": 4862,
+          "estimatedCostUsd": 0.05149775
+        }
+      ],
+      "mentions": [
+        {
+          "source": "bilibili.com",
+          "url": "https://www.bilibili.com/video/BV1wuA3zoEn4/",
+          "snippet": "A creator previews an AI agent for Slay the Spire 2 and says it is still being debugged.",
+          "publishedAt": "2026-03-22",
+          "sentiment": "neutral",
+          "rawTokens": 0,
+          "title": "【STS2】自动爬塔Agent最终方案？AI：臣妾做不到啊",
+          "summary": "The creator shares an early preview of an AI agent intended to climb the Spire in Slay the Spire 2, noting that bugs are still being fixed. The post presents the project as a work in progress rather than judging the game itself.",
+          "quote": "杀戮尖塔2Agent 先行预告，正在修bug",
+          "themes": "ai agent, gameplay tools, development",
+          "authorType": "social"
+        },
+        {
+          "source": "bilibili.com",
+          "url": "https://www.bilibili.com/video/BV1qSANzNE6b/",
+          "snippet": "A gameplay clip jokes about building a deck with 64 copies of the card 横祸.",
+          "publishedAt": "2026-03-22",
+          "sentiment": "positive",
+          "rawTokens": 0,
+          "title": "[slay the spire2]当你克隆了64张横祸",
+          "summary": "The creator posts a short Slay the Spire 2 gameplay clip centered on duplicating 64 copies of a card. Its framing is playful, presenting an extreme deck-building interaction as the joke and hook.",
+          "quote": "还就那个构建映射",
+          "themes": "gameplay, deckbuilding, humor",
+          "authorType": "social"
+        },
+        {
+          "source": "bilibili.com",
+          "url": "https://www.bilibili.com/video/BV13MAgzzEdD/",
+          "snippet": "A creator demonstrates a Devil May Cry 5-inspired mod featuring weapon-switching card changes and combat ratings.",
+          "publishedAt": "2026-03-22",
+          "sentiment": "positive",
+          "rawTokens": 0,
+          "title": "【杀戮尖塔2】维吉尔的椅子MOD 正式测试",
+          "summary": "The video presents a formal test of a fan-made Vergil-themed mod for Slay the Spire 2. Its described mechanics include weapon switching that changes cards, combat ratings, focus, and a demon transformation; the creator also cautions that mod compatibility and save data may be at risk.",
+          "quote": "主要几个特殊机制，武器切换导致卡牌变化、战斗评价、专注度等，以及魔人化效果",
+          "themes": "modding, custom character, gameplay mechanics",
+          "authorType": "social"
+        },
+        {
+          "source": "bilibili.com",
+          "url": "https://www.bilibili.com/video/BV1R2QQBYE3h/",
+          "snippet": "A gameplay video follows the creator playing Defect at Ascension 1 and feeling they have grasped the character.",
+          "publishedAt": "2026-03-22",
+          "sentiment": "positive",
+          "rawTokens": 0,
+          "title": "[Slay the Spire 2 ]鸡煲进阶1 真的大彻大悟了",
+          "summary": "The creator shares a Slay the Spire 2 run with Defect at Ascension 1, framing it as a moment of finally understanding how to play the character. The title and related recommendations emphasize learning character strategies and experimenting with builds.",
+          "quote": "鸡煲进阶1 真的大彻大悟了",
+          "themes": "gameplay, character strategy, progression",
+          "authorType": "social"
+        },
+        {
+          "source": "bilibili.com",
+          "url": "https://www.bilibili.com/video/BV1KHQQBDE9v/",
+          "snippet": "A popular gameplay clip jokes about following advice to pick many good cards, with the description saying the creator could not reproduce the result after trying three laptops.",
+          "publishedAt": "2026-03-22",
+          "sentiment": "positive",
+          "rawTokens": 0,
+          "title": "他们说好牌多抓我就照做了...",
+          "summary": "The creator shares a Slay the Spire 2 run built around taking lots of cards, with the post's description joking that they tried three laptops without being able to reproduce something. Related clips continue the humorous focus on card duplication and outsized combos, suggesting the appeal is entertaining, over-the-top gameplay.",
+          "quote": "寻找了三台笔电都无法成功复制......",
+          "themes": "gameplay, deckbuilding, humor",
+          "authorType": "social"
+        }
+      ]
+    },
+    {
+      "startDate": "2026-03-23",
+      "endDate": "2026-04-05",
+      "cadence": "weekly",
+      "instructions": null,
+      "usage": [
+        {
+          "inputTokens": 46175,
+          "outputTokens": 2820,
+          "cachedTokens": 4862,
+          "estimatedCostUsd": 0.080449
+        },
+        {
+          "inputTokens": 74050,
+          "outputTokens": 3928,
+          "cachedTokens": 4862,
+          "estimatedCostUsd": 0.12637275
+        }
+      ],
+      "mentions": [
+        {
+          "source": "macworld.com",
+          "url": "https://www.macworld.com/article/3096249/slay-the-spire-2-review.html",
+          "snippet": "The review says the sequel keeps the original’s core format while adding co-op, new characters, and variety.",
+          "publishedAt": "2026-03-27",
+          "sentiment": "positive",
+          "rawTokens": 0,
+          "title": "Slay The Spire 2 review: The best deck-builder just got better",
+          "summary": "Macworld contributor Cliff Joseph says Slay the Spire 2 stays close to the original rather than reinventing it. He points to co-op and smaller additions as ways the sequel stays fresh, while noting that its graphics and roguelike frustrations may not appeal to everyone. The review recommends it mainly to fans of the first game.",
+          "quote": "Slay The Spire 2 sticks closely to the original but adds co-op, new characters and more variety.",
+          "themes": "co-op, new characters, sequel design",
+          "authorType": "review"
+        },
+        {
+          "source": "gamespot.com",
+          "url": "https://www.gamespot.com/articles/slay-the-spire-2-dev-adjusts-update-that-led-to-review-bombing/1100-6539079/",
+          "snippet": "Mega Crit rolled back some balance changes after player criticism and negative reviews.",
+          "publishedAt": "2026-03-27",
+          "sentiment": "neutral",
+          "rawTokens": 0,
+          "title": "Slay the Spire 2 Dev Adjusts Update That Led To Review Bombing",
+          "summary": "GameSpot reports that Mega Crit reversed several changes from an earlier beta patch after players objected to balance adjustments. The article describes criticism of changes to Prepared, Borrowed Time, and Capture Spirit, and says the developer encouraged players to use the in-game feedback tool. It frames the episode as a dispute over experimental balance changes during Early Access.",
+          "quote": "Another patch just dropped on the Beta Branch, with lots of balance adjustments from last week's beta patch! Notably: Prepared is back!",
+          "themes": "balance changes, player feedback, review bombing",
+          "authorType": "press"
+        },
+        {
+          "source": "kotaku.com",
+          "url": "https://kotaku.com/slay-spire-2-patch-notes-nerf-infinite-combo-silent-2000682645",
+          "snippet": "The story covers a beta patch that reversed disputed changes after player backlash.",
+          "publishedAt": "2026-03-27",
+          "sentiment": "neutral",
+          "rawTokens": 0,
+          "title": "Slay The Spire 2 Reverts Controversial Nerf And Explains Why",
+          "summary": "Kotaku says the new beta patch walked back many changes from the previous test build. It reports that players had criticized the earlier changes and that Mega Crit explained why it restored or adjusted some cards. The piece notes the studio credited in-game feedback as instrumental in guiding its response.",
+          "quote": "A brand new beta patch for Slay the Spire 2 just dropped, and it’s walked back many of the changes introduced in the previous v0.100.0 beta patch that released on March 20.",
+          "themes": "balance changes, player feedback, beta patch",
+          "authorType": "press"
+        },
+        {
+          "source": "insider-gaming.com",
+          "url": "https://insider-gaming.com/new-slay-the-spire-2-beta-patch-reverts-major-changes/",
+          "snippet": "The report says the latest beta patch reverses changes that had drawn negative player reactions.",
+          "publishedAt": "2026-03-27",
+          "sentiment": "neutral",
+          "rawTokens": 0,
+          "title": "New Slay the Spire 2 Beta Patch Reverts Major Changes",
+          "summary": "Insider Gaming reports on Slay the Spire 2’s v0.101.0 beta patch, describing it as a response to a previous update that received substantial player criticism. It says the new patch reverses some of those changes while making further balance adjustments and bug fixes. The story focuses on the developers’ reaction to community feedback rather than reviewing the game as a whole.",
+          "quote": "The previous one, although optional, received thousands of negative reviews from players.",
+          "themes": "beta patch, player criticism, balance",
+          "authorType": "press"
+        },
+        {
+          "source": "gamerant.com",
+          "url": "https://gamerant.com/slay-the-spire-2-march-beta-update-patch-notes/",
+          "snippet": "The article says the update restored some card designs after players criticized earlier balance experiments.",
+          "publishedAt": "2026-03-28",
+          "sentiment": "neutral",
+          "rawTokens": 0,
+          "title": "Slay The Spire 2 March 2026 Beta Update Reverts Many Unpopular Changes",
+          "summary": "Game Rant describes the v0.101.0 beta patch as a rollback of several unpopular changes following vocal player feedback. It highlights the return of the Prepared card and reversions affecting Necrobinder cards, and notes that the previous changes had prompted negative Steam reviews. The piece presents the patch as Mega Crit responding to criticism while continuing to test balance.",
+          "quote": "The latest beta update for deckbuilding roguelite Slay the Spire 2 rolls back some unpopular changes following a vocal round of player feedback.",
+          "themes": "balance changes, player feedback, card design",
+          "authorType": "press"
+        },
+        {
+          "source": "dood.gg",
+          "url": "https://dood.gg/en/slay-the-spire-2/guides/patch-notes-v0-101/",
+          "snippet": "The breakdown says the patch reversed experimental changes that had been poorly received and buffed Regent.",
+          "publishedAt": "2026-03-27",
+          "sentiment": "neutral",
+          "rawTokens": 0,
+          "title": "Slay the Spire 2 Patch Notes v0.101.0 — All Changes",
+          "summary": "This patch-notes breakdown says v0.101.0 mass-reverted several experimental changes from v0.100.0 after a poor reception. It identifies reversions to Prepared, Borrowed Time, and Capture Spirit as key changes, and says Regent received buffs. The mention reflects player dissatisfaction with the previous balance pass and the developers’ subsequent adjustments.",
+          "quote": "This patch mass-reverts many of the experimental changes from v0.100.0 that received poor reception.",
+          "themes": "patch notes, balance changes, player reception",
+          "authorType": "other"
+        },
+        {
+          "source": "youtube.com",
+          "url": "https://www.youtube.com/watch?v=PUA6yY-6zcM",
+          "snippet": "A creator posts a run of the March 24 daily challenge and describes it as very hard.",
+          "publishedAt": "2026-03-24",
+          "sentiment": "neutral",
+          "rawTokens": 0,
+          "title": "Slay The Spire 2 Daily Challenge #9 - March 24, 2026",
+          "summary": "The Daily Spire’s video covers a Slay the Spire 2 daily challenge run dated March 24. Its description characterizes the challenge as very difficult. The mention is gameplay-focused and does not offer a broader review of the game.",
+          "quote": "This was a very hard one.",
+          "themes": "daily challenge, gameplay, difficulty",
+          "authorType": "social"
+        },
+        {
+          "source": "youtube.com",
+          "url": "https://www.youtube.com/watch?v=7JB6nANWUJg",
+          "snippet": "A creator says the daily run was difficult because it began with many cards to cycle through.",
+          "publishedAt": "2026-03-25",
+          "sentiment": "neutral",
+          "rawTokens": 0,
+          "title": "Slay The Spire 2 Daily Challenge #10 - March 25, 2026",
+          "summary": "The Daily Spire’s video documents the March 25 Slay the Spire 2 daily challenge. The creator calls it difficult and points to the large number of cards available to cycle through at the beginning of the run. The post is a short gameplay mention rather than an overall assessment of the game.",
+          "quote": "This was another difficult one as you had a lot of cards to cycle through at the start of the run.",
+          "themes": "daily challenge, gameplay, difficulty",
+          "authorType": "social"
+        },
+        {
+          "source": "store.steampowered.com",
+          "url": "https://store.steampowered.com/news/app/2868840/view/507357952986842134",
+          "snippet": "Mega Crit announced beta patch v0.102.0, adding end-of-run Badges and making balance, card, and interface changes.",
+          "publishedAt": "2026-04-02",
+          "sentiment": "neutral",
+          "rawTokens": 0,
+          "title": "Slay the Spire 2 - Beta Patch Notes - v0.102.0",
+          "summary": "Mega Crit’s official patch announcement describes Badges that highlight notable moments in a run, such as beating a boss without losing HP or finishing quickly. It also outlines broader beta changes, including balance and visual updates. The post presents the changes as ways to make runs feel more distinct and improve scoring.",
+          "quote": "They're meant as little reminders to let you know what was unique about each adventure.",
+          "themes": "beta update, run badges, game balance",
+          "authorType": "brand"
+        },
+        {
+          "source": "steamcommunity.com",
+          "url": "https://steamcommunity.com/app/2868840/eventcomments/798966028860285600/",
+          "snippet": "Players discussing the patch raised concerns about balance changes, including increased card-removal costs and enemy buffs.",
+          "publishedAt": "2026-04-02",
+          "sentiment": "negative",
+          "rawTokens": 0,
+          "title": "Beta Patch Notes - v0.102.0 :: Slay the Spire 2 Events & Announcements",
+          "summary": "Players responding to the v0.102.0 announcement debated whether the patch’s balance adjustments went too far. Some called the patch underwhelming, while others objected to the higher cost of removing cards and changes to enemies such as Skulking Colony. The comments reflect mixed reactions to the update rather than a consensus about the game overall.",
+          "quote": "Quite the nothingburger patch.",
+          "themes": "player feedback, balance changes, difficulty",
+          "authorType": "forum"
+        },
+        {
+          "source": "pcgamesn.com",
+          "url": "https://www.pcgamesn.com/slay-the-spire-2/patch-notes-badges",
+          "snippet": "PCGamesN reports on beta patch changes, including Badges, pricier card removal at Ascension 6, and redesigned cards.",
+          "publishedAt": "2026-04-03",
+          "sentiment": "positive",
+          "rawTokens": 0,
+          "title": "Slay the Spire 2 nerfs card removal, buffs shivs, and adds a new reward system",
+          "summary": "Ken Allsop explains that the beta patch adds Badges to call out distinctive moments from each run and replaces the Ascension 6 rest-site modifier with higher Merchant card-removal prices. The article also covers the Necrobinder’s redesigned Borrowed Time and changes to Silent’s Blade of Ink. It notes that the beta has continued to receive improvements and suggests players may want to try it.",
+          "quote": "These work like in-game achievements that are specific to each run",
+          "themes": "beta update, card changes, difficulty",
+          "authorType": "press"
+        },
+        {
+          "source": "slaythespire-2.com",
+          "url": "https://slaythespire-2.com/blog/20260402-right-time",
+          "snippet": "The writer recommends starting now for players who enjoy discovery and evolving balance, while noting that Early Access is still changing.",
+          "publishedAt": "2026-04-02",
+          "sentiment": "positive",
+          "rawTokens": 0,
+          "title": "Is Now a Good Time to Start Playing Slay the Spire 2?",
+          "summary": "The article says the game is already playable and fun, and argues that Early Access is a good fit for people who like experiencing a game as it develops. It cautions that frequent changes may frustrate players who want a complete, stable, polished version. It also says newcomers do not need to play the original first because the sequel is standalone.",
+          "quote": "playable, genuinely fun, but still growing.",
+          "themes": "early access, recommendation, new players",
+          "authorType": "other"
+        },
+        {
+          "source": "youtube.com",
+          "url": "https://www.youtube.com/watch?v=7mJ0Lhq9tlU",
+          "snippet": "The Daily Spire uploaded a video of a Slay the Spire 2 daily challenge run.",
+          "publishedAt": "2026-04-02",
+          "sentiment": "neutral",
+          "rawTokens": 0,
+          "title": "Slay The Spire 2 Daily Challenge #18 - April 2, 2026",
+          "summary": "The Daily Spire presents gameplay from the April 2 daily challenge. The search result identifies it as a run in Slay the Spire 2 but does not provide commentary or an evaluation of the game, so the mention is informational rather than clearly praising or criticizing it.",
+          "quote": "Daily challenge of Slay The Spire 2 on April 2, 2026",
+          "themes": "gameplay, daily challenge, video",
+          "authorType": "social"
+        },
+        {
+          "source": "pcgamer.com",
+          "url": "https://www.pcgamer.com/slay-the-spire-2/",
+          "snippet": "PC Gamer reports that the beta adds run Badges alongside other changes, with less backlash than the previous update had drawn.",
+          "publishedAt": "2026-04-03",
+          "sentiment": "positive",
+          "rawTokens": 0,
+          "title": "Slay the Spire 2 adds end-of-run badges in latest beta patch",
+          "summary": "Andy Chalk’s PC Gamer item describes the new end-of-run Badges, which mark unusual or memorable events from a run. The update also includes reworks, tweaks, and fixes. The article contrasts the response with the backlash to the prior patch, suggesting this update had landed more smoothly so far.",
+          "quote": "so far hasn't sparked nearly the level of backlash the last one got.",
+          "themes": "beta update, player reaction, run badges",
+          "authorType": "press"
+        },
+        {
+          "source": "games.gg",
+          "url": "https://games.gg/news/slay-the-spire-2-adds-end-of-run-badges-in-new-beta-patch/",
+          "snippet": "Games.gg covers the new Badges feature and related card reworks, describing the changes as a way to make runs more memorable.",
+          "publishedAt": "2026-04-04",
+          "sentiment": "positive",
+          "rawTokens": 0,
+          "title": "Slay the Spire 2 Adds End-of-Run Badges in New Beta Patch",
+          "summary": "Eliza Crichton-Stuart reports that Badges call attention to events such as a damage-free boss win, a fast run, or unspent gold, with later plans to show them in run history and stats. The article also outlines reworks to Silent’s Blade of Ink and Necrobinder’s Borrowed Time. It frames the patch positively, noting that players were taking it better than the previous update.",
+          "quote": "The latest beta patch for Slay the Spire 2 introduces end-of-run badges, a new feature designed to highlight what made each climb through the Spire distinct.",
+          "themes": "beta update, run badges, card reworks",
+          "authorType": "press"
+        },
+        {
+          "source": "gamerant.com",
+          "url": "https://gamerant.com/slay-spire-2-update-patch-notes-april-2026/",
+          "snippet": "Game Rant covers beta patch v0.102.0, highlighting Badges, card reworks, and balance and interface changes.",
+          "publishedAt": "2026-04-05",
+          "sentiment": "positive",
+          "rawTokens": 0,
+          "title": "Slay the Spire 2 Gets New Update for April 2026",
+          "summary": "The article presents the patch as another substantial step in Mega Crit’s ongoing support for the Early Access game. It focuses on Badges as a recap of notable run moments and describes reworks to Borrowed Time and Blade of Ink, alongside other balance adjustments and fixes. Its framing is favorable, emphasizing new features and the effort to make runs feel distinctive.",
+          "quote": "introducing fresh additions and changes to the roguelike deck-building game.",
+          "themes": "beta update, new features, game balance",
+          "authorType": "press"
+        },
+        {
+          "source": "youtube.com",
+          "url": "https://www.youtube.com/watch?v=Hb92rVLO-2o",
+          "snippet": "The Daily Spire uploaded a video of a Slay the Spire 2 daily challenge run.",
+          "publishedAt": "2026-04-05",
+          "sentiment": "neutral",
+          "rawTokens": 0,
+          "title": "Slay The Spire 2 Daily Challenge #21 - April 5, 2026",
+          "summary": "The Daily Spire’s video is a gameplay recording of the April 5 daily challenge. The search result gives no review or opinion about the game, so it serves as a dated example of ongoing play rather than a clear positive or negative judgment.",
+          "quote": "Daily challenge Slay The Spire 2 on April 5, 2026",
+          "themes": "gameplay, daily challenge, video",
+          "authorType": "social"
+        }
+      ]
     }
   ],
   "chats": [
@@ -767,6 +1198,235 @@
             "outputTokens": 582,
             "cachedTokens": 2792,
             "estimatedCostUsd": 0.0081365
+          }
+        },
+        {
+          "role": "user",
+          "content": "fetch 2 more weeks of data",
+          "payload": null
+        },
+        {
+          "role": "tool",
+          "content": "listFetchRuns",
+          "payload": null
+        },
+        {
+          "role": "tool",
+          "content": "listPrompts",
+          "payload": null
+        },
+        {
+          "role": "assistant",
+          "content": "I need the **start date, end date, cadence** (daily, weekly, or monthly), and fetch-prompt choice before I can plan the fetch. “Two more weeks” gives a duration, but not the dates or cadence.\n\nExisting fetches, all with **Prompt: None**:\n\n| Dates | Cadence | Status | Mentions |\n|---|---|---:|---:|\n| Feb 15–Mar 20, 2026 | Weekly | Done | 49 |\n| Mar 21, 2026 | Daily | Done | 7 |\n| Mar 22, 2026 | Daily | Done | 5 |\n\nThere are no subject-library fetch prompts available. Tell me the date range, cadence, and whether you want **no prompt** or new prompt text.",
+          "payload": null,
+          "usage": {
+            "inputTokens": 6379,
+            "outputTokens": 455,
+            "cachedTokens": 3046,
+            "estimatedCostUsd": 0.009097
+          }
+        },
+        {
+          "role": "user",
+          "content": "fetch two weeks after march 22nd",
+          "payload": null
+        },
+        {
+          "role": "tool",
+          "content": "listFetchRuns",
+          "payload": null
+        },
+        {
+          "role": "tool",
+          "content": "listPrompts",
+          "payload": null
+        },
+        {
+          "role": "assistant",
+          "content": "I’ll interpret “two weeks after March 22” as **March 23–April 5, 2026**. What cadence would you like—daily, weekly, or monthly—and should I use **no prompt** or new prompt text? There are no subject-library fetch prompts.\n\nAlready fetched, all with **Prompt: None**:\n- Feb 15–Mar 20, 2026 (weekly)\n- Mar 21, 2026 (daily)\n- Mar 22, 2026 (daily)",
+          "payload": null,
+          "usage": {
+            "inputTokens": 6720,
+            "outputTokens": 279,
+            "cachedTokens": 6274,
+            "estimatedCostUsd": 0.00413175
+          }
+        },
+        {
+          "role": "user",
+          "content": "stick to weekly and use the existing prompt from this chat",
+          "payload": null
+        },
+        {
+          "role": "tool",
+          "content": "listFetchRuns",
+          "payload": null
+        },
+        {
+          "role": "tool",
+          "content": "listPrompts",
+          "payload": null
+        },
+        {
+          "role": "assistant",
+          "content": "I found no saved fetch prompt, and the earlier runs used **no prompt**. For March 23–April 5, 2026, weekly cadence is set; should I proceed with **no prompt**, or would you like to provide prompt text?",
+          "payload": null,
+          "usage": {
+            "inputTokens": 6976,
+            "outputTokens": 228,
+            "cachedTokens": 6584,
+            "estimatedCostUsd": 0.003593
+          }
+        },
+        {
+          "role": "user",
+          "content": "yes",
+          "payload": null
+        },
+        {
+          "role": "tool",
+          "content": "planFetchRun",
+          "payload": "{\"subjectId\":2,\"subjectName\":\"Slay the Spire 2\",\"startDate\":\"2026-03-23\",\"endDate\":\"2026-04-05\",\"cadence\":\"weekly\",\"gaps\":[{\"start\":\"2026-03-23\",\"end\":\"2026-04-05\",\"windows\":2}],\"skipped\":[],\"totalWindows\":2,\"instructions\":null}"
+        },
+        {
+          "role": "assistant",
+          "content": "The weekly fetch is planned for **March 23–April 5, 2026**, with **no prompt**. Review the plan card and click **Start fetch** to run it.",
+          "payload": null,
+          "usage": {
+            "inputTokens": 7103,
+            "outputTokens": 208,
+            "cachedTokens": 6775,
+            "estimatedCostUsd": 0.003336875
+          }
+        },
+        {
+          "role": "user",
+          "content": "tell me about that data?",
+          "payload": null
+        },
+        {
+          "role": "tool",
+          "content": "listFetchRuns",
+          "payload": null
+        },
+        {
+          "role": "tool",
+          "content": "getSentimentSummary",
+          "payload": null
+        },
+        {
+          "role": "tool",
+          "content": "getThemes",
+          "payload": null
+        },
+        {
+          "role": "tool",
+          "content": "getMentions",
+          "payload": null
+        },
+        {
+          "role": "tool",
+          "content": "createVisualization",
+          "payload": "{\"title\":\"Slay the Spire 2 mentions, Mar 23–Apr 5\",\"html\":\"<!DOCTYPE html>\\n<html lang=\\\"en\\\">\\n<head>\\n<meta charset=\\\"utf-8\\\">\\n<meta name=\\\"viewport\\\" content=\\\"width=device-width, initial-scale=1\\\">\\n<title>Slay the Spire 2 mentions, Mar 23–Apr 5</title>\\n<style>\\n  body { background: transparent; color: var(--text); margin: 0; font-family: system-ui, sans-serif; }\\n  .chart { width: 100%; max-width: 700px; margin: 0 auto; padding: 18px 16px; box-sizing: border-box; }\\n  h1 { font-size: 1.2rem; line-height: 1.3; margin: 0 0 4px; }\\n  .range { color: var(--muted); font-size: .9rem; margin: 0 0 12px; }\\n  .plot-wrap { position: relative; background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 8px; }\\n  svg { display: block; width: 100%; height: auto; }\\n  .grid { stroke: var(--border); stroke-width: 1; }\\n  .axis { stroke: var(--muted); stroke-width: 1; }\\n  .tick-label, .axis-label, .week-label { fill: var(--muted); font-family: system-ui, sans-serif; font-size: 12px; }\\n  .week-label { fill: var(--text); font-size: 13px; }\\n  .count { fill: var(--text); font-family: system-ui, sans-serif; font-size: 13px; font-weight: 650; text-anchor: middle; }\\n  .bar-group { cursor: pointer; outline: none; }\\n  .bar-group:focus .focus-outline { opacity: 1; }\\n  .focus-outline { fill: none; stroke: var(--text); stroke-width: 2; stroke-dasharray: 4 3; opacity: 0; }\\n  .legend { display: flex; justify-content: center; flex-wrap: wrap; gap: 18px; color: var(--text); font-size: .85rem; padding: 4px 0 2px; }\\n  .legend span { display: inline-flex; align-items: center; gap: 7px; }\\n  .swatch { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }\\n  .tooltip { position: absolute; z-index: 2; display: none; max-width: 240px; padding: 9px 11px; border: 1px solid var(--border); border-radius: 8px; background: var(--bg); color: var(--text); box-shadow: 0 4px 14px #0003; font-size: .82rem; line-height: 1.45; white-space: pre-line; pointer-events: none; }\\n</style>\\n</head>\\n<body>\\n<main class=\\\"chart\\\">\\n  <h1>Slay the Spire 2 mentions</h1>\\n  <p class=\\\"range\\\">Mar 23–Apr 5, 2026 · weekly sentiment</p>\\n  <div class=\\\"plot-wrap\\\" id=\\\"plot\\\">\\n    <svg viewBox=\\\"0 0 700 410\\\" role=\\\"img\\\" aria-labelledby=\\\"svg-title svg-desc\\\">\\n      <title id=\\\"svg-title\\\">Stored mentions by weekly sentiment</title>\\n      <desc id=\\\"svg-desc\\\">Stacked counts of positive, neutral, and negative mentions for the weeks starting March 23 and March 30, 2026. Hover or focus a bar for its counts.</desc>\\n      <!-- Horizontal count grid and labeled y-axis -->\\n      <line class=\\\"grid\\\" x1=\\\"88\\\" y1=\\\"50\\\" x2=\\\"660\\\" y2=\\\"50\\\"></line>\\n      <line class=\\\"grid\\\" x1=\\\"88\\\" y1=\\\"106\\\" x2=\\\"660\\\" y2=\\\"106\\\"></line>\\n      <line class=\\\"grid\\\" x1=\\\"88\\\" y1=\\\"162\\\" x2=\\\"660\\\" y2=\\\"162\\\"></line>\\n      <line class=\\\"grid\\\" x1=\\\"88\\\" y1=\\\"218\\\" x2=\\\"660\\\" y2=\\\"218\\\"></line>\\n      <line class=\\\"grid\\\" x1=\\\"88\\\" y1=\\\"274\\\" x2=\\\"660\\\" y2=\\\"274\\\"></line>\\n      <line class=\\\"grid\\\" x1=\\\"88\\\" y1=\\\"330\\\" x2=\\\"660\\\" y2=\\\"330\\\"></line>\\n      <line class=\\\"axis\\\" x1=\\\"88\\\" y1=\\\"50\\\" x2=\\\"88\\\" y2=\\\"330\\\"></line>\\n      <line class=\\\"axis\\\" x1=\\\"88\\\" y1=\\\"330\\\" x2=\\\"660\\\" y2=\\\"330\\\"></line>\\n      <text class=\\\"tick-label\\\" x=\\\"76\\\" y=\\\"334\\\" text-anchor=\\\"end\\\">0</text>\\n      <text class=\\\"tick-label\\\" x=\\\"76\\\" y=\\\"278\\\" text-anchor=\\\"end\\\">2</text>\\n      <text class=\\\"tick-label\\\" x=\\\"76\\\" y=\\\"222\\\" text-anchor=\\\"end\\\">4</text>\\n      <text class=\\\"tick-label\\\" x=\\\"76\\\" y=\\\"166\\\" text-anchor=\\\"end\\\">6</text>\\n      <text class=\\\"tick-label\\\" x=\\\"76\\\" y=\\\"110\\\" text-anchor=\\\"end\\\">8</text>\\n      <text class=\\\"tick-label\\\" x=\\\"76\\\" y=\\\"54\\\" text-anchor=\\\"end\\\">10</text>\\n      <text class=\\\"axis-label\\\" transform=\\\"translate(22 190) rotate(-90)\\\" text-anchor=\\\"middle\\\">Stored mentions</text>\\n      <text class=\\\"axis-label\\\" x=\\\"374\\\" y=\\\"398\\\" text-anchor=\\\"middle\\\">Week starting</text>\\n\\n      <!-- Week starting 2026-03-23: positive 1, neutral 7, negative 0 -->\\n      <g class=\\\"bar-group\\\" tabindex=\\\"0\\\" role=\\\"img\\\"\\n         aria-label=\\\"Week starting Mar 23, 2026: positive 1, neutral 7, negative 0\\\"\\n         data-date=\\\"Week starting Mar 23, 2026\\\" data-positive=\\\"1\\\" data-neutral=\\\"7\\\" data-negative=\\\"0\\\">\\n        <rect x=\\\"218\\\" y=\\\"106\\\" width=\\\"110\\\" height=\\\"196\\\" fill=\\\"var(--neutral)\\\"></rect>\\n        <rect x=\\\"218\\\" y=\\\"302\\\" width=\\\"110\\\" height=\\\"28\\\" fill=\\\"var(--positive)\\\"></rect>\\n        <rect class=\\\"focus-outline\\\" x=\\\"214\\\" y=\\\"102\\\" width=\\\"118\\\" height=\\\"232\\\" rx=\\\"3\\\"></rect>\\n        <text class=\\\"count\\\" x=\\\"273\\\" y=\\\"210\\\">7</text>\\n        <text class=\\\"count\\\" x=\\\"273\\\" y=\\\"321\\\">1</text>\\n        <text class=\\\"count\\\" x=\\\"273\\\" y=\\\"94\\\">0</text>\\n        <text class=\\\"week-label\\\" x=\\\"273\\\" y=\\\"359\\\" text-anchor=\\\"middle\\\">Mar 23</text>\\n      </g>\\n\\n      <!-- Week starting 2026-03-30: positive 5, neutral 3, negative 1 -->\\n      <g class=\\\"bar-group\\\" tabindex=\\\"0\\\" role=\\\"img\\\"\\n         aria-label=\\\"Week starting Mar 30, 2026: positive 5, neutral 3, negative 1\\\"\\n         data-date=\\\"Week starting Mar 30, 2026\\\" data-positive=\\\"5\\\" data-neutral=\\\"3\\\" data-negative=\\\"1\\\">\\n        <rect x=\\\"430\\\" y=\\\"190\\\" width=\\\"110\\\" height=\\\"140\\\" fill=\\\"var(--positive)\\\"></rect>\\n        <rect x=\\\"430\\\" y=\\\"106\\\" width=\\\"110\\\" height=\\\"84\\\" fill=\\\"var(--neutral)\\\"></rect>\\n        <rect x=\\\"430\\\" y=\\\"78\\\" width=\\\"110\\\" height=\\\"28\\\" fill=\\\"var(--negative)\\\"></rect>\\n        <rect class=\\\"focus-outline\\\" x=\\\"426\\\" y=\\\"74\\\" width=\\\"118\\\" height=\\\"260\\\" rx=\\\"3\\\"></rect>\\n        <text class=\\\"count\\\" x=\\\"485\\\" y=\\\"239\\\">5</text>\\n        <text class=\\\"count\\\" x=\\\"485\\\" y=\\\"157\\\">3</text>\\n        <text class=\\\"count\\\" x=\\\"485\\\" y=\\\"98\\\">1</text>\\n        <text class=\\\"week-label\\\" x=\\\"485\\\" y=\\\"359\\\" text-anchor=\\\"middle\\\">Mar 30</text>\\n      </g>\\n    </svg>\\n    <div class=\\\"tooltip\\\" id=\\\"tooltip\\\" role=\\\"status\\\" aria-live=\\\"polite\\\"></div>\\n    <div class=\\\"legend\\\" aria-label=\\\"Sentiment legend\\\">\\n      <span><i class=\\\"swatch\\\" style=\\\"background:var(--positive)\\\"></i>Positive</span>\\n      <span><i class=\\\"swatch\\\" style=\\\"background:var(--neutral)\\\"></i>Neutral</span>\\n      <span><i class=\\\"swatch\\\" style=\\\"background:var(--negative)\\\"></i>Negative</span>\\n    </div>\\n  </div>\\n</main>\\n<script>\\n(() => {\\n  const plot = document.getElementById(\\\"plot\\\");\\n  const tooltip = document.getElementById(\\\"tooltip\\\");\\n  const groups = document.querySelectorAll(\\\".bar-group\\\");\\n\\n  function show(group, x, y) {\\n    const date = group.dataset.date;\\n    const positive = group.dataset.positive;\\n    const neutral = group.dataset.neutral;\\n    const negative = group.dataset.negative;\\n    tooltip.textContent = `${date}\\\\nPositive: ${positive} · Neutral: ${neutral} · Negative: ${negative}`;\\n    tooltip.style.display = \\\"block\\\";\\n    const bounds = plot.getBoundingClientRect();\\n    tooltip.style.left = `${Math.max(8, Math.min(x - bounds.left + 12, bounds.width - tooltip.offsetWidth - 8))}px`;\\n    tooltip.style.top = `${Math.max(8, y - bounds.top - tooltip.offsetHeight - 10)}px`;\\n  }\\n\\n  groups.forEach(group => {\\n    group.addEventListener(\\\"pointerenter\\\", event => show(group, event.clientX, event.clientY));\\n    group.addEventListener(\\\"pointermove\\\", event => show(group, event.clientX, event.clientY));\\n    group.addEventListener(\\\"pointerleave\\\", () => { tooltip.style.display = \\\"none\\\"; });\\n    group.addEventListener(\\\"focus\\\", () => {\\n      const box = group.getBoundingClientRect();\\n      show(group, box.left + box.width / 2, box.top + box.height / 2);\\n    });\\n    group.addEventListener(\\\"blur\\\", () => { tooltip.style.display = \\\"none\\\"; });\\n  });\\n})();\\n</script>\\n</body>\\n</html>\"}"
+        },
+        {
+          "role": "assistant",
+          "content": "**The March 23–April 5 fetch is complete: it found 17 mentions, mostly neutral or positive, with one negative mention.**\n\n### Sentiment\n\n| Week starting | Positive | Neutral | Negative | Total |\n|---|---:|---:|---:|---:|\n| Mar 23 | 1 | 7 | 0 | 8 |\n| Mar 30 | 5 | 3 | 1 | 9 |\n| **Total** | **6** | **10** | **1** | **17** |\n\nThe discussion became more positive in the second week. Much of it covered beta updates rather than broad reviews: on April 2, Mega Crit announced v0.102.0, including end-of-run Badges and balance changes ([Steam, Apr 2](https://store.steampowered.com/news/app/2868840/view/507357952986842134)); coverage of the new feature was favorable ([PC Gamer, Apr 3](https://www.pcgamer.com/slay-the-spire-2/)). The single negative mention was a Steam forum comment objecting to balance changes such as higher card-removal costs and enemy buffs; the commenter called the patch a “nothingburger” ([Steam Community, Apr 2](https://steamcommunity.com/app/2868840/eventcomments/798966028860285600/)).\n\nAcross the period, **beta updates** were a prominent theme (5 mentions: 4 positive, 1 neutral), alongside **balance changes** (5: 4 neutral, 1 negative). The chart above shows weekly sentiment. This describes the stored mentions from the completed fetch, not all online discussion.\n\nWould you like a closer look at the beta-patch reactions?",
+          "payload": null,
+          "usage": {
+            "inputTokens": 24236,
+            "outputTokens": 4404,
+            "cachedTokens": 14446,
+            "estimatedCostUsd": 0.05808325
+          }
+        }
+      ]
+    },
+    {
+      "title": "Show my fetch run history",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Show my fetch run history",
+          "payload": null
+        },
+        {
+          "role": "tool",
+          "content": "listFetchRuns",
+          "payload": null
+        },
+        {
+          "role": "assistant",
+          "content": "| Run | Dates | Cadence | Status | Mentions | Prompt |\n|---|---|---|---|---:|---|\n| 3 | 2026-03-21 | Daily | Done | 7 | None |\n| 2 | 2026-02-15–2026-03-20 | Weekly | Done | 49 | None |\n\nWould you like a summary of what people said in these runs?",
+          "payload": null,
+          "usage": {
+            "inputTokens": 3342,
+            "outputTokens": 146,
+            "cachedTokens": 1592,
+            "estimatedCostUsd": 0.0038465
+          }
+        },
+        {
+          "role": "user",
+          "content": "Fetch more mentions",
+          "payload": null
+        },
+        {
+          "role": "tool",
+          "content": "listFetchRuns",
+          "payload": null
+        },
+        {
+          "role": "assistant",
+          "content": "What date range should I fetch, what cadence (daily, weekly, or monthly), and which fetch prompt should I use (a library prompt, your own instructions, or none)?\n\nAlready fetched: **2026-02-15–2026-03-20** (weekly) and **2026-03-21** (daily); both used **no prompt**.",
+          "payload": null,
+          "usage": {
+            "inputTokens": 3578,
+            "outputTokens": 166,
+            "cachedTokens": 3288,
+            "estimatedCostUsd": 0.0024335
+          }
+        },
+        {
+          "role": "user",
+          "content": "Mar 22 to Mar 22 2026, daily, no prompt",
+          "payload": null
+        },
+        {
+          "role": "tool",
+          "content": "planFetchRun",
+          "payload": "{\"subjectId\":2,\"subjectName\":\"Slay the Spire 2\",\"startDate\":\"2026-03-22\",\"endDate\":\"2026-03-22\",\"cadence\":\"daily\",\"gaps\":[{\"start\":\"2026-03-22\",\"end\":\"2026-03-22\",\"windows\":1}],\"skipped\":[],\"totalWindows\":1,\"instructions\":null}"
+        },
+        {
+          "role": "assistant",
+          "content": "The fetch plan is ready for **March 22, 2026** (daily, no prompt). Review the plan card and click **Start fetch** to run it.",
+          "payload": null,
+          "usage": {
+            "inputTokens": 3734,
+            "outputTokens": 79,
+            "cachedTokens": 3493,
+            "estimatedCostUsd": 0.001527875
+          }
+        },
+        {
+          "role": "user",
+          "content": "Plan a fetch Mar 1–Mar 10 2026 weekly, no prompt",
+          "payload": null
+        },
+        {
+          "role": "tool",
+          "content": "planFetchRun",
+          "payload": "{\"subjectId\":2,\"subjectName\":\"Slay the Spire 2\",\"startDate\":\"2026-03-01\",\"endDate\":\"2026-03-10\",\"cadence\":\"weekly\",\"gaps\":[],\"skipped\":[{\"start\":\"2026-03-01\",\"end\":\"2026-03-10\",\"runId\":2,\"status\":\"done\"}],\"totalWindows\":0,\"instructions\":null}"
+        },
+        {
+          "role": "assistant",
+          "content": "March 1–10, 2026 is already covered by a completed weekly fetch (Run 2), so there are no new dates to fetch with no prompt.",
+          "payload": null,
+          "usage": {
+            "inputTokens": 3863,
+            "outputTokens": 78,
+            "cachedTokens": 3656,
+            "estimatedCostUsd": 0.00149575
           }
         }
       ]
