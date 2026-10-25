@@ -3,8 +3,11 @@
 import { useEffect, useState } from 'react';
 import Button from '@/components/common/Button';
 import Input from '@/components/common/Input';
+import { formatRange } from '@/lib/dateRanges';
 
 type FetchPrompt = { id: number; title: string; body: string };
+type Skipped = { start: string; end: string; runId: number };
+type StartedRun = { startDate: string; endDate: string; windows: number };
 
 const isoDaysAgo = (n: number) => new Date(Date.now() - n * 86_400_000).toISOString().slice(0, 10);
 const fieldClass =
@@ -21,6 +24,7 @@ export default function FetchRunForm({ subjectId, onStarted }: { subjectId: numb
   const [save, setSave] = useState(false);
   const [title, setTitle] = useState('');
   const [error, setError] = useState('');
+  const [notes, setNotes] = useState<string[]>([]);
   const [busy, setBusy] = useState(false);
 
   useEffect(() => {
@@ -51,6 +55,7 @@ export default function FetchRunForm({ subjectId, onStarted }: { subjectId: numb
     const instructions = showText ? text.trim() : '';
     setBusy(true);
     setError('');
+    setNotes([]);
     try {
       if (showSave && save) {
         const res = await fetch('/api/prompts', {
@@ -70,7 +75,23 @@ export default function FetchRunForm({ subjectId, onStarted }: { subjectId: numb
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ ...fields, ...(instructions && { instructions }) }),
       });
-      if (!res.ok) return setError((await res.json()).error ?? 'Could not start the fetch.');
+      const data = await res.json();
+      const skippedLines = ((data.skipped ?? []) as Skipped[]).map(
+        (s) => `Skipped ${formatRange(s)} (already fetched in run #${s.runId}).`,
+      );
+      if (!res.ok) {
+        setNotes(skippedLines);
+        return setError(data.error ?? 'Could not start the fetch.');
+      }
+      const runs = data.runs as StartedRun[];
+      const cadence = String(fields.cadence);
+      const windows = runs.reduce((n, r) => n + r.windows, 0);
+      setNotes([
+        ...skippedLines,
+        `Started ${runs.length} run${runs.length === 1 ? '' : 's'}: ${runs
+          .map((r) => formatRange({ start: r.startDate, end: r.endDate }))
+          .join(', ')} (${windows} ${cadence} window${windows === 1 ? '' : 's'}).`,
+      ]);
       onStarted();
     } finally {
       setBusy(false);
@@ -151,6 +172,11 @@ export default function FetchRunForm({ subjectId, onStarted }: { subjectId: numb
           Run
         </Button>
       </div>
+      {notes.map((note) => (
+        <p key={note} className="text-sm text-muted-foreground">
+          {note}
+        </p>
+      ))}
     </form>
   );
 }

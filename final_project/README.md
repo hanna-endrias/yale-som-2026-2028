@@ -35,3 +35,10 @@ Seed data scripts (no tokens spent):
 Other scripts: `npm run typecheck` and `npm run build`.
 
 Theming: every color, font, and size comes from `config/brand.ts`. Edit it there and the page hot-reloads.
+
+## Agents
+
+- **Fetch Agent**: web-searches for mentions of a subject, one search per daily/weekly/monthly window. Dates already fetched with the same fetch prompt are skipped, so a request only fetches the gaps (all covered: nothing starts).
+- **Analyst Agent**: one chat per subject, with tools `getMentions`, `getSentimentSummary`, `getThemes`, `getTopSources`, `createVisualization`, `listFetchRuns`, `planFetchRun`, `listPrompts`, `createPrompt`, `updatePrompt`, `deletePrompt`. The LLM never starts a fetch or updates/deletes a prompt: it shows a card, and the owner's click on **Start fetch**, **Save changes** or **Delete** does.
+
+Details in [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).

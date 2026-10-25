@@ -1,7 +1,6 @@
 import type { LanguageModelUsage, ModelMessage, UIMessage } from 'ai';
 import { and, asc, eq, inArray } from 'drizzle-orm';
-import { streamAnalyst } from '@/agents/analystAgent';
-import { VISUALIZATION_TOOL } from '@/agents/tools/createVisualization';
+import { CARD_TOOLS, streamAnalyst } from '@/agents/analystAgent';
 import { getDb } from '@/db/client';
 import { chatMessages, chatSessions, mentions, subjects, tokenUsage } from '@/db/schema';
 import { usageRow } from '@/lib/cost';
@@ -143,6 +142,7 @@ export function sendMessage(ownerId: number, sessionId: number, text: string) {
   // LLM calls made inside tools (the visualizer) report their usage here, so the turn's cost includes them.
   const toolUsage: LanguageModelUsage[] = [];
   const result = streamAnalyst({
+    ownerId,
     subject: session.subject,
     messages: [...history, { role: 'user', content: text }],
     onToolUsage: (usage) => toolUsage.push(usage),
@@ -154,7 +154,7 @@ export function sendMessage(ownerId: number, sessionId: number, text: string) {
         .join('\n\n');
       db.transaction((tx) => {
         for (const r of steps.flatMap((s) => s.toolResults)) {
-          const payload = r.toolName === VISUALIZATION_TOOL ? JSON.stringify(r.output) : null;
+          const payload = CARD_TOOLS.has(r.toolName) ? JSON.stringify(r.output) : null;
           tx.insert(chatMessages).values({ chatSessionId: sessionId, role: 'tool', content: r.toolName, payload }).run();
         }
         const assistant = tx
