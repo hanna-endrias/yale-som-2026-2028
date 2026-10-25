@@ -25,3 +25,6 @@ next-env.d.ts
 
 # devloop scratch screenshots
 .devloop/
+
+# SQLite database
+data/

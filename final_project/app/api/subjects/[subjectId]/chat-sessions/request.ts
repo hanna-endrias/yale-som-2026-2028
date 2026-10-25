@@ -1,0 +1,1 @@
+export { parseSubjectId } from '../request';

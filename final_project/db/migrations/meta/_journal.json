@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1792886079226,
+      "tag": "0000_majestic_marvex",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1792887943009,
+      "tag": "0001_fetch_run_error",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1792890033842,
+      "tag": "0002_prompt_library",
+      "breakpoints": true
+    }
+  ]
+}

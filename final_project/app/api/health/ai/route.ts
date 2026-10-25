@@ -1,6 +1,6 @@
 import { pingModel } from '@/lib/healthCheck';
 
-// Scaffold-only health check: GET → one tiny gpt-6-luna call through Portkey.
+// Scaffold-only health check: GET → one tiny call to the active LLM provider (config/llm.ts).
 export const dynamic = 'force-dynamic';
 
 export async function GET() {
