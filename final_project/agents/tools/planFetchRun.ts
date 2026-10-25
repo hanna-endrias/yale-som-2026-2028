@@ -1,7 +1,7 @@
 import { tool } from 'ai';
 import { z } from 'zod';
 import { normalizeCriteria, searchCriteriaSchema } from '@/lib/searchCriteria';
-import { createFetchRunSchema } from '@/lib/validation/fetchRuns';
+import { createFetchRunSchema, fetchFallbackSchema } from '@/lib/validation/fetchRuns';
 import { planFetchRun } from '@/services/fetchRunService';
 import { listPrompts } from '@/services/promptService';
 
@@ -13,9 +13,10 @@ export function planFetchRunTool(ownerId: number, subject: { id: number; name: s
   return tool({
     description:
       'Plan a fetch of new mentions for this tracker: once the user has given start date, end date, cadence and a search criteria choice, ' +
-      'or right away when they ask about dates that were never fetched (then pass followUpQuestion). ' +
-      'Shows the user a plan card with a Start button and an Edit link; it does NOT start the fetch. Pass promptId (saved search criteria), ' +
-      'or criteria (new one-time search criteria), or neither (no criteria).',
+      'or right away when they ask about specific dates never fetched or a partly fetched period (pass only the missing dates and followUpQuestion), ' +
+      'or right away for a relative period (e.g. "past week") never fetched (then also pass fallback = the newest fetched dates of the same length). ' +
+      'Shows the user a plan card with a Start button and an Edit link (plus a "Use <fallback> instead" button when fallback is set); ' +
+      'it does NOT start the fetch. Pass promptId (saved search criteria), or criteria (new one-time search criteria), or neither (no criteria).',
     inputSchema: z.object({
       startDate: z.string().describe('YYYY-MM-DD'),
       endDate: z.string().describe('YYYY-MM-DD, inclusive'),
@@ -29,9 +30,19 @@ export function planFetchRunTool(ownerId: number, subject: { id: number; name: s
         .max(500)
         .optional()
         .describe("The owner's question, word for word, when this fetch is for dates they asked about; it is asked again once the fetch is done"),
+      fallback: z
+        .object({ startDate: z.string().describe('YYYY-MM-DD'), endDate: z.string().describe('YYYY-MM-DD, inclusive') })
+        .optional()
+        .describe(
+          'Only with followUpQuestion, for a relative period with none of it fetched: the newest fetched dates of the same length, ' +
+            'ending at the newest fetched date. The card offers a button to answer from them instead of fetching.',
+        ),
     }),
-    execute: async ({ promptId, criteria, followUpQuestion, ...rest }) => {
+    execute: async ({ promptId, criteria, followUpQuestion, fallback, ...rest }) => {
       if (promptId !== undefined && criteria) return { error: 'Pass either promptId or criteria, not both.' };
+      const question = followUpQuestion?.trim() || undefined;
+      const fallbackParsed = fallback ? fetchFallbackSchema.safeParse(fallback) : undefined;
+      if (fallbackParsed && !fallbackParsed.success) return { error: fallbackParsed.error.issues.map((i) => i.message).join(' ') };
       let promptTitle: string | undefined;
       let instructions: string | undefined;
       if (promptId !== undefined) {
@@ -55,7 +66,9 @@ export function planFetchRunTool(ownerId: number, subject: { id: number; name: s
         promptTitle,
         // One-time criteria, so the card's Edit mode can show them as fields.
         criteria: criteria ? normalizeCriteria(criteria) : undefined,
-        followUpQuestion: followUpQuestion?.trim() || undefined,
+        followUpQuestion: question,
+        // Already-fetched dates the card offers instead of fetching (meaningless without a question to answer).
+        fallback: question && fallbackParsed?.success ? fallbackParsed.data : undefined,
         ...plan,
       };
     },

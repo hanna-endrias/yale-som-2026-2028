@@ -136,7 +136,12 @@ export default function ChatWindow({
                 waitingForData={firstSetup && !dataReady}
               />
             ) : (
-              messages.map((m, i) => <ChatMessageBubble key={m.id} message={m} laterUserMessage={i < lastUser} />)
+              messages.map((m, i) => <ChatMessageBubble
+                  key={m.id}
+                  message={m}
+                  laterUserMessage={i < lastUser}
+                  streaming={busy && i === messages.length - 1}
+                />)
             )}
             {setupCards.map((c) => (
               <FetchSetupCard key={c.key} subjectId={subjectId} subjectName={subjectName} prefill={c.prefill} />
