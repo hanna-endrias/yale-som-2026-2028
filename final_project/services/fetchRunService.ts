@@ -1,5 +1,6 @@
-import { desc, eq, sql } from 'drizzle-orm';
-import { runCadence } from '@/agents/cadenceWrapper';
+import { and, asc, desc, eq, inArray, sql } from 'drizzle-orm';
+import { runCadence, splitWindows } from '@/agents/cadenceWrapper';
+import { intersectRange, subtractRanges } from '@/lib/dateRanges';
 import { getDb } from '@/db/client';
 import { fetchRuns, mentions, tokenUsage } from '@/db/schema';
 import { usageRow } from '@/lib/cost';
@@ -30,13 +31,43 @@ export function listFetchRuns(ownerId: number, subjectId: number) {
     .all();
 }
 
-// Inserts a pending run and starts the job in-process without awaiting it.
+// No-overlap rule: a date is covered when a done/pending/running run of the subject includes it with the same
+// (trimmed) instructions. Returns the uncovered gaps and what was skipped (per covering run); null if not owned.
+export function planFetchRun(ownerId: number, subjectId: number, input: CreateFetchRunInput) {
+  if (!getSubject(ownerId, subjectId)) return null;
+  const instructions = (input.instructions ?? '').trim();
+  const range = { start: input.startDate, end: input.endDate };
+  const covering = getDb()
+    .select({ id: fetchRuns.id, start: fetchRuns.startDate, end: fetchRuns.endDate, status: fetchRuns.status, instructions: fetchRuns.instructions })
+    .from(fetchRuns)
+    .where(and(eq(fetchRuns.subjectId, subjectId), inArray(fetchRuns.status, ['done', 'pending', 'running'])))
+    .orderBy(asc(fetchRuns.startDate))
+    .all()
+    .filter((r) => (r.instructions ?? '').trim() === instructions);
+  const skipped = covering.flatMap((r) => {
+    const overlap = intersectRange(range, r);
+    return overlap ? [{ ...overlap, runId: r.id, status: r.status }] : [];
+  });
+  const gaps = subtractRanges(range, covering).map((g) => ({ ...g, windows: splitWindows(g.start, g.end, input.cadence).length }));
+  return { gaps, skipped, totalWindows: gaps.reduce((n, g) => n + g.windows, 0), instructions: instructions || null };
+}
+
+// Inserts one pending run per uncovered gap and runs them in-process, one after another, without awaiting.
+// Returns null if not owned, { covered } when every date is already fetched, else { runs, skipped }.
 export function startFetchRun(ownerId: number, subjectId: number, input: CreateFetchRunInput) {
   const subject = getSubject(ownerId, subjectId);
-  if (!subject) return null;
-  const run = getDb().insert(fetchRuns).values({ subjectId, ...input }).returning().get();
-  void runJob(run.id, subject, input);
-  return run;
+  const plan = subject && planFetchRun(ownerId, subjectId, input);
+  if (!subject || !plan) return null;
+  if (!plan.gaps.length) return { covered: plan.skipped };
+  const db = getDb();
+  const runs = plan.gaps.map((g) => ({
+    ...db.insert(fetchRuns).values({ subjectId, ...input, startDate: g.start, endDate: g.end }).returning().get(),
+    windows: g.windows,
+  }));
+  void (async () => {
+    for (const run of runs) await runJob(run.id, subject, { ...input, startDate: run.startDate, endDate: run.endDate });
+  })();
+  return { runs, skipped: plan.skipped };
 }
 
 async function runJob(runId: number, subject: NonNullable<ReturnType<typeof getSubject>>, input: CreateFetchRunInput) {

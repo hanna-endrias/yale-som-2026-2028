@@ -3,10 +3,29 @@ import ReactMarkdown, { type Components } from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import TokenCostBadge from '@/components/common/TokenCostBadge';
 import type { AssistantMetadata } from '@/services/chatService';
+import FetchPlanCard, { isFetchPlan } from './FetchPlanCard';
+import PromptDeleteCard, { isPromptDelete } from './PromptDeleteCard';
+import PromptUpdateCard, { isPromptUpdate } from './PromptUpdateCard';
 import VisualizationFrame from './VisualizationFrame';
 
 const isVisualization = (o: unknown): o is { title: string; html: string } =>
   typeof o === 'object' && o !== null && typeof (o as { html?: unknown }).html === 'string';
+
+// The card a tool's output renders as, by tool name (names match agents/tools; that module is server-only).
+function ToolCard({ toolName, output }: { toolName: string; output: unknown }) {
+  switch (toolName) {
+    case 'createVisualization':
+      return isVisualization(output) ? <VisualizationFrame title={output.title} html={output.html} /> : null;
+    case 'planFetchRun':
+      return isFetchPlan(output) ? <FetchPlanCard plan={output} /> : null;
+    case 'updatePrompt':
+      return isPromptUpdate(output) ? <PromptUpdateCard update={output} /> : null;
+    case 'deletePrompt':
+      return isPromptDelete(output) ? <PromptDeleteCard prompt={output} /> : null;
+    default:
+      return null;
+  }
+}
 
 // Links become citation pills; a URL that isn't a stored mention of this subject is flagged.
 function citationLink(unverified: Set<string>): Components['a'] {
@@ -77,6 +96,7 @@ export default function ChatMessageBubble({ message }: { message: UIMessage }) {
           );
         }
         if (isToolUIPart(part)) {
+          const toolName = getToolName(part);
           const done = part.state === 'output-available';
           const failed = part.state === 'output-error';
           return (
@@ -85,9 +105,9 @@ export default function ChatMessageBubble({ message }: { message: UIMessage }) {
                 data-testid="tool-call"
                 className="self-start rounded-sm border border-border px-xs text-xs text-muted-foreground"
               >
-                tool: {getToolName(part)} {failed ? '✗' : done ? '✓' : '…'}
+                tool: {toolName} {failed ? '✗' : done ? '✓' : '…'}
               </span>
-              {done && isVisualization(part.output) && <VisualizationFrame title={part.output.title} html={part.output.html} />}
+              {done && <ToolCard toolName={toolName} output={part.output} />}
             </div>
           );
         }

@@ -15,7 +15,8 @@ export async function GET(_req: Request, { params }: Ctx) {
   return runs ? NextResponse.json({ runs }) : notFound();
 }
 
-// Returns right away with the pending run; the fetch itself runs in the background.
+// Returns right away with one pending run per uncovered gap; the fetches run in the background.
+// 409 when every requested date is already fetched with the same prompt.
 export async function POST(req: Request, { params }: Ctx) {
   const user = await requireUser();
   if (user instanceof NextResponse) return user;
@@ -23,6 +24,13 @@ export async function POST(req: Request, { params }: Ctx) {
   if (!id || !getSubject(user.id, id)) return notFound();
   const parsed = await parseCreateFetchRunRequest(req);
   if ('error' in parsed) return NextResponse.json({ error: parsed.error }, { status: 400 });
-  const run = startFetchRun(user.id, id, parsed.data);
-  return run ? NextResponse.json({ run }, { status: 201 }) : notFound();
+  const result = startFetchRun(user.id, id, parsed.data);
+  if (!result) return notFound();
+  if ('covered' in result) {
+    return NextResponse.json(
+      { error: 'Those dates are already fetched with this prompt.', skipped: result.covered },
+      { status: 409 },
+    );
+  }
+  return NextResponse.json(result, { status: 201 });
 }
