@@ -31,8 +31,14 @@ export function listFetchRuns(ownerId: number, subjectId: number) {
     .all();
 }
 
+// Whether an owned subject has any fetch run (any status); false if not owned.
+export function hasFetchRuns(ownerId: number, subjectId: number): boolean {
+  if (!getSubject(ownerId, subjectId)) return false;
+  return !!getDb().select({ id: fetchRuns.id }).from(fetchRuns).where(eq(fetchRuns.subjectId, subjectId)).limit(1).get();
+}
+
 // No-overlap rule: a date is covered when a done/pending/running run of the subject includes it with the same
-// (trimmed) instructions. Returns the uncovered gaps and what was skipped (per covering run); null if not owned.
+// (trimmed) instructions, i.e. the same rendered search criteria. Returns the uncovered gaps and what was skipped (per covering run); null if not owned.
 export function planFetchRun(ownerId: number, subjectId: number, input: CreateFetchRunInput) {
   if (!getSubject(ownerId, subjectId)) return null;
   const instructions = (input.instructions ?? '').trim();

@@ -2,6 +2,7 @@
 
 import { Menu } from 'lucide-react';
 import { useState } from 'react';
+import Logo from '@/components/common/Logo';
 import { Sheet, SheetContent, SheetTitle } from '@/components/ui/sheet';
 
 // 2 columns (Sidebar | main) from sm up; below sm the sidebar is a sheet drawer.
@@ -35,7 +36,9 @@ export default function AppShell({ sidebar, children }: { sidebar: React.ReactNo
           >
             <Menu className="size-5" />
           </button>
-          <span className="font-heading font-bold">Perspectives</span>
+          <span className="flex items-center gap-xs font-heading font-bold">
+            <Logo size={20} /> Perspectives
+          </span>
         </header>
         {children}
       </main>

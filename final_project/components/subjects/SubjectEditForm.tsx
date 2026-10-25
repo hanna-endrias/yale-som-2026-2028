@@ -44,7 +44,7 @@ export default function SubjectEditForm({ subjectId }: { subjectId: number }) {
   useEffect(() => {
     fetch(`/api/subjects/${subjectId}`)
       .then((res) => res.json())
-      .then((data) => (data.subject ? setSubject(data.subject) : setError(data.error ?? 'Could not load subject.')));
+      .then((data) => (data.subject ? setSubject(data.subject) : setError(data.error ?? 'Could not load tracker.')));
   }, [subjectId]);
 
   async function onSave(e: React.FormEvent<HTMLFormElement>) {
@@ -108,7 +108,7 @@ export default function SubjectEditForm({ subjectId }: { subjectId: number }) {
             }}
             className={deleteClass}
           >
-            Delete subject
+            Delete tracker
           </button>
           <div className="flex items-center gap-sm">
             {saved && <span className="text-sm text-muted-foreground">Saved.</span>}

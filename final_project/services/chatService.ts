@@ -1,10 +1,12 @@
 import type { LanguageModelUsage, ModelMessage, UIMessage } from 'ai';
 import { and, asc, eq, inArray } from 'drizzle-orm';
 import { CARD_TOOLS, streamAnalyst } from '@/agents/analystAgent';
+import { PLAN_FETCH_TOOL } from '@/agents/tools/planFetchRun';
 import { getDb } from '@/db/client';
-import { chatMessages, chatSessions, mentions, subjects, tokenUsage } from '@/db/schema';
+import { chatMessages, chatSessions, fetchRuns, mentions, subjects, tokenUsage } from '@/db/schema';
 import { usageRow } from '@/lib/cost';
 import { extractUrls } from '@/lib/links';
+import type { FetchPlanStart } from '@/lib/validation/chat';
 import { getSubject } from './subjectService';
 
 const TITLE_LENGTH = 40;
@@ -78,25 +80,34 @@ function unverifiedUrls(subjectId: number, text: string): string[] {
   return urls.filter((u) => !known.has(u));
 }
 
+// A card's tool call id: the one saved in its payload (the same as in the live stream), else one from the row id.
+function toolCallIdOf(rowId: number, output: unknown): string {
+  const saved = (output as { toolCallId?: unknown } | null)?.toolCallId;
+  return typeof saved === 'string' ? saved : `tool-${rowId}`;
+}
+
 // History as UI messages. `tool` rows (tool name + optional JSON payload) are shown on the assistant reply that follows them.
 export function listMessages(ownerId: number, sessionId: number): UIMessage[] | null {
   const session = getChatSession(ownerId, sessionId);
   if (!session) return null;
   const out: UIMessage[] = [];
-  let tools: { toolName: string; payload: string | null }[] = [];
+  let tools: { id: number; toolName: string; payload: string | null }[] = [];
   for (const row of messageRows(sessionId)) {
     if (row.role === 'tool') {
-      tools.push({ toolName: row.content, payload: row.payload });
+      tools.push({ id: row.id, toolName: row.content, payload: row.payload });
       continue;
     }
-    const toolParts = tools.map(({ toolName, payload }, i) => ({
-      type: 'dynamic-tool' as const,
-      toolName,
-      toolCallId: `${row.id}-${i}`,
-      state: 'output-available' as const,
-      input: {},
-      output: payload ? JSON.parse(payload) : null,
-    }));
+    const toolParts = tools.map(({ id, toolName, payload }) => {
+      const output = payload ? JSON.parse(payload) : null;
+      return {
+        type: 'dynamic-tool' as const,
+        toolName,
+        toolCallId: toolCallIdOf(id, output),
+        state: 'output-available' as const,
+        input: {},
+        output,
+      };
+    });
     tools = [];
     const metadata: AssistantMetadata | undefined =
       row.inputTokens === null
@@ -154,7 +165,8 @@ export function sendMessage(ownerId: number, sessionId: number, text: string) {
         .join('\n\n');
       db.transaction((tx) => {
         for (const r of steps.flatMap((s) => s.toolResults)) {
-          const payload = CARD_TOOLS.has(r.toolName) ? JSON.stringify(r.output) : null;
+          // The tool call id is kept so a card can find its own row again (recordFetchPlanStart).
+          const payload = CARD_TOOLS.has(r.toolName) ? JSON.stringify({ ...(r.output as object), toolCallId: r.toolCallId }) : null;
           tx.insert(chatMessages).values({ chatSessionId: sessionId, role: 'tool', content: r.toolName, payload }).run();
         }
         const assistant = tx
@@ -185,4 +197,33 @@ export function sendMessage(ownerId: number, sessionId: number, text: string) {
       return metadata;
     },
   });
+}
+
+// Saves what a fetch plan card started into its planFetchRun message's payload (`started`), so the card shows
+// those runs after a reload instead of its original plan. The session must be the owner's and every run must
+// belong to the session's subject; returns null (404) otherwise or when no such card is in the session.
+export function recordFetchPlanStart(ownerId: number, sessionId: number, input: FetchPlanStart) {
+  const session = getChatSession(ownerId, sessionId);
+  if (!session) return null;
+  const db = getDb();
+  const { toolCallId, ...started } = { ...input, runIds: [...new Set(input.runIds)] };
+  const owned = db
+    .select({ id: fetchRuns.id })
+    .from(fetchRuns)
+    .where(and(eq(fetchRuns.subjectId, session.subject.id), inArray(fetchRuns.id, started.runIds)))
+    .all();
+  if (owned.length !== started.runIds.length) return null;
+  const card = db
+    .select({ id: chatMessages.id, payload: chatMessages.payload })
+    .from(chatMessages)
+    .where(and(eq(chatMessages.chatSessionId, sessionId), eq(chatMessages.role, 'tool'), eq(chatMessages.content, PLAN_FETCH_TOOL)))
+    .all()
+    .map((r) => ({ id: r.id, output: r.payload ? (JSON.parse(r.payload) as Record<string, unknown>) : null }))
+    .find((r) => r.output && toolCallIdOf(r.id, r.output) === toolCallId);
+  if (!card) return null;
+  db.update(chatMessages)
+    .set({ payload: JSON.stringify({ ...card.output, started }) })
+    .where(eq(chatMessages.id, card.id))
+    .run();
+  return started;
 }

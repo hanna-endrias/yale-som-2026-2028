@@ -15,7 +15,7 @@ export default function Modal({ open, onOpenChange, title, children, trigger }: 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       {trigger && <DialogTrigger asChild>{trigger}</DialogTrigger>}
-      <DialogContent aria-describedby={undefined} className="gap-md p-lg text-base sm:max-w-lg">
+      <DialogContent aria-describedby={undefined} className="max-h-[calc(100dvh-2rem)] gap-md overflow-y-auto p-lg text-base sm:max-w-lg">
         <DialogHeader>
           <DialogTitle className="text-lg font-bold">{title}</DialogTitle>
         </DialogHeader>

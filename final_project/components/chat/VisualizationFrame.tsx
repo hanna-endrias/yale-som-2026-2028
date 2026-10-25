@@ -15,9 +15,10 @@ const VARS: Record<string, string> = {
   '--panel': '--brand-color-panel',
   '--border': '--brand-color-border',
   '--accent': '--brand-color-accent-text',
+  '--positive': '--brand-chart-positive',
+  '--neutral': '--brand-chart-neutral',
   '--negative': '--brand-color-destructive',
 };
-const FIXED = { '--positive': '#2BB3A3', '--neutral': '#9AA0AB' };
 
 // Reports the content height on load and on every resize, so the frame grows to fit (postMessage is allowed from the sandbox).
 const RESIZE_SCRIPT = `<script>(function(){var s=function(){parent.postMessage({perspectivesVizHeight:Math.ceil(document.documentElement.getBoundingClientRect().height)},'*')};s();addEventListener('load',s);new ResizeObserver(s).observe(document.documentElement);})();</script>`;
@@ -26,7 +27,6 @@ function buildDoc(html: string): string {
   const root = getComputedStyle(document.documentElement);
   const vars = Object.entries(VARS)
     .map(([name, brandVar]) => `${name}: ${root.getPropertyValue(brandVar).trim()};`)
-    .concat(Object.entries(FIXED).map(([n, v]) => `${n}: ${v};`))
     .join(' ');
   const head = `<meta http-equiv="Content-Security-Policy" content="${CSP}"><style>:root { ${vars} color-scheme: light dark; }</style>`;
   // The CSP meta must be inside <head> to apply; insert after an existing <head>, else before everything.

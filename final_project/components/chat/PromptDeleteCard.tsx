@@ -37,14 +37,14 @@ export default function PromptDeleteCard({ prompt }: { prompt: PromptDelete }) {
     setPending(false);
     if (res.ok) setStatus('deleted');
     else if (res.status === 404) setStatus('already');
-    else setError(data.error ?? 'Could not delete the prompt.');
+    else setError(data.error ?? 'Could not delete it.');
   }
 
   const done = { deleted: 'Deleted.', already: 'Already deleted.', kept: 'Kept.' } as const;
 
   return (
     <section className="w-full overflow-hidden rounded-md border border-border text-sm" data-testid="prompt-delete-card">
-      <header className="border-b border-border bg-panel px-sm py-xs text-xs font-semibold">Delete prompt?</header>
+      <header className="border-b border-border bg-panel px-sm py-xs text-xs font-semibold">Delete {KIND_LABEL[prompt.kind].toLowerCase()}?</header>
       <div className="flex flex-col gap-xs px-sm py-sm">
         <p className="font-medium">
           {KIND_LABEL[prompt.kind]} · “{prompt.title}”

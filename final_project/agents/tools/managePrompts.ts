@@ -1,5 +1,6 @@
 import { tool } from 'ai';
 import { z } from 'zod';
+import { criteriaToInstructions, searchCriteriaSchema } from '@/lib/searchCriteria';
 import { createPromptSchema, promptKindSchema, updatePromptSchema } from '@/lib/validation/prompts';
 import { createPrompt, listPrompts, type PromptItem } from '@/services/promptService';
 
@@ -21,8 +22,8 @@ export function managePromptTools(ownerId: number, subject: Subject) {
   return {
     listPrompts: tool({
       description:
-        "List the owner's library prompts. kind 'fetch' = fetcher prompts (steer web searches), 'analyst' = chat starters. " +
-        "scope 'subject' (default) = prompts available on this subject; 'all' = every prompt the owner has.",
+        "List the owner's library prompts. kind 'fetch' = saved search criteria (steer web searches; body is the rendered criteria), " +
+        "'analyst' = chat questions. scope 'subject' (default) = prompts available on this tracker; 'all' = every prompt the owner has.",
       inputSchema: z.object({
         kind: promptKindSchema.optional(),
         scope: z.enum(['subject', 'all']).default('subject'),
@@ -39,11 +40,15 @@ export function managePromptTools(ownerId: number, subject: Subject) {
 
     createPrompt: tool({
       description:
-        `Save a new library prompt. Scoped to "${subject.name}" unless allSubjects is true (only when the user asks for all subjects).`,
+        `Save a new library prompt. Scoped to "${subject.name}" unless allSubjects is true (only when the user asks for all trackers). ` +
+        "kind 'analyst' (chat question) needs body; kind 'fetch' (search criteria) needs criteria instead of body.",
       inputSchema: z.object({
         kind: promptKindSchema,
         title: z.string(),
-        body: z.string(),
+        body: z.string().optional().describe('The question (kind analyst only)'),
+        criteria: searchCriteriaSchema
+          .optional()
+          .describe('kind fetch only: sources, topics, excludeKeywords, region, language, notes (all optional, at least one)'),
         allSubjects: z.boolean().optional(),
       }),
       execute: async ({ allSubjects, ...rest }) => {
@@ -63,17 +68,22 @@ export function managePromptTools(ownerId: number, subject: Subject) {
     [UPDATE_PROMPT_TOOL]: tool({
       description:
         'Propose a change to a library prompt (find its id with listPrompts first). Does NOT save: the user sees a ' +
-        "before/after card and must click Save. scope 'subject' = only this subject, 'all' = all subjects.",
+        "before/after card and must click Save. scope 'subject' = only this tracker, 'all' = all trackers. " +
+        'Change a chat question with body, and search criteria with criteria (the full new criteria).',
       inputSchema: z.object({
         id: z.number().int(),
         title: z.string().optional(),
-        body: z.string().optional(),
+        body: z.string().optional().describe('New question (chat questions only)'),
+        criteria: searchCriteriaSchema.optional().describe('New search criteria (search criteria only)'),
         kind: promptKindSchema.optional(),
         scope: z.enum(['subject', 'all']).optional(),
       }),
       execute: async ({ id, scope, ...fields }) => {
         const before = findPrompt(ownerId, id);
         if (!before) return notFound;
+        const kind = fields.kind ?? before.kind;
+        if (kind === 'fetch' && fields.body !== undefined) return { error: 'Search criteria are changed with criteria, not body.' };
+        if (kind === 'analyst' && fields.criteria !== undefined) return { error: 'Chat questions are changed with body, not criteria.' };
         const parsed = updatePromptSchema.safeParse({
           ...fields,
           ...(scope && { allSubjects: scope === 'all', subjectIds: scope === 'all' ? [] : [subject.id] }),
@@ -116,6 +126,7 @@ function changedFields(before: PromptItem, input: z.infer<typeof updatePromptSch
   if (input.kind !== undefined && input.kind !== before.kind) patch.kind = input.kind;
   if (input.title !== undefined && input.title !== before.title) patch.title = input.title;
   if (input.body !== undefined && input.body !== before.body) patch.body = input.body;
+  if (input.criteria !== undefined && criteriaToInstructions(input.criteria) !== before.body) patch.criteria = input.criteria;
   if (input.allSubjects !== undefined) {
     const sameIds =
       [...input.subjectIds!].sort().join() === [...before.subjectIds].sort().join();

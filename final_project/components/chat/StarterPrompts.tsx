@@ -1,4 +1,7 @@
+'use client';
+
 import Link from 'next/link';
+import { useChatPanel } from './ChatSidePanel';
 import type { PromptItem } from '@/services/promptService';
 
 export type StarterPrompt = Pick<PromptItem, 'id' | 'title' | 'body'>;
@@ -7,14 +10,20 @@ type Props = {
   subjectName: string;
   prompts: StarterPrompt[];
   onPick: (text: string) => void;
+  waitingForData?: boolean; // no fetch yet: a pick is remembered and asked once the setup card's fetch finishes
 };
 
-// Shown only before the first message; a card shows a library prompt's title and submits its body as the first turn.
-export default function StarterPrompts({ subjectName, prompts, onPick }: Props) {
+// Shown only before the first message; a card shows a library prompt's title and passes its body to onPick.
+export default function StarterPrompts({ subjectName, prompts, onPick, waitingForData }: Props) {
+  const panel = useChatPanel();
+  const manageClass =
+    'self-end text-sm text-muted-foreground hover:text-accent-text focus-visible:outline-2 focus-visible:outline-focus';
   return (
-    <div className="m-auto flex w-full max-w-xl flex-col gap-sm p-md">
+    <div className={`flex w-full max-w-xl flex-col gap-sm p-md ${waitingForData ? 'mx-auto' : 'm-auto'}`}>
       <p className="mb-sm text-center text-muted-foreground">
-        Ask the Analyst Agent anything about {subjectName}&apos;s mentions.
+        {waitingForData
+          ? "Pick a question now and we'll ask it once the fetch finishes."
+          : `Ask the Analyst Agent anything about ${subjectName}'s mentions.`}
       </p>
       {prompts.map((p) => (
         <button
@@ -26,14 +35,17 @@ export default function StarterPrompts({ subjectName, prompts, onPick }: Props) 
           {p.title}
         </button>
       ))}
-      {prompts.length > 0 && (
-        <Link
-          href="/prompts"
-          className="self-end text-sm text-muted-foreground hover:text-accent-text focus-visible:outline-2 focus-visible:outline-focus"
-        >
-          Manage prompts →
-        </Link>
-      )}
+      {/* Opens the side panel's Questions tab; /prompts stays the full library. */}
+      {prompts.length > 0 &&
+        (panel ? (
+          <button type="button" onClick={() => panel.show('questions')} className={manageClass}>
+            Manage prompts →
+          </button>
+        ) : (
+          <Link href="/prompts" className={manageClass}>
+            Manage prompts →
+          </Link>
+        ))}
     </div>
   );
 }

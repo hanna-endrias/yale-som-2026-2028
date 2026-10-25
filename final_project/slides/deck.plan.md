@@ -59,6 +59,6 @@ One-line pitch: Ask an AI analyst how your launch landed online, for the cost of
 ## Screenshots needed
 | Name | Page | UI state |
 |---|---|---|
-| fetch-runs | / → Friend ⋯ → Fetch runs | Seeded weekly run with mention count and token cost |
+| fetch-runs | Friend seeded chat → side panel → Fetches tab | Seeded weekly run with mention count and token cost |
 | chat-chart | Friend seeded chat | Sentiment chart fully visible, no new messages |
 | safety-injection | reused from .devloop/screenshots/step6-chat/03-injection-test.jpg | Analyst refusing the injected review |

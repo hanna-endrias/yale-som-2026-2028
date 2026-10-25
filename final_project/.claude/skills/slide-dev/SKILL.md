@@ -52,7 +52,7 @@ Never edit `slides.html` by hand, and never put raw hex in `deck.html` — use t
    State: <exact UI state, e.g. "Friend subject open, seeded chat scrolled so the sentiment chart and citations are both visible">
    Output: slides/shots/<shot-name>.jpg
    ```
-   Then invoke the **devloop** skill with `slides/shots.plan.md`. Good default shots: chat answer with chart + citations, sidebar with subjects/sessions, subject modal fetch-runs tab (monthly cadence), prompt library, prompt-injection refusal (safety), token cost badge. Avoid shots that call Portkey unless a fresh one is truly needed (tokens cost money); prefer seeded data.
+   Then invoke the **devloop** skill with `slides/shots.plan.md`. Good default shots: chat answer with chart + citations, sidebar with trackers/sessions, chat side panel Fetches tab (monthly cadence), first-fetch setup card, prompt library, prompt-injection refusal (safety), token cost badge. Avoid shots that call Portkey unless a fresh one is truly needed (tokens cost money); prefer seeded data.
 
 4. **Build**: `npm run slides:build` (theme from the plan). It fails loudly on a missing image and warns past 10 slides.
 

@@ -7,7 +7,7 @@ import Modal from '@/components/common/Modal';
 import { expandNewSubject } from '@/components/shell/SubjectFolder';
 import { cancelClass, formJson, SubjectFields } from './SubjectEditForm';
 
-// `trigger` is the button that opens it ([+ New subject], or the empty-state CTA).
+// `trigger` is the button that opens it ([+ New tracker], or the empty-state CTA).
 export default function AddSubjectModal({ trigger }: { trigger: React.ReactNode }) {
   const router = useRouter();
   const [open, setOpen] = useState(false);
@@ -29,15 +29,22 @@ export default function AddSubjectModal({ trigger }: { trigger: React.ReactNode 
       body: formJson(e.currentTarget),
     });
     const data = await res.json();
-    setBusy(false);
-    if (!res.ok) return setError(data.error ?? 'Could not create subject.');
+    if (!res.ok) {
+      setBusy(false);
+      return setError(data.error ?? 'Could not create tracker.');
+    }
     expandNewSubject(data.subject.id);
+    // Land in a new chat, where the setup card runs the first fetch.
+    const chat = await fetch(`/api/subjects/${data.subject.id}/chat-sessions`, { method: 'POST' });
+    const session = chat.ok ? (await chat.json()).session : null;
+    setBusy(false);
     setOpen(false);
+    if (session) router.push(`/chat/${session.id}`);
     router.refresh();
   }
 
   return (
-    <Modal open={open} onOpenChange={onOpenChange} title="New subject" trigger={trigger}>
+    <Modal open={open} onOpenChange={onOpenChange} title="New tracker" trigger={trigger}>
       <form onSubmit={onSubmit} className="flex flex-col gap-md">
         <SubjectFields />
         {error && (

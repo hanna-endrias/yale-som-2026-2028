@@ -2,11 +2,11 @@
 
 ## Task: fetch-runs
 Files: none (capture only)
-Page: / (open the Friend subject's ⋯ menu → Fetch runs tab)
+Page: the seeded Friend chat session "How did sentiment shift before, during a…" (find it in the sidebar under Friend)
 Login: owner1@test.com / test1234
 Theme: dark
 Viewport: 1280x800
-State: SubjectModal for "Friend" open on the Fetch runs tab, the seeded weekly run (2025-09-01 → 2025-11-23) visible with its mention count and token cost.
+State: chat side panel open on the Fetches tab, the seeded weekly run (2025-09-01 → 2025-11-23) visible with its mention count and token cost.
 Output: slides/shots/fetch-runs.jpg
 
 ## Task: chat-chart

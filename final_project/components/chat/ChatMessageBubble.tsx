@@ -12,12 +12,24 @@ const isVisualization = (o: unknown): o is { title: string; html: string } =>
   typeof o === 'object' && o !== null && typeof (o as { html?: unknown }).html === 'string';
 
 // The card a tool's output renders as, by tool name (names match agents/tools; that module is server-only).
-function ToolCard({ toolName, output }: { toolName: string; output: unknown }) {
+// laterUserMessage: a user turn follows this message (a fetch card then never re-asks its question).
+// toolCallId: the same live and after reload (chatService saves it), so a fetch card can record what it started.
+function ToolCard({
+  toolName,
+  toolCallId,
+  output,
+  laterUserMessage,
+}: {
+  toolName: string;
+  toolCallId: string;
+  output: unknown;
+  laterUserMessage: boolean;
+}) {
   switch (toolName) {
     case 'createVisualization':
       return isVisualization(output) ? <VisualizationFrame title={output.title} html={output.html} /> : null;
     case 'planFetchRun':
-      return isFetchPlan(output) ? <FetchPlanCard plan={output} /> : null;
+      return isFetchPlan(output) ? <FetchPlanCard plan={output} toolCallId={toolCallId} laterUserMessage={laterUserMessage} /> : null;
     case 'updatePrompt':
       return isPromptUpdate(output) ? <PromptUpdateCard update={output} /> : null;
     case 'deletePrompt':
@@ -72,11 +84,17 @@ const BASE: Components = {
 };
 
 // One message: user turns as a right-aligned bubble; agent turns as markdown, tool-call badges and charts.
-export default function ChatMessageBubble({ message }: { message: UIMessage }) {
+export default function ChatMessageBubble({
+  message,
+  laterUserMessage = false,
+}: {
+  message: UIMessage;
+  laterUserMessage?: boolean; // a user turn comes after this message
+}) {
   if (message.role === 'user') {
     const text = message.parts.map((p) => (p.type === 'text' ? p.text : '')).join('');
     return (
-      <div className="max-w-[85%] self-end whitespace-pre-wrap rounded-lg bg-panel px-md py-sm">{text}</div>
+      <div className="min-w-0 max-w-[85%] self-end whitespace-pre-wrap rounded-lg bg-panel px-md py-sm [overflow-wrap:anywhere]">{text}</div>
     );
   }
 
@@ -84,7 +102,7 @@ export default function ChatMessageBubble({ message }: { message: UIMessage }) {
   const meta = message.metadata as AssistantMetadata | undefined;
   const components = { ...BASE, a: citationLink(new Set(meta?.unverifiedUrls ?? [])) };
   return (
-    <div className="flex w-full max-w-[85%] flex-col gap-xs self-start" data-testid="assistant-message">
+    <div className="flex w-full min-w-0 max-w-[85%] flex-col gap-xs self-start [overflow-wrap:anywhere]" data-testid="assistant-message">
       {message.parts.map((part, i) => {
         if (part.type === 'text') {
           return (
@@ -107,7 +125,14 @@ export default function ChatMessageBubble({ message }: { message: UIMessage }) {
               >
                 tool: {toolName} {failed ? '✗' : done ? '✓' : '…'}
               </span>
-              {done && <ToolCard toolName={toolName} output={part.output} />}
+              {done && (
+                <ToolCard
+                  toolName={toolName}
+                  toolCallId={part.toolCallId}
+                  output={part.output}
+                  laterUserMessage={laterUserMessage}
+                />
+              )}
             </div>
           );
         }
