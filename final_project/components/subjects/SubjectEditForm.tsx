@@ -17,15 +17,64 @@ const deleteClass =
   'rounded-md border border-destructive px-md py-sm font-medium text-destructive hover:bg-destructive/10 disabled:opacity-60';
 export const cancelClass = 'rounded-md border border-border px-md py-sm font-medium hover:bg-panel';
 
+const hintClass = 'text-xs font-normal text-muted-foreground';
+
 // The subject fields, shared by AddSubjectModal and the Details tab.
+// Placeholders and hints say what each field does for the search, since owners can't guess that.
 export function SubjectFields({ values }: { values?: SubjectValues }) {
   return (
     <>
-      <Input label="Name*" id="subject-name" name="name" defaultValue={values?.name} />
-      <Input label="Description" id="subject-description" name="description" defaultValue={values?.description} />
-      <Input label="Location" id="subject-location" name="location" defaultValue={values?.location ?? ''} />
-      <Input label="Website" id="subject-website" name="website" defaultValue={values?.website ?? ''} />
-      <Input label="Search terms" id="subject-search-terms" name="searchTerms" defaultValue={values?.searchTerms} />
+      <Input
+        label="Name*"
+        id="subject-name"
+        name="name"
+        placeholder="e.g. Blue Door Bakery or @handle"
+        defaultValue={values?.name}
+      />
+      <div className="flex flex-col gap-xs">
+        <label htmlFor="subject-description" className="flex flex-col gap-xs text-sm font-medium">
+          Description
+          <textarea
+            id="subject-description"
+            name="description"
+            rows={3}
+            defaultValue={values?.description}
+            placeholder="What it is and why people would mention it, e.g. a family bakery in New Haven known for sourdough"
+            aria-describedby="subject-description-hint"
+            className="resize-y rounded-md border border-border bg-background px-sm py-sm text-base font-normal text-text focus-visible:outline-2 focus-visible:outline-focus"
+          />
+        </label>
+        <span id="subject-description-hint" className={hintClass}>
+          Helps the search tell it apart from things with a similar name.
+        </span>
+      </div>
+      <Input
+        label="Location"
+        id="subject-location"
+        name="location"
+        placeholder="e.g. New Haven, CT"
+        defaultValue={values?.location ?? ''}
+      />
+      <Input
+        label="Website"
+        id="subject-website"
+        name="website"
+        placeholder="e.g. https://example.com"
+        defaultValue={values?.website ?? ''}
+      />
+      <div className="flex flex-col gap-xs">
+        <Input
+          label="Search terms"
+          id="subject-search-terms"
+          name="searchTerms"
+          placeholder="e.g. products, @handles, #hashtags"
+          defaultValue={values?.searchTerms}
+          aria-describedby="subject-search-terms-hint"
+        />
+        <span id="subject-search-terms-hint" className={hintClass}>
+          Separate with commas. Other names people use when they talk about it.
+        </span>
+      </div>
     </>
   );
 }

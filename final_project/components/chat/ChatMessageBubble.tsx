@@ -1,5 +1,6 @@
 import { getToolName, isToolUIPart, type UIMessage } from 'ai';
 import { ListChecks } from 'lucide-react';
+import { Children, isValidElement, useState } from 'react';
 import ReactMarkdown, { type Components } from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import TokenCostBadge from '@/components/common/TokenCostBadge';
@@ -113,9 +114,11 @@ function ToolActivity({ tools, live }: { tools: ToolPart[]; live: boolean }) {
 }
 
 // Links become citation pills; a URL that isn't a stored mention of this subject is flagged.
+// A non-web link (the model sometimes writes "[see the chart](#)") is just text, not a source.
 function citationLink(unverified: Set<string>): Components['a'] {
   return function CitationLink({ href, children }) {
-    const bad = !!href && unverified.has(href);
+    if (!href || !/^https?:\/\//i.test(href)) return <>{children}</>;
+    const bad = unverified.has(href);
     return (
       <a
         href={href}
@@ -135,13 +138,48 @@ function citationLink(unverified: Set<string>): Components['a'] {
   };
 }
 
+const SHOWN_CITATIONS = 4;
+
+// A paragraph or list item with a long run of citation pills shows the first few and a "+N more sources" toggle.
+// Only http(s) links count (CitationLink renders other links as text); prose after the last pill stays visible.
+function CollapsedCitations({ children }: { children: React.ReactNode }) {
+  const [expanded, setExpanded] = useState(false);
+  const items = Children.toArray(children);
+  const links = items.flatMap((c, i) =>
+    isValidElement<{ href?: string }>(c) && /^https?:\/\//i.test(c.props.href ?? '') ? [i] : [],
+  );
+  if (expanded || links.length <= SHOWN_CITATIONS + 1) return <>{children}</>;
+  return (
+    <>
+      {items.slice(0, links[SHOWN_CITATIONS - 1] + 1)}{' '}
+      <button
+        type="button"
+        onClick={() => setExpanded(true)}
+        className="rounded-sm text-xs font-medium text-muted-foreground underline hover:text-accent-text focus-visible:outline-2 focus-visible:outline-focus"
+      >
+        +{links.length - SHOWN_CITATIONS} more sources
+      </button>
+      {items.slice(links[links.length - 1] + 1)}
+    </>
+  );
+}
+
 // Tailwind styles for markdown elements (there is no typography plugin).
 const BASE: Components = {
   h1: ({ children }) => <h3 className="mt-sm text-lg font-semibold">{children}</h3>,
   h2: ({ children }) => <h3 className="mt-sm text-lg font-semibold">{children}</h3>,
   h3: ({ children }) => <h4 className="mt-sm font-semibold">{children}</h4>,
   h4: ({ children }) => <h4 className="mt-sm font-semibold">{children}</h4>,
-  p: ({ children }) => <p className="leading-relaxed">{children}</p>,
+  p: ({ children }) => (
+    <p className="leading-relaxed">
+      <CollapsedCitations>{children}</CollapsedCitations>
+    </p>
+  ),
+  li: ({ children }) => (
+    <li>
+      <CollapsedCitations>{children}</CollapsedCitations>
+    </li>
+  ),
   ul: ({ children }) => <ul className="ml-md list-disc space-y-xs">{children}</ul>,
   ol: ({ children }) => <ol className="ml-md list-decimal space-y-xs">{children}</ol>,
   blockquote: ({ children }) => <blockquote className="border-l-2 border-border pl-sm text-muted-foreground">{children}</blockquote>,

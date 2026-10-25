@@ -1217,7 +1217,7 @@
         },
         {
           "role": "assistant",
-          "content": "I need the **start date, end date, cadence** (daily, weekly, or monthly), and fetch-prompt choice before I can plan the fetch. “Two more weeks” gives a duration, but not the dates or cadence.\n\nExisting fetches, all with **Prompt: None**:\n\n| Dates | Cadence | Status | Mentions |\n|---|---|---:|---:|\n| Feb 15–Mar 20, 2026 | Weekly | Done | 49 |\n| Mar 21, 2026 | Daily | Done | 7 |\n| Mar 22, 2026 | Daily | Done | 5 |\n\nThere are no subject-library fetch prompts available. Tell me the date range, cadence, and whether you want **no prompt** or new prompt text.",
+          "content": "I need the **start date, end date, cadence** (daily, weekly, or monthly), and search-criteria choice before I can plan the fetch. “Two more weeks” gives a duration, but not the dates or cadence.\n\nExisting fetches, all with **Search criteria: None**:\n\n| Dates | Cadence | Status | Mentions |\n|---|---|---:|---:|\n| Feb 15–Mar 20, 2026 | Weekly | Done | 49 |\n| Mar 21, 2026 | Daily | Done | 7 |\n| Mar 22, 2026 | Daily | Done | 5 |\n\nThere are no saved search criteria for this tracker. Tell me the date range, cadence, and whether you want **no search criteria** or new ones.",
           "payload": null,
           "usage": {
             "inputTokens": 6379,
@@ -1243,7 +1243,7 @@
         },
         {
           "role": "assistant",
-          "content": "I’ll interpret “two weeks after March 22” as **March 23–April 5, 2026**. What cadence would you like—daily, weekly, or monthly—and should I use **no prompt** or new prompt text? There are no subject-library fetch prompts.\n\nAlready fetched, all with **Prompt: None**:\n- Feb 15–Mar 20, 2026 (weekly)\n- Mar 21, 2026 (daily)\n- Mar 22, 2026 (daily)",
+          "content": "I’ll interpret “two weeks after March 22” as **March 23–April 5, 2026**. What cadence would you like—daily, weekly, or monthly—and should I use **no search criteria** or new ones? There are no saved search criteria for this tracker.\n\nAlready fetched, all with **Search criteria: None**:\n- Feb 15–Mar 20, 2026 (weekly)\n- Mar 21, 2026 (daily)\n- Mar 22, 2026 (daily)",
           "payload": null,
           "usage": {
             "inputTokens": 6720,
@@ -1254,7 +1254,7 @@
         },
         {
           "role": "user",
-          "content": "stick to weekly and use the existing prompt from this chat",
+          "content": "stick to weekly and use the existing search criteria from this chat",
           "payload": null
         },
         {
@@ -1269,7 +1269,7 @@
         },
         {
           "role": "assistant",
-          "content": "I found no saved fetch prompt, and the earlier runs used **no prompt**. For March 23–April 5, 2026, weekly cadence is set; should I proceed with **no prompt**, or would you like to provide prompt text?",
+          "content": "I found no saved search criteria, and the earlier runs used **none**. For March 23–April 5, 2026, weekly cadence is set; should I proceed with **no search criteria**, or would you like to provide some?",
           "payload": null,
           "usage": {
             "inputTokens": 6976,
@@ -1290,7 +1290,7 @@
         },
         {
           "role": "assistant",
-          "content": "The weekly fetch is planned for **March 23–April 5, 2026**, with **no prompt**. Review the plan card and click **Start fetch** to run it.",
+          "content": "The weekly fetch is planned for **March 23–April 5, 2026**, with **no search criteria**. Review the plan card and click **Start fetch** to run it.",
           "payload": null,
           "usage": {
             "inputTokens": 7103,
@@ -1357,7 +1357,7 @@
         },
         {
           "role": "assistant",
-          "content": "| Run | Dates | Cadence | Status | Mentions | Prompt |\n|---|---|---|---|---:|---|\n| 3 | 2026-03-21 | Daily | Done | 7 | None |\n| 2 | 2026-02-15–2026-03-20 | Weekly | Done | 49 | None |\n\nWould you like a summary of what people said in these runs?",
+          "content": "| Run | Dates | Cadence | Status | Mentions | Search criteria |\n|---|---|---|---|---:|---|\n| 3 | 2026-03-21 | Daily | Done | 7 | None |\n| 2 | 2026-02-15–2026-03-20 | Weekly | Done | 49 | None |\n\nWould you like a summary of what people said in these runs?",
           "payload": null,
           "usage": {
             "inputTokens": 3342,
@@ -1378,7 +1378,7 @@
         },
         {
           "role": "assistant",
-          "content": "What date range should I fetch, what cadence (daily, weekly, or monthly), and which fetch prompt should I use (a library prompt, your own instructions, or none)?\n\nAlready fetched: **2026-02-15–2026-03-20** (weekly) and **2026-03-21** (daily); both used **no prompt**.",
+          "content": "What date range should I fetch, what cadence (daily, weekly, or monthly), and which search criteria should I use (saved criteria, one-time criteria, or none)?\n\nAlready fetched: **2026-02-15–2026-03-20** (weekly) and **2026-03-21** (daily); both used **no search criteria**.",
           "payload": null,
           "usage": {
             "inputTokens": 3578,
@@ -1389,7 +1389,7 @@
         },
         {
           "role": "user",
-          "content": "Mar 22 to Mar 22 2026, daily, no prompt",
+          "content": "Mar 22 to Mar 22 2026, daily, no search criteria",
           "payload": null
         },
         {
@@ -1399,7 +1399,7 @@
         },
         {
           "role": "assistant",
-          "content": "The fetch plan is ready for **March 22, 2026** (daily, no prompt). Review the plan card and click **Start fetch** to run it.",
+          "content": "The fetch plan is ready for **March 22, 2026** (daily, no search criteria). Review the plan card and click **Start fetch** to run it.",
           "payload": null,
           "usage": {
             "inputTokens": 3734,
@@ -1410,7 +1410,7 @@
         },
         {
           "role": "user",
-          "content": "Plan a fetch Mar 1–Mar 10 2026 weekly, no prompt",
+          "content": "Plan a fetch Mar 1–Mar 10 2026 weekly, no search criteria",
           "payload": null
         },
         {
@@ -1420,7 +1420,7 @@
         },
         {
           "role": "assistant",
-          "content": "March 1–10, 2026 is already covered by a completed weekly fetch (Run 2), so there are no new dates to fetch with no prompt.",
+          "content": "March 1–10, 2026 is already covered by a completed weekly fetch (Run 2), so there are no new dates to fetch without search criteria.",
           "payload": null,
           "usage": {
             "inputTokens": 3863,

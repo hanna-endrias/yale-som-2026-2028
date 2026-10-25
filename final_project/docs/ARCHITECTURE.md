@@ -224,7 +224,7 @@ final_project/
 │   │   ├── DateField.tsx       # label + date button + popover calendar (ui/calendar, react-day-picker); hidden YYYY-MM-DD input
 │   │   ├── Logo.tsx            # three-circle mark from brand CSS vars (§1)
 │   │   ├── Modal.tsx           # wraps ui/dialog; scrolls when taller than the viewport
-│   │   └── TokenCostBadge.tsx  # "1,234 tok · ~$0.0012" (§3)
+│   │   └── TokenCostBadge.tsx  # "~$0.96 · 645.8K tokens", exact count on hover (§3)
 │   ├── auth/
 │   │   ├── LoginForm.tsx
 │   │   └── SignupForm.tsx
@@ -258,7 +258,8 @@ final_project/
 │       ├── PromptUpdateCard.tsx    # updatePrompt card: before/after diff, [Save changes]
 │       ├── PromptDeleteCard.tsx    # deletePrompt card: [Delete]
 │       ├── StarterPrompts.tsx
-│       └── ChatEmptyState.tsx
+│       ├── ChatEmptyState.tsx
+│       └── TrackerCards.tsx        # /chat home: per-tracker stats cards (no LLM)
 └── scripts/
     ├── check-env.ts            # npm run check:env — active provider's key is in .env and the model answers
     ├── db-reset.ts             # npm run db:reset — delete the SQLite file (§7)
@@ -288,7 +289,7 @@ The UI is a single app shell (sidebar + main area), so `components/` is grouped 
 
 All FKs cascade on delete (deleting a user, subject, prompt or session removes everything under it). Every service query is scoped to the logged-in owner — directly by `owner_id`, or by joining through the subject's owner — so another owner's row is simply "not found" (404). Never trust a client-supplied subject_id/session_id/prompt_id without that check. (Ties into the tenant-isolation safety plan in `PRODUCT.md` §6.)
 
-**Token cost.** `lib/cost.ts` `usageRow()` turns an AI SDK usage object into a `token_usage` row, and `estimateCost()` computes `estimated_cost_usd` at log time from `config/llm.ts` pricing (cached input tokens at the cached rate). One row is written per chat turn (ref_id = the assistant message; summed over every step of the tool loop plus any LLM call made inside a tool, i.e. the visualizer) and one per fetch window (ref_id = the fetch run; summed per run). `components/common/TokenCostBadge.tsx` renders `1,234 tok · ~$0.0012` (or `—` when no cost was recorded) under each assistant message — from the stream's finish metadata live, and from a `token_usage` join on reload — and on each fetch-history row.
+**Token cost.** `lib/cost.ts` `usageRow()` turns an AI SDK usage object into a `token_usage` row, and `estimateCost()` computes `estimated_cost_usd` at log time from `config/llm.ts` pricing (cached input tokens at the cached rate). One row is written per chat turn (ref_id = the assistant message; summed over every step of the tool loop plus any LLM call made inside a tool, i.e. the visualizer) and one per fetch window (ref_id = the fetch run; summed per run). `components/common/TokenCostBadge.tsx` renders `~$0.96 · 645.8K tokens` (exact count in a tooltip; `—` when no cost was recorded) under each assistant message — from the stream's finish metadata live, and from a `token_usage` join on reload — and on each fetch-history row.
 
 **Where cost comes from, and how to extend it.** Cost is an estimate, not a billed amount: the token counts the model returns with each call, multiplied by the per-1M-token prices in `config/llm.ts` `pricing`, keyed by model name. Those prices are placeholders until they're checked against the provider's price list. To extend it:
 - **New model or provider:** add its prices to `pricing` under the model name. `estimateCost()` looks up the active model, so nothing else changes.
@@ -338,7 +339,7 @@ Base system prompts live in `agents/prompts/`. Both embed `INJECTION_RULES` from
   - Both prompt cards check `GET /api/prompts` on mount, so a reload shows the saved/deleted state. Cancel is local state only.
 - **Link allow-list**: before returning, every http(s) URL in the HTML that is not a stored mention URL of the subject (SVG namespace ids aside) is replaced with `#`, so invented or injected links can't reach the page.
 - **Sandbox**: `VisualizationFrame` renders the HTML in `<iframe sandbox="allow-scripts allow-popups allow-popups-to-escape-sandbox" srcdoc>` (no `allow-same-origin`) with a CSP `<meta>` (`default-src 'none'`; inline script/style; `data:` images). The chart can run its own JS and open source links in a new tab, but can't make network requests, read cookies or touch the app page. It reports its height to the parent with `postMessage`; theme colors are passed in as CSS variables read from the app's brand vars.
-- **Citations**: the analyst cites mentions as markdown links. `ChatMessageBubble` renders them (via `react-markdown` + `remark-gfm`) as pills that open in a new tab. `chatService` checks every URL in a reply against the subject's stored `mentions.url` (live in the stream's finish metadata, and again in `listMessages` on reload); a URL that isn't stored gets a ⚠ pill with the tooltip "Not found in stored mentions".
+- **Citations**: the analyst cites mentions as markdown links. `ChatMessageBubble` renders them (via `react-markdown` + `remark-gfm`) as pills that open in a new tab. `chatService` checks every URL in a reply against the subject's stored `mentions.url` (live in the stream's finish metadata, and again in `listMessages` on reload); a URL that isn't stored gets a ⚠ pill with the tooltip "Not found in stored mentions". A link that isn't `http(s)` (e.g. `[the chart](#)`) renders as plain text. A paragraph or list item with more than 5 pills shows the first 4 and a **+N more sources** button (only the hidden pills collapse; any text after the last pill stays).
 
 ---
 
@@ -425,7 +426,7 @@ The active session row is highlighted; `▾` / `▸` = folder expanded / collaps
 **Side panel** (`ChatSidePanel`, 22rem, `border-l`; question and criteria titles wrap to 2 lines before truncating): `[▸]` in the chat header collapses / expands it. The state is saved in `localStorage` and it is open by default from `lg` up; below `lg` the same button opens it as a right-side sheet. Three tabs:
 - **Questions**: the tracker's chat questions (`GET /api/prompts?kind=analyst&subjectId=`, incl. all-tracker ones). Clicking a row (hover label and aria-label **Use in chat**) fills the chat box, focused and editable; nothing is sent until Send. ✎ edits in `PromptEditorModal`; **+ New question** opens it scoped to this tracker (`defaultSubjectIds`), and the lists reload after a save or delete (`onSaved`).
 - **Criteria**: the tracker's saved search criteria, each with its `criteriaSummary` line. Clicking one (**New fetch**) appends a pre-filled `FetchSetupCard` to the chat (§3c), no LLM call; ✎ edits, **+ New criteria** creates.
-- **Fetches**: the run history (`GET /api/subjects/:id/fetch-runs`): dates, cadence, criteria (first line of `instructions`, or "None"), status, mentions, `TokenCostBadge`, and a failed run's error. Polls every 3 s while a run is pending or running, and reloads when a chat card starts or finishes runs (`runsVersion`).
+- **Fetches**: the run history (`GET /api/subjects/:id/fetch-runs`): dates, cadence, criteria (the saved search criteria's title when `instructions` matches one, else "One-time search criteria" or "No search criteria"; a neutral "Search criteria" while the saved list loads; full text on hover), status, mentions, `TokenCostBadge`, and a failed run's error. Polls every 3 s while a run is pending or running, and reloads when a chat card starts or finishes runs (`runsVersion`).
 
 ### Sidebar hover states
 ```
@@ -473,11 +474,18 @@ A tracker with no fetch runs (here a new one, as owner2):
 ```
 ┌──────────────────────────┬──────────────────────────────────────────────────┐
 │ (◎) Perspectives         │                                                  │
-│ TRACKERS             [+] │             Welcome to Perspectives              │
-│ ▸ Acme Coffee            │                                                  │
-│ ▸ Brand Two              │   Pick a tracker and press + to start a chat.    │
-│ ──────────────────────── │                                                  │
-│ Prompt library           │   — or, with no trackers yet —                   │
+│ TRACKERS             [+] │                 Your trackers                    │
+│ ▸ Acme Coffee            │  What's stored so far. Open a chat to ask.       │
+│ ▸ Brand Two              │  ┌─ Acme Coffee ───────┐ ┌─ Brand Two ─────────┐ │
+│ ──────────────────────── │  │ 50 mentions · Sep 1–│ │ No mentions fetched │ │
+│ Prompt library           │  │ ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ │ │ yet                 │ │
+│                          │  │ 2% pos · 20% neu ·  │ │                     │ │
+│                          │  │ ~$1.47 spent so far │ │                     │ │
+│                          │  │[Open latest chat]   │ │ [New chat]          │ │
+│                          │  │[New chat]           │ │                     │ │
+│                          │  └─────────────────────┘ └─────────────────────┘ │
+│                          │                                                  │
+│                          │   — or, with no trackers yet —                   │
 │                          │                                                  │
 │                          │             Add your first tracker               │
 │                          │   Add a business, brand, or handle to start      │
@@ -487,7 +495,7 @@ A tracker with no fetch runs (here a new one, as owner2):
 │ (H) owner1@test.com    ⌄ │                                                  │
 └──────────────────────────┴──────────────────────────────────────────────────┘
 ```
-**Add your first tracker** opens AddSubjectModal.
+One card per tracker (`TrackerCards`, from `listTrackerOverviews` in `subjectService`: stored data only, no LLM call): mention count and the fetched dates (earliest start to latest end of done runs), a sentiment bar with % positive / neutral / negative (rounded to sum to 100), the estimated spend (fetch windows + chat turns), **Open latest chat**, and **New chat**. **Add your first tracker** opens AddSubjectModal.
 
 ### `/prompts` — prompt library (from the sidebar's **Prompt library**)
 ```
@@ -521,6 +529,8 @@ Notes       ________________________________
             ├──────────────────────────────────────────┤
             │ Name*          [______________________]  │
             │ Description    [______________________]  │
+            │                [______________________]  │
+            │                Helps the search tell it… │
             │ Location       [______________________]  │
             │ Website        [______________________]  │
             │ Search terms   [______________________]  │
@@ -528,7 +538,7 @@ Notes       ________________________________
             │                     [ Cancel ] [ Create ]│
             └──────────────────────────────────────────┘
 ```
-Create → `POST /api/subjects`, then `POST /api/subjects/:id/chat-sessions` and navigate to the new chat, where **Set up your first fetch** is waiting; the new folder appears in the sidebar, expanded.
+Every field has an example placeholder; Description is a 3-line textarea, and Description and Search terms have a one-line hint under them (what the field does for the search). Create → `POST /api/subjects`, then `POST /api/subjects/:id/chat-sessions` and navigate to the new chat, where **Set up your first fetch** is waiting; the new folder appears in the sidebar, expanded.
 
 ### SubjectModal (from a tracker's `[⋯]`)
 The tracker's name as the title and its details only: the same fields as AddSubjectModal, pre-filled, `[Save]` → `PATCH /api/subjects/:id`, plus `[Delete tracker]` → `DELETE /api/subjects/:id` (with confirm). Fetches start from the chat's cards, and the history is in the side panel's Fetches tab.
@@ -615,8 +625,9 @@ The sidebar becomes a sheet drawer over the main area; following any link in it 
 | `components/chat/PromptUpdateCard.tsx` | chat (`updatePrompt`) | `GET /api/prompts` (state on mount), `PATCH /api/prompts/:id` |
 | `components/chat/PromptDeleteCard.tsx` | chat (`deletePrompt`) | `GET /api/prompts` (state on mount), `DELETE /api/prompts/:id` |
 | `components/chat/StarterPrompts.tsx` | fresh session | — (a card sends its body through ChatWindow, or queues it until the first fetch is done; Manage prompts → opens the side panel) |
-| `components/chat/ChatEmptyState.tsx` | `/chat` | — (opens AddSubjectModal) |
-| `components/common/TokenCostBadge.tsx` | side panel › Fetches, fetch cards, chat | — (renders tokens + estimated cost) |
+| `components/chat/ChatEmptyState.tsx` | `/chat` | — (tracker cards, or opens AddSubjectModal) |
+| `components/chat/TrackerCards.tsx` | `/chat` | `POST /api/subjects/:id/chat-sessions` (New chat) |
+| `components/common/TokenCostBadge.tsx` | side panel › Fetches, fetch cards, chat | — (renders estimated cost, then compact token count; exact count in tooltip) |
 | `components/common/DateField.tsx` | fetch cards | — (popover calendar) |
 | `components/common/Logo.tsx` | sidebar, mobile header, login / signup | — |
 | `components/common/Modal.tsx` | all modals | — |
