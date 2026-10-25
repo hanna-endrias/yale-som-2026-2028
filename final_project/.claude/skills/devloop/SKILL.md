@@ -1,19 +1,38 @@
 ---
 name: devloop
-description: Execute an implementation plan task by task via subagents that each build, browser-test, screenshot, and iterate; report once at the end. Use when given a plan file (or a plan in the conversation) to implement end to end.
+description: Write an implementation plan from the template (asking Hanna for the decisions it needs), or execute a plan task by task via subagents that each build, browser-test, screenshot, and iterate; report once at the end. Use when asked to plan a feature for devloop, or when given a plan file (or a plan in the conversation) to implement end to end.
 ---
 
 # devloop
 
+Two modes, picked from `$ARGUMENTS`:
+- **`plan [idea]`**, or empty with no plan in the conversation → [Plan mode](#plan-mode): write a plan file to run in a fresh session. Don't implement anything.
+- **a path to a plan file**, or empty with a plan in the conversation → [Run mode](#run-mode).
+
+## Plan mode
+Output: `docs/[NAME]_PLAN.md`, filled in from [plan.template.md](plan.template.md). The plan must stand alone: a fresh session with no memory of this one runs it.
+
+1. **Get the idea.** If `$ARGUMENTS` has none, ask Hanna what she wants built and why, in one question.
+2. **Read before asking.** `CLAUDE.md`, the relevant `docs/ARCHITECTURE.md` sections, and the code the feature touches (use an Explore subagent if it spans many files). Note what exists today, what's hardcoded, and the closest existing pattern to copy.
+3. **Ask only real decisions** with AskUserQuestion (up to 4 per call, recommended option first): where it lives in the UI, what's seeded, scope, behavior on click, anything that changes the data model. Don't ask what the code or the ground rules already answer. Record each answer under "Decisions made (asked)".
+4. **Fill the template.**
+   - Steps are ordered so each leaves the app running and typechecking; a pure refactor goes first and says "(no behavior change)".
+   - Each step names files, functions, routes and limits concretely, has a wireframe for new UI, and ends in a **Check:** a subagent can actually run in the browser, including the owner2 isolation case and how many LLM calls it spends.
+   - Keep the last two steps: the wrap-up that **stops** for Hanna's review, and the doc sync that only runs after she approves.
+   - Delete sections that don't apply (e.g. Data model) and every `[bracket]`.
+5. **Write and hand off.** Write `docs/[NAME]_PLAN.md`, show Hanna the step list in a few lines, and tell her to run `/devloop docs/[NAME]_PLAN.md` in a fresh session. Revise on feedback; never start implementing in this session.
+
+## Run mode
 You are the **orchestrator**. You never edit app code yourself; subagents do. Your context should only grow by their short reports.
 
 Input: `$ARGUMENTS` = path to a plan file. If empty, use the plan from this conversation.
 
-## Orchestrator steps
-1. Read the plan. Split it into ordered, self-contained tasks, each with: files, acceptance criteria, page URL to check. Show them as the task list.
+1. Read the plan, including its "Before you start" list. Split it into ordered, self-contained tasks, each with: files, acceptance criteria (the step's **Check**), page URL to check. Skip steps already ticked `[x]`. Show them as the task list.
 2. Start the dev server once: `preview_start` with the first config in `.claude/launch.json`. Note the `serverId`.
-3. For each task **in order**, spawn one `general-purpose` subagent with the brief below and wait for it. Then spot-check: `npm run typecheck` and look at its final screenshot (Read the path it reports).
+3. For each task **in order**, spawn one `general-purpose` subagent with the brief below and wait for it. Then spot-check: `npm run typecheck` and look at its final screenshot (Read the path it reports). If the plan is a file, tick that step `## [x]` there.
 4. When all tasks are done: `npm run typecheck`, `npm run build`, one final screenshot per changed page. Then report once: status per task, files changed, screenshot paths, open issues.
+
+**Stop steps.** A step that says **Stop** (the wrap-up and hand-off) ends the run: report, give Hanna the plan's Verification checklist, and don't run any later step (e.g. "Only after Hanna has … approved") until she says she approved it.
 
 Never commit or push. Never paste subagent transcripts into the main context.
 
