@@ -1,4 +1,5 @@
 import { getToolName, isToolUIPart, type UIMessage } from 'ai';
+import { ListChecks } from 'lucide-react';
 import ReactMarkdown, { type Components } from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import TokenCostBadge from '@/components/common/TokenCostBadge';
@@ -37,6 +38,78 @@ function ToolCard({
     default:
       return null;
   }
+}
+
+// Friendly names for the activity line (names match agents/tools); unknown tools show their raw name.
+const TOOL_LABELS: Record<string, string> = {
+  getSentimentSummary: 'sentiment',
+  getThemes: 'themes',
+  getTopSources: 'sources',
+  getMentions: 'mentions',
+  createVisualization: 'chart',
+  listFetchRuns: 'fetch history',
+  planFetchRun: 'fetch plan',
+  listPrompts: 'prompt library',
+  createPrompt: 'prompt library',
+  updatePrompt: 'prompt library',
+  deletePrompt: 'prompt library',
+};
+
+type ToolPart = Extract<UIMessage['parts'][number], { toolCallId: string }>;
+type Block = { kind: 'text'; key: number; text: string } | { kind: 'tools'; key: number; tools: ToolPart[] };
+
+const toolLabel = (part: ToolPart) => {
+  const name = getToolName(part);
+  return TOOL_LABELS[name] ?? name;
+};
+
+// "a", "a and b", "a, b and c".
+function joinLabels(labels: string[]): string {
+  if (labels.length <= 1) return labels.join('');
+  return `${labels.slice(0, -1).join(', ')} and ${labels[labels.length - 1]}`;
+}
+
+// Text parts stay as they are; consecutive tool parts become one group. Parts that render nothing
+// (step-start, reasoning, …) don't break a group.
+function groupParts(parts: UIMessage['parts']): Block[] {
+  const blocks: Block[] = [];
+  parts.forEach((part, i) => {
+    if (part.type === 'text') {
+      blocks.push({ kind: 'text', key: i, text: part.text });
+    } else if (isToolUIPart(part)) {
+      const last = blocks[blocks.length - 1];
+      if (last?.kind === 'tools') last.tools.push(part as ToolPart);
+      else blocks.push({ kind: 'tools', key: i, tools: [part as ToolPart] });
+    }
+  });
+  return blocks;
+}
+
+// One quiet line per group of tool calls: "Checking themes…" while running, "Checked a, b and c" when done.
+// live: the reply is still streaming and nothing but tools follows this group, so between steps it keeps pulsing.
+function ToolActivity({ tools, live }: { tools: ToolPart[]; live: boolean }) {
+  const finished = (t: ToolPart) => t.state === 'output-available' || t.state === 'output-error' || t.state === 'output-denied';
+  const running = tools.filter((t) => !finished(t));
+  const failed = tools.filter((t) => t.state === 'output-error').length;
+  const labels = [...new Set(tools.map(toolLabel))];
+  return (
+    <div data-testid="tool-activity" className="flex items-center gap-xs self-start text-xs text-muted-foreground">
+      <ListChecks className="size-3.5 shrink-0" aria-hidden />
+      {running.length > 0 || live ? (
+        <span className="animate-pulse">Checking {toolLabel(running[running.length - 1] ?? tools[tools.length - 1])}…</span>
+      ) : (
+        <span>
+          Checked {joinLabels(labels)}
+          {failed > 0 && (
+            <span className="text-destructive">
+              {' '}
+              · {failed} {failed === 1 ? 'step' : 'steps'} failed
+            </span>
+          )}
+        </span>
+      )}
+    </div>
+  );
 }
 
 // Links become citation pills; a URL that isn't a stored mention of this subject is flagged.
@@ -83,13 +156,15 @@ const BASE: Components = {
   td: ({ children }) => <td className="border-b border-border px-sm py-xs align-top">{children}</td>,
 };
 
-// One message: user turns as a right-aligned bubble; agent turns as markdown, tool-call badges and charts.
+// One message: user turns as a right-aligned bubble; agent turns as markdown, tool activity lines and charts.
 export default function ChatMessageBubble({
   message,
   laterUserMessage = false,
+  streaming = false,
 }: {
   message: UIMessage;
   laterUserMessage?: boolean; // a user turn comes after this message
+  streaming?: boolean; // this is the live reply (only the last message, never one reloaded from the DB)
 }) {
   if (message.role === 'user') {
     const text = message.parts.map((p) => (p.type === 'text' ? p.text : '')).join('');
@@ -103,40 +178,33 @@ export default function ChatMessageBubble({
   const components = { ...BASE, a: citationLink(new Set(meta?.unverifiedUrls ?? [])) };
   return (
     <div className="flex w-full min-w-0 max-w-[85%] flex-col gap-xs self-start [overflow-wrap:anywhere]" data-testid="assistant-message">
-      {message.parts.map((part, i) => {
-        if (part.type === 'text') {
+      {groupParts(message.parts).map((block, i, blocks) => {
+        if (block.kind === 'text') {
           return (
-            <div key={i} className="flex flex-col gap-sm">
+            <div key={block.key} className="flex flex-col gap-sm">
               <ReactMarkdown remarkPlugins={[remarkGfm]} components={components}>
-                {part.text}
+                {block.text}
               </ReactMarkdown>
             </div>
           );
         }
-        if (isToolUIPart(part)) {
-          const toolName = getToolName(part);
-          const done = part.state === 'output-available';
-          const failed = part.state === 'output-error';
-          return (
-            <div key={i} className="flex flex-col gap-xs">
-              <span
-                data-testid="tool-call"
-                className="self-start rounded-sm border border-border px-xs text-xs text-muted-foreground"
-              >
-                tool: {toolName} {failed ? '✗' : done ? '✓' : '…'}
-              </span>
-              {done && (
-                <ToolCard
-                  toolName={toolName}
-                  toolCallId={part.toolCallId}
-                  output={part.output}
-                  laterUserMessage={laterUserMessage}
-                />
-              )}
-            </div>
-          );
-        }
-        return null;
+        return (
+          <div key={block.key} className="flex flex-col gap-xs">
+            <ToolActivity tools={block.tools} live={streaming && i === blocks.length - 1} />
+            {block.tools.map(
+              (t) =>
+                t.state === 'output-available' && (
+                  <ToolCard
+                    key={t.toolCallId}
+                    toolName={getToolName(t)}
+                    toolCallId={t.toolCallId}
+                    output={t.output}
+                    laterUserMessage={laterUserMessage}
+                  />
+                ),
+            )}
+          </div>
+        );
       })}
       {meta && <TokenCostBadge tokens={meta.tokens} costUsd={meta.costUsd} />}
     </div>

@@ -33,6 +33,7 @@ export type FetchPlan = {
   promptTitle?: string;
   criteria?: SearchCriteria; // one-time search criteria
   followUpQuestion?: string; // asked again once the fetch is done
+  fallback?: { startDate: string; endDate: string }; // newest fetched dates the question can use instead
   instructions: string | null;
   gaps: { start: string; end: string; windows: number }[];
   skipped: { start: string; end: string; runId: number; status: string }[];
@@ -61,12 +62,13 @@ type Props = {
 };
 
 // Chat card for a planned fetch: shows the gaps and a Start button (the only way a chat fetch starts), with an
-// Edit link to change the dates, cadence and search criteria first. Then the started runs' live status
+// Edit link to change the dates, cadence and search criteria first, and with a `fallback` a "Use <dates> instead"
+// button that asks the question about those fetched dates instead of fetching. Then the started runs' live status
 // (FetchRunProgress); when they are all done, a plan with a followUpQuestion asks it as the next user turn.
 // On reload it shows what it started (saved on its message, edited or not); an older card without that record
 // finds its runs by matching each planned gap in the run history.
 export default function FetchPlanCard({ plan, toolCallId, laterUserMessage = false }: Props) {
-  const { sessionId, onRunsDone, runsChanged } = useChatActions();
+  const { sessionId, onRunsDone, runsChanged, sendQuestion } = useChatActions();
   const uid = useId();
   const [runIds, setRunIds] = useState<number[] | null>(plan.started?.runIds ?? null);
   const [checked, setChecked] = useState(!!plan.started);
@@ -90,6 +92,11 @@ export default function FetchPlanCard({ plan, toolCallId, laterUserMessage = fal
   const url = `/api/subjects/${plan.subjectId}/fetch-runs`;
   // Saved criteria show their title; one-time criteria their rendered text on one line.
   const criteria = plan.promptTitle ?? (plan.instructions ? `“${plan.instructions.replace(/\s*\n\s*/g, ' · ')}”` : 'None');
+  // Instead of fetching, the question can be answered from the newest fetched dates (until the owner writes again).
+  const fallback =
+    plan.fallback && plan.followUpQuestion && !laterUserMessage && !editing
+      ? { start: plan.fallback.startDate, end: plan.fallback.endDate }
+      : null;
 
   // On mount, for a card with no saved start: were this plan's gaps already started (e.g. before a reload)?
   useEffect(() => {
@@ -277,14 +284,28 @@ export default function FetchPlanCard({ plan, toolCallId, laterUserMessage = fal
                 >
                   {editing ? 'Cancel edit' : 'Edit'}
                 </button>
-                <Button
-                  type="button"
-                  onClick={start}
-                  disabled={pending || (editing ? !picker.ready : plan.gaps.length === 0)}
-                  className="w-full sm:w-auto"
-                >
-                  {pending ? 'Starting…' : 'Start fetch'}
-                </Button>
+                {fallback && (
+                  <button
+                    type="button"
+                    onClick={() => sendQuestion(`${plan.followUpQuestion} Use the fetched data from ${rangeWithYear(fallback)}.`)}
+                    disabled={pending}
+                    className="w-full rounded-md border border-border px-md py-sm font-medium hover:bg-panel disabled:opacity-60 sm:w-auto"
+                    data-testid="fetch-plan-fallback"
+                  >
+                    Use {formatRange(fallback)} instead
+                  </button>
+                )}
+                {/* A plan with no gaps has nothing to start; Edit can still pick other dates. */}
+                {(editing || plan.gaps.length > 0) && (
+                  <Button
+                    type="button"
+                    onClick={start}
+                    disabled={pending || (editing && !picker.ready)}
+                    className="w-full sm:w-auto"
+                  >
+                    {pending ? 'Starting…' : 'Start fetch'}
+                  </Button>
+                )}
               </div>
               {message && (
                 <p role="alert" className="text-destructive">

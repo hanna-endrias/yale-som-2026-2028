@@ -97,7 +97,7 @@ export function ChatPanelToggle() {
 type Props = { subjectId: number; subjectName: string; subjects: SubjectOption[] };
 
 // Right side of a chat: the tracker's chat questions, saved search criteria and fetch history.
-// Inline (≈18rem, border-l) from lg up, a right-side sheet below. Rendered inside ChatWindow's ChatActions provider.
+// Inline (22rem, border-l) from lg up, a right-side sheet below. Rendered inside ChatWindow's ChatActions provider.
 export default function ChatSidePanel(props: Props) {
   const panel = useChatPanel();
   // Below lg, an action runs after the sheet has closed so focus can move to the chat box.
@@ -107,7 +107,7 @@ export default function ChatSidePanel(props: Props) {
   if (panel.isDesktop) {
     if (!panel.open) return null;
     return (
-      <aside aria-label="Side panel" data-testid="chat-side-panel" className="flex w-72 shrink-0 flex-col border-l border-border">
+      <aside aria-label="Side panel" data-testid="chat-side-panel" className="flex w-88 shrink-0 flex-col border-l border-border">
         <PanelBody {...props} run={(fn) => fn()} />
       </aside>
     );
@@ -249,7 +249,7 @@ function PanelBody({ subjectId, subjects, run }: Props & { run: (fn: () => void)
                     onClick={() => run(() => setDraft(p.body))}
                     className={rowButtonClass}
                   >
-                    <span className="min-w-0 flex-1 truncate">{p.title}</span>
+                    <span className="line-clamp-2 min-w-0 flex-1 break-words">{p.title}</span>
                     <span aria-hidden className={hoverActionClass}>
                       Use in chat
                     </span>
@@ -283,7 +283,7 @@ function PanelBody({ subjectId, subjects, run }: Props & { run: (fn: () => void)
                     className={rowButtonClass}
                   >
                     <span className="flex min-w-0 flex-1 flex-col">
-                      <span className="truncate font-medium">{p.title}</span>
+                      <span className="line-clamp-2 break-words font-medium">{p.title}</span>
                       <span className="truncate text-xs text-muted-foreground">
                         {criteriaSummary(criteriaForEditing(p)) || 'No constraints'}
                       </span>

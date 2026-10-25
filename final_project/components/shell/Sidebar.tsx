@@ -19,26 +19,33 @@ export default function Sidebar({ subjects, email, llm }: Props) {
         <span className="flex items-center gap-xs font-heading text-lg font-bold">
           <Logo size={24} /> Perspectives
         </span>
-        <AddSubjectModal
-          trigger={
-            <button
-              type="button"
-              className="flex items-center gap-xs self-start rounded-md border border-border bg-background px-sm py-xs text-sm font-medium hover:text-accent-text"
-            >
-              <Plus className="size-4" /> New tracker
-            </button>
-          }
-        />
-        <PromptLibraryLink />
       </div>
 
       <div className="flex min-h-0 flex-1 flex-col gap-xs overflow-y-auto px-sm">
-        <p className="px-sm text-xs font-semibold tracking-wide text-muted-foreground">TRACKERS</p>
+        <div className="flex items-center justify-between px-sm">
+          <p className="text-xs font-semibold tracking-wide text-muted-foreground">TRACKERS</p>
+          <AddSubjectModal
+            trigger={
+              <button
+                type="button"
+                aria-label="New tracker"
+                title="New tracker"
+                data-testid="new-tracker"
+                className="rounded-md p-xs text-muted-foreground hover:bg-background hover:text-accent-text focus-visible:outline-2 focus-visible:outline-focus"
+              >
+                <Plus className="size-4" />
+              </button>
+            }
+          />
+        </div>
         {subjects.length === 0 ? (
           <p className="px-sm text-sm text-muted-foreground">No trackers yet.</p>
         ) : (
           subjects.map((s) => <SubjectFolder key={s.id} subject={s} />)
         )}
+        <div className="mt-sm border-t border-border pt-sm">
+          <PromptLibraryLink />
+        </div>
       </div>
 
       <UserBar email={email} llm={llm} />

@@ -42,3 +42,10 @@ export const createFetchRunSchema = z
   }));
 
 export type CreateFetchRunInput = z.output<typeof createFetchRunSchema>;
+
+// A fetch plan's alternative: already-fetched dates the owner can use instead of fetching (planFetchRun `fallback`).
+export const fetchFallbackSchema = z
+  .object({ startDate: date, endDate: date })
+  .refine((v) => v.startDate <= v.endDate, { error: 'The fallback start date must be on or before its end date.' });
+
+export type FetchFallback = z.output<typeof fetchFallbackSchema>;
