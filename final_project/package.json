@@ -10,7 +10,9 @@
     "check:env": "tsx scripts/check-env.ts",
     "db:generate": "drizzle-kit generate",
     "db:reset": "tsx scripts/db-reset.ts",
-    "db:seed": "tsx scripts/db-seed.ts"
+    "db:seed": "tsx scripts/db-seed.ts",
+    "fixture:capture": "tsx scripts/capture-fixture.ts",
+    "fixture:chat": "tsx scripts/export-chat-fixture.ts"
   },
   "dependencies": {
     "@ai-sdk/openai": "^4.0.102",
@@ -26,6 +28,8 @@
     "radix-ui": "^1.8.1",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1",
     "shadcn": "^4.22.1",
     "tw-animate-css": "^1.4.0",
     "zod": "^4.6.7"
