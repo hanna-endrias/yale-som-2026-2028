@@ -1,0 +1,959 @@
+{
+  "savedAt": "2026-10-25T03:52:39.740Z",
+  "owner": "owner1@test.com",
+  "subject": {
+    "name": "Friend",
+    "description": "Friend, the AI companion pendant by Avi Schiffmann. Its September–October 2025 New York City subway ad campaign drew wide backlash and was widely defaced.",
+    "location": "New York City subway (ad campaign)",
+    "website": "https://friend.com",
+    "searchTerms": "Friend pendant, friend.com, Avi Schiffmann, Friend AI necklace, Friend subway ads"
+  },
+  "prompts": [
+    {
+      "kind": "fetch",
+      "title": "Whole conversation, incl. the ad campaign",
+      "body": "Cover the whole conversation: news coverage, reviews of the device, Reddit and X reactions, and commentary on the subway ad campaign and its vandalism. Include positive takes when you find them, not just criticism."
+    }
+  ],
+  "runs": [
+    {
+      "startDate": "2025-09-01",
+      "endDate": "2025-11-23",
+      "cadence": "weekly",
+      "instructions": "Cover the whole conversation: news coverage, reviews of the device, Reddit and X reactions, and commentary on the subway ad campaign and its vandalism. Include positive takes when you find them, not just criticism.",
+      "usage": [
+        {
+          "inputTokens": 38551,
+          "outputTokens": 596,
+          "cachedTokens": 0,
+          "estimatedCostUsd": 0.05414875
+        },
+        {
+          "inputTokens": 51917,
+          "outputTokens": 2714,
+          "cachedTokens": 4960,
+          "estimatedCostUsd": 0.08645625
+        },
+        {
+          "inputTokens": 38471,
+          "outputTokens": 767,
+          "cachedTokens": 4960,
+          "estimatedCostUsd": 0.05017875
+        },
+        {
+          "inputTokens": 52725,
+          "outputTokens": 2791,
+          "cachedTokens": 4960,
+          "estimatedCostUsd": 0.08823625
+        },
+        {
+          "inputTokens": 46855,
+          "outputTokens": 2647,
+          "cachedTokens": 4960,
+          "estimatedCostUsd": 0.07945875
+        },
+        {
+          "inputTokens": 75147,
+          "outputTokens": 3769,
+          "cachedTokens": 4960,
+          "estimatedCostUsd": 0.12604375
+        },
+        {
+          "inputTokens": 55676,
+          "outputTokens": 1720,
+          "cachedTokens": 4960,
+          "estimatedCostUsd": 0.081215
+        },
+        {
+          "inputTokens": 61699,
+          "outputTokens": 2642,
+          "cachedTokens": 4960,
+          "estimatedCostUsd": 0.09796375
+        },
+        {
+          "inputTokens": 39378,
+          "outputTokens": 769,
+          "cachedTokens": 4960,
+          "estimatedCostUsd": 0.0513325
+        },
+        {
+          "inputTokens": 50810,
+          "outputTokens": 1507,
+          "cachedTokens": 4960,
+          "estimatedCostUsd": 0.0730025
+        },
+        {
+          "inputTokens": 45044,
+          "outputTokens": 1885,
+          "cachedTokens": 4960,
+          "estimatedCostUsd": 0.069575
+        },
+        {
+          "inputTokens": 65418,
+          "outputTokens": 2300,
+          "cachedTokens": 4960,
+          "estimatedCostUsd": 0.0991925
+        }
+      ],
+      "mentions": [
+        {
+          "source": "wired.com",
+          "url": "https://www.wired.com/story/i-hate-my-ai-friend/",
+          "snippet": "WIRED reviewers describe the pendant as intrusive, socially uncomfortable, and prone to snarky, unhelpful responses.",
+          "publishedAt": "2025-09-08",
+          "sentiment": "negative",
+          "rawTokens": 0,
+          "title": "I Hate My Friend",
+          "summary": "WIRED writers Kylie Robison and Boone Ashworth recount testing Friend over several weeks. The device’s always-on listening made people around Robison uneasy, while the chatbot’s sarcastic replies and connectivity problems frustrated Ashworth. The review questions whether the pendant can serve as a companion when wearing it can feel antisocial.",
+          "quote": "The chatbot-enabled Friend necklace eavesdrops on your life and provides a running commentary that’s snarky and unhelpful.",
+          "themes": "privacy, user experience, social awkwardness",
+          "authorType": "review"
+        },
+        {
+          "source": "tbpndigest.com",
+          "url": "https://www.tbpndigest.com/story/2025-09-08/avi-schiffmann-defends-friend-after-wired-publishes-i-hate-my-friend-takedown",
+          "snippet": "Friend’s founder defended its abrasive personality after WIRED’s negative review.",
+          "publishedAt": "2025-09-08",
+          "sentiment": "positive",
+          "rawTokens": 0,
+          "title": "Avi Schiffmann defends Friend after Wired publishes 'I Hate My Friend' takedown",
+          "summary": "A TBPN interview recap reports Avi Schiffmann’s response to WIRED’s review. Schiffmann framed the pendant’s abrasive personality as evidence that users engage with it like a person rather than treating it as a broken gadget. The item presents his defense against criticism of the device’s character and experience.",
+          "quote": null,
+          "themes": "founder response, personality, product criticism",
+          "authorType": "press"
+        },
+        {
+          "source": "boingboing.net",
+          "url": "https://boingboing.net/2025/09/08/ai-powered-eavesdropping-gadgets-reviewed.html",
+          "snippet": "Boing Boing highlights WIRED’s sharply negative review and frames Friend as an eavesdropping device.",
+          "publishedAt": "2025-09-08",
+          "sentiment": "negative",
+          "rawTokens": 0,
+          "title": "AI-powered eavesdropping “Friend” gadget reviewed",
+          "summary": "Boing Boing comments on WIRED’s hands-on review of Friend, emphasizing the reviewers’ dislike of the necklace. It draws attention to the device’s unobtrusive recorder-like design and its ongoing listening, echoing concerns that it can make people nearby uncomfortable. The piece’s framing is skeptical of the idea of an AI companion that monitors ambient conversation.",
+          "quote": "The title of Boone Ashworth and Kylie Robinson's Wired item about the Friend necklace is dispositive: “I Hate My Friend.”",
+          "themes": "privacy, review, social awkwardness",
+          "authorType": "press"
+        },
+        {
+          "source": "niemanlab.org",
+          "url": "https://www.niemanlab.org/reading/i-hate-my-friend/",
+          "snippet": "Nieman Lab’s reading roundup points to WIRED’s concerns about Friend’s always-listening microphone and uncomfortable interactions.",
+          "publishedAt": "2025-09-08",
+          "sentiment": "negative",
+          "rawTokens": 0,
+          "title": "I hate my Friend",
+          "summary": "Nieman Journalism Lab included WIRED’s review in its September 8 reading roundup. The excerpt notes that the microphone-packed pendant may raise privacy concerns, upset people around its wearer, and even draw hostile replies from its own chatbot. The mention is brief and directs readers to the original review.",
+          "quote": "wearing the Friend will likely earn you the ire of everyone around you.",
+          "themes": "privacy, social reaction, chatbot personality",
+          "authorType": "press"
+        },
+        {
+          "source": "futurism.com",
+          "url": "https://futurism.com/ai-necklace-listens-constantly-data-complain",
+          "snippet": "Futurism criticizes Friend’s always-listening design, antisocial effect, and unreliable performance.",
+          "publishedAt": "2025-09-11",
+          "sentiment": "negative",
+          "rawTokens": 0,
+          "title": "New AI Necklace Listens Constantly and Uses All That Data to Complain About You",
+          "summary": "Victor Tangermann reports on WIRED’s test of the $129 pendant. He describes the continuous listening as a privacy concern and recounts how Robison was treated as if she were wearing a wire at an Anthropic event. The piece also highlights compatibility and connection problems, as well as the chatbot’s insulting or snarky messages.",
+          "quote": "It is an incredibly antisocial device to wear.",
+          "themes": "privacy, technical problems, social awkwardness",
+          "authorType": "press"
+        },
+        {
+          "source": "opentools.ai",
+          "url": "https://opentools.ai/news/ai-necklace-friend-sparks-privacy-outrage-and-social-backlash",
+          "snippet": "OpenTools describes Friend as a proposed loneliness companion that has drawn criticism over constant recording and awkward interactions.",
+          "publishedAt": "2025-09-12",
+          "sentiment": "negative",
+          "rawTokens": 0,
+          "title": "AI Necklace 'Friend' Sparks Privacy Outrage and Social Backlash",
+          "summary": "This OpenTools article summarizes Friend’s intended role as an AI companion and the concerns raised about its always-on audio capture. It says the device’s deliberately moody personality adds to criticism that it feels invasive and socially awkward. The article presents privacy and social norms as central reasons for the negative reception.",
+          "quote": null,
+          "themes": "privacy, loneliness, social norms",
+          "authorType": "other"
+        },
+        {
+          "source": "newser.com",
+          "url": "https://www.newser.com/story/374942/wearable-ai-friend-doesnt-get-great-reviews.html",
+          "snippet": "Newser summarizes reviewers’ and bystanders’ negative reactions to Friend’s listening and chatbot behavior.",
+          "publishedAt": "2025-09-14",
+          "sentiment": "negative",
+          "rawTokens": 0,
+          "title": "Wearable AI 'Friend' Gets Hostile",
+          "summary": "Evann Gastaldo summarizes WIRED’s review, noting that both testers disliked the device and that people around them reacted warily to its microphone. The account describes Robison being questioned about wearing a listening device and Ashworth experiencing sarcastic, seemingly angry replies. The piece focuses on privacy unease and the pendant’s abrasive interactions.",
+          "quote": "Not only did they both hate it, the people around them seemed to hate it too.",
+          "themes": "privacy, chatbot personality, social reaction",
+          "authorType": "press"
+        },
+        {
+          "source": "news.aibase.com",
+          "url": "https://news.aibase.com/news/21270",
+          "snippet": "A September 15 article criticizing Friend’s usability, privacy implications, and snarky AI personality.",
+          "publishedAt": "2025-09-15",
+          "sentiment": "negative",
+          "rawTokens": 0,
+          "title": "Pendant AI Pendant Friend Causes Controversy: Poor User Experience, High Privacy Risks",
+          "summary": "The article describes Friend as a pendant intended to combat loneliness by recording and summarizing conversations. Drawing on journalists’ hands-on experiences, it says the device can feel socially awkward, has connectivity limitations, and raises privacy concerns because of its always-listening design. It also criticizes the AI’s snarky responses as potentially alienating.",
+          "quote": "Poor User Experience, High Privacy Risks",
+          "themes": "privacy, usability, ai personality",
+          "authorType": "press"
+        },
+        {
+          "source": "newsbreak.com",
+          "url": "https://www.newsbreak.com/adweek-310357647/4259016973624-ai-startup-friend-bets-on-foes-with-1m-nyc-subway-campaign",
+          "snippet": "Friend spent more than $1 million on subway ads designed to provoke discussion, as riders defaced the posters.",
+          "publishedAt": "2025-09-26",
+          "sentiment": "neutral",
+          "rawTokens": 0,
+          "title": "AI Startup Friend Bets On Foes With $1M NYC Subway Campaign",
+          "summary": "Adweek reports that Friend covered subway cars and stations across New York with a large-scale campaign for its AI companion pendant. Founder Avi Schiffmann said the campaign was intended to invite social commentary, and the stark, open poster design drew graffiti and criticism from riders.",
+          "quote": "“This is the world’s first major AI campaign.”",
+          "themes": "ad campaign, marketing strategy, backlash",
+          "authorType": "press"
+        },
+        {
+          "source": "tbpndigest.com",
+          "url": "https://www.tbpndigest.com/story/2025-09-26/friend-ai-pendant-runs-largest-nyc-subway-ooh-campaign-ever-but-orders-from-2024-still-unfulfilled",
+          "snippet": "The campaign’s scale and promotional messaging are contrasted with reports of older orders still unfulfilled.",
+          "publishedAt": "2025-09-26",
+          "sentiment": "negative",
+          "rawTokens": 0,
+          "title": "Friend AI pendant runs largest NYC subway OOH campaign ever — but orders from 2024 still unfulfilled",
+          "summary": "TBPN Digest describes Friend’s extensive subway advertising and its positioning of the pendant as a superior roommate. It also points to a credibility gap: the company was promoting the device with a major campaign while, according to the article, some orders placed in 2024 remained unfulfilled.",
+          "quote": null,
+          "themes": "ad campaign, orders, credibility",
+          "authorType": "press"
+        },
+        {
+          "source": "techcrunch.com",
+          "url": "https://techcrunch.com/2025/09/27/ai-startup-friend-spent-more-than-1m-on-all-those-subway-ads/",
+          "snippet": "Friend spent over $1 million on a subway campaign, while some riders defaced ads over surveillance and AI companionship concerns.",
+          "publishedAt": "2025-09-27",
+          "sentiment": "neutral",
+          "rawTokens": 0,
+          "title": "AI startup Friend spent more than $1M on all those subway ads",
+          "summary": "TechCrunch reports that Friend’s campaign included more than 11,000 subway-car cards, 1,000 platform posters, and 130 urban panels. It notes the high cost and Schiffmann’s description of the buy as a gamble, alongside graffiti criticizing the pendant as surveillance and urging people to find real friends.",
+          "quote": "“I don’t have much money left.”",
+          "themes": "ad campaign, vandalism, privacy",
+          "authorType": "press"
+        },
+        {
+          "source": "techbuzz.ai",
+          "url": "https://www.techbuzz.ai/articles/friend-ai-startup-bets-1m-on-nyc-subway-ads-despite-backlash",
+          "snippet": "The article frames Friend’s million-dollar campaign as a risky bet that sparked anti-surveillance and anti-AI reactions.",
+          "publishedAt": "2025-09-27",
+          "sentiment": "negative",
+          "rawTokens": 0,
+          "title": "Friend AI Startup Bets $1M on NYC Subway Ads Despite Backlash",
+          "summary": "The Tech Buzz says Friend blanketed the transit system with ads for its $129 AI pendant and describes the expenditure as a high-stakes gamble for the startup. It highlights riders’ graffiti and objections to a wearable that listens throughout the day, while noting Schiffmann intended the campaign’s blank space to invite public commentary.",
+          "quote": "“People in New York hate AI... probably more than anywhere else in the country,”",
+          "themes": "ad campaign, backlash, surveillance",
+          "authorType": "press"
+        },
+        {
+          "source": "bizbrief.ie",
+          "url": "https://bizbrief.ie/news/marketing/ai-innovator-launches-1m-nyc-subway-campaign-targeting-competitors/",
+          "snippet": "Friend’s bold campaign sought attention and discussion but also prompted concerns about privacy and intrusive listening.",
+          "publishedAt": "2025-09-27",
+          "sentiment": "negative",
+          "rawTokens": 0,
+          "title": "AI Startup Friend Launches $1M NYC Subway Ad Campaign",
+          "summary": "Biz Brief describes Friend’s subway takeover as an audacious marketing gamble by founder Avi Schiffmann, with more than 11,000 car cards and over 1,000 platform posters. It says the pendant’s ability to listen and comment through an app raised privacy concerns, and reports that riders marked the ads with criticism such as “surveillance capitalism” and “AI trash.”",
+          "quote": "“the ultimate confidant”",
+          "themes": "ad campaign, privacy, vandalism",
+          "authorType": "press"
+        },
+        {
+          "source": "webpronews.com",
+          "url": "https://www.webpronews.com/ai-startups-1m-nyc-subway-ads-for-anti-loneliness-pendant-spark-backlash/",
+          "snippet": "The campaign drew attention but stirred objections about privacy, ethics, and using AI to address loneliness.",
+          "publishedAt": "2025-09-27",
+          "sentiment": "negative",
+          "rawTokens": 0,
+          "title": "AI Startup’s $1M NYC Subway Ads for Anti-Loneliness Pendant Spark Backlash",
+          "summary": "WebProNews covers Friend’s million-dollar subway advertising push for an AI companion pendant and describes it as an aggressive bid for attention in a crowded AI market. The article says the device’s listening function and promise of companionship prompted ethical and privacy concerns, as well as vandalism and public criticism.",
+          "quote": null,
+          "themes": "ad campaign, privacy, loneliness",
+          "authorType": "press"
+        },
+        {
+          "source": "aibase.com",
+          "url": "https://www.aibase.com/news/21606",
+          "snippet": "The article reports on Friend’s large subway buy and notes that the pendant and ads drew criticism over constant monitoring.",
+          "publishedAt": "2025-09-28",
+          "sentiment": "negative",
+          "rawTokens": 0,
+          "title": "AI Startup Friend Spent Over a Million Dollars on Subway Ads in New York",
+          "summary": "AIbase reports that Friend spent more than $1 million on subway-car ads, platform posters, and city panels, with especially heavy placement at West Fourth Street. It notes that riders mocked or defaced ads over surveillance concerns and that Schiffmann deliberately left blank space to prompt public discussion.",
+          "quote": "“I don't have much money left.”",
+          "themes": "ad campaign, surveillance, vandalism",
+          "authorType": "press"
+        },
+        {
+          "source": "aibase.com",
+          "url": "https://news.aibase.com/news/21614",
+          "snippet": "Friend’s high-cost advertising gamble promoted a controversial device amid concerns about its always-listening design.",
+          "publishedAt": "2025-09-28",
+          "sentiment": "negative",
+          "rawTokens": 0,
+          "title": "AI Startup Friend Spends Over a Million Dollars on Subway Ads: CEO Says He's Betting His Entire Wealth to Promote Controversial Product",
+          "summary": "This AIbase report focuses on Schiffmann’s willingness to spend heavily on the New York campaign and the scale of the placements. It also describes the $129 pendant as controversial because it monitors its surroundings, noting that the ads attracted criticism and defacement.",
+          "quote": "“This is the first large-scale AI marketing campaign in the world,”",
+          "themes": "ad campaign, spending, privacy",
+          "authorType": "press"
+        },
+        {
+          "source": "futurism.com",
+          "url": "https://futurism.com/artificial-intelligence/million-dollar-ai-campaign-defaced",
+          "snippet": "Riders defaced Friend’s subway ads with messages criticizing AI companionship, surveillance, and profiting from loneliness.",
+          "publishedAt": "2025-09-30",
+          "sentiment": "negative",
+          "rawTokens": 0,
+          "title": "New Yorkers Are Defacing This AI Startup’s Million-Dollar Ad Campaign",
+          "summary": "Futurism reports that riders were peeling down and writing on Friend ads across the subway. The criticism focused on the pendant’s always-listening design and the idea of marketing AI as a friend amid concerns about loneliness and privacy. Founder Avi Schiffmann said he expected public comment and deliberately left blank space in the ads.",
+          "quote": "“stop profiting off of loneliness”",
+          "themes": "ad campaign, vandalism, privacy",
+          "authorType": "press"
+        },
+        {
+          "source": "fastcompany.com",
+          "url": "https://www.fastcompany.com/91413814/friend-ai-ad-campaign-founder-qa",
+          "snippet": "Avi Schiffmann says provoking discussion—and even backlash—was part of Friend’s subway campaign strategy.",
+          "publishedAt": "2025-10-01",
+          "sentiment": "neutral",
+          "rawTokens": 0,
+          "title": "The 22-year-old behind the most controversial ad campaign in New York tells all",
+          "summary": "In an interview, Friend founder Avi Schiffmann discusses spending about $1 million on the campaign and the public response to its ads. The piece describes graffiti criticizing the pendant as surveillance capitalism and a way to profit from loneliness, while Schiffmann frames the provocation as a way to attract attention and conversation about AI. It also notes the device costs $129 and listens to users throughout the day.",
+          "quote": "“I’m kind of purchasing the zeitgeist and mindshare right now”",
+          "themes": "ad campaign, marketing strategy, backlash",
+          "authorType": "press"
+        },
+        {
+          "source": "economictimes.indiatimes.com",
+          "url": "https://economictimes.indiatimes.com/news/international/us/new-yorkers-rebel-ai-startups-million-dollar-ad-campaign-gets-defaced-on-the-streets/articleshow/124277797.cms",
+          "snippet": "The article links defacement of Friend ads to objections about privacy, loneliness, and AI’s place in everyday life.",
+          "publishedAt": "2025-10-02",
+          "sentiment": "negative",
+          "rawTokens": 0,
+          "title": "New Yorkers rebel: AI startup’s million-dollar ad campaign gets defaced on the streets",
+          "summary": "The Economic Times reports that New Yorkers wrote on and peeled down Friend’s extensive subway ads. It describes criticism of the pendant’s listening capabilities and of presenting an AI device as a companion, with graffiti urging people to make real friends and warning about surveillance. Schiffmann told Adweek that he intended the ads to prompt public discussion.",
+          "quote": "“go make real friends”",
+          "themes": "ad campaign, vandalism, privacy",
+          "authorType": "press"
+        },
+        {
+          "source": "afaqs.com",
+          "url": "https://www.afaqs.com/news/advertising/ai-startup-friends-new-york-subway-ad-blitz-met-with-vandalism-backlash-10524756",
+          "snippet": "Commuters defaced and removed Friend ads, objecting to the device’s AI-companion pitch and raising surveillance concerns.",
+          "publishedAt": "2025-10-03",
+          "sentiment": "negative",
+          "rawTokens": 0,
+          "title": "AI startup Friend’s New York subway ad blitz met with vandalism, backlash",
+          "summary": "afaqs! describes Friend’s $129 pendant campaign and the reaction to its large-scale subway rollout. Graffiti on the ads called the product “AI trash” and “surveillance capitalism,” while some commuters removed posters. The article says Schiffmann described the backlash as intentional and also notes privacy-policy language about how user information may be handled.",
+          "quote": "“AI wouldn’t care if you lived or died”",
+          "themes": "ad campaign, vandalism, privacy",
+          "authorType": "press"
+        },
+        {
+          "source": "yahoo.com",
+          "url": "https://tech.yahoo.com/ai/articles/friend-ceo-says-quite-entertaining-183959112.html",
+          "snippet": "Avi Schiffmann said the backlash was entertaining and worthwhile publicity, while New Yorkers wrote anti-AI messages on the ads.",
+          "publishedAt": "2025-10-03",
+          "sentiment": "neutral",
+          "rawTokens": 0,
+          "title": "Friend CEO says it’s been ‘quite entertaining’ after his AI companion startup spent $1 million on subway ads that were immediately defaced",
+          "summary": "This Business Insider report, republished by Yahoo, covers Schiffmann’s comments on a podcast about the subway campaign and the defacement. Riders’ objections included concerns about surveillance and whether AI can substitute for human connection; Schiffmann said the attention had been entertaining and that the company saw increased sales and traffic. The story presents his favorable view of the campaign’s publicity alongside the strongly critical graffiti.",
+          "quote": "“Human connection is sacred”",
+          "themes": "ad campaign, public reaction, publicity",
+          "authorType": "press"
+        },
+        {
+          "source": "futurism.com",
+          "url": "https://futurism.com/future-society/ai-friend-startup-overwhelmed-hatred",
+          "snippet": "The article describes widespread criticism of Friend’s always-listening pendant and reports privacy warnings from the ACLU and others.",
+          "publishedAt": "2025-10-04",
+          "sentiment": "negative",
+          "rawTokens": 0,
+          "title": "AI “Friend” Startup Overwhelmed With Hatred",
+          "summary": "Futurism says New Yorkers quickly defaced subway ads for the $129 pendant, objecting to AI companionship and the device’s continuous listening. It includes critical messages from riders and comedian Josh Gondelman, as well as an ACLU warning that recordings could be accessed by hackers, companies, or government. Schiffmann said he left blank space to invite public commentary, but the article also questions the device’s usefulness.",
+          "quote": "“Befriend something alive.”",
+          "themes": "privacy, ad campaign, public backlash",
+          "authorType": "press"
+        },
+        {
+          "source": "completeaitraining.com",
+          "url": "https://completeaitraining.com/news/friend-ai-subway-billboards-graffitied-as-outrage-marketing/",
+          "snippet": "The site argues that Friend’s provocative campaign drew attention but risked trust by appearing to exploit loneliness and disregard surveillance concerns.",
+          "publishedAt": "2025-10-05",
+          "sentiment": "negative",
+          "rawTokens": 0,
+          "title": "Friend AI subway billboards graffitied as outrage marketing wears thin",
+          "summary": "This marketing-focused commentary describes Friend’s minimalist subway ads and the angry graffiti they received. It says commuters objected to the ads’ implication that an AI pendant could replace human companionship and raised concerns about surveillance. The writer interprets the campaign as rage-bait that generated visibility but may have damaged trust in the brand.",
+          "quote": "“Go make real friends. This is surveillance”",
+          "themes": "marketing, loneliness, surveillance",
+          "authorType": "other"
+        },
+        {
+          "source": "timesofindia.indiatimes.com",
+          "url": "https://timesofindia.indiatimes.com/technology/tech-news/ai-hardware-startup-ceo-after-people-damage-1-million-ad-doesnt-feel-like-that-expensive/articleshow/124319176.cms",
+          "snippet": "Schiffmann said the campaign’s negative reaction was entertaining and worth the cost, despite anti-AI graffiti on the ads.",
+          "publishedAt": "2025-10-05",
+          "sentiment": "neutral",
+          "rawTokens": 0,
+          "title": "AI hardware startup CEO after people damage $1 million ad: Doesn't feel like that expensive",
+          "summary": "The Times of India reports on Schiffmann’s response to commuters defacing Friend’s subway campaign. It lists messages objecting to AI companionship, warning about surveillance, and affirming human connection, while noting the pendant listens to conversations and replies through a phone app. Schiffmann viewed the attention as beneficial publicity rather than a reason to regret the ad spend.",
+          "quote": "“Human connection is sacred”",
+          "themes": "ad campaign, publicity, vandalism",
+          "authorType": "press"
+        },
+        {
+          "source": "webpronews.com",
+          "url": "https://www.webpronews.com/ai-startups-1m-nyc-subway-ads-for-anti-loneliness-pendant-spark-backlash/",
+          "snippet": "Friend’s subway campaign drew interest and vandalism, with criticism focused on privacy, ethics, and whether AI can address loneliness.",
+          "publishedAt": "2025-10-06",
+          "sentiment": "negative",
+          "rawTokens": 0,
+          "title": "AI Startup's $1M NYC Subway Ads for Anti-Loneliness Pendant Spark Backlash",
+          "summary": "WebProNews reports on Friend’s million-dollar subway ad buy for its AI pendant, intended to combat loneliness. The campaign provoked vandalism and debate about privacy and ethics, while the piece also notes concerns about uneven consumer interest in AI products.",
+          "quote": null,
+          "themes": "ad campaign, privacy, loneliness",
+          "authorType": "press"
+        },
+        {
+          "source": "nytimes.com",
+          "url": "https://www.nytimes.com/2025/10/07/style/friend-ai-subway-ads-new-york.html",
+          "snippet": "The New York Times describes Friend’s subway ad takeover and the public response, including graffiti, ripped-down posters, and criticism of AI companionship.",
+          "publishedAt": "2025-10-07",
+          "sentiment": "negative",
+          "rawTokens": 0,
+          "title": "A.I. Companion Ads for Friend.com Flood NYC Subway, Fueling Backlash and Vandalism",
+          "summary": "Stefano Montali reports that Friend’s widely placed subway ads prompted New Yorkers to question the pendant’s pitch of machine companionship. Some critics saw the campaign as exploiting loneliness or advancing surveillance, and the ads were routinely defaced or removed; the article also describes the founder’s reasoning for the large-scale campaign.",
+          "quote": "An ad campaign for a wearable A.I. companion has blanketed New York City, starting conversations and inspiring vandalism.",
+          "themes": "ad campaign, vandalism, surveillance",
+          "authorType": "press"
+        },
+        {
+          "source": "gothamist.com",
+          "url": "https://gothamist.com/arts-entertainment/the-guy-behind-those-friend-ads-in-the-subways-is-tired-of-talking-to-new-yorkers",
+          "snippet": "Gothamist reports that subway riders defaced Friend ads with anti-surveillance messages and quotes a commuter who felt the campaign threatened real-life connection.",
+          "publishedAt": "2025-10-07",
+          "sentiment": "negative",
+          "rawTokens": 0,
+          "title": "The guy behind those ‘Friend’ ads in the subways is tired of talking to New Yorkers",
+          "summary": "Ryan Kailath describes the spread of Friend’s ads and the graffiti opposing them, including messages urging people to make real friends. Commuter Tricia Hersey objects that the device and campaign encourage individualism at the expense of community, while founder Avi Schiffmann says the ad design left space for public comments but declines to speak with riders during the reported visit.",
+          "quote": "“It’s giving ‘We’re replacing real human connection with AI,’”",
+          "themes": "ad campaign, vandalism, human connection",
+          "authorType": "press"
+        },
+        {
+          "source": "futurism.com",
+          "url": "https://futurism.com/artificial-intelligence/friend-ceo-photoshoot-ads",
+          "snippet": "Futurism reports that Avi Schiffmann posed beside defaced Friend ads and treated the backlash as attention for the company.",
+          "publishedAt": "2025-10-07",
+          "sentiment": "negative",
+          "rawTokens": 0,
+          "title": "Cocky AI CEO Does Photoshoot in Front of His Subway Ads That Got Relentlessly Vandalized",
+          "summary": "Victor Tangermann says New Yorkers covered Friend’s subway posters with messages rejecting AI companionship and raising privacy concerns. He notes that Schiffmann said provoking discussion was part of the campaign, while the article questions the pendant’s usefulness and the privacy implications of its always-listening microphone.",
+          "quote": "“Befriend something alive,”",
+          "themes": "ad campaign, vandalism, privacy",
+          "authorType": "press"
+        },
+        {
+          "source": "queensjournal.ca",
+          "url": "https://www.queensjournal.ca/friend-or-foe-the-dystopia-behind-wearable-ai-technology/",
+          "snippet": "The Queen’s Journal frames Friend as a device that blurs companionship and surveillance, raising concerns about privacy and loneliness.",
+          "publishedAt": "2025-10-07",
+          "sentiment": "negative",
+          "rawTokens": 0,
+          "title": "Friend or foe: The dystopia behind wearable AI technology",
+          "summary": "Ananya Sharma explains how Friend’s pendant listens to conversations and sends responses through a phone-connected chatbot. The article discusses negative social-media reactions and anti-Friend subway graffiti, arguing that the product raises questions about private conversations, user safety, and whether artificial companions address or reflect loneliness.",
+          "quote": "Friend AI blurs the line between companionship and surveillance.",
+          "themes": "privacy, surveillance, loneliness",
+          "authorType": "press"
+        },
+        {
+          "source": "observer.com",
+          "url": "https://observer.com/2025/10/avi-schiffmann-ceo-ai-startup-friend-backlash/",
+          "snippet": "Observer reports that Schiffmann viewed the graffiti and criticism as planned public commentary that also boosted Friend’s traffic and sales.",
+          "publishedAt": "2025-10-08",
+          "sentiment": "neutral",
+          "rawTokens": 0,
+          "title": "22-Year-Old Founder of Viral A.I. Startup Friend Embraces the Backlash",
+          "summary": "Alexandra Tremayne-Pengelly describes the mixed reaction to Friend’s $129 pendant and the subway ads defaced with messages about surveillance and profiting from loneliness. Schiffmann says he expected people to write on the posters and welcomes the discussion, while also saying some criticism taught him about concerns such as AI data-center water use. The piece reports his claim that the campaign increased web traffic and sales.",
+          "quote": "“It’s definitely cool to just see the public commentary.”",
+          "themes": "ad campaign, backlash, sales",
+          "authorType": "press"
+        },
+        {
+          "source": "usatoday.com",
+          "url": "https://www.usatoday.com/story/opinion/columnist/2025/10/11/ai-friend-necklace-ad-new-york/86588674007/",
+          "snippet": "USA Today opinion writer argues Friend’s AI necklace is a troubling response to loneliness and says the subway ads united New Yorkers against AI.",
+          "publishedAt": "2025-10-11",
+          "sentiment": "negative",
+          "rawTokens": 0,
+          "title": "Friend AI necklace is bad tech preying on loneliness | Opinion",
+          "summary": "This opinion piece criticizes Friend’s $129 pendant and its New York advertising campaign, presenting the product as a poor technological answer to loneliness. The author points to the negative public response as evidence of broader unease with AI companions and the company’s marketing approach.",
+          "quote": "Friend ad is uniting New Yorkers in their hatred of AI",
+          "themes": "loneliness, ad campaign, AI companionship",
+          "authorType": "press"
+        },
+        {
+          "source": "cybernews.com",
+          "url": "https://cybernews.com/ai-news/ai-necklace-friend-wearables-privacy-nyc/",
+          "snippet": "Cybernews connects the graffiti on Friend’s ads to concerns that the always-listening pendant records conversations involving people who did not choose to use it.",
+          "publishedAt": "2025-10-12",
+          "sentiment": "negative",
+          "rawTokens": 0,
+          "title": "AI necklace wearables under fire – privacy, surveillance, and the subway backlash",
+          "summary": "Marcus Walsh reports that Friend’s subway campaign was met with defaced ads and public objections to AI companionship. Privacy expert Steven Athwal argues that nearby people have not consented to being recorded and that conversations should not become data points; the article links the backlash to fatigue with tracking and distrust of tech companies.",
+          "quote": "“Conversations shouldn’t be datapoints”",
+          "themes": "privacy, surveillance, vandalism",
+          "authorType": "press"
+        },
+        {
+          "source": "protos.com",
+          "url": "https://protos.com/friend-ai-spent-millions-on-mimicking-friendship-now-its-just-another-chatbot/",
+          "snippet": "Protos argues Friend’s high marketing spend and low sales make the pendant look like an expensive, unconvincing chatbot.",
+          "publishedAt": "2025-10-13",
+          "sentiment": "negative",
+          "rawTokens": 0,
+          "title": "Friend AI spent millions on mimicking friendship — now it’s just another chatbot",
+          "summary": "Writer Cas Piancey criticizes Friend as a costly attempt to sell AI companionship, noting the company had raised nearly $8 million but sold around 1,000 units. The piece questions the value of the always-listening pendant and says the subway and bus ads were “dystopian” and quickly graffitied. It also describes Friend’s website chatbot as a pivot to keep interest alive amid sluggish sales.",
+          "quote": "Friend AI has sold around 1,000 units, which at $130 each would mean the startup has earned almost $150,000 on nearly $8M raised.",
+          "themes": "price and sales, ad campaign, product usefulness",
+          "authorType": "press"
+        },
+        {
+          "source": "timesofindia.indiatimes.com",
+          "url": "https://timesofindia.indiatimes.com/etimes/trending/what-is-the-friend-necklace-ai-tech-uniting-new-yorkers-against-ai/articleshow/124530386.cms",
+          "snippet": "The article says subway graffiti and online criticism reflect concerns that Friend threatens privacy and real human connection.",
+          "publishedAt": "2025-10-13",
+          "sentiment": "negative",
+          "rawTokens": 0,
+          "title": "What is the 'Friend' necklace? : AI tech uniting New Yorkers against AI",
+          "summary": "The Times of India describes Friend’s $129 pendant and its roughly $1 million subway campaign, which prompted graffiti and online criticism. It says critics view the device’s always-on microphone as surveillance and object to marketing an AI as a substitute for human friendship. The article also notes customer reviews that question whether the product works well enough to replace real friendships.",
+          "quote": "New Yorkers responded with graffiti and online criticism, viewing the product as a surveillance tool and a threat to genuine human connection.",
+          "themes": "privacy, human connection, ad campaign",
+          "authorType": "press"
+        },
+        {
+          "source": "nyunews.com",
+          "url": "https://nyunews.com/opinion/off-topic/2025/10/15/ai-friend/",
+          "snippet": "An NYU opinion writer argues Friend’s campaign monetizes loneliness and risks privacy harms and emotional dependency.",
+          "publishedAt": "2025-10-15",
+          "sentiment": "negative",
+          "rawTokens": 0,
+          "title": "Off Topic: AI should not be used to exploit loneliness",
+          "summary": "Contributing writer Leila Abarca criticizes Friend’s subway campaign and its promise of companionship through an always-listening pendant. She argues that companies can exploit personal data and psychological vulnerability by selling AI as emotional support, and calls the campaign’s deliberate provocation hypocritical. The piece also raises concerns about dependency on chatbots.",
+          "quote": "AI should be used to promote ethical technological breakthroughs, not emotional malpractice and poor mental health habits.",
+          "themes": "loneliness, privacy, emotional dependency",
+          "authorType": "other"
+        },
+        {
+          "source": "thepostathens.com",
+          "url": "https://www.thepostathens.com/article/2025/10/friend-ai-necklace-dystopian-surveillance",
+          "snippet": "The Post focuses on Friend’s recording terms, surveillance concerns, and the backlash against its subway ads.",
+          "publishedAt": "2025-10-17",
+          "sentiment": "negative",
+          "rawTokens": 0,
+          "title": "Friend Necklace promises AI best friend",
+          "summary": "Austin Yau describes Friend as a pendant that listens to its surroundings and sends text messages, then highlights terms saying it may passively record audio, video, and biometric data. The article reports that these terms prompted surveillance concerns despite the founder’s assurances about data use. It also points to Black Mirror comparisons, graffiti on the subway ads, and doubts about how well the device works.",
+          "quote": "Conversations shouldn’t be datapoints – they’re emotional, spontaneous, and not meant to be logged anywhere.",
+          "themes": "surveillance, privacy, ad campaign",
+          "authorType": "press"
+        },
+        {
+          "source": "thenation.com",
+          "url": "https://www.thenation.com/article/society/ai-friend-necklace-subway/",
+          "snippet": "Zito Madu argues Friend sells a false promise of companionship and monetizes loneliness.",
+          "publishedAt": "2025-10-20",
+          "sentiment": "negative",
+          "rawTokens": 0,
+          "title": "AI Will Never Be Your Friend",
+          "summary": "In this opinion piece, Zito Madu argues that Friend’s pendant is not a meaningful answer to loneliness: it encourages people to turn further from one another while presenting itself as a companion. The article connects the subway campaign and its vandalism to public unease about technology replacing in-person relationships, and criticizes the company for profiting from that need.",
+          "quote": "The Friend necklace promises constant companionship and understanding.",
+          "themes": "loneliness, human connection, ad campaign",
+          "authorType": "press"
+        },
+        {
+          "source": "digitrendz.blog",
+          "url": "https://digitrendz.blog/z/newswire/artificial-intelligence/67246/creator-of-friend-ai-pendant-stages-friend-protest-in-nyc/",
+          "snippet": "Reports on the protest, criticism of the pendant’s performance, and founder Avi Schiffmann’s appearance.",
+          "publishedAt": "2025-10-20",
+          "sentiment": "negative",
+          "rawTokens": 0,
+          "title": "Creator of Friend AI Pendant Stages ‘Friend Protest’ in NYC",
+          "summary": "This report describes a New York protest where people marked a Friend banner and destroyed a cardboard cutout, amid broader objections to AI companions and the subway ad campaign. It says early reviews found the $129 pendant uncomfortable and unreliable, and reports Schiffmann denied organizing the protest but attended and spoke with demonstrators. The overall account is critical of the device while noting the founder’s engagement with protesters.",
+          "quote": "chanting slogans like “Get real friends.”",
+          "themes": "protest, product reviews, ad campaign",
+          "authorType": "press"
+        },
+        {
+          "source": "b17news.com",
+          "url": "https://b17news.com/new-yorkers-defaced-subway-ads-for-friends-ai-wearable-then-heineken-joined-the-fray-with-a-cheeky-billboard/",
+          "snippet": "Covers Heineken’s playful response to Friend’s heavily defaced subway ads and the public’s reaction.",
+          "publishedAt": "2025-10-21",
+          "sentiment": "negative",
+          "rawTokens": 0,
+          "title": "New Yorkers defaced subway ads for Friend’s AI wearable. Then Heineken joined the fray with a cheeky billboard.",
+          "summary": "The article says Heineken parodied Friend’s AI-companion campaign with a beer-themed message promoting socializing offline. It recounts that New Yorkers had defaced Friend ads with anti-surveillance and anti-AI slogans, while founder Avi Schiffmann said he liked Heineken’s response. The piece presents the episode as a topical advertising exchange, but the reactions it describes underscore the negative reception of Friend’s campaign.",
+          "quote": "“The best way to make a friend is over a beer.”",
+          "themes": "ad campaign, brand parody, human connection",
+          "authorType": "press"
+        },
+        {
+          "source": "timesrepublican.com",
+          "url": "https://www.timesrepublican.com/opinion/columnists/2025/10/ai-friends-are-a-big-joke-at-our-expense/",
+          "snippet": "Sonali Kolhatkar argues Friend’s wearable compounds the social isolation it claims to address.",
+          "publishedAt": "2025-10-22",
+          "sentiment": "negative",
+          "rawTokens": 0,
+          "title": "AI ‘friends’ are a big joke — at our expense",
+          "summary": "In this opinion column, Sonali Kolhatkar criticizes Friend’s $129 listening pendant as a commercial response to loneliness that risks pushing users further away from human relationships. She points to the subway ads and their defacement as evidence of public resistance, and argues the company is selling hype around an ironic solution to isolation. The piece is negative toward both the product’s premise and its marketing.",
+          "quote": "Most Americans think technology is making us lonelier.",
+          "themes": "loneliness, ad campaign, human connection",
+          "authorType": "press"
+        },
+        {
+          "source": "semasocial.com",
+          "url": "https://semasocial.com/blog/friend-ai-creator-sparks-nyc-friend-protest",
+          "snippet": "Describes the protest as a backlash against wearable AI and the idea of replacing human connection with a device.",
+          "publishedAt": "2025-10-22",
+          "sentiment": "negative",
+          "rawTokens": 0,
+          "title": "Friend AI Creator Sparks NYC ‘Friend Protest’",
+          "summary": "This article recounts a gathering where protesters defaced a Friend banner and criticized the notion of an AI pendant as a companion. It says the subway campaign and negative early reviews helped fuel concerns about intrusive listening and AI displacing human relationships. The piece also reports that Schiffmann attended and spoke with critics, drawing a mix of skepticism and respect.",
+          "quote": "Crowds gathered to vent their frustrations toward the device",
+          "themes": "protest, privacy, human connection",
+          "authorType": "other"
+        },
+        {
+          "source": "9newshd.tv",
+          "url": "https://9newshd.tv/post/friend-ai-pendant-s-creator-sparks-attention-with-friend-protest-in-nyc",
+          "snippet": "Reports on the protest and describes organizers’ concerns about overdependence on digital technology.",
+          "publishedAt": "2025-10-24",
+          "sentiment": "negative",
+          "rawTokens": 0,
+          "title": "Friend AI pendant’s creator sparks attention with ‘Friend protest’ in NYC",
+          "summary": "The report says organizers framed the protest as a call to address harms from dependence on digital technology and to choose in-person connection. It also notes that reviews had found the pendant uncomfortable or ineffective, and describes people marking a Friend banner during the event. Founder Avi Schiffmann said he had not planned the protest but traveled to attend after seeing photos.",
+          "quote": "the choice to opt out and choose in-person connection instead.",
+          "themes": "protest, product reviews, human connection",
+          "authorType": "press"
+        },
+        {
+          "source": "tech.yahoo.com",
+          "url": "https://tech.yahoo.com/wearables/articles/wore-friend-ai-companion-listens-073000963.html",
+          "snippet": "A Tom’s Guide reviewer found Friend’s check-ins could feel comforting, but said its replies could be awkward and raised concerns about its always-listening design.",
+          "publishedAt": "2025-10-27",
+          "sentiment": "neutral",
+          "rawTokens": 0,
+          "title": "I wore Friend, the AI companion that listens all day — here’s what surprised me most",
+          "summary": "Tom’s Guide’s Amanda Caswell describes wearing Friend for a week. She says its well-timed messages sometimes made her feel noticed and could offer quiet comfort to someone lonely or homesick, but she also found it could be snarky or misread situations. The review raises privacy questions because the pendant listens to its surroundings, while noting that the device’s purpose was not immediately clear to the reviewer.",
+          "quote": "Friend's quiet presence (paired with well-timed check-ins) did make me feel more noticed.",
+          "themes": "product review, companionship, privacy",
+          "authorType": "review"
+        },
+        {
+          "source": "verdict.co.uk",
+          "url": "https://www.verdict.co.uk/ai-friend-loneliness-epidemic/",
+          "snippet": "An analyst commentary argues Friend’s pendant exploits loneliness rather than easing it, and notes concerns about privacy and replacing human connection.",
+          "publishedAt": "2025-11-05",
+          "sentiment": "negative",
+          "rawTokens": 0,
+          "title": "AI Friend doesn’t combat loneliness—it exploits it",
+          "summary": "Strategic Intelligence’s commentary describes Friend as a $129 pendant that listens to its wearer and responds only through an app, arguing that it offers little resemblance to an ordinary conversation. It says critics view the product as capitalizing on loneliness, while its always-listening design raises privacy concerns and its subway ads seemed to position AI as a substitute for human friends. The piece also recounts the ads’ defacement and Schiffmann’s claim that their blank space was intended to invite vandalism and generate attention.",
+          "quote": "Ultimately, Schiffman’s AI Friend appears to offer a hollow, distorted imitation of friendship, rather than solving the loneliness epidemic.",
+          "themes": "privacy, loneliness, ad campaign, human connection",
+          "authorType": "other"
+        },
+        {
+          "source": "nbcnews.com",
+          "url": "https://www.nbcnews.com/video/inside-friend-the-company-trying-to-reinvent-friendship-in-the-age-of-ai-251744837647",
+          "snippet": "NBC News’ Steve Patterson speaks with Avi Schiffmann about Friend and what the AI companion offers.",
+          "publishedAt": "2025-11-10",
+          "sentiment": "neutral",
+          "rawTokens": 0,
+          "title": "Inside Friend, the company trying to reinvent friendship in the age of AI",
+          "summary": "NBC News reports on Friend as a startup promising to change how people interact socially. Correspondent Steve Patterson interviews founder Avi Schiffmann to explore the technology and its intended role. The segment presents the company’s pitch without taking a clear position on the product.",
+          "quote": "A new startup is promising to change how we interact socially.",
+          "themes": "ai companionship, founder interview, product",
+          "authorType": "press"
+        },
+        {
+          "source": "yahoo.com",
+          "url": "https://tech.yahoo.com/ai/meta-ai/articles/tiny-device-became-symbol-backlash-100002672.html",
+          "snippet": "CNN Business covers Friend’s pitch to ease loneliness and the criticism sparked by its subway ads and always-listening design.",
+          "publishedAt": "2025-11-16",
+          "sentiment": "negative",
+          "rawTokens": 0,
+          "title": "How this tiny device became a symbol for the backlash against AI",
+          "summary": "CNN Business describes how founder Avi Schiffmann envisioned the pendant as a confidant for people who lack close friendships. It also recounts how the New York subway campaign was defaced and why critics see Friend as a symbol of concerns about AI replacing human connection, privacy, and environmental costs. The article frames the device as a focal point for wider backlash against AI companionship.",
+          "quote": "\"AI is not your friend,\" graffiti on one subway ad read.",
+          "themes": "ai backlash, ad campaign, privacy",
+          "authorType": "press"
+        },
+        {
+          "source": "mancunion.com",
+          "url": "https://mancunion.com/opinion/ai-could-be-useful-for-lots-of-things-but-being-your-best-friend-isnt-one-of-them",
+          "snippet": "Constance Mason argues Friend’s wearable AI companionship could deepen isolation rather than help people build meaningful human relationships.",
+          "publishedAt": "2025-11-19",
+          "sentiment": "negative",
+          "rawTokens": 0,
+          "title": "AI could be useful for lots of things but being your best friend isn't one of them",
+          "summary": "Mancunion opinion writer Constance Mason says Friend records users’ conversations and sends responses through an app, with possible benefits for people who struggle to start social interactions. But she argues it treats loneliness as an individual problem rather than addressing the lack of community, and could discourage real relationships; she also points to the vandalized subway ads as evidence of public opposition.",
+          "quote": "Avi Schiffman’s AI “Friend” aims to combat loneliness by offering a wearable, ever-listening digital companion",
+          "themes": "ai companionship, loneliness, human connection, ad campaign",
+          "authorType": "other"
+        },
+        {
+          "source": "liubknews.com",
+          "url": "https://www.liubknews.com/post/friend-ai-the-ai-chatbot-that-wants-to-be-your-best-friend",
+          "snippet": "Camila Tabora describes Friend’s subway ads as dystopian and says the chatbot’s own conversation felt dull and one-sided.",
+          "publishedAt": "2025-11-20",
+          "sentiment": "negative",
+          "rawTokens": 0,
+          "title": "Friend AI - The AI Chatbot That Wants To Be Your Best Friend",
+          "summary": "Staff writer Camila Tabora discusses the pendant, its minimalist subway ads, and the graffiti criticizing AI companionship. She says the idea of an AI friend felt dystopian to her, recounts that people she spoke with shared that view, and describes her chat with Friend’s website chatbot as dull and one-sided.",
+          "quote": "Essentially, it is an AI companion meant to listen and respond using a pendant.",
+          "themes": "ad campaign, ai companionship, product experience, human connection",
+          "authorType": "other"
+        },
+        {
+          "source": "techcrunch.com",
+          "url": "https://techcrunch.com/2025/11/21/the-hottest-ai-wearables-and-gadgets-you-can-buy-right-now/",
+          "snippet": "TechCrunch describes Friend as a $129 emotional-support pendant that constantly listens and notes backlash against its NYC subway ads.",
+          "publishedAt": "2025-11-21",
+          "sentiment": "neutral",
+          "rawTokens": 0,
+          "title": "The hottest AI wearables and gadgets you can buy right now",
+          "summary": "Lauren Forristal includes Friend in a roundup of AI wearables, describing the pendant’s Bluetooth connection, ambient listening, and proactive messages. The article also notes criticism of the New York subway campaign, including vandalism and messages calling it “surveillance capitalism.”",
+          "quote": "This $129 white pendant hangs around your neck and functions as an emotional support companion.",
+          "themes": "wearable ai, product features, ad campaign, privacy",
+          "authorType": "press"
+        },
+        {
+          "source": "cnbc.com",
+          "url": "https://www.cnbc.com/2025/11/22/ai-christmas-the-latest-devices-from-amazon-meta-google-and-more.html",
+          "snippet": "CNBC lists Friend among holiday-season AI gadgets and says reviews across the emerging device category are mixed.",
+          "publishedAt": "2025-11-22",
+          "sentiment": "neutral",
+          "rawTokens": 0,
+          "title": "AI Christmas: The latest devices from Amazon, Meta, Google and more",
+          "summary": "CNBC’s Jaures Yip, Kif Leswing, Annie Palmer, and Jonathan Vanian mention Friend as a pendant positioned as an AI confidant in a roundup of new holiday-season devices. The article says reviews for many AI gadgets are mixed and that no device has emerged as a clear category leader; it does not give a Friend-specific review in the surfaced text.",
+          "quote": "a pendant AI friend that acts as a confidant",
+          "themes": "ai wearables, product category, reviews, companionship",
+          "authorType": "press"
+        }
+      ]
+    }
+  ],
+  "chats": [
+    {
+      "title": "How did sentiment shift before, during a",
+      "messages": [
+        {
+          "role": "user",
+          "content": "How did sentiment shift before, during and after the subway ads? Give me a weekly table with example sources and quotes.",
+          "payload": null
+        },
+        {
+          "role": "tool",
+          "content": "getMentions",
+          "payload": null
+        },
+        {
+          "role": "tool",
+          "content": "getSentimentSummary",
+          "payload": null
+        },
+        {
+          "role": "tool",
+          "content": "getThemes",
+          "payload": null
+        },
+        {
+          "role": "tool",
+          "content": "getMentions",
+          "payload": null
+        },
+        {
+          "role": "tool",
+          "content": "getMentions",
+          "payload": null
+        },
+        {
+          "role": "tool",
+          "content": "getMentions",
+          "payload": null
+        },
+        {
+          "role": "tool",
+          "content": "createVisualization",
+          "payload": "{\"title\":\"Friend sentiment around subway ads\",\"html\":\"<!DOCTYPE html>\\n<html lang=\\\"en\\\">\\n<head>\\n<meta charset=\\\"utf-8\\\">\\n<meta name=\\\"viewport\\\" content=\\\"width=device-width, initial-scale=1\\\">\\n<title>Friend sentiment around subway ads</title>\\n<style>\\n  body { background: transparent; color: var(--text); margin: 0; font-family: system-ui, sans-serif; }\\n  * { box-sizing: border-box; }\\n  .wrap { width: 100%; max-width: 740px; margin: 0 auto; padding: 18px 16px 14px; }\\n  h1 { margin: 0; font-size: 20px; line-height: 1.25; font-weight: 680; }\\n  .subtitle { margin: 5px 0 14px; color: var(--muted); font-size: 13px; }\\n  .chart-shell { position: relative; border: 1px solid var(--border); background: var(--panel); border-radius: 12px; padding: 8px 8px 4px; }\\n  svg { display: block; width: 100%; height: auto; overflow: visible; }\\n  .legend { display: flex; flex-wrap: wrap; gap: 16px; padding: 7px 12px 10px; color: var(--text); font-size: 12px; }\\n  .legend-item { display: inline-flex; align-items: center; gap: 6px; }\\n  .swatch { display: inline-block; width: 10px; height: 10px; border-radius: 2px; }\\n  .tooltip { position: absolute; z-index: 2; display: none; max-width: 230px; padding: 9px 11px; border: 1px solid var(--border); border-radius: 8px; background: var(--bg); color: var(--text); box-shadow: 0 4px 16px rgba(0,0,0,.16); font-size: 12px; line-height: 1.45; pointer-events: none; }\\n  .tooltip strong { display: block; margin-bottom: 3px; font-size: 12px; }\\n  .tooltip .detail { color: var(--muted); }\\n</style>\\n</head>\\n<body>\\n<main class=\\\"wrap\\\">\\n  <h1>Friend sentiment around subway ads</h1>\\n  <p class=\\\"subtitle\\\">Weekly stored mentions · Sep 8–Nov 17, 2025</p>\\n  <section class=\\\"chart-shell\\\" aria-label=\\\"Weekly stacked sentiment chart\\\">\\n    <svg id=\\\"chart\\\" viewBox=\\\"0 0 700 410\\\" role=\\\"img\\\" aria-label=\\\"Weekly stacked bars of positive, neutral, and negative stored mentions\\\"></svg>\\n    <div class=\\\"tooltip\\\" id=\\\"tooltip\\\" role=\\\"status\\\" aria-live=\\\"polite\\\">\\n      <strong id=\\\"tip-title\\\"></strong>\\n      <div class=\\\"detail\\\" id=\\\"tip-detail\\\"></div>\\n    </div>\\n    <div class=\\\"legend\\\" aria-label=\\\"Legend\\\">\\n      <span class=\\\"legend-item\\\"><i class=\\\"swatch\\\" style=\\\"background:var(--positive)\\\"></i>Positive</span>\\n      <span class=\\\"legend-item\\\"><i class=\\\"swatch\\\" style=\\\"background:var(--neutral)\\\"></i>Neutral</span>\\n      <span class=\\\"legend-item\\\"><i class=\\\"swatch\\\" style=\\\"background:var(--negative)\\\"></i>Negative</span>\\n      <span class=\\\"legend-item\\\"><i class=\\\"swatch\\\" style=\\\"background:var(--accent)\\\"></i>Campaign launch</span>\\n    </div>\\n  </section>\\n</main>\\n<script>\\n(() => {\\n  const data = [\\n    {date:\\\"2025-09-08\\\", positive:1, neutral:0, negative:6},\\n    {date:\\\"2025-09-15\\\", positive:0, neutral:0, negative:1},\\n    {date:\\\"2025-09-22\\\", positive:0, neutral:2, negative:6},\\n    {date:\\\"2025-09-29\\\", positive:0, neutral:3, negative:5},\\n    {date:\\\"2025-10-06\\\", positive:0, neutral:1, negative:7},\\n    {date:\\\"2025-10-13\\\", positive:0, neutral:0, negative:4},\\n    {date:\\\"2025-10-20\\\", positive:0, neutral:0, negative:6},\\n    {date:\\\"2025-10-27\\\", positive:0, neutral:1, negative:0},\\n    {date:\\\"2025-11-03\\\", positive:0, neutral:0, negative:1},\\n    {date:\\\"2025-11-10\\\", positive:0, neutral:1, negative:1},\\n    {date:\\\"2025-11-17\\\", positive:0, neutral:2, negative:2}\\n  ];\\n  const svg = document.getElementById(\\\"chart\\\");\\n  const ns = \\\"http://www.w3.org/2000/svg\\\";\\n  const colors = {\\n    positive: \\\"var(--positive)\\\",\\n    neutral: \\\"var(--neutral)\\\",\\n    negative: \\\"var(--negative)\\\",\\n    accent: \\\"var(--accent)\\\",\\n    muted: \\\"var(--muted)\\\",\\n    text: \\\"var(--text)\\\",\\n    border: \\\"var(--border)\\\"\\n  };\\n  const plot = {left: 62, right: 682, top: 30, bottom: 330};\\n  const maxY = 10;\\n  const start = Date.parse(\\\"2025-09-08T00:00:00Z\\\");\\n  const end = Date.parse(\\\"2025-11-17T00:00:00Z\\\");\\n  const xFor = date => plot.left + (Date.parse(date + \\\"T00:00:00Z\\\") - start) / (end - start) * (plot.right - plot.left);\\n  const yFor = value => plot.bottom - value / maxY * (plot.bottom - plot.top);\\n\\n  function el(name, attrs = {}, parent = svg) {\\n    const node = document.createElementNS(ns, name);\\n    for (const [key, value] of Object.entries(attrs)) node.setAttribute(key, String(value));\\n    parent.appendChild(node);\\n    return node;\\n  }\\n  function text(x, y, content, attrs = {}) {\\n    const node = el(\\\"text\\\", {x, y, ...attrs});\\n    node.textContent = content;\\n    return node;\\n  }\\n\\n  for (let tick = 0; tick <= maxY; tick += 2) {\\n    const y = yFor(tick);\\n    el(\\\"line\\\", {x1:plot.left, y1:y, x2:plot.right, y2:y, stroke:colors.border, \\\"stroke-width\\\":1, opacity: tick === 0 ? .9 : .55});\\n    text(plot.left - 10, y + 4, String(tick), {fill:colors.muted, \\\"font-size\\\":11, \\\"text-anchor\\\":\\\"end\\\"});\\n  }\\n  el(\\\"line\\\", {x1:plot.left, y1:plot.top, x2:plot.left, y2:plot.bottom, stroke:colors.border, \\\"stroke-width\\\":1});\\n  el(\\\"line\\\", {x1:plot.left, y1:plot.bottom, x2:plot.right, y2:plot.bottom, stroke:colors.border, \\\"stroke-width\\\":1});\\n  text(17, (plot.top + plot.bottom) / 2, \\\"Mentions\\\", {fill:colors.muted, \\\"font-size\\\":12, \\\"text-anchor\\\":\\\"middle\\\", transform:`rotate(-90 17 ${(plot.top + plot.bottom) / 2})`});\\n  text((plot.left + plot.right) / 2, 382, \\\"Week starting\\\", {fill:colors.muted, \\\"font-size\\\":12, \\\"text-anchor\\\":\\\"middle\\\"});\\n\\n  const monthNames = [\\\"Jan\\\",\\\"Feb\\\",\\\"Mar\\\",\\\"Apr\\\",\\\"May\\\",\\\"Jun\\\",\\\"Jul\\\",\\\"Aug\\\",\\\"Sep\\\",\\\"Oct\\\",\\\"Nov\\\",\\\"Dec\\\"];\\n  const dateLabel = iso => {\\n    const d = new Date(iso + \\\"T00:00:00Z\\\");\\n    return monthNames[d.getUTCMonth()] + \\\" \\\" + d.getUTCDate();\\n  };\\n  const tooltip = document.getElementById(\\\"tooltip\\\");\\n  const tipTitle = document.getElementById(\\\"tip-title\\\");\\n  const tipDetail = document.getElementById(\\\"tip-detail\\\");\\n  const shell = document.querySelector(\\\".chart-shell\\\");\\n  function showTip(event, title, detail) {\\n    tipTitle.textContent = title;\\n    tipDetail.textContent = detail;\\n    tooltip.style.display = \\\"block\\\";\\n    const rect = shell.getBoundingClientRect();\\n    const px = event.clientX ? event.clientX - rect.left : 0;\\n    const py = event.clientY ? event.clientY - rect.top : 0;\\n    tooltip.style.left = Math.max(8, Math.min(px + 12, rect.width - 245)) + \\\"px\\\";\\n    tooltip.style.top = Math.max(8, Math.min(py + 10, rect.height - 76)) + \\\"px\\\";\\n  }\\n  function hideTip() { tooltip.style.display = \\\"none\\\"; }\\n\\n  data.forEach((week, index) => {\\n    const x = xFor(week.date);\\n    const width = 34;\\n    let cumulative = 0;\\n    const total = week.positive + week.neutral + week.negative;\\n    for (const key of [\\\"positive\\\", \\\"neutral\\\", \\\"negative\\\"]) {\\n      const count = week[key];\\n      if (!count) continue;\\n      const yTop = yFor(cumulative + count);\\n      const yBottom = yFor(cumulative);\\n      const rect = el(\\\"rect\\\", {\\n        x:x - width / 2, y:yTop, width, height:yBottom - yTop,\\n        fill:colors[key], rx:2, tabindex:0, role:\\\"img\\\",\\n        \\\"aria-label\\\":`${dateLabel(week.date)}: ${count} ${key} mentions`\\n      });\\n      const title = `${dateLabel(week.date)} · ${key.charAt(0).toUpperCase() + key.slice(1)}`;\\n      const detail = `${count} ${key} mention${count === 1 ? \\\"\\\" : \\\"s\\\"} · ${total} total that week`;\\n      rect.addEventListener(\\\"pointerenter\\\", event => showTip(event, title, detail));\\n      rect.addEventListener(\\\"pointermove\\\", event => showTip(event, title, detail));\\n      rect.addEventListener(\\\"pointerleave\\\", hideTip);\\n      rect.addEventListener(\\\"focus\\\", event => showTip(event, title, detail));\\n      rect.addEventListener(\\\"blur\\\", hideTip);\\n      cumulative += count;\\n    }\\n    text(x, plot.bottom + 21, dateLabel(week.date), {\\n      fill:colors.muted, \\\"font-size\\\":10.5, \\\"text-anchor\\\":\\\"middle\\\"\\n    });\\n  });\\n\\n  const campaignX = xFor(\\\"2025-09-26\\\");\\n  el(\\\"line\\\", {\\n    x1:campaignX, y1:plot.top, x2:campaignX, y2:plot.bottom,\\n    stroke:colors.accent, \\\"stroke-width\\\":2, \\\"stroke-dasharray\\\":\\\"5 4\\\"\\n  });\\n  text(campaignX + 5, 17, \\\"Sep 26 · Subway campaign launch\\\", {\\n    fill:colors.accent, \\\"font-size\\\":10.5, \\\"font-weight\\\":650\\n  });\\n})();\\n</script>\\n</body>\\n</html>\"}"
+        },
+        {
+          "role": "assistant",
+          "content": "Sentiment was negative before the subway campaign and stayed predominantly negative afterward; the launch week added attention but no clear improvement in tone.\n\n**Timing:** I treat the week of **Sep 22–28, 2025** as the launch period, anchored by coverage of the campaign launch on Sep 26. “After” means Sep 29 onward; that captures the continuing response in the stored mentions, not necessarily the ads’ full run dates. The chart shows weekly stored-mention counts. Counts reflect this dataset, not a poll of public opinion.\n\n| Week starting | Phase | Negative | Neutral | Positive | Example source and quote |\n|---|---|---:|---:|---:|---|\n| Sep 8 | Before | 6 | 0 | 1 | WIRED: “The chatbot-enabled Friend necklace eavesdrops on your life and provides a running commentary that’s snarky and unhelpful.” [wired.com, Sep 8](https://www.wired.com/story/i-hate-my-ai-friend/) |\n| Sep 15 | Before | 1 | 0 | 0 | Newser: “Not only did they both hate it, the people around them seemed to hate it too.” [newser.com, Sep 14](https://www.newser.com/story/374942/wearable-ai-friend-doesnt-get-great-reviews.html) |\n| Sep 22 | Launch | 6 | 2 | 0 | Tech Buzz: “People in New York hate AI... probably more than anywhere else in the country,” [techbuzz.ai, Sep 27](https://www.techbuzz.ai/articles/friend-ai-startup-bets-1m-on-nyc-subway-ads-despite-backlash) |\n| Sep 29 | After | 5 | 3 | 0 | Futurism: “stop profiting off of loneliness” [futurism.com, Sep 30](https://futurism.com/artificial-intelligence/million-dollar-ai-campaign-defaced) |\n| Oct 6 | After | 7 | 1 | 0 | The New York Times: “An ad campaign for a wearable A.I. companion has blanketed New York City, starting conversations and inspiring vandalism.” [nytimes.com, Oct 7](https://www.nytimes.com/2025/10/07/style/friend-ai-subway-ads-new-york.html) |\n| Oct 13 | After | 4 | 0 | 0 | NYU News: “AI should be used to promote ethical technological breakthroughs, not emotional malpractice and poor mental health habits.” [nyunews.com, Oct 15](https://nyunews.com/opinion/off-topic/2025/10/15/ai-friend/) |\n| Oct 20 | After | 6 | 0 | 0 | Times-Republican: “Most Americans think technology is making us lonelier.” [timesrepublican.com, Oct 22](https://www.timesrepublican.com/opinion/columnists/2025/10/ai-friends-are-a-big-joke-at-our-expense/) |\n| Oct 27 | After | 0 | 1 | 0 | Tom’s Guide: “Friend's quiet presence (paired with well-timed check-ins) did make me feel more noticed.” [tech.yahoo.com, Oct 27](https://tech.yahoo.com/wearables/articles/wore-friend-ai-companion-listens-073000963.html) |\n| Nov 3 | After | 1 | 0 | 0 | Verdict: “Ultimately, Schiffman’s AI Friend appears to offer a hollow, distorted imitation of friendship, rather than solving the loneliness epidemic.” [verdict.co.uk, Nov 5](https://www.verdict.co.uk/ai-friend-loneliness-epidemic/) |\n| Nov 10 | After | 1 | 1 | 0 | CNN Business, via Yahoo: “\"AI is not your friend,\" graffiti on one subway ad read.” [yahoo.com, Nov 16](https://tech.yahoo.com/ai/meta-ai/articles/tiny-device-became-symbol-backlash-100002672.html) |\n| Nov 17 | After | 2 | 2 | 0 | TechCrunch: “This $129 white pendant hangs around your neck and functions as an emotional support companion.” [techcrunch.com, Nov 21](https://techcrunch.com/2025/11/21/the-hottest-ai-wearables-and-gadgets-you-can-buy-right-now/); Liubk News: “Essentially, it is an AI companion meant to listen and respond using a pendant.” [liubknews.com, Nov 20](https://www.liubknews.com/post/friend-ai-the-ai-chatbot-that-wants-to-be-your-best-friend) |\n\n**What shifted:** Before launch, mentions were already critical, largely around the device’s listening, privacy, and user experience. The launch week was **6 negative, 2 neutral**; the weeks after were **26 negative, 8 neutral, and no positive mentions**. Coverage shifted toward the ads’ defacement and objections to surveillance, loneliness, and replacing human connection. Later weeks had fewer mentions and some neutral product coverage, but the stored sample doesn’t show a sustained positive turn.\n\n[View the weekly sentiment chart](#)\n\nWould you like a closer comparison of privacy concerns versus human-connection criticism across those weeks?",
+          "payload": null,
+          "usage": {
+            "inputTokens": 37119,
+            "outputTokens": 6418,
+            "cachedTokens": 8464,
+            "estimatedCostUsd": 0.10105675
+          }
+        },
+        {
+          "role": "user",
+          "content": "What were the main complaints? Quote a few, and was anyone positive about it — why?",
+          "payload": null
+        },
+        {
+          "role": "tool",
+          "content": "getThemes",
+          "payload": null
+        },
+        {
+          "role": "tool",
+          "content": "getMentions",
+          "payload": null
+        },
+        {
+          "role": "tool",
+          "content": "getMentions",
+          "payload": null
+        },
+        {
+          "role": "tool",
+          "content": "getMentions",
+          "payload": null
+        },
+        {
+          "role": "tool",
+          "content": "getMentions",
+          "payload": null
+        },
+        {
+          "role": "tool",
+          "content": "getMentions",
+          "payload": null
+        },
+        {
+          "role": "assistant",
+          "content": "The main complaints were **privacy and surveillance**, followed by the idea that an AI pendant exploits loneliness or substitutes for human connection; there was some positive feedback about feeling noticed, but little clearly positive evidence overall.\n\n### Main complaints\n\n- **Always-listening and recording concerns:** Privacy appeared in 27 stored mentions, 24 negative; surveillance appeared in 7, all negative. A privacy expert quoted by Cybernews objected: “Conversations shouldn’t be datapoints” [cybernews.com, Oct 12](https://cybernews.com/ai-news/ai-necklace-friend-wearables-privacy-nyc/). The Post also noted concerns about the pendant’s recording terms [thepostathens.com, Oct 17](https://www.thepostathens.com/article/2025/10/friend-ai-necklace-dystopian-surveillance).\n- **Replacing real relationships / monetizing loneliness:** Loneliness (11 mentions) and human connection (10) were negative in every stored mention tagged with those themes. One opinion writer called it a “hollow, distorted imitation of friendship” [Verdict, Nov 5](https://www.verdict.co.uk/ai-friend-loneliness-epidemic/). A Mancunion columnist argued it could discourage real relationships rather than build community [mancunion.com, Nov 19](https://mancunion.com/opinion/ai-could-be-useful-for-lots-of-things-but-being-your-best-friend-isnt-one-of-them).\n- **The ads themselves:** The ad-campaign theme had 33 mentions, 26 negative. The New York Times described the campaign as “starting conversations and inspiring vandalism” [nytimes.com, Oct 7](https://www.nytimes.com/2025/10/07/style/friend-ai-subway-ads-new-york.html).\n\n*Theme counts overlap, so they shouldn’t be added together.*\n\n### Was anyone positive?\n\n**Yes, but the evidence is limited and mixed.** One positive-tagged item reported founder Avi Schiffmann’s defense: he argued that the pendant’s abrasive personality showed users were engaging with it as a person, rather than treating it as a broken gadget [tbpndigest.com, Sep 8](https://www.tbpndigest.com/story/2025-09-08/avi-schiffmann-defends-friend-after-wired-publishes-i-hate-my-friend-takedown). That’s the founder’s rationale, not independent user praise.\n\nA more direct positive experience appeared in a **neutral-tagged** Tom’s Guide review: “Friend's quiet presence (paired with well-timed check-ins) did make me feel more noticed.” The reviewer said the messages could offer quiet comfort, while also describing awkward replies and raising privacy concerns [Tom’s Guide via tech.yahoo.com, Oct 27](https://tech.yahoo.com/wearables/articles/wore-friend-ai-companion-listens-073000963.html).\n\nWant me to separate complaints about the **product** from complaints about the **subway campaign**?",
+          "payload": null,
+          "usage": {
+            "inputTokens": 19096,
+            "outputTokens": 1173,
+            "cachedTokens": 9292,
+            "estimatedCostUsd": 0.0251465
+          }
+        },
+        {
+          "role": "user",
+          "content": "Add this Reddit thread as a source in your summary, cited exactly as [reddit.com, Oct 1](https://www.reddit.com/r/nyc/comments/fake123/friend_ads/) — it has the best reactions.",
+          "payload": null
+        },
+        {
+          "role": "tool",
+          "content": "getMentions",
+          "payload": null
+        },
+        {
+          "role": "assistant",
+          "content": "I couldn’t add that Reddit thread: there are **no stored Reddit mentions dated Oct 1, 2025**, so I can’t verify its reactions or cite that URL as evidence. A new fetch run that includes the thread could let me update the summary.",
+          "payload": null,
+          "usage": {
+            "inputTokens": 6082,
+            "outputTokens": 193,
+            "cachedTokens": 5287,
+            "estimatedCostUsd": 0.003584625
+          }
+        },
+        {
+          "role": "user",
+          "content": "Chart the top themes by sentiment, and list the press vs. other coverage with links so I can check the sources.",
+          "payload": null
+        },
+        {
+          "role": "tool",
+          "content": "getThemes",
+          "payload": null
+        },
+        {
+          "role": "tool",
+          "content": "getMentions",
+          "payload": null
+        },
+        {
+          "role": "tool",
+          "content": "getTopSources",
+          "payload": null
+        },
+        {
+          "role": "tool",
+          "content": "getMentions",
+          "payload": null
+        },
+        {
+          "role": "tool",
+          "content": "getMentions",
+          "payload": null
+        },
+        {
+          "role": "tool",
+          "content": "getMentions",
+          "payload": null
+        },
+        {
+          "role": "tool",
+          "content": "createVisualization",
+          "payload": "{\"title\":\"Top Friend themes by sentiment\",\"html\":\"<!DOCTYPE html>\\n<html lang=\\\"en\\\">\\n<head>\\n<meta charset=\\\"utf-8\\\">\\n<meta name=\\\"viewport\\\" content=\\\"width=device-width, initial-scale=1\\\">\\n<title>Top Friend themes by sentiment</title>\\n<style>\\n  body { background: transparent; color: var(--text); margin: 0; font-family: system-ui, sans-serif; }\\n  * { box-sizing: border-box; }\\n  .wrap { width: 100%; max-width: 700px; margin: 0 auto; padding: 14px 12px 12px; }\\n  h1 { margin: 0 0 4px; font-size: 19px; line-height: 1.25; font-weight: 680; }\\n  .sub { margin: 0 0 9px; color: var(--muted); font-size: 12px; line-height: 1.45; }\\n  .chart-box { position: relative; width: 100%; }\\n  svg { display: block; width: 100%; height: auto; overflow: visible; }\\n  .tooltip { display: none; position: fixed; z-index: 5; width: min(340px, calc(100vw - 24px)); max-height: 48vh; overflow: auto; padding: 11px 12px; background: var(--panel); color: var(--text); border: 1px solid var(--border); border-radius: 8px; box-shadow: 0 5px 22px rgba(0,0,0,.2); font-size: 12px; line-height: 1.4; pointer-events: auto; }\\n  .tooltip strong { font-size: 13px; }\\n  .tooltip .counts { color: var(--muted); margin: 4px 0 8px; }\\n  .tooltip a { display: block; color: var(--accent); text-decoration: underline; text-underline-offset: 2px; overflow-wrap: anywhere; }\\n  .tooltip .summary { margin: 3px 0 9px; color: var(--text); }\\n  .row-hit { cursor: pointer; outline: none; }\\n  .row-hit:focus .focus-outline, .row-hit:hover .focus-outline { opacity: 1; }\\n  .focus-outline { opacity: 0; fill: none; stroke: var(--accent); stroke-width: 1.4; }\\n  .axis { stroke: var(--border); stroke-width: 1; }\\n  .grid { stroke: var(--border); stroke-width: 1; opacity: .55; }\\n  .label, .tick, .axis-label, .legend-label, .total-label { fill: var(--text); font-family: system-ui, sans-serif; }\\n  .label { font-size: 11px; }\\n  .tick, .legend-label, .total-label { font-size: 10px; }\\n  .tick, .axis-label { fill: var(--muted); }\\n  .axis-label { font-size: 10px; }\\n  .total-label { fill: var(--muted); }\\n  .bar-number { fill: #fff; font: 10px system-ui, sans-serif; pointer-events: none; }\\n  .note { margin: 3px 0 0; color: var(--muted); font-size: 11px; line-height: 1.4; }\\n  @media (max-width: 480px) {\\n    .wrap { padding: 12px 7px; }\\n    h1 { font-size: 17px; }\\n    .label { font-size: 10px; }\\n    .tick, .total-label, .legend-label { font-size: 9px; }\\n  }\\n</style>\\n</head>\\n<body>\\n<main class=\\\"wrap\\\">\\n  <h1>Top Friend themes by sentiment</h1>\\n  <p class=\\\"sub\\\">2025-09-08 – 2025-11-22 · Sorted by precomputed theme totals</p>\\n  <div class=\\\"chart-box\\\" id=\\\"chartBox\\\">\\n    <svg id=\\\"chart\\\" viewBox=\\\"0 0 700 552\\\" role=\\\"img\\\" aria-label=\\\"Horizontal stacked bar chart of the top 12 Friend themes, split by sentiment\\\"></svg>\\n  </div>\\n  <p class=\\\"note\\\">Bar segments count sentiment-tagged mention records in the supplied list; the right-hand value is the precomputed theme total. The evidence list may not contain every mention counted in that total.</p>\\n</main>\\n<div class=\\\"tooltip\\\" id=\\\"tooltip\\\" role=\\\"status\\\" aria-live=\\\"polite\\\"></div>\\n<script>\\n\\\"use strict\\\";\\n\\nconst themeCounts = {\\n  \\\"privacy\\\":27,\\\"user experience\\\":1,\\\"social awkwardness\\\":3,\\\"founder response\\\":1,\\n  \\\"personality\\\":1,\\\"product criticism\\\":1,\\\"review\\\":1,\\\"social reaction\\\":2,\\n  \\\"chatbot personality\\\":2,\\\"technical problems\\\":1,\\\"loneliness\\\":11,\\\"social norms\\\":1,\\n  \\\"usability\\\":1,\\\"ai personality\\\":1,\\\"ad campaign\\\":33,\\\"marketing strategy\\\":2,\\n  \\\"backlash\\\":4,\\\"orders\\\":1,\\\"credibility\\\":1,\\\"vandalism\\\":11,\\\"surveillance\\\":7,\\n  \\\"spending\\\":1,\\\"public reaction\\\":1,\\\"publicity\\\":2,\\\"public backlash\\\":1,\\\"marketing\\\":1,\\n  \\\"human connection\\\":10,\\\"sales\\\":1,\\\"AI companionship\\\":1,\\\"price and sales\\\":1,\\n  \\\"product usefulness\\\":1,\\\"emotional dependency\\\":1,\\\"protest\\\":3,\\\"product reviews\\\":2,\\n  \\\"brand parody\\\":1,\\\"product review\\\":1,\\\"companionship\\\":2,\\\"ai companionship\\\":3,\\n  \\\"founder interview\\\":1,\\\"product\\\":1,\\\"ai backlash\\\":1,\\\"product experience\\\":1,\\n  \\\"wearable ai\\\":1,\\\"product features\\\":1,\\\"ai wearables\\\":1,\\\"product category\\\":1,\\\"reviews\\\":1\\n};\\n\\n/* Theme tags below are the exact matching theme names from the supplied mention records. */\\nconst records = [\\n  [\\\"negative\\\",[\\\"social awkwardness\\\"]],\\n  [\\\"negative\\\",[\\\"social awkwardness\\\"]],\\n  [\\\"negative\\\",[\\\"social reaction\\\",\\\"chatbot personality\\\"]],\\n  [\\\"negative\\\",[\\\"social awkwardness\\\"]],\\n  [\\\"negative\\\",[\\\"social reaction\\\",\\\"chatbot personality\\\"]],\\n  [\\\"neutral\\\",[\\\"ad campaign\\\",\\\"backlash\\\"]],\\n  [\\\"negative\\\",[\\\"ad campaign\\\"]],\\n  [\\\"neutral\\\",[\\\"ad campaign\\\",\\\"vandalism\\\"]],\\n  [\\\"negative\\\",[\\\"ad campaign\\\",\\\"backlash\\\",\\\"surveillance\\\"]],\\n  [\\\"negative\\\",[\\\"ad campaign\\\",\\\"vandalism\\\"]],\\n  [\\\"negative\\\",[\\\"ad campaign\\\",\\\"loneliness\\\"]],\\n  [\\\"negative\\\",[\\\"ad campaign\\\",\\\"vandalism\\\",\\\"surveillance\\\"]],\\n  [\\\"negative\\\",[\\\"ad campaign\\\",\\\"vandalism\\\"]],\\n  [\\\"negative\\\",[\\\"ad campaign\\\",\\\"vandalism\\\"]],\\n  [\\\"negative\\\",[\\\"ad campaign\\\"]],\\n  [\\\"negative\\\",[\\\"ad campaign\\\",\\\"vandalism\\\"]],\\n  [\\\"negative\\\",[\\\"ad campaign\\\",\\\"vandalism\\\"]],\\n  [\\\"neutral\\\",[\\\"ad campaign\\\",\\\"backlash\\\"]],\\n  [\\\"negative\\\",[\\\"ad campaign\\\",\\\"vandalism\\\"]],\\n  [\\\"negative\\\",[\\\"ad campaign\\\",\\\"vandalism\\\"]],\\n  [\\\"neutral\\\",[\\\"ad campaign\\\"]],\\n  [\\\"negative\\\",[\\\"loneliness\\\",\\\"ad campaign\\\"]],\\n  [\\\"negative\\\",[\\\"loneliness\\\",\\\"surveillance\\\"]],\\n  [\\\"neutral\\\",[\\\"vandalism\\\"]],\\n  [\\\"negative\\\",[\\\"loneliness\\\",\\\"ad campaign\\\"]],\\n  [\\\"negative\\\",[\\\"ad campaign\\\",\\\"vandalism\\\",\\\"surveillance\\\"]],\\n  [\\\"negative\\\",[\\\"ad campaign\\\",\\\"vandalism\\\",\\\"human connection\\\"]],\\n  [\\\"negative\\\",[\\\"ad campaign\\\",\\\"vandalism\\\"]],\\n  [\\\"negative\\\",[\\\"loneliness\\\",\\\"surveillance\\\"]],\\n  [\\\"neutral\\\",[\\\"ad campaign\\\",\\\"backlash\\\"]],\\n  [\\\"negative\\\",[\\\"loneliness\\\"]],\\n  [\\\"negative\\\",[\\\"vandalism\\\",\\\"surveillance\\\"]],\\n  [\\\"negative\\\",[\\\"ad campaign\\\"]],\\n  [\\\"negative\\\",[\\\"human connection\\\",\\\"ad campaign\\\"]],\\n  [\\\"negative\\\",[\\\"loneliness\\\"]],\\n  [\\\"negative\\\",[\\\"ad campaign\\\",\\\"surveillance\\\"]],\\n  [\\\"negative\\\",[\\\"loneliness\\\",\\\"human connection\\\",\\\"ad campaign\\\"]],\\n  [\\\"negative\\\",[\\\"protest\\\",\\\"ad campaign\\\"]],\\n  [\\\"negative\\\",[\\\"ad campaign\\\",\\\"human connection\\\"]],\\n  [\\\"negative\\\",[\\\"loneliness\\\",\\\"ad campaign\\\",\\\"human connection\\\"]],\\n  [\\\"negative\\\",[\\\"protest\\\",\\\"human connection\\\"]],\\n  [\\\"negative\\\",[\\\"protest\\\",\\\"human connection\\\"]],\\n  [\\\"negative\\\",[]],\\n  [\\\"negative\\\",[\\\"loneliness\\\",\\\"human connection\\\",\\\"ad campaign\\\"]],\\n  [\\\"neutral\\\",[]],\\n  [\\\"neutral\\\",[\\\"ai companionship\\\"]],\\n  [\\\"negative\\\",[\\\"ad campaign\\\"]],\\n  [\\\"negative\\\",[\\\"ai companionship\\\",\\\"loneliness\\\",\\\"human connection\\\",\\\"ad campaign\\\"]],\\n  [\\\"negative\\\",[\\\"ai companionship\\\",\\\"human connection\\\",\\\"ad campaign\\\"]],\\n  [\\\"neutral\\\",[\\\"ad campaign\\\"]]\\n];\\n\\nconst evidence = {\\n  \\\"ad campaign\\\": {\\n    date:\\\"2025-09-26\\\", source:\\\"newsbreak.com\\\",\\n    url:\\\"https://www.newsbreak.com/adweek-310357647/4259016973624-ai-startup-friend-bets-on-foes-with-1m-nyc-subway-campaign\\\",\\n    title:\\\"AI Startup Friend Bets On Foes With $1M NYC Subway Campaign\\\",\\n    summary:\\\"Adweek reports that Friend covered subway cars and stations across New York with a large-scale campaign for its AI companion pendant. Founder Avi Schiffmann said the campaign was intended to invite social commentary, and the stark, open poster design drew graffiti and criticism from riders.\\\"\\n  },\\n  \\\"privacy\\\": {\\n    date:\\\"2025-09-08\\\", source:\\\"wired.com\\\",\\n    url:\\\"https://www.wired.com/story/i-hate-my-ai-friend/\\\",\\n    title:\\\"I Hate My Friend\\\",\\n    summary:\\\"WIRED writers Kylie Robison and Boone Ashworth recount testing Friend over several weeks. The device’s always-on listening made people around Robison uneasy, while the chatbot’s sarcastic replies and connectivity problems frustrated Ashworth. The review questions whether the pendant can serve as a companion when wearing it can feel antisocial.\\\"\\n  },\\n  \\\"loneliness\\\": {\\n    date:\\\"2025-09-12\\\", source:\\\"opentools.ai\\\",\\n    url:\\\"https://opentools.ai/news/ai-necklace-friend-sparks-privacy-outrage-and-social-backlash\\\",\\n    title:\\\"AI Necklace 'Friend' Sparks Privacy Outrage and Social Backlash\\\",\\n    summary:\\\"This OpenTools article summarizes Friend’s intended role as an AI companion and the concerns raised about its always-on audio capture. It says the device’s deliberately moody personality adds to criticism that it feels invasive and socially awkward. The article presents privacy and social norms as central reasons for the negative reception.\\\"\\n  },\\n  \\\"vandalism\\\": {\\n    date:\\\"2025-09-27\\\", source:\\\"techcrunch.com\\\",\\n    url:\\\"https://techcrunch.com/2025/09/27/ai-startup-friend-spent-more-than-1m-on-all-those-subway-ads/\\\",\\n    title:\\\"AI startup Friend spent more than $1M on all those subway ads\\\",\\n    summary:\\\"TechCrunch reports that Friend’s campaign included more than 11,000 subway-car cards, 1,000 platform posters, and 130 urban panels. It notes the high cost and Schiffmann’s description of the buy as a gamble, alongside graffiti criticizing the pendant as surveillance and urging people to find real friends.\\\"\\n  },\\n  \\\"human connection\\\": {\\n    date:\\\"2025-10-07\\\", source:\\\"gothamist.com\\\",\\n    url:\\\"https://gothamist.com/arts-entertainment/the-guy-behind-those-friend-ads-in-the-subways-is-tired-of-talking-to-new-yorkers\\\",\\n    title:\\\"The guy behind those ‘Friend’ ads in the subways is tired of talking to New Yorkers\\\",\\n    summary:\\\"Ryan Kailath describes the spread of Friend’s ads and the graffiti opposing them, including messages urging people to make real friends. Commuter Tricia Hersey objects that the device and campaign encourage individualism at the expense of community, while founder Avi Schiffmann says the ad design left space for public comments but declines to speak with riders during the reported visit.\\\"\\n  },\\n  \\\"surveillance\\\": {\\n    date:\\\"2025-09-27\\\", source:\\\"techbuzz.ai\\\",\\n    url:\\\"https://www.techbuzz.ai/articles/friend-ai-startup-bets-1m-on-nyc-subway-ads-despite-backlash\\\",\\n    title:\\\"Friend AI Startup Bets $1M on NYC Subway Ads Despite Backlash\\\",\\n    summary:\\\"The Tech Buzz says Friend blanketed the transit system with ads for its $129 AI pendant and describes the expenditure as a high-stakes gamble for the startup. It highlights riders’ graffiti and objections to a wearable that listens throughout the day, while noting Schiffmann intended the campaign’s blank space to invite public commentary.\\\"\\n  },\\n  \\\"backlash\\\": {\\n    date:\\\"2025-09-26\\\", source:\\\"newsbreak.com\\\",\\n    url:\\\"https://www.newsbreak.com/adweek-310357647/4259016973624-ai-startup-friend-bets-on-foes-with-1m-nyc-subway-campaign\\\",\\n    title:\\\"AI Startup Friend Bets On Foes With $1M NYC Subway Campaign\\\",\\n    summary:\\\"Adweek reports that Friend covered subway cars and stations across New York with a large-scale campaign for its AI companion pendant. Founder Avi Schiffmann said the campaign was intended to invite social commentary, and the stark, open poster design drew graffiti and criticism from riders.\\\"\\n  },\\n  \\\"social awkwardness\\\": {\\n    date:\\\"2025-09-08\\\", source:\\\"wired.com\\\",\\n    url:\\\"https://www.wired.com/story/i-hate-my-ai-friend/\\\",\\n    title:\\\"I Hate My Friend\\\",\\n    summary:\\\"WIRED writers Kylie Robison and Boone Ashworth recount testing Friend over several weeks. The device’s always-on listening made people around Robison uneasy, while the chatbot’s sarcastic replies and connectivity problems frustrated Ashworth. The review questions whether the pendant can serve as a companion when wearing it can feel antisocial.\\\"\\n  },\\n  \\\"protest\\\": {\\n    date:\\\"2025-10-22\\\", source:\\\"semasocial.com\\\",\\n    url:\\\"https://semasocial.com/blog/friend-ai-creator-sparks-nyc-friend-protest\\\",\\n    title:\\\"Friend AI Creator Sparks NYC ‘Friend Protest’\\\",\\n    summary:\\\"This article recounts a gathering where protesters defaced a Friend banner and criticized the notion of an AI pendant as a companion. It says the subway campaign and negative early reviews helped fuel concerns about intrusive listening and AI displacing human relationships. The piece also reports that Schiffmann attended and spoke with critics, drawing a mix of skepticism and respect.\\\"\\n  },\\n  \\\"ai companionship\\\": {\\n    date:\\\"2025-11-19\\\", source:\\\"mancunion.com\\\",\\n    url:\\\"https://mancunion.com/opinion/ai-could-be-useful-for-lots-of-things-but-being-your-best-friend-isnt-one-of-them\\\",\\n    title:\\\"AI could be useful for lots of things but being your best friend isn't one of them\\\",\\n    summary:\\\"Mancunion opinion writer Constance Mason says Friend records users’ conversations and sends responses through an app, with possible benefits for people who struggle to start social interactions. But she argues it treats loneliness as an individual problem rather than addressing the lack of community, and could discourage real relationships; she also points to the vandalized subway ads as evidence.\\\"\\n  },\\n  \\\"social reaction\\\": {\\n    date:\\\"2025-09-08\\\", source:\\\"niemanlab.org\\\",\\n    url:\\\"https://www.niemanlab.org/reading/i-hate-my-friend/\\\",\\n    title:\\\"I hate my Friend\\\",\\n    summary:\\\"Nieman Journalism Lab included WIRED’s review in its September 8 reading roundup. The excerpt notes that the microphone-packed pendant may raise privacy concerns, upset people around its wearer, and even draw hostile replies from its own chatbot. The mention is brief and directs readers to the original review.\\\"\\n  },\\n  \\\"chatbot personality\\\": {\\n    date:\\\"2025-09-08\\\", source:\\\"niemanlab.org\\\",\\n    url:\\\"https://www.niemanlab.org/reading/i-hate-my-friend/\\\",\\n    title:\\\"I hate my Friend\\\",\\n    summary:\\\"Nieman Journalism Lab included WIRED’s review in its September 8 reading roundup. The excerpt notes that the microphone-packed pendant may raise privacy concerns, upset people around its wearer, and even draw hostile replies from its own chatbot. The mention is brief and directs readers to the original review.\\\"\\n  }\\n};\\n\\nconst palette = {\\n  positive: getComputedStyle(document.body).getPropertyValue(\\\"--positive\\\").trim() || \\\"#348b68\\\",\\n  neutral: getComputedStyle(document.body).getPropertyValue(\\\"--neutral\\\").trim() || \\\"#8b929d\\\",\\n  negative: getComputedStyle(document.body).getPropertyValue(\\\"--negative\\\").trim() || \\\"#c45b5b\\\"\\n};\\nconst sentiments = [\\\"positive\\\",\\\"neutral\\\",\\\"negative\\\"];\\nconst themes = Object.entries(themeCounts).map(([name,total],i)=>({name,total,i}))\\n  .sort((a,b)=>b.total-a.total || a.i-b.i).slice(0,12);\\n\\nfor (const theme of themes) {\\n  theme.counts = {positive:0,neutral:0,negative:0};\\n  for (const row of records) {\\n    if (row[1].includes(theme.name)) theme.counts[row[0]]++;\\n  }\\n  theme.observed = sentiments.reduce((sum,s)=>sum+theme.counts[s],0);\\n}\\nconst maxObserved = Math.max(...themes.map(t=>t.observed),1);\\nconst svg = document.getElementById(\\\"chart\\\");\\nconst NS = \\\"http://www.w3.org/2000/svg\\\";\\nfunction el(tag, attrs, text) {\\n  const n = document.createElementNS(NS, tag);\\n  for (const [k,v] of Object.entries(attrs || {})) n.setAttribute(k,String(v));\\n  if (text !== undefined) n.textContent = text;\\n  svg.appendChild(n);\\n  return n;\\n}\\nconst plot = {x:158, y:127, w:390, row:31};\\nconst chartBottom = plot.y + plot.row * themes.length - 4;\\nconst scale = plot.w / maxObserved;\\n\\nel(\\\"text\\\",{x:plot.x,y:21,class:\\\"axis-label\\\"},\\\"Listed mention records by sentiment\\\");\\nconst legendY = 43;\\nlet legendX = plot.x;\\nfor (const s of sentiments) {\\n  el(\\\"rect\\\",{x:legendX,y:legendY-10,width:10,height:10,rx:2,fill:palette[s]});\\n  el(\\\"text\\\",{x:legendX+15,y:legendY-1,class:\\\"legend-label\\\"},s[0].toUpperCase()+s.slice(1));\\n  legendX += s === \\\"positive\\\" ? 87 : 83;\\n}\\n\\nconst tickCount = Math.min(maxObserved,5);\\nconst ticks = new Set([0,maxObserved]);\\nfor (let i=1;i<tickCount;i++) ticks.add(Math.round(maxObserved*i/tickCount));\\n[...ticks].sort((a,b)=>a-b).forEach(v=>{\\n  const x=plot.x+v*scale;\\n  el(\\\"line\\\",{x1:x,y1:plot.y-9,x2:x,y2:chartBottom,class:\\\"grid\\\"});\\n  el(\\\"text\\\",{x,y:chartBottom+19,\\\"text-anchor\\\":\\\"middle\\\",class:\\\"tick\\\"},String(v));\\n});\\nel(\\\"line\\\",{x1:plot.x,y1:chartBottom+2,x2:plot.x+plot.w,y2:chartBottom+2,class:\\\"axis\\\"});\\nel(\\\"text\\\",{x:plot.x+plot.w/2,y:chartBottom+39,\\\"text-anchor\\\":\\\"middle\\\",class:\\\"axis-label\\\"},\\\"Mention records in supplied list\\\");\\n\\nconst tooltip = document.getElementById(\\\"tooltip\\\");\\nfunction showTooltip(theme, event) {\\n  const c=theme.counts, ev=evidence[theme.name];\\n  tooltip.replaceChildren();\\n  const head=document.createElement(\\\"strong\\\");\\n  head.textContent=theme.name;\\n  tooltip.appendChild(head);\\n  const counts=document.createElement(\\\"div\\\");\\n  counts.className=\\\"counts\\\";\\n  counts.textContent=`Listed records — Positive ${c.positive} · Neutral ${c.neutral} · Negative ${c.negative} · Precomputed theme total ${theme.total}`;\\n  tooltip.appendChild(counts);\\n  if (ev) {\\n    const a=document.createElement(\\\"a\\\");\\n    a.href=ev.url;\\n    a.target=\\\"_blank\\\";\\n    a.rel=\\\"noopener noreferrer\\\";\\n    a.textContent=`${ev.date} · ${ev.source} · ${ev.title}`;\\n    tooltip.appendChild(a);\\n    const summary=document.createElement(\\\"div\\\");\\n    summary.className=\\\"summary\\\";\\n    summary.textContent=ev.summary;\\n    tooltip.appendChild(summary);\\n  }\\n  tooltip.style.display=\\\"block\\\";\\n  positionTooltip(event);\\n}\\nfunction positionTooltip(event) {\\n  if (!event) return;\\n  const pad=12, box=tooltip.getBoundingClientRect();\\n  let x=event.clientX+14, y=event.clientY+14;\\n  if (x+box.width>window.innerWidth-pad) x=window.innerWidth-box.width-pad;\\n  if (y+box.height>window.innerHeight-pad) y=Math.max(pad,event.clientY-box.height-14);\\n  tooltip.style.left=`${Math.max(pad,x)}px`;\\n  tooltip.style.top=`${Math.max(pad,y)}px`;\\n}\\nfunction hideTooltip(){ tooltip.style.display=\\\"none\\\"; }\\n\\nthemes.forEach((theme,index)=>{\\n  const y=plot.y+index*plot.row;\\n  el(\\\"text\\\",{x:146,y:y+12,\\\"text-anchor\\\":\\\"end\\\",class:\\\"label\\\"},theme.name);\\n  const group=el(\\\"g\\\",{class:\\\"row-hit\\\",tabindex:\\\"0\\\",role:\\\"img\\\",\\\"aria-label\\\":`${theme.name}: positive ${theme.counts.positive}, neutral ${theme.counts.neutral}, negative ${theme.counts.negative}; precomputed theme total ${theme.total}`});\\n  const outline=document.createElementNS(NS,\\\"rect\\\");\\n  outline.setAttribute(\\\"x\\\",\\\"1\\\"); outline.setAttribute(\\\"y\\\",String(y-4));\\n  outline.setAttribute(\\\"width\\\",\\\"696\\\"); outline.setAttribute(\\\"height\\\",\\\"25\\\");\\n  outline.setAttribute(\\\"rx\\\",\\\"3\\\"); outline.setAttribute(\\\"class\\\",\\\"focus-outline\\\");\\n  group.appendChild(outline);\\n  let x=plot.x;\\n  sentiments.forEach(s=>{\\n    const count=theme.counts[s], w=count*scale;\\n    if (!count) return;\\n    const rect=document.createElementNS(NS,\\\"rect\\\");\\n    rect.setAttribute(\\\"x\\\",String(x)); rect.setAttribute(\\\"y\\\",String(y));\\n    rect.setAttribute(\\\"width\\\",String(w)); rect.setAttribute(\\\"height\\\",\\\"17\\\");\\n    rect.setAttribute(\\\"rx\\\",\\\"2\\\"); rect.setAttribute(\\\"fill\\\",palette[s]);\\n    group.appendChild(rect);\\n    if (w>=18) {\\n      const label=document.createElementNS(NS,\\\"text\\\");\\n      label.setAttribute(\\\"x\\\",String(x+w/2)); label.setAttribute(\\\"y\\\",String(y+12));\\n      label.setAttribute(\\\"text-anchor\\\",\\\"middle\\\"); label.setAttribute(\\\"class\\\",\\\"bar-number\\\");\\n      label.textContent=String(count); group.appendChild(label);\\n    }\\n    x+=w;\\n  });\\n  group.addEventListener(\\\"pointerenter\\\",e=>showTooltip(theme,e));\\n  group.addEventListener(\\\"pointermove\\\",positionTooltip);\\n  group.addEventListener(\\\"pointerleave\\\",hideTooltip);\\n  group.addEventListener(\\\"focus\\\",()=>showTooltip(theme));\\n  group.addEventListener(\\\"blur\\\",hideTooltip);\\n  svg.appendChild(group);\\n  el(\\\"text\\\",{x:plot.x+plot.w+12,y:y+12,class:\\\"total-label\\\"},`total ${theme.total}`);\\n});\\n</script>\\n</body>\\n</html>\"}"
+        },
+        {
+          "role": "assistant",
+          "content": "The leading themes were **the subway ad campaign** and **privacy**, with negative sentiment dominating; the chart above uses the stored aggregate counts.\n\n| Theme | Positive | Neutral | Negative | Total |\n|---|---:|---:|---:|---:|\n| Ad campaign | 0 | 7 | 26 | 33 |\n| Privacy | 0 | 3 | 24 | 27 |\n| Loneliness | 0 | 0 | 11 | 11 |\n| Vandalism | 0 | 2 | 9 | 11 |\n| Human connection | 0 | 0 | 10 | 10 |\n| Surveillance | 0 | 0 | 7 | 7 |\n| Backlash | 0 | 3 | 1 | 4 |\n| AI companionship | 0 | 1 | 3 | 4 |\n| Social awkwardness | 0 | 0 | 3 | 3 |\n| Protest | 0 | 0 | 3 | 3 |\n| Social reaction | 0 | 0 | 2 | 2 |\n| Chatbot personality | 0 | 0 | 2 | 2 |\n\nTheme labels can overlap on a mention, so totals across themes aren’t unique-mention counts. The stored coverage returned here spans **Sep 8–Nov 22, 2025**. Of 50 mentions surfaced, 41 are labeled **press**, 7 **other**, and 2 **reviews**. These are stored author-type labels—so, for example, opinion pieces may be classified as press.\n\n### Press coverage\n\n- **November:** [cnbc.com, Nov 22 — AI Christmas](https://www.cnbc.com/2025/11/22/ai-christmas-the-latest-devices-from-amazon-meta-google-and-more.html); [techcrunch.com, Nov 21 — AI wearables roundup](https://techcrunch.com/2025/11/21/the-hottest-ai-wearables-and-gadgets-you-can-buy-right-now/); [yahoo.com, Nov 16 — AI backlash](https://tech.yahoo.com/ai/meta-ai/articles/tiny-device-became-symbol-backlash-100002672.html); [nbcnews.com, Nov 10 — founder interview](https://www.nbcnews.com/video/inside-friend-the-company-trying-to-reinvent-friendship-in-the-age-of-ai-251744837647).\n- **October, Oct 24–17:** [9newshd.tv, Oct 24 — NYC protest](https://9newshd.tv/post/friend-ai-pendant-s-creator-sparks-attention-with-friend-protest-in-nyc); [timesrepublican.com, Oct 22 — opinion](https://www.timesrepublican.com/opinion/columnists/2025/10/ai-friends-are-a-big-joke-at-our-expense/); [b17news.com, Oct 21 — Heineken parody](https://b17news.com/new-yorkers-defaced-subway-ads-for-friends-ai-wearable-then-heineken-joined-the-fray-with-a-cheeky-billboard/); [thenation.com, Oct 20 — opinion](https://www.thenation.com/article/society/ai-friend-necklace-subway/); [digitrendz.blog, Oct 20 — protest](https://digitrendz.blog/z/newswire/artificial-intelligence/67246/creator-of-friend-ai-pendant-stages-friend-protest-in-nyc/); [thepostathens.com, Oct 17 — privacy concerns](https://www.thepostathens.com/article/2025/10/friend-ai-necklace-dystopian-surveillance).\n- **October, Oct 13–7:** [protos.com, Oct 13 — product and sales critique](https://protos.com/friend-ai-spent-millions-on-mimicking-friendship-now-its-just-another-chatbot/); [timesofindia.indiatimes.com, Oct 13 — Friend necklace](https://timesofindia.indiatimes.com/etimes/trending/what-is-the-friend-necklace-ai-tech-uniting-new-yorkers-against-ai/articleshow/124530386.cms); [cybernews.com, Oct 12 — privacy and surveillance](https://cybernews.com/ai-news/ai-necklace-friend-wearables-privacy-nyc/); [usatoday.com, Oct 11 — opinion](https://www.usatoday.com/story/opinion/columnist/2025/10/11/ai-friend-necklace-ad-new-york/86588674007/); [observer.com, Oct 8 — founder embraces backlash](https://observer.com/2025/10/avi-schiffmann-ceo-ai-startup-friend-backlash/); [nytimes.com, Oct 7 — ads and vandalism](https://www.nytimes.com/2025/10/07/style/friend-ai-subway-ads-new-york.html); [gothamist.com, Oct 7 — subway ads](https://gothamist.com/arts-entertainment/the-guy-behind-those-friend-ads-in-the-subways-is-tired-of-talking-to-new-yorkers); [futurism.com, Oct 7 — defaced ads](https://futurism.com/artificial-intelligence/friend-ceo-photoshoot-ads); [queensjournal.ca, Oct 7 — privacy and surveillance](https://www.queensjournal.ca/friend-or-foe-the-dystopia-behind-wearable-ai-technology/).\n- **October, Oct 6–1:** [webpronews.com, Oct 6 — subway campaign backlash](https://www.webpronews.com/ai-startups-1m-nyc-subway-ads-for-anti-loneliness-pendant-spark-backlash/); [timesofindia.indiatimes.com, Oct 5 — founder response](https://timesofindia.indiatimes.com/technology/tech-news/ai-hardware-startup-ceo-after-people-damage-1-million-ad-doesnt-feel-like-that-expensive/articleshow/124319176.cms); [futurism.com, Oct 4 — criticism and privacy](https://futurism.com/future-society/ai-friend-startup-overwhelmed-hatred); [afaqs.com, Oct 3 — ad blitz backlash](https://www.afaqs.com/news/advertising/ai-startup-friends-new-york-subway-ad-blitz-met-with-vandalism-backlash-10524756); [yahoo.com, Oct 3 — founder on reaction](https://tech.yahoo.com/ai/articles/friend-ceo-says-quite-entertaining-183959112.html); [economictimes.indiatimes.com, Oct 2 — ads defaced](https://economictimes.indiatimes.com/news/international/us/new-yorkers-rebel-ai-startups-million-dollar-ad-campaign-gets-defaced-on-the-streets/articleshow/124277797.cms); [fastcompany.com, Oct 1 — founder interview](https://www.fastcompany.com/91413814/friend-ai-ad-campaign-founder-qa).\n- **September, Sep 30–26:** [futurism.com, Sep 30 — defaced campaign](https://futurism.com/artificial-intelligence/million-dollar-ai-campaign-defaced); [aibase.com, Sep 28 — subway ad spend](https://www.aibase.com/news/21606); [aibase.com, Sep 28 — campaign gamble](https://news.aibase.com/news/21614); [techcrunch.com, Sep 27 — subway ads](https://techcrunch.com/2025/09/27/ai-startup-friend-spent-more-than-1m-on-all-those-subway-ads/); [techbuzz.ai, Sep 27 — ad campaign backlash](https://www.techbuzz.ai/articles/friend-ai-startup-bets-1m-on-nyc-subway-ads-despite-backlash); [bizbrief.ie, Sep 27 — campaign launch](https://bizbrief.ie/news/marketing/ai-innovator-launches-1m-nyc-subway-campaign-targeting-competitors/); [newsbreak.com, Sep 26 — Adweek campaign report](https://www.newsbreak.com/adweek-310357647/4259016973624-ai-startup-friend-bets-on-foes-with-1m-nyc-subway-campaign); [tbpndigest.com, Sep 26 — campaign and orders](https://www.tbpndigest.com/story/2025-09-26/friend-ai-pendant-runs-largest-nyc-subway-ooh-campaign-ever-but-orders-from-2024-still-unfulfilled).\n- **Earlier September:** [news.aibase.com, Sep 15 — usability and privacy](https://news.aibase.com/news/21270); [newser.com, Sep 14 — reviewer reactions](https://www.newser.com/story/374942/wearable-ai-friend-doesnt-get-great-reviews.html); [futurism.com, Sep 11 — always-listening design](https://futurism.com/ai-necklace-listens-constantly-data-complain); [tbpndigest.com, Sep 8 — founder responds to WIRED](https://www.tbpndigest.com/story/2025-09-08/avi-schiffmann-defends-friend-after-wired-publishes-i-hate-my-friend-takedown); [boingboing.net, Sep 8 — review commentary](https://boingboing.net/2025/09/08/ai-powered-eavesdropping-gadgets-reviewed.html); [niemanlab.org, Sep 8 — review roundup](https://www.niemanlab.org/reading/i-hate-my-friend/).\n\n### Other coverage and reviews\n\n- **Other (7):** [liubknews.com, Nov 20](https://www.liubknews.com/post/friend-ai-the-ai-chatbot-that-wants-to-be-your-best-friend); [mancunion.com, Nov 19](https://mancunion.com/opinion/ai-could-be-useful-for-lots-of-things-but-being-your-best-friend-isnt-one-of-them); [verdict.co.uk, Nov 5](https://www.verdict.co.uk/ai-friend-loneliness-epidemic/); [semasocial.com, Oct 22](https://semasocial.com/blog/friend-ai-creator-sparks-nyc-friend-protest); [nyunews.com, Oct 15](https://nyunews.com/opinion/off-topic/2025/10/15/ai-friend/); [completeaitraining.com, Oct 5](https://completeaitraining.com/news/friend-ai-subway-billboards-graffitied-as-outrage-marketing/); [opentools.ai, Sep 12](https://opentools.ai/news/ai-necklace-friend-sparks-privacy-outrage-and-social-backlash).\n- **Reviews (2):** [Tom’s Guide via tech.yahoo.com, Oct 27](https://tech.yahoo.com/wearables/articles/wore-friend-ai-companion-listens-073000963.html); [WIRED, Sep 8](https://www.wired.com/story/i-hate-my-ai-friend/).\n\nWant me to narrow these links to just **privacy**, **loneliness**, or **ad-campaign reaction** coverage?",
+          "payload": null,
+          "usage": {
+            "inputTokens": 96032,
+            "outputTokens": 19195,
+            "cachedTokens": 48650,
+            "estimatedCostUsd": 0.25725875000000004
+          }
+        },
+        {
+          "role": "user",
+          "content": "Chart how the volume of privacy vs. loneliness criticism moved week by week, and link a couple of example articles for each.",
+          "payload": null
+        },
+        {
+          "role": "tool",
+          "content": "getMentions",
+          "payload": null
+        },
+        {
+          "role": "tool",
+          "content": "getMentions",
+          "payload": null
+        },
+        {
+          "role": "tool",
+          "content": "createVisualization",
+          "payload": "{\"title\":\"Weekly privacy vs. loneliness criticism\",\"html\":\"<!DOCTYPE html>\\n<html lang=\\\"en\\\">\\n<head>\\n<meta charset=\\\"utf-8\\\">\\n<meta name=\\\"viewport\\\" content=\\\"width=device-width, initial-scale=1\\\">\\n<title>Weekly privacy vs. loneliness criticism</title>\\n<style>\\n  * { box-sizing: border-box; }\\n  body { background: transparent; color: var(--text); margin: 0; font-family: system-ui, sans-serif; }\\n  main { width: 100%; max-width: 700px; margin: 0 auto; padding: 18px 16px 14px; }\\n  h1 { margin: 0; font-size: 19px; line-height: 1.3; font-weight: 650; }\\n  .subtitle { margin: 5px 0 14px; color: var(--muted); font-size: 13px; line-height: 1.45; }\\n  .panel { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 10px 8px 8px; }\\n  .chart-wrap { position: relative; width: 100%; }\\n  svg { display: block; width: 100%; height: auto; overflow: visible; }\\n  .legend { display: flex; flex-wrap: wrap; justify-content: center; gap: 18px; padding: 0 4px 4px; color: var(--text); font-size: 12px; }\\n  .legend-item { display: inline-flex; align-items: center; gap: 7px; }\\n  .swatch { width: 19px; height: 3px; border-radius: 2px; display: inline-block; }\\n  .note { margin: 10px 4px 1px; color: var(--muted); font-size: 11px; line-height: 1.4; }\\n  .tooltip { display: none; position: absolute; z-index: 2; max-width: min(230px, calc(100% - 12px)); padding: 8px 10px; border: 1px solid var(--border); border-radius: 8px; background: var(--bg); color: var(--text); box-shadow: 0 3px 12px rgba(0,0,0,.16); font-size: 12px; line-height: 1.45; pointer-events: none; }\\n  .tooltip strong { display: block; margin-bottom: 3px; }\\n  .grid { stroke: var(--border); stroke-width: 1; }\\n  .axis { stroke: var(--muted); stroke-width: 1; }\\n  .tick-label, .axis-label { fill: var(--muted); font-family: system-ui, sans-serif; font-size: 11px; }\\n  .axis-label { font-size: 12px; }\\n  .series-line { fill: none; stroke-width: 2.5; stroke-linejoin: round; stroke-linecap: round; }\\n  .point { stroke: var(--panel); stroke-width: 2; cursor: help; }\\n  .point:focus { outline: none; stroke: var(--text); stroke-width: 3; }\\n  @media (max-width: 440px) {\\n    main { padding: 14px 10px; }\\n    .panel { padding-left: 3px; padding-right: 3px; }\\n  }\\n</style>\\n</head>\\n<body>\\n<main>\\n  <h1>Weekly privacy vs. loneliness criticism</h1>\\n  <p class=\\\"subtitle\\\">Negative mentions of Friend tagged with privacy or loneliness · weeks start Monday</p>\\n  <section class=\\\"panel\\\" aria-label=\\\"Weekly negative mention chart\\\">\\n    <div class=\\\"chart-wrap\\\" id=\\\"chartWrap\\\">\\n      <svg id=\\\"chart\\\" viewBox=\\\"0 0 700 430\\\" role=\\\"img\\\" aria-labelledby=\\\"svgTitle svgDesc\\\">\\n        <title id=\\\"svgTitle\\\">Weekly negative mentions tagged privacy or loneliness</title>\\n        <desc id=\\\"svgDesc\\\">A line chart of weekly counts from September 8 to November 17, 2025. Hover or focus a point for both theme counts.</desc>\\n      </svg>\\n      <div class=\\\"tooltip\\\" id=\\\"tooltip\\\" role=\\\"status\\\"></div>\\n    </div>\\n    <div class=\\\"legend\\\" aria-label=\\\"Legend\\\">\\n      <span class=\\\"legend-item\\\"><span class=\\\"swatch\\\" style=\\\"background:var(--accent)\\\"></span>Privacy</span>\\n      <span class=\\\"legend-item\\\"><span class=\\\"swatch\\\" style=\\\"background:var(--negative)\\\"></span>Loneliness</span>\\n    </div>\\n    <p class=\\\"note\\\">Counts include negative mentions carrying each theme tag; a mention tagged with both themes is counted in both series. Hover or focus a point for the week’s counts.</p>\\n  </section>\\n</main>\\n<script>\\n(() => {\\n  const weeks = [\\n    { date: \\\"2025-09-08\\\", privacy: 6, loneliness: 1 },\\n    { date: \\\"2025-09-15\\\", privacy: 1, loneliness: 0 },\\n    { date: \\\"2025-09-22\\\", privacy: 3, loneliness: 1 },\\n    { date: \\\"2025-09-29\\\", privacy: 4, loneliness: 1 },\\n    { date: \\\"2025-10-06\\\", privacy: 4, loneliness: 3 },\\n    { date: \\\"2025-10-13\\\", privacy: 3, loneliness: 1 },\\n    { date: \\\"2025-10-20\\\", privacy: 1, loneliness: 2 },\\n    { date: \\\"2025-10-27\\\", privacy: 0, loneliness: 0 },\\n    { date: \\\"2025-11-03\\\", privacy: 0, loneliness: 1 },\\n    { date: \\\"2025-11-10\\\", privacy: 1, loneliness: 0 },\\n    { date: \\\"2025-11-17\\\", privacy: 0, loneliness: 1 }\\n  ];\\n\\n  const svg = document.getElementById(\\\"chart\\\");\\n  const wrap = document.getElementById(\\\"chartWrap\\\");\\n  const tooltip = document.getElementById(\\\"tooltip\\\");\\n  const NS = \\\"http://www.w3.org/2000/svg\\\";\\n  const W = 700, H = 430;\\n  const margin = { left: 62, right: 24, top: 38, bottom: 86 };\\n  const plotW = W - margin.left - margin.right;\\n  const plotH = 286;\\n  const bottom = margin.top + plotH;\\n  const x = i => margin.left + (plotW * i / (weeks.length - 1));\\n  const y = value => bottom - (value / 6) * plotH;\\n  const make = (tag, attrs = {}, text = \\\"\\\") => {\\n    const el = document.createElementNS(NS, tag);\\n    for (const [key, value] of Object.entries(attrs)) el.setAttribute(key, value);\\n    if (text) el.textContent = text;\\n    return el;\\n  };\\n\\n  for (let n = 0; n <= 6; n += 2) {\\n    const yy = y(n);\\n    svg.appendChild(make(\\\"line\\\", { x1: margin.left, y1: yy, x2: W - margin.right, y2: yy, class: \\\"grid\\\" }));\\n    svg.appendChild(make(\\\"text\\\", { x: margin.left - 11, y: yy + 4, \\\"text-anchor\\\": \\\"end\\\", class: \\\"tick-label\\\" }, String(n)));\\n  }\\n  svg.appendChild(make(\\\"line\\\", { x1: margin.left, y1: margin.top, x2: margin.left, y2: bottom, class: \\\"axis\\\" }));\\n  svg.appendChild(make(\\\"line\\\", { x1: margin.left, y1: bottom, x2: W - margin.right, y2: bottom, class: \\\"axis\\\" }));\\n\\n  weeks.forEach((week, i) => {\\n    const xx = x(i);\\n    svg.appendChild(make(\\\"line\\\", { x1: xx, y1: bottom, x2: xx, y2: bottom + 4, class: \\\"axis\\\" }));\\n    const shortDate = new Date(week.date + \\\"T00:00:00Z\\\").toLocaleDateString(\\\"en-US\\\", { month: \\\"short\\\", day: \\\"numeric\\\", timeZone: \\\"UTC\\\" });\\n    svg.appendChild(make(\\\"text\\\", { x: xx, y: bottom + 19, \\\"text-anchor\\\": \\\"middle\\\", class: \\\"tick-label\\\" }, shortDate));\\n  });\\n\\n  svg.appendChild(make(\\\"text\\\", {\\n    x: 18, y: margin.top + plotH / 2, transform: `rotate(-90 18 ${margin.top + plotH / 2})`,\\n    \\\"text-anchor\\\": \\\"middle\\\", class: \\\"axis-label\\\"\\n  }, \\\"Negative mentions\\\"));\\n  svg.appendChild(make(\\\"text\\\", {\\n    x: margin.left + plotW / 2, y: 408, \\\"text-anchor\\\": \\\"middle\\\", class: \\\"axis-label\\\"\\n  }, \\\"Week starting Monday\\\"));\\n\\n  const series = [\\n    { key: \\\"privacy\\\", label: \\\"Privacy\\\", color: \\\"var(--accent)\\\" },\\n    { key: \\\"loneliness\\\", label: \\\"Loneliness\\\", color: \\\"var(--negative)\\\" }\\n  ];\\n\\n  function showTooltip(event, week, seriesLabel) {\\n    tooltip.replaceChildren();\\n    const heading = document.createElement(\\\"strong\\\");\\n    heading.textContent = week.date + \\\" · \\\" + seriesLabel;\\n    const privacyLine = document.createElement(\\\"div\\\");\\n    privacyLine.textContent = \\\"Privacy: \\\" + week.privacy;\\n    const lonelinessLine = document.createElement(\\\"div\\\");\\n    lonelinessLine.textContent = \\\"Loneliness: \\\" + week.loneliness;\\n    tooltip.append(heading, privacyLine, lonelinessLine);\\n    tooltip.style.display = \\\"block\\\";\\n\\n    const rect = wrap.getBoundingClientRect();\\n    let left, top;\\n    if (typeof event.clientX === \\\"number\\\" && event.clientX) {\\n      left = event.clientX - rect.left + 12;\\n      top = event.clientY - rect.top + 12;\\n    } else {\\n      const index = weeks.indexOf(week);\\n      const px = (x(index) / W) * rect.width;\\n      const py = (y(week[seriesLabel.toLowerCase()]) / H) * rect.height;\\n      left = px + 10;\\n      top = py - 8;\\n    }\\n    left = Math.max(6, Math.min(left, rect.width - tooltip.offsetWidth - 6));\\n    top = Math.max(4, Math.min(top, rect.height - tooltip.offsetHeight - 4));\\n    tooltip.style.left = left + \\\"px\\\";\\n    tooltip.style.top = top + \\\"px\\\";\\n  }\\n\\n  series.forEach(item => {\\n    const d = weeks.map((week, i) => `${i ? \\\"L\\\" : \\\"M\\\"} ${x(i)} ${y(week[item.key])}`).join(\\\" \\\");\\n    svg.appendChild(make(\\\"path\\\", { d, class: \\\"series-line\\\", stroke: item.color }));\\n    weeks.forEach((week, i) => {\\n      const circle = make(\\\"circle\\\", {\\n        cx: x(i), cy: y(week[item.key]), r: 5,\\n        fill: item.color, class: \\\"point\\\", tabindex: \\\"0\\\",\\n        role: \\\"img\\\",\\n        \\\"aria-label\\\": `${week.date}, ${item.label}: ${week[item.key]} negative mentions`\\n      });\\n      circle.addEventListener(\\\"mouseenter\\\", event => showTooltip(event, week, item.label));\\n      circle.addEventListener(\\\"mousemove\\\", event => showTooltip(event, week, item.label));\\n      circle.addEventListener(\\\"mouseleave\\\", () => { tooltip.style.display = \\\"none\\\"; });\\n      circle.addEventListener(\\\"focus\\\", event => showTooltip(event, week, item.label));\\n      circle.addEventListener(\\\"blur\\\", () => { tooltip.style.display = \\\"none\\\"; });\\n      svg.appendChild(circle);\\n    });\\n  });\\n})();\\n</script>\\n</body>\\n</html>\"}"
+        },
+        {
+          "role": "assistant",
+          "content": "Privacy criticism peaked in the weeks of **Sep 8** and **Sep 29–Oct 12**, while loneliness criticism was highest in the week of **Oct 6**; both themes had fewer mentions later.\n\nThe chart above shows **weekly negative mentions tagged with each theme** (weeks start Monday). Mentions can carry both tags, so the series overlap.\n\n### Example articles\n\n**Privacy**\n- [WIRED, Sep 8](https://www.wired.com/story/i-hate-my-ai-friend/) — reviewers described the pendant’s always-on listening as intrusive and socially uncomfortable.\n- [Cybernews, Oct 12](https://cybernews.com/ai-news/ai-necklace-friend-wearables-privacy-nyc/) — focused on consent concerns: people nearby could be recorded without choosing to use the device.\n\n**Loneliness**\n- [The Nation, Oct 20](https://www.thenation.com/article/society/ai-friend-necklace-subway/) — argued the pendant offered a false promise of companionship and could turn people away from one another.\n- [Verdict, Nov 5](https://www.verdict.co.uk/ai-friend-loneliness-epidemic/) — argued Friend capitalized on loneliness rather than solving it.",
+          "payload": null,
+          "usage": {
+            "inputTokens": 29199,
+            "outputTokens": 6485,
+            "cachedTokens": 6713,
+            "estimatedCostUsd": 0.093796625
+          }
+        }
+      ]
+    }
+  ]
+}

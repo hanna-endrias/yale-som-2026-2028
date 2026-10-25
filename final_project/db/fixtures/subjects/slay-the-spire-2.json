@@ -1,0 +1,775 @@
+{
+  "savedAt": "2026-10-25T03:52:40.509Z",
+  "owner": "owner1@test.com",
+  "subject": {
+    "name": "Slay the Spire 2",
+    "description": "Rouguelike deckbuilder",
+    "location": null,
+    "website": null,
+    "searchTerms": "sts2, slay the spire 2, launch"
+  },
+  "prompts": [],
+  "runs": [
+    {
+      "startDate": "2026-02-15",
+      "endDate": "2026-03-20",
+      "cadence": "weekly",
+      "instructions": null,
+      "usage": [
+        {
+          "inputTokens": 38519,
+          "outputTokens": 4594,
+          "cachedTokens": 0,
+          "estimatedCostUsd": 0.09408875
+        },
+        {
+          "inputTokens": 53224,
+          "outputTokens": 2321,
+          "cachedTokens": 4862,
+          "estimatedCostUsd": 0.08427025
+        },
+        {
+          "inputTokens": 51088,
+          "outputTokens": 3024,
+          "cachedTokens": 4862,
+          "estimatedCostUsd": 0.08863025
+        },
+        {
+          "inputTokens": 48429,
+          "outputTokens": 3279,
+          "cachedTokens": 4862,
+          "estimatedCostUsd": 0.0878565
+        },
+        {
+          "inputTokens": 62720,
+          "outputTokens": 4457,
+          "cachedTokens": 4862,
+          "estimatedCostUsd": 0.11750025
+        }
+      ],
+      "mentions": [
+        {
+          "source": "megacrit.com",
+          "url": "https://www.megacrit.com/news/2026-2-16-neowsletter-issue-19/",
+          "snippet": "Mega Crit’s pre-launch newsletter confirms macOS support at launch and discusses planned cross-platform saves and other game details.",
+          "publishedAt": "2026-02-16",
+          "sentiment": "positive",
+          "rawTokens": 0,
+          "title": "The Neowsletter - February 2026",
+          "summary": "Mega Crit’s monthly newsletter shares development and launch details for Slay the Spire 2. It confirms the game will be available on macOS at launch and says cross-platform saving is a goal, while also covering details such as the hand-size limit and a newly revealed monster. The tone is informative and anticipatory.",
+          "quote": "Will StS2 be available on MacOS on launch? Casey: Yes",
+          "themes": "launch details, macos, cross-platform saves",
+          "authorType": "brand"
+        },
+        {
+          "source": "steamcommunity.com",
+          "url": "https://steamcommunity.com/app/646570/eventcomments/748296636715772040/",
+          "snippet": "Players react to the February newsletter, with several expressing excitement that Slay the Spire 2 is coming soon and others discussing the newsletter’s recurring format.",
+          "publishedAt": "2026-02-16",
+          "sentiment": "positive",
+          "rawTokens": 0,
+          "title": "The Neowsletter - February 2026",
+          "summary": "This Steam discussion thread collects player responses to Mega Crit’s February newsletter. Several commenters are excited about Slay the Spire 2’s approaching release, while some debate newsletter jokes and one commenter complains about seeing the updates in their feed. The overall mood toward the upcoming game is enthusiastic.",
+          "quote": "SLAY THE SPIRE 2 IS OUT NEXT MONTH!!",
+          "themes": "fan excitement, newsletter, release anticipation",
+          "authorType": "forum"
+        },
+        {
+          "source": "megacrit.com",
+          "url": "https://www.megacrit.com/news/2026-02-19-release-date-trailer/",
+          "snippet": "Mega Crit announces a March 5 Early Access date and reveals co-op for up to four players.",
+          "publishedAt": "2026-02-19",
+          "sentiment": "positive",
+          "rawTokens": 0,
+          "title": "Slay the Spire 2 Releases in Early Access on March 5, 2026!",
+          "summary": "Developer Mega Crit announces that Slay the Spire 2 will enter Early Access on March 5 and presents an official trailer. The announcement highlights a new mode for up to four players, including multiplayer-specific cards and team synergies, and says more content will be added during Early Access. Its promotional framing conveys excitement about the sequel and its new features.",
+          "quote": "up to 4 players can now team up",
+          "themes": "release date, co-op, early access",
+          "authorType": "brand"
+        },
+        {
+          "source": "gameinformer.com",
+          "url": "https://www.gameinformer.com/2026/02/19/slay-the-spire-2-reveals-4-player-co-op-march-early-access-release-date",
+          "snippet": "The report covers the March 5 launch date, four-player co-op, returning and new characters, and the Defect’s return.",
+          "publishedAt": "2026-02-19",
+          "sentiment": "positive",
+          "rawTokens": 0,
+          "title": "Slay The Spire 2 Reveals 4 Player Co-Op, March Early Access Release Date",
+          "summary": "Charles Harte reports that Mega Crit set Slay the Spire 2’s Early Access release for March 5 and revealed co-op for up to four players. The article describes multiplayer-specific cards and team synergies, and notes that the trailer shows the Defect alongside two new characters. Its opening calls the original game fantastic and frames the sequel news as exciting.",
+          "quote": "In addition to the release date, Mega Crit also announced Slay the Spire 2 will have a massive feature not included in the predecessor: co-op play.",
+          "themes": "co-op, release date, characters",
+          "authorType": "press"
+        },
+        {
+          "source": "gematsu.com",
+          "url": "https://www.gematsu.com/2026/02/slay-the-spire-ii-launches-in-early-access-on-march-5",
+          "snippet": "A brief news report says the roguelike deckbuilder sequel is coming to PC via Steam Early Access on March 5.",
+          "publishedAt": "2026-02-19",
+          "sentiment": "neutral",
+          "rawTokens": 0,
+          "title": "Slay the Spire II launches in Early Access on March 5",
+          "summary": "Sal Romano reports Mega Crit’s announcement that Slay the Spire II will launch in Early Access for PC via Steam on March 5. The piece focuses on the release date and identifies it as a roguelike deckbuilder sequel. It is a straightforward news brief without an expressed judgment of the game.",
+          "quote": "Roguelike deckbuilder sequel Slay the Spire II will launch in Early Access for PC via Steam on March 5",
+          "themes": "release date, early access, pc",
+          "authorType": "press"
+        },
+        {
+          "source": "wccftech.com",
+          "url": "https://wccftech.com/slay-the-spire-2-release-date-megacrit/",
+          "snippet": "The article reports the March 5 date and highlights four-player co-op and five playable characters at launch.",
+          "publishedAt": "2026-02-19",
+          "sentiment": "positive",
+          "rawTokens": 0,
+          "title": "Slay the Spire 2 Arrives in Early Access in Two Weeks",
+          "summary": "David Carcasole reports that Mega Crit has confirmed a March 5 Early Access release, following the game’s earlier delay from its 2025 target. The article notes the animated trailer, four-player co-op, and a starting roster of five playable characters. It presents the sequel as a highly anticipated release but does not offer a review of the gameplay.",
+          "quote": "Slay the Spire 2 arrives in early access on March 5, 2026.",
+          "themes": "release date, co-op, characters",
+          "authorType": "press"
+        },
+        {
+          "source": "techpowerup.com",
+          "url": "https://www.techpowerup.com/346576/slay-the-spire-2-switches-up-predecessors-formula-with-4-player-co-op-gets-march-5-steam-launch",
+          "snippet": "The report emphasizes co-op as a major change from the original and gives the March 5 Steam launch date.",
+          "publishedAt": "2026-02-19",
+          "sentiment": "positive",
+          "rawTokens": 0,
+          "title": "Slay the Spire 2 Switches Up Predecessor's Formula With 4-Player Co-Op, Gets March 5 Steam Launch",
+          "summary": "Cpt.Jank’s news report says Slay the Spire 2 will arrive on Steam Early Access on March 5 and adds four-player co-op to the original’s single-player formula. It describes the first game as beloved and notes its continuing player community, setting up the sequel’s multiplayer reveal as a notable change. The piece is primarily factual and upbeat about the announcement.",
+          "quote": "Slay the Spire 2 Switches Up Predecessor's Formula With 4-Player Co-Op",
+          "themes": "co-op, release date, sequel",
+          "authorType": "press"
+        },
+        {
+          "source": "shacknews.com",
+          "url": "https://www.shacknews.com/article/147940/slay-the-spire-2-early-access-release-date",
+          "snippet": "Shacknews reports the date and says Mega Crit expects Early Access to last roughly one to two years.",
+          "publishedAt": "2026-02-19",
+          "sentiment": "neutral",
+          "rawTokens": 0,
+          "title": "Slay the Spire 2 gets March 5 early access release date",
+          "summary": "The Shacknews report covers Mega Crit’s announcement of a March 5, 2026 Early Access launch. It explains that the studio wants to use player feedback to improve and expand the game, and says the team expects an Early Access period similar to the original’s—roughly one to two years. The article is informative rather than evaluative.",
+          "quote": "Slay the Spire 2 will be launching in early access on March 5, 2026.",
+          "themes": "release date, early access, development",
+          "authorType": "press"
+        },
+        {
+          "source": "engadget.com",
+          "url": "https://www.engadget.com/gaming/slay-the-spire-2-will-enter-early-access-on-march-5-210338514.html",
+          "snippet": "Engadget reports the release date and highlights four-player co-op and Mega Crit’s plans to use Early Access feedback.",
+          "publishedAt": "2026-02-19",
+          "sentiment": "positive",
+          "rawTokens": 0,
+          "title": "Slay the Spire 2 will enter early access on March 5",
+          "summary": "Anna Washenko reports that the sequel to the influential 2019 deckbuilder will reach Steam Early Access on March 5. The piece notes that Mega Crit intends to use the period for balancing, quality-of-life improvements, and experimentation, and that the game will include co-op for up to four people. The coverage is positive about the game’s significance but mainly reports the announcement.",
+          "quote": "The next chapter of the influential indie is getting four-player co-op.",
+          "themes": "release date, co-op, early access",
+          "authorType": "press"
+        },
+        {
+          "source": "gamespot.com",
+          "url": "https://www.gamespot.com/articles/slay-the-spire-2-finally-enters-early-access-next-month-with-new-co-op-mode/1100-6538295/",
+          "snippet": "GameSpot covers the March 5 date, co-op for up to four players, and plans for new content during Early Access.",
+          "publishedAt": "2026-02-19",
+          "sentiment": "positive",
+          "rawTokens": 0,
+          "title": "Slay The Spire 2 Finally Enters Early Access Next Month With New Co-Op Mode",
+          "summary": "Tomas Franzese reports that Slay the Spire 2 will launch in Early Access on Steam on March 5, with a co-op mode for groups of up to four. The article says co-op will have multiplayer-specific cards geared toward teamwork and notes that Mega Crit plans to add further content during Early Access. It also observes that the game builds on the original with more heroes, abilities, and encounters.",
+          "quote": "Slay the Spire 2 enters early access on March 5 and introduces a co-op mode to the roguelike.",
+          "themes": "co-op, release date, new content",
+          "authorType": "press"
+        },
+        {
+          "source": "worthplaying.com",
+          "url": "https://worthplaying.com/article/2026/2/19/news/149059-slay-the-spire-ii-early-access-date-set-for-march-trailer/",
+          "snippet": "A short news item reports that the PC game is scheduled to enter Early Access on March 5.",
+          "publishedAt": "2026-02-19",
+          "sentiment": "neutral",
+          "rawTokens": 0,
+          "title": "'Slay The Spire II' Early Access Date Set For March - Trailer",
+          "summary": "WorthPlaying reports that Slay the Spire 2 is in development for PC and is coming to Early Access on March 5, 2026. The item centers on the release-date announcement and trailer rather than offering analysis or a review. It is neutral in tone.",
+          "quote": "Slay the Spire 2 is in development for PC (Steam), coming to Early Access in March 5, 2026.",
+          "themes": "release date, early access, pc",
+          "authorType": "press"
+        },
+        {
+          "source": "thinkygames.com",
+          "url": "https://thinkygames.com/news/slay-the-spire-2-early-access-release-date-revealed-including-new-4-player-co-op-mode/",
+          "snippet": "The article welcomes the sequel’s March launch and describes co-op as a major addition for longtime fans.",
+          "publishedAt": "2026-02-20",
+          "sentiment": "positive",
+          "rawTokens": 0,
+          "title": "Slay the Spire 2 early access release date revealed, including new 4-player co-op mode",
+          "summary": "Corey Hardt reports that Slay the Spire 2 is due in Early Access on March 5 and highlights the newly revealed four-player co-op. The article notes that returning characters will join two newcomers and sees the multiplayer mode as opening up new possibilities for character combinations and synergies. It also connects the feature to the positive reception of the cooperative board-game version.",
+          "quote": "This is a huge deal for the many superfans of the game",
+          "themes": "co-op, characters, fan anticipation",
+          "authorType": "press"
+        },
+        {
+          "source": "game8.co",
+          "url": "https://game8.co/articles/latest/slay-the-spire-2-trailer-reveals-march-5-early-access-and-4-player-co-op",
+          "snippet": "Game8 reports the March 5 launch date, co-op reveal, and Mega Crit’s stated goals for Early Access.",
+          "publishedAt": "2026-02-20",
+          "sentiment": "neutral",
+          "rawTokens": 0,
+          "title": "Slay the Spire 2 Trailer Reveals March 5 Early Access and 4-Player Co-Op",
+          "summary": "Neika Gaviola’s report says Mega Crit revealed a March 5 Early Access release date in a new trailer. It highlights the four-player co-op mode and explains that the studio plans to use Early Access for continued development. The article is an informational news piece, not a review.",
+          "quote": "Slay the Spire 2 developer Mega Crit unveils a March 5, 2026, Early Access release",
+          "themes": "release date, co-op, early access",
+          "authorType": "press"
+        },
+        {
+          "source": "g2a.com",
+          "url": "https://www.g2a.com/news/latest/slay-the-spire-2-early-access-release-date-set-for-march-5-as-animated-trailer-reveals-4-player-co-op/",
+          "snippet": "G2A reports the March 5 Early Access date and the animated trailer’s four-player co-op reveal.",
+          "publishedAt": "2026-02-20",
+          "sentiment": "positive",
+          "rawTokens": 0,
+          "title": "Slay the Spire 2 Early Access Release Date Set for March 5 as Animated Trailer Reveals 4-Player Co-Op",
+          "summary": "Luke Kyle reports that Mega Crit’s animated trailer set Slay the Spire 2’s Steam Early Access debut for March 5 and revealed four-player co-op. The article frames the game as a beloved roguelike deckbuilder and summarizes the headline announcements. Its language is positive, though the article is news coverage rather than a hands-on review.",
+          "quote": "the beloved roguelike deckbuilder debuts in Steam Early Access in just two weeks, on March 5, 2026.",
+          "themes": "release date, co-op, trailer",
+          "authorType": "press"
+        },
+        {
+          "source": "awesomeradicalgaming.com",
+          "url": "https://awesomeradicalgaming.com/2026/02/20/co-op-enabled-slay-the-spire-2-announces-early-access/",
+          "snippet": "The post notes the March 5 date and says anticipation is building for the return of the series.",
+          "publishedAt": "2026-02-20",
+          "sentiment": "positive",
+          "rawTokens": 0,
+          "title": "Co-op Enabled Slay the Spire 2 Announces Early Access",
+          "summary": "The post reports that Slay the Spire 2’s Early Access date has been set for March 5, 2026, after an earlier postponement. It describes anticipation around the return of the series and points to the new co-op feature. The framing is enthusiastic, though the available search-result excerpt provides limited detail.",
+          "quote": "Anticipation is building as Slay the Spire 2’s early access release date has been declared",
+          "themes": "release date, co-op, anticipation",
+          "authorType": "other"
+        },
+        {
+          "source": "gamedaily.com",
+          "url": "https://gamedaily.com/news/slay-the-spire-2-brings-co-op-climbing-and-new-heroes-to-early-access-in-march-2026",
+          "snippet": "GameDaily previews the sequel’s March 5 Early Access launch, emphasizing its new co-op mode, characters, and varied acts.",
+          "publishedAt": "2026-02-22",
+          "sentiment": "positive",
+          "rawTokens": 0,
+          "title": "Slay The Spire 2 Brings Co Op Climbing And New Heroes To Early Access In March 2026",
+          "summary": "Alfredo Robelo describes Slay the Spire 2 as an expansion of the original’s deckbuilding formula, with returning characters, newcomers, and alternate acts. The article spotlights four-player co-op, including multiplayer cards and team synergies, and notes Mega Crit’s plan for a long Early Access period with more content. Its tone is enthusiastic about the sequel’s larger scope and new ways to play.",
+          "quote": "a surprise focus on cooperative play",
+          "themes": "early access, co-op, new characters",
+          "authorType": "press"
+        },
+        {
+          "source": "polygon.com",
+          "url": "https://www.polygon.com/slay-the-spire-2-release-date-delay-handmancers-grimslair-steam-pc-roguelike/",
+          "snippet": "Polygon reports that Slay the Spire 2’s release announcement prompted anxiety and different scheduling decisions among competing deckbuilder developers.",
+          "publishedAt": "2026-02-23",
+          "sentiment": "neutral",
+          "rawTokens": 0,
+          "title": "Slay the Spire 2 forces Steam creator to prepare for game's release failure",
+          "summary": "Polygon’s report discusses how the March 5 Early Access date affects two other deckbuilding games. Handmancers’ developers postponed their launch, fearing they would be overshadowed, while Grimslair’s developer said it would stick with its planned window. The piece presents Slay the Spire 2 as a major competitor because fans and studios expect strong attention for the established series.",
+          "quote": "Slay the Spire's recent sequel announcement has similarly sent some deckbuilding games into a tailspin.",
+          "themes": "release competition, indie games, deckbuilders",
+          "authorType": "press"
+        },
+        {
+          "source": "game8.co",
+          "url": "https://game8.co/articles/latest/slay-the-spire-2-pulls-a-silksong-with-release-date-causes-multiple-indie-delays",
+          "snippet": "Game8 says Slay the Spire 2’s March 5 launch date led several indie games to reconsider their release timing to avoid being overshadowed.",
+          "publishedAt": "2026-02-24",
+          "sentiment": "neutral",
+          "rawTokens": 0,
+          "title": "Slay the Spire 2 Pulls a Silksong with Release Date, Causes Multiple Indie Delays",
+          "summary": "Teddy Olaveja Belnas II covers other developers’ reactions to Slay the Spire 2’s announced Early Access date. The article says Handmancer delayed its launch, citing the risk of competing with a popular deckbuilder, and also notes Mini Tank Mayhem’s rescheduling. It frames the game’s influence on the release calendar as a sign that rival studios expect it to draw substantial player attention.",
+          "quote": "Slay The Spire 2’s release date announcement sparked numerous indie titles to delay their launch.",
+          "themes": "release competition, indie games, launch timing",
+          "authorType": "press"
+        },
+        {
+          "source": "game8.co",
+          "url": "https://game8.co/articles/latest/slay-the-spire-2-pulls-a-silksong-with-release-date-causes-multiple-indie-delays",
+          "snippet": "Game8’s updated coverage highlights indie developers moving release plans because they worry Slay the Spire 2 will dominate attention.",
+          "publishedAt": "2026-02-25",
+          "sentiment": "neutral",
+          "rawTokens": 0,
+          "title": "Slay the Spire 2 Pulls a Silksong with Release Date, Causes Multiple Indie Delays",
+          "summary": "In its February 25 update, Game8 continues its account of how the sequel’s scheduled launch affected other indie releases. It reports that some developers chose to delay rather than launch alongside Slay the Spire 2, hoping to avoid being overlooked and to use the extra time for polishing and balancing. The article’s focus is the game’s perceived market impact, not a review of its gameplay quality.",
+          "quote": "many indie developers are steering clear of StS2 to ensure their titles aren't overshadowed.",
+          "themes": "release competition, indie games, launch timing",
+          "authorType": "press"
+        },
+        {
+          "source": "dotesports.com",
+          "url": "https://dotesports.com/indies/news/slay-the-spire-2-early-access-release-date",
+          "snippet": "Dot Esports outlines expectations for the sequel, describing its planned Early Access, new characters, and four-player co-op.",
+          "publishedAt": "2026-02-28",
+          "sentiment": "positive",
+          "rawTokens": 0,
+          "title": "Slay the Spire 2 early access release date",
+          "summary": "Rijit Banerjee’s guide explains that Slay the Spire 2 is expected to follow the original’s extended Early Access model, giving Mega Crit time to use player feedback to refine balance and add content. It previews returning characters alongside the Necrobinder and Regent, and points to co-op as a new strategic layer built around coordination and shared planning. The piece conveys anticipation while answering whether newcomers can start with the sequel.",
+          "quote": "The addition of four player co op and team-based effects adds a fresh layer of strategy",
+          "themes": "early access, co-op, characters",
+          "authorType": "press"
+        },
+        {
+          "source": "game8.co",
+          "url": "https://game8.co/reviews/slay-the-spire-2/slay-the-spire-2-review-early-access",
+          "snippet": "Game8’s first impressions describe the sequel’s familiar deckbuilding, new four-player co-op, and returning and new characters.",
+          "publishedAt": "2026-03-05",
+          "sentiment": "positive",
+          "rawTokens": 0,
+          "title": "Slay the Spire 2 Review [Early Access] | Still the Deckbuilder to Beat",
+          "summary": "Game8’s early-access review introduces the familiar turn-based deckbuilding and the sequel’s co-op for up to four players. The writer says the original’s challenges renewed their appetite for the Spire and describes finally getting to play the sequel’s early-access build.",
+          "quote": "To say that I love Slay the Spire is an understatement among understatements.",
+          "themes": "deckbuilding, co-op, new characters",
+          "authorType": "review"
+        },
+        {
+          "source": "megacrit.com",
+          "url": "https://megacrit.com/news/2026-03-05-early-access-launch/",
+          "snippet": "Mega Crit announced that the long-awaited sequel is available on Steam Early Access.",
+          "publishedAt": "2026-03-05",
+          "sentiment": "positive",
+          "rawTokens": 0,
+          "title": "Slay the Spire 2 is out NOW in Early Access!!",
+          "summary": "Developer Mega Crit announced Slay the Spire 2’s Early Access launch on Steam. The studio presents it as the long-awaited sequel to its original roguelike deckbuilder and expresses excitement about players trying the game after five years of work.",
+          "quote": "The Spire has finally reawakened.",
+          "themes": "early access, launch, developer announcement",
+          "authorType": "brand"
+        },
+        {
+          "source": "rollingout.com",
+          "url": "https://rollingout.com/2026/03/05/slay-the-spire-2-is-worth-every-minute/",
+          "snippet": "The article highlights the new co-op mode, five playable characters, and the sequel’s revamped Spire.",
+          "publishedAt": "2026-03-05",
+          "sentiment": "positive",
+          "rawTokens": 0,
+          "title": "Why Slay the Spire 2 is worth every minute of the wait",
+          "summary": "Tega Egwabor reports that the game entered Early Access after a longer-than-planned development period, noting that Mega Crit took more time to polish it. The article points to four-player co-op, multiplayer-specific cards and team synergies, and five distinct characters as key additions to the returning run-based deckbuilding formula.",
+          "quote": "One of the most talked-about additions in Slay the Spire 2 is co-op multiplayer, a feature the original game never offered.",
+          "themes": "co-op, characters, early access",
+          "authorType": "press"
+        },
+        {
+          "source": "nordic.ign.com",
+          "url": "https://nordic.ign.com/slay-the-spire-2/104836/news/slay-the-spire-2-launches-immediately-shatters-a-concurrent-player-record-on-steam",
+          "snippet": "IGN reports that the game reached 177,000 concurrent Steam players on launch day, setting a roguelike record at the time.",
+          "publishedAt": "2026-03-05",
+          "sentiment": "positive",
+          "rawTokens": 0,
+          "title": "Slay the Spire 2 Launches, Immediately Shatters a Concurrent Player Record on Steam",
+          "summary": "Rebekah Valentine reports on Slay the Spire 2’s strong launch-day player numbers, including a new Steam concurrent-player record for a roguelike. The article frames this as a particularly impressive debut amid several major game releases and notes that the player count was still rising as she wrote.",
+          "quote": "That's a new record for a roguelike on the platform",
+          "themes": "launch, player count, steam",
+          "authorType": "press"
+        },
+        {
+          "source": "forbes.com",
+          "url": "https://www.forbes.com/sites/paultassi/2026/03/06/slay-the-spire-2-breaks-two-steam-player-count-records-in-one-day/",
+          "snippet": "Paul Tassi says the game’s concurrent player count surged after launch, setting records for the roguelike genre and the year’s biggest Steam release so far.",
+          "publishedAt": "2026-03-06",
+          "sentiment": "positive",
+          "rawTokens": 0,
+          "title": "‘Slay The Spire 2’ Breaks Two Steam Player Count Records In One Day",
+          "summary": "Paul Tassi reports that Slay the Spire 2 nearly doubled its initial launch-day concurrent-player peak, reaching about 430,000 players and becoming Steam’s fourth-most-played game at the time. He attributes the success to the long-awaited sequel’s appeal and notes that roguelikes can sustain play through the many possible run combinations.",
+          "quote": "Slay the Spire 2 is a smash hit on Steam, shattering two different player count records in 24 hours.",
+          "themes": "player count, steam, launch",
+          "authorType": "press"
+        },
+        {
+          "source": "techpowerup.com",
+          "url": "https://www.techpowerup.com/347128/slay-the-spire-2-peaks-at-over-430-000-players-in-first-24-hours",
+          "snippet": "TechPowerUp reports 430,456 peak concurrent players, a top spot on Steam’s sales chart, and positive reception to the sequel’s additions.",
+          "publishedAt": "2026-03-06",
+          "sentiment": "positive",
+          "rawTokens": 0,
+          "title": "Slay the Spire 2 Peaks at Over 430,000 Players in First 24 Hours",
+          "summary": "TechPowerUp reports that the game reached 430,456 concurrent players within its first 24 hours and topped Steam’s sales chart. It describes the launch as successful, citing positive Steam reviews, new characters and cards, and co-op that appears to build on the original without feeling shoehorned in.",
+          "quote": "Judging by the Steam reviews, most of the improvements seem to successfully build on what made the previous game great",
+          "themes": "player count, sales, co-op",
+          "authorType": "press"
+        },
+        {
+          "source": "g2a.com",
+          "url": "https://www.g2a.com/news/features/slay-the-spire-2-early-access-first-impressions/",
+          "snippet": "G2A’s first impressions praise the launch reception and expanded feature set while noting that the game is still unfinished Early Access.",
+          "publishedAt": "2026-03-06",
+          "sentiment": "positive",
+          "rawTokens": 0,
+          "title": "Slay the Spire 2 Early Access – First Impressions",
+          "summary": "G2A’s editorial team says the sequel already feels like an event and reports its overwhelmingly positive early Steam reviews. The piece recommends it to deckbuilder fans while flagging Early Access caveats, including no true ending yet, disabled achievements, and more content still to come.",
+          "quote": "The community reception has been nothing short of phenomenal",
+          "themes": "early access, reviews, new features",
+          "authorType": "review"
+        },
+        {
+          "source": "me.ign.com",
+          "url": "https://me.ign.com/en/slay-the-spire-2/241826/review/slay-the-spire-2-early-access-review-so-far",
+          "snippet": "Dan Stapleton finds the opening hours very familiar but says new characters, enemies, and events make the sequel feel worthy of its name.",
+          "publishedAt": "2026-03-07",
+          "sentiment": "positive",
+          "rawTokens": 0,
+          "title": "Slay the Spire 2 Early Access Review So Far",
+          "summary": "IGN reviewer Dan Stapleton initially felt the game resembled a remake because its map and combat closely follow the original. After unlocking more content, he found the new characters, enemies, bosses, artifacts, and events helped the sequel establish its own identity; he also praised the livelier art style while noting that balance and new encounters made early runs challenging.",
+          "quote": "this follow-up has come more into its own",
+          "themes": "review, familiarity, new content",
+          "authorType": "review"
+        },
+        {
+          "source": "sea.ign.com",
+          "url": "https://sea.ign.com/slay-the-spire-2/239791/video/slay-the-spire-2-15-biggest-changes-from-slay-the-spire-1",
+          "snippet": "IGN’s video overview highlights the sequel’s art and engine changes, new mechanics and characters, and long-requested co-op.",
+          "publishedAt": "2026-03-07",
+          "sentiment": "positive",
+          "rawTokens": 0,
+          "title": "Slay the Spire 2 - 15 Biggest Changes From Slay the Spire 1",
+          "summary": "IGN’s March 7 video compares the sequel with the original, covering revised characters, card types, alternate acts, quests, and new mechanics. It presents official co-op and the Necrobinder and Regent as significant additions to the familiar deckbuilding loop.",
+          "quote": "Mega Crit is introducing more ways to break the game than ever before.",
+          "themes": "new mechanics, characters, co-op",
+          "authorType": "press"
+        },
+        {
+          "source": "polygon.com",
+          "url": "https://www.polygon.com/slay-the-spire-2-review-early-access/",
+          "snippet": "Polygon says the sequel largely preserves the original’s appeal, adding new characters, cards, relics, and co-op without radically changing the formula.",
+          "publishedAt": "2026-03-10",
+          "sentiment": "positive",
+          "rawTokens": 0,
+          "title": "Slay the Spire 2 review: a deluxe replacement in every way",
+          "summary": "Polygon’s reviewer says Slay the Spire 2 feels very close to the first game, with additions that expand and tweak its familiar deckbuilding rather than reinvent it. The piece notes that co-op is a significant addition, but can still feel like an add-on; overall, the reviewer says the game is good and appreciates its small design twists.",
+          "quote": "Slay the Spire 2 plays like DLC.",
+          "themes": "gameplay, sequel, co-op",
+          "authorType": "review"
+        },
+        {
+          "source": "ngohq.com",
+          "url": "https://www.ngohq.com/2026/03/08/slay-the-spire-2-review/",
+          "snippet": "The review introduces the game through its card-based roguelike premise and the influence of the original Slay the Spire.",
+          "publishedAt": "2026-03-08",
+          "sentiment": "neutral",
+          "rawTokens": 0,
+          "title": "Slay the Spire 2 Review",
+          "summary": "NGOHQ frames the sequel against the original’s reputation as an influential indie game. Its description highlights the central card system, where attacks, defense, and status effects are played from a hand of cards. The available search excerpt does not show the reviewer’s overall verdict.",
+          "quote": "a roguelike adventure built around a deck of cards.",
+          "themes": "deckbuilding, combat, legacy",
+          "authorType": "review"
+        },
+        {
+          "source": "g2a.com",
+          "url": "https://www.g2a.com/news/game-spotlights/slay-the-spire-2-mobile-version-coming-later-not-during-early-access/",
+          "snippet": "G2A reports that a mobile version is planned, but Mega Crit is prioritizing the PC Early Access build first.",
+          "publishedAt": "2026-03-11",
+          "sentiment": "neutral",
+          "rawTokens": 0,
+          "title": "Slay the Spire 2 Mobile Version Coming Later, Not During Early Access",
+          "summary": "G2A says players hoping to play Slay the Spire 2 on phones will have to wait: the developers plan iOS and Android versions, but have not announced a release window. The article attributes the delay to Mega Crit’s focus on improving the PC version during Early Access, following a similar development approach to the first game.",
+          "quote": "it will not appear anytime soon.",
+          "themes": "mobile, early access, platforms",
+          "authorType": "press"
+        },
+        {
+          "source": "gamespot.com",
+          "url": "https://www.gamespot.com/articles/slay-the-spire-2-epochs/1100-6538655/",
+          "snippet": "GameSpot explains the Epochs and the objectives players must complete to unlock them.",
+          "publishedAt": "2026-03-11",
+          "sentiment": "neutral",
+          "rawTokens": 0,
+          "title": "How To Unlock Slay The Spire 2 Epochs",
+          "summary": "This GameSpot guide focuses on Slay the Spire 2’s progression system, describing how players unlock Epochs by completing objectives across repeated runs. It is a practical reference for players trying to track down the game’s timeline content, rather than an evaluative review.",
+          "quote": "All the Slay The Spire 2 Epochs from the timeline and all the conditions needed to unlock them.",
+          "themes": "progression, unlockables, guide",
+          "authorType": "press"
+        },
+        {
+          "source": "ign.com",
+          "url": "https://sea.ign.com/slay-the-spire-2/239726/review/slay-the-spire-2-early-access-review-so-far",
+          "snippet": "IGN calls the sequel an easy recommendation, praising how it retains the original’s engrossing deckbuilding while adding to it.",
+          "publishedAt": "2026-03-14",
+          "sentiment": "positive",
+          "rawTokens": 0,
+          "title": "Slay the Spire 2 Early Access Review",
+          "summary": "IGN reviewer Dan Stapleton says Slay the Spire 2’s Early Access build plays much like the original, a similarity the review treats as a strength. The review describes the sequel as a compelling continuation rather than an ambitious departure, and recommends it based on the appeal of its core roguelike deckbuilding.",
+          "quote": "A sequel that's not too ambitious but just as enthralling.",
+          "themes": "gameplay, review, sequel",
+          "authorType": "review"
+        },
+        {
+          "source": "rpgfan.com",
+          "url": "https://www.rpgfan.com/2026/03/14/slay-the-spire-ii-hands-on-and-slay-some-monsters-while-youre-at-it/",
+          "snippet": "RPGFan praises Mega Crit for finding a strong balance between preserving the original and adding new design depth.",
+          "publishedAt": "2026-03-14",
+          "sentiment": "positive",
+          "rawTokens": 0,
+          "title": "Slay the Spire II Early Access Review: And Slay Some Monsters, While You're At It",
+          "summary": "Jerry Williams initially wondered whether the sequel would be a cash grab or could innovate while retaining the first game’s identity. The review says Mega Crit found a successful balance, and points to the two new characters and their card sets as adding meaningful depth to the design.",
+          "quote": "Mega Crit has nailed the sweet spot.",
+          "themes": "gameplay, characters, design",
+          "authorType": "review"
+        },
+        {
+          "source": "kotaku.com",
+          "url": "https://kotaku.com/slay-spire-2-patch-notes-sales-damage-build-2000678909",
+          "snippet": "Kotaku reports that the game sold three million copies in its first week, while Mega Crit addressed a damage exploit and shared early player-run figures.",
+          "publishedAt": "2026-03-14",
+          "sentiment": "positive",
+          "rawTokens": 0,
+          "title": "Slay The Spire 2 Patches Damage Exploit As It Tops 3 Million Sales",
+          "summary": "Kotaku describes Slay the Spire 2’s first week as a major commercial success, reporting three million copies sold and more than 250 million runs attempted. The article also covers a damage exploit and quick fixes discussed by Mega Crit, framing the update as part of the game’s active Early Access period.",
+          "quote": "The deckbuilding roguelike blew the first game’s launch out of the water",
+          "themes": "sales, early access, bug fixes",
+          "authorType": "press"
+        },
+        {
+          "source": "megacrit.com",
+          "url": "https://megacrit.com/news/2026-3-13-neowsletter-issue-20/",
+          "snippet": "Mega Crit celebrates the Early Access response, reporting three million copies sold and more than 25 million runs attempted in about a week.",
+          "publishedAt": "2026-03-13",
+          "sentiment": "positive",
+          "rawTokens": 0,
+          "title": "The Neowsletter - March 2026",
+          "summary": "In its March newsletter, developer Mega Crit thanks players for the response to Slay the Spire 2’s Early Access launch and shares early sales and run totals. The studio also discusses upcoming merchandise and other Slay the Spire announcements. Its celebratory tone reflects the team’s positive view of the launch reception.",
+          "quote": "Slay the Spire 2 has been out for merely a week and we have already hit 3,000,000 units sold",
+          "themes": "launch, sales, community",
+          "authorType": "brand"
+        },
+        {
+          "source": "avclub.com",
+          "url": "https://www.avclub.com/slay-the-spire-2-early-access-impressions",
+          "snippet": "Slay The Spire 2 turns the deckbuilding play of the original into a co-op game, bringing digital card games back to their physical roots.",
+          "publishedAt": "2026-03-16",
+          "sentiment": "positive",
+          "rawTokens": 0,
+          "title": "Slay The Spire 2 lets you share your digital card game obsession with friends",
+          "summary": "Elijah Gonzalez argues the sequel makes a meaningful addition to the original formula by letting players climb together in co-op. The piece says this brings the genre closer to its tabletop roots and helps Slay the Spire 2 feel like more than a repeat of the first game.",
+          "quote": "The game didn’t just settle for more of the same, it added an ingenious touch that brings it back to its tabletop roots.",
+          "themes": "co-op, gameplay, sequel",
+          "authorType": "press"
+        },
+        {
+          "source": "gamingonlinux.com",
+          "url": "https://www.gamingonlinux.com/2026/03/the-godot-powered-slay-the-spire-2-has-already-hit-over-3-million-sales/",
+          "snippet": "Mega Crit confirmed 3,000,000 units sold and more than 25,000,000 runs attempted in roughly a week.",
+          "publishedAt": "2026-03-16",
+          "sentiment": "positive",
+          "rawTokens": 0,
+          "title": "The Godot powered Slay the Spire 2 has already hit over 3 million sales",
+          "summary": "Liam Squires-Hand reports on the game’s early sales and play activity, drawing on Mega Crit’s newsletter. The article also notes that the developers plan ongoing balance work and more content, while avoiding a firm timeline for major additions. Its framing emphasizes the sequel’s strong reception and commercial momentum.",
+          "quote": "we have already hit 3,000,000 units sold with more than 25,000,000 runs attempted",
+          "themes": "sales, player activity, early access",
+          "authorType": "press"
+        },
+        {
+          "source": "mobalytics.gg",
+          "url": "https://mobalytics.gg/slay-the-spire-2/guides/keywords",
+          "snippet": "A reference guide explains the game’s keywords and character-specific mechanics for players building decks.",
+          "publishedAt": "2026-03-17",
+          "sentiment": "neutral",
+          "rawTokens": 0,
+          "title": "Slay the Spire 2 Keywords and Terms Guide",
+          "summary": "Mobalytics presents a beginner-focused reference to Slay the Spire 2’s keywords, including familiar terms and mechanics tied to individual characters. It explains that knowing these rules matters because they shape build archetypes and how players use cards. The page is informational rather than evaluative.",
+          "quote": "Knowing how they all work is essential to playing the game",
+          "themes": "beginner guide, keywords, game mechanics",
+          "authorType": "other"
+        },
+        {
+          "source": "youtube.com",
+          "url": "https://www.youtube.com/watch?v=XthYITE0z3c",
+          "snippet": "The creator describes a difficult daily run and says they committed to a shield-focused build.",
+          "publishedAt": "2026-03-17",
+          "sentiment": "neutral",
+          "rawTokens": 0,
+          "title": "Slay The Spire 2 Daily Challenge #2 - March 17, 2026",
+          "summary": "The Daily Spire shares a gameplay run from Slay the Spire 2’s March 17 daily challenge. The creator says the challenge was difficult and explains that a shield build was a useful choice, though it was awkward early because the deck needed block cards while still handling initial enemies and bosses.",
+          "quote": "This was a hard one and I had to commit to a full shield build for the run.",
+          "themes": "gameplay, daily challenge, strategy",
+          "authorType": "social"
+        },
+        {
+          "source": "kotaku.com",
+          "url": "https://kotaku.com/slay-the-spire-2-tips-tricks-beginner-deckbuilding-2000680050",
+          "snippet": "Lewis Parker says the sequel is harder than the original and offers advice for players struggling to finish a run.",
+          "publishedAt": "2026-03-18",
+          "sentiment": "negative",
+          "rawTokens": 0,
+          "title": "Slay The Spire 2: Tips And Tricks For Getting Started",
+          "summary": "Parker writes that Slay the Spire 2 can be tough for newcomers and even experienced players, pointing to player discussions and the difficulty of getting through early runs. The guide offers tips to help people survive and adapt, while describing the sequel’s harder challenge as intentional. It also notes that some characters and cards feel stronger than others and that balancing remains ongoing.",
+          "quote": "they made it harder on purpose.",
+          "themes": "difficulty, beginner guide, balance",
+          "authorType": "press"
+        },
+        {
+          "source": "progameguides.com",
+          "url": "https://progameguides.com/slay-the-spire-2/slay-the-spire-2-beginners-guide/",
+          "snippet": "The guide says new players may lose early, then explains the game’s systems and deckbuilding approach.",
+          "publishedAt": "2026-03-18",
+          "sentiment": "neutral",
+          "rawTokens": 0,
+          "title": "Slay the Spire 2 Beginner’s Guide [Early Access]",
+          "summary": "Nikola Savic’s guide introduces the game’s core loop, characters, map, campfires, elites, and relics for beginners. It says early defeats are normal and encourages players to adapt to the cards and relics they receive rather than forcing a predetermined archetype. The page notes that Mega Crit is patching the Early Access build frequently.",
+          "quote": "If your first few runs in Slay the Spire 2 ended somewhere in Act 1 with very little explanation, that's completely normal.",
+          "themes": "beginner guide, difficulty, deckbuilding",
+          "authorType": "other"
+        },
+        {
+          "source": "mobalytics.gg",
+          "url": "https://mobalytics.gg/slay-the-spire-2/guides/beginner-guide",
+          "snippet": "The guide advises players to adapt their decks to each run and fight enemies early for rewards.",
+          "publishedAt": "2026-03-19",
+          "sentiment": "neutral",
+          "rawTokens": 0,
+          "title": "Slay the Spire 2 Ultimate Beginner Guide",
+          "summary": "Mobalytics offers beginner advice focused on route selection and responding to the cards, relics, and enemies available in each run. It recommends taking several early normal fights for rewards and warns that a card’s value depends on the situation. The guide frames learning to adapt as more useful than memorizing a fixed strategy.",
+          "quote": "Success in the game comes less from memorizing strategies and more from learning how to evaluate situations and adapt your deck along the way.",
+          "themes": "beginner guide, strategy, deckbuilding",
+          "authorType": "other"
+        },
+        {
+          "source": "steamdb.info",
+          "url": "https://steamdb.info/patchnotes/22424761/",
+          "snippet": "The first major post-launch beta patch targets infinite combos and adds Phobia Mode and new art.",
+          "publishedAt": "2026-03-20",
+          "sentiment": "neutral",
+          "rawTokens": 0,
+          "title": "Beta Patch Notes - v0.100.0",
+          "summary": "SteamDB records the v0.100.0 beta update for Slay the Spire 2, including a broad balance pass intended to make infinite combos harder to assemble. The notes also describe Phobia Mode, alternate visual assets, new card portraits, and character-specific visual effects. The page identifies the patch as beta-branch content.",
+          "quote": "This one has a huge balance pass, the main aim of which is to make infinites harder to achieve.",
+          "themes": "patch, balance, accessibility",
+          "authorType": "other"
+        },
+        {
+          "source": "gamespot.com",
+          "url": "https://www.gamespot.com/articles/slay-the-spire-2-is-becoming-a-little-less-scary-but-players-are-unhappy-with-patchs-nerfs/1100-6538921/",
+          "snippet": "The first major beta update adds Phobia Mode, but changes to cards and enemies have upset some players.",
+          "publishedAt": "2026-03-20",
+          "sentiment": "negative",
+          "rawTokens": 0,
+          "title": "Slay The Spire 2 Is Becoming A Little Less Scary, But Players Are Unhappy With Patch’s Nerfs",
+          "summary": "Tomas Franzese covers v0.100.0, highlighting its accessibility toggle and extensive balance changes. The article says some adjustments—particularly a change to Silent’s Prepared card and a stronger Doormaker boss—have caused community backlash. It also stresses that the patch is still being tested in the public beta branch, leaving time for revisions.",
+          "quote": "Some of these changes have caused backlash from the community.",
+          "themes": "patch, balance, player backlash",
+          "authorType": "press"
+        },
+        {
+          "source": "polygon.com",
+          "url": "https://www.polygon.com/slay-the-spire-2-patch-infinite-doormaker-prepared-card-changes-steam-reviews/",
+          "snippet": "Polygon reports that balance changes to popular strategies and tougher enemies prompted a wave of negative Steam reviews.",
+          "publishedAt": "2026-03-20",
+          "sentiment": "negative",
+          "rawTokens": 0,
+          "title": "Slay the Spire 2 slammed on Steam over patch that makes game harder",
+          "summary": "Polygon says the beta update made the game harder by changing popular card strategies and buffing enemies, including the final boss. It describes player anger over nerfs to infinite combos and specific changes to Silent and Regent, alongside complaints that the update went too far. The article notes that the patch also added Phobia Mode and other quality-of-life changes.",
+          "quote": "Adjustments to popular decks and buffs to enemy bosses have Steam fans up in arms",
+          "themes": "patch, difficulty, player backlash",
+          "authorType": "press"
+        },
+        {
+          "source": "kotaku.com",
+          "url": "https://kotaku.com/slay-the-spire-2-steam-review-bomb-balance-patch-prepared-doormaker-2000680603",
+          "snippet": "Kotaku reports that players used Steam reviews to protest balance changes to cards and a boss encounter.",
+          "publishedAt": "2026-03-20",
+          "sentiment": "negative",
+          "rawTokens": 0,
+          "title": "Slay The Spire 2 Is Getting Review Bombed On Steam Over Upcoming Balance Patch",
+          "summary": "Lewis Parker reports that the game’s Steam rating fell after a beta balance patch changed the Silent’s Prepared card and strengthened the Doormaker fight. The article says some players used reviews to express objections rather than the in-game feedback tool. The criticism centers on concern that the changes would make runs less enjoyable or overly difficult.",
+          "quote": "Some fans are using Steam reviews to submit their input on upcoming changes rather than the in-game 'Feedback' option",
+          "themes": "review bombing, balance, player feedback",
+          "authorType": "press"
+        },
+        {
+          "source": "pcgamesn.com",
+          "url": "https://www.pcgamesn.com/slay-the-spire-2/patch-notes-infinites-nerfed",
+          "snippet": "PCGamesN says the first major beta balance patch makes infinite combos harder and changes cards including Prepared.",
+          "publishedAt": "2026-03-20",
+          "sentiment": "negative",
+          "rawTokens": 0,
+          "title": "Slay the Spire 2 is stamping out infinites, and you're not prepared for what we've lost",
+          "summary": "Ken Allsop describes the update as a substantial balance pass aimed at making infinite combos less accessible, while noting they remain part of the game’s power curve. The article details the changes to Silent’s Prepared card and the new Phobia Mode. Allsop acknowledges the card’s former usefulness and says he will miss its previous form.",
+          "quote": "I can still see some great use cases for it, but I can't deny that I'll miss the old favorite.",
+          "themes": "patch, card balance, strategy",
+          "authorType": "press"
+        }
+      ]
+    }
+  ],
+  "chats": [
+    {
+      "title": "what was the sentiment before and after",
+      "messages": [
+        {
+          "role": "user",
+          "content": "what was the sentiment before and after the release. can you create a simple visualization of the data that are interesting",
+          "payload": null
+        },
+        {
+          "role": "tool",
+          "content": "getSentimentSummary",
+          "payload": null
+        },
+        {
+          "role": "tool",
+          "content": "getThemes",
+          "payload": null
+        },
+        {
+          "role": "tool",
+          "content": "getTopSources",
+          "payload": null
+        },
+        {
+          "role": "tool",
+          "content": "getMentions",
+          "payload": null
+        },
+        {
+          "role": "tool",
+          "content": "getSentimentSummary",
+          "payload": null
+        },
+        {
+          "role": "tool",
+          "content": "getMentions",
+          "payload": null
+        },
+        {
+          "role": "tool",
+          "content": "getMentions",
+          "payload": null
+        },
+        {
+          "role": "tool",
+          "content": "createVisualization",
+          "payload": "{\"title\":\"Slay the Spire 2 sentiment before vs. after launch\",\"html\":\"<!DOCTYPE html>\\n<html lang=\\\"en\\\">\\n<head>\\n<meta charset=\\\"utf-8\\\">\\n<meta name=\\\"viewport\\\" content=\\\"width=device-width, initial-scale=1\\\">\\n<title>Slay the Spire 2 sentiment before vs. after launch</title>\\n<style>\\n  body { background: transparent; color: var(--text); margin: 0; font-family: system-ui, sans-serif; }\\n  * { box-sizing: border-box; }\\n  main { width: 100%; max-width: 700px; margin: 0 auto; padding: 18px 16px 24px; }\\n  h1 { font-size: 1.3rem; line-height: 1.25; margin: 0 0 5px; }\\n  .subtitle, .note { color: var(--muted); font-size: .88rem; margin: 0; }\\n  .chart-card { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; margin-top: 16px; padding: 8px; }\\n  svg { display: block; width: 100%; height: auto; overflow: visible; }\\n  .axis, .tick { stroke: var(--border); stroke-width: 1; }\\n  .tick-label, .axis-label, .period-label, .event-label, .legend-label, .value-label {\\n    fill: var(--text); font-family: system-ui, sans-serif;\\n  }\\n  .tick-label, .legend-label { font-size: 12px; }\\n  .axis-label { font-size: 13px; }\\n  .period-label { font-size: 13px; font-weight: 600; }\\n  .event-label { font-size: 12px; font-weight: 650; }\\n  .value-label { font-size: 12px; font-weight: 650; }\\n  .bar { cursor: help; stroke: var(--panel); stroke-width: 1; }\\n  .bar:focus { outline: none; stroke: var(--text); stroke-width: 2; }\\n  .positive { fill: var(--positive); }\\n  .neutral { fill: var(--neutral); }\\n  .negative { fill: var(--negative); }\\n  .event-line { stroke: var(--accent); stroke-width: 1.5; stroke-dasharray: 5 4; }\\n  .legend-swatch { stroke: none; }\\n  .note { line-height: 1.45; margin-top: 10px; }\\n  h2 { font-size: 1rem; margin: 18px 0 4px; }\\n  .evidence-intro { color: var(--muted); font-size: .84rem; margin: 0 0 8px; }\\n  .evidence { list-style: none; padding: 0; margin: 0; display: grid; gap: 7px; }\\n  .evidence a {\\n    display: block; color: var(--text); text-decoration: none;\\n    background: var(--panel); border: 1px solid var(--border); border-radius: 8px;\\n    padding: 9px 11px;\\n  }\\n  .evidence a:hover, .evidence a:focus-visible { border-color: var(--accent); outline: none; }\\n  .row-meta { color: var(--muted); display: block; font-size: .76rem; margin-bottom: 2px; }\\n  .row-title { display: block; font-size: .88rem; font-weight: 600; line-height: 1.35; }\\n  #tooltip {\\n    display: none; position: fixed; z-index: 5; max-width: min(340px, calc(100vw - 24px));\\n    background: var(--panel); color: var(--text); border: 1px solid var(--border);\\n    border-radius: 8px; box-shadow: 0 5px 18px rgba(0,0,0,.18);\\n    padding: 9px 11px; font-size: .82rem; line-height: 1.4; pointer-events: none;\\n  }\\n  #tooltip strong { display: block; margin-bottom: 3px; }\\n  @media (max-width: 480px) {\\n    main { padding: 14px 10px 20px; }\\n    .chart-card { padding: 4px; }\\n  }\\n</style>\\n</head>\\n<body>\\n<main>\\n  <h1>Slay the Spire 2 sentiment before vs. after launch</h1>\\n  <p class=\\\"subtitle\\\">Stored mention counts by sentiment · exact-date records in each period</p>\\n\\n  <section class=\\\"chart-card\\\" aria-label=\\\"Grouped bar chart of sentiment counts\\\">\\n    <svg id=\\\"chart\\\" viewBox=\\\"0 0 700 405\\\" role=\\\"img\\\" aria-labelledby=\\\"chart-title chart-desc\\\">\\n      <title id=\\\"chart-title\\\">Mention sentiment before and after the March 5 release</title>\\n      <desc id=\\\"chart-desc\\\">Positive, neutral, and negative mention counts for February 16 to March 4 and March 5 to March 20, 2026. A vertical marker labels the March 5 release date.</desc>\\n    </svg>\\n  </section>\\n  <p class=\\\"note\\\">Positive mentions remained the largest category after launch. Negative mentions appear in the post-release period, with all five stored negative mentions dated March 18–20.</p>\\n\\n  <h2>Negative-mention evidence</h2>\\n  <p class=\\\"evidence-intro\\\">Hover or focus a row for its summary. Each item links to its stored source.</p>\\n  <ul class=\\\"evidence\\\" id=\\\"evidence\\\"></ul>\\n</main>\\n<div id=\\\"tooltip\\\" role=\\\"status\\\" aria-live=\\\"polite\\\"></div>\\n\\n<script>\\n(() => {\\n  const svg = document.getElementById(\\\"chart\\\");\\n  const ns = \\\"http://www.w3.org/2000/svg\\\";\\n  const tooltip = document.getElementById(\\\"tooltip\\\");\\n\\n  const groups = [\\n    { label: \\\"Pre-release\\\", dates: \\\"Feb 16–Mar 4\\\", counts: { positive: 13, neutral: 7, negative: 0 } },\\n    { label: \\\"Post-release\\\", dates: \\\"Mar 5–20\\\", counts: { positive: 15, neutral: 8, negative: 5 } }\\n  ];\\n  const series = [\\n    { key: \\\"positive\\\", label: \\\"Positive\\\" },\\n    { key: \\\"neutral\\\", label: \\\"Neutral\\\" },\\n    { key: \\\"negative\\\", label: \\\"Negative\\\" }\\n  ];\\n\\n  function el(name, attrs, text) {\\n    const node = document.createElementNS(ns, name);\\n    for (const [key, value] of Object.entries(attrs || {})) node.setAttribute(key, value);\\n    if (text !== undefined) node.textContent = text;\\n    return node;\\n  }\\n  function showTooltip(title, detail, x, y) {\\n    tooltip.replaceChildren();\\n    const strong = document.createElement(\\\"strong\\\");\\n    strong.textContent = title;\\n    const body = document.createElement(\\\"span\\\");\\n    body.textContent = detail;\\n    tooltip.append(strong, body);\\n    tooltip.style.display = \\\"block\\\";\\n    const left = Math.min(x + 12, window.innerWidth - tooltip.offsetWidth - 10);\\n    const top = Math.min(y + 12, window.innerHeight - tooltip.offsetHeight - 10);\\n    tooltip.style.left = Math.max(10, left) + \\\"px\\\";\\n    tooltip.style.top = Math.max(10, top) + \\\"px\\\";\\n  }\\n  function hideTooltip() { tooltip.style.display = \\\"none\\\"; }\\n\\n  const plot = { left: 76, right: 674, top: 82, bottom: 306 };\\n  const max = 16;\\n  const y = value => plot.bottom - (value / max) * (plot.bottom - plot.top);\\n\\n  // Horizontal count axis and labeled ticks.\\n  svg.append(el(\\\"text\\\", { x: 20, y: 195, class: \\\"axis-label\\\", transform: \\\"rotate(-90 20 195)\\\", \\\"text-anchor\\\": \\\"middle\\\" }, \\\"Mentions\\\"));\\n  [0, 5, 10, 15].forEach(value => {\\n    const yy = y(value);\\n    svg.append(el(\\\"line\\\", { x1: plot.left, y1: yy, x2: plot.right, y2: yy, class: \\\"tick\\\" }));\\n    svg.append(el(\\\"text\\\", { x: plot.left - 12, y: yy + 4, class: \\\"tick-label\\\", \\\"text-anchor\\\": \\\"end\\\" }, String(value)));\\n  });\\n  svg.append(el(\\\"line\\\", { x1: plot.left, y1: plot.bottom, x2: plot.right, y2: plot.bottom, class: \\\"axis\\\" }));\\n\\n  // Legend.\\n  const legendStart = 420;\\n  series.forEach((item, i) => {\\n    const lx = legendStart + i * 84;\\n    svg.append(el(\\\"rect\\\", { x: lx, y: 24, width: 12, height: 12, rx: 2, class: \\\"legend-swatch \\\" + item.key }));\\n    svg.append(el(\\\"text\\\", { x: lx + 17, y: 35, class: \\\"legend-label\\\" }, item.label));\\n  });\\n\\n  // Release-date marker, between the two period groups.\\n  const markerX = 375;\\n  svg.append(el(\\\"line\\\", { x1: markerX, y1: 62, x2: markerX, y2: plot.bottom, class: \\\"event-line\\\" }));\\n  svg.append(el(\\\"text\\\", { x: markerX + 7, y: 73, class: \\\"event-label\\\" }, \\\"Release · March 5\\\"));\\n\\n  const centers = [222, 526];\\n  const barWidth = 43;\\n  const gap = 10;\\n  groups.forEach((group, gi) => {\\n    const totalWidth = series.length * barWidth + (series.length - 1) * gap;\\n    const startX = centers[gi] - totalWidth / 2;\\n\\n    series.forEach((item, si) => {\\n      const value = group.counts[item.key];\\n      const x = startX + si * (barWidth + gap);\\n      const yy = y(value);\\n      const height = Math.max(0, plot.bottom - yy);\\n      const rect = el(\\\"rect\\\", {\\n        x, y: value === 0 ? plot.bottom - 1 : yy, width: barWidth, height: value === 0 ? 1 : height,\\n        rx: 3, class: \\\"bar \\\" + item.key, tabindex: \\\"0\\\", role: \\\"img\\\",\\n        \\\"aria-label\\\": `${group.label}, ${group.dates}, ${item.label}: ${value} mentions`\\n      });\\n      const detail = `${item.label}: ${value} mentions · ${group.dates}, 2026`;\\n      rect.addEventListener(\\\"pointerenter\\\", event => showTooltip(group.label, detail, event.clientX, event.clientY));\\n      rect.addEventListener(\\\"pointermove\\\", event => showTooltip(group.label, detail, event.clientX, event.clientY));\\n      rect.addEventListener(\\\"pointerleave\\\", hideTooltip);\\n      rect.addEventListener(\\\"focus\\\", () => {\\n        const r = rect.getBoundingClientRect();\\n        showTooltip(group.label, detail, r.left + r.width / 2, r.top + r.height / 2);\\n      });\\n      rect.addEventListener(\\\"blur\\\", hideTooltip);\\n      svg.append(rect);\\n      svg.append(el(\\\"text\\\", {\\n        x: x + barWidth / 2, y: value === 0 ? plot.bottom - 8 : yy - 7,\\n        class: \\\"value-label\\\", \\\"text-anchor\\\": \\\"middle\\\"\\n      }, String(value)));\\n    });\\n\\n    svg.append(el(\\\"text\\\", { x: centers[gi], y: 335, class: \\\"period-label\\\", \\\"text-anchor\\\": \\\"middle\\\" }, group.label));\\n    svg.append(el(\\\"text\\\", { x: centers[gi], y: 354, class: \\\"tick-label\\\", \\\"text-anchor\\\": \\\"middle\\\" }, group.dates + \\\", 2026\\\"));\\n  });\\n  svg.append(el(\\\"text\\\", { x: (plot.left + plot.right) / 2, y: 389, class: \\\"axis-label\\\", \\\"text-anchor\\\": \\\"middle\\\" }, \\\"Release period\\\"));\\n\\n  const negativeEvidence = [\\n    {\\n      date: \\\"2026-03-18\\\", source: \\\"kotaku.com\\\",\\n      url: \\\"https://kotaku.com/slay-the-spire-2-tips-tricks-beginner-deckbuilding-2000680050\\\",\\n      title: \\\"Slay The Spire 2: Tips And Tricks For Getting Started\\\",\\n      summary: \\\"Parker writes that Slay the Spire 2 can be tough for newcomers and even experienced players, pointing to player discussions and the difficulty of getting through early runs. The guide offers tips to help people survive and adapt, while describing balance concerns.\\\"\\n    },\\n    {\\n      date: \\\"2026-03-20\\\", source: \\\"gamespot.com\\\",\\n      url: \\\"https://www.gamespot.com/articles/slay-the-spire-2-is-becoming-a-little-less-scary-but-players-are-unhappy-with-patchs-nerfs/1100-6538921/\\\",\\n      title: \\\"Slay The Spire 2 Is Becoming A Little Less Scary, But Players Are Unhappy With Patch’s Nerfs\\\",\\n      summary: \\\"Tomas Franzese covers v0.100.0, highlighting its accessibility toggle and extensive balance changes. The article says some adjustments—particularly a change to Silent’s Prepared card and a stronger Doormaker boss—have caused community backlash.\\\"\\n    },\\n    {\\n      date: \\\"2026-03-20\\\", source: \\\"polygon.com\\\",\\n      url: \\\"https://www.polygon.com/slay-the-spire-2-patch-infinite-doormaker-prepared-card-changes-steam-reviews/\\\",\\n      title: \\\"Slay the Spire 2 slammed on Steam over patch that makes game harder\\\",\\n      summary: \\\"Polygon says the beta update made the game harder by changing popular card strategies and buffing enemies, including the final boss. It describes player anger over nerfs to infinite combos and specific changes to Silent and Regent.\\\"\\n    },\\n    {\\n      date: \\\"2026-03-20\\\", source: \\\"kotaku.com\\\",\\n      url: \\\"https://kotaku.com/slay-the-spire-2-steam-review-bomb-balance-patch-prepared-doormaker-2000680603\\\",\\n      title: \\\"Slay The Spire 2 Is Getting Review Bombed On Steam Over Upcoming Balance Patch\\\",\\n      summary: \\\"Lewis Parker reports that the game’s Steam rating fell after a beta balance patch changed the Silent’s Prepared card and strengthened the Doormaker fight. The article says some players used reviews to express objections rather than the in-game feedback tools.\\\"\\n    },\\n    {\\n      date: \\\"2026-03-20\\\", source: \\\"pcgamesn.com\\\",\\n      url: \\\"https://www.pcgamesn.com/slay-the-spire-2/patch-notes-infinites-nerfed\\\",\\n      title: \\\"Slay the Spire 2 is stamping out infinites, and you're not prepared for what we've lost\\\",\\n      summary: \\\"Ken Allsop describes the update as a substantial balance pass aimed at making infinite combos less accessible, while noting they remain part of the game’s power curve. The article details changes to Silent’s Prepared card and the new Phobia Mode.\\\"\\n    }\\n  ];\\n\\n  const list = document.getElementById(\\\"evidence\\\");\\n  negativeEvidence.forEach(item => {\\n    const li = document.createElement(\\\"li\\\");\\n    const a = document.createElement(\\\"a\\\");\\n    a.setAttribute(\\\"href\\\", item.url);\\n    a.setAttribute(\\\"target\\\", \\\"_blank\\\");\\n    a.setAttribute(\\\"rel\\\", \\\"noopener noreferrer\\\");\\n    const meta = document.createElement(\\\"span\\\");\\n    meta.className = \\\"row-meta\\\";\\n    meta.textContent = item.date + \\\" · \\\" + item.source + \\\" · Negative\\\";\\n    const title = document.createElement(\\\"span\\\");\\n    title.className = \\\"row-title\\\";\\n    title.textContent = item.title;\\n    a.append(meta, title);\\n    const detail = item.source + \\\" · \\\" + item.date + \\\" — \\\" + item.summary;\\n    a.addEventListener(\\\"pointerenter\\\", event => showTooltip(item.title, detail, event.clientX, event.clientY));\\n    a.addEventListener(\\\"pointermove\\\", event => showTooltip(item.title, detail, event.clientX, event.clientY));\\n    a.addEventListener(\\\"pointerleave\\\", hideTooltip);\\n    a.addEventListener(\\\"focus\\\", () => {\\n      const r = a.getBoundingClientRect();\\n      showTooltip(item.title, detail, r.left + r.width / 2, r.top + Math.min(r.height / 2, 35));\\n    });\\n    a.addEventListener(\\\"blur\\\", hideTooltip);\\n    li.append(a);\\n    list.append(li);\\n  });\\n})();\\n</script>\\n</body>\\n</html>\"}"
+        },
+        {
+          "role": "assistant",
+          "content": "**Sentiment stayed mostly positive after the March 5, 2026 Early Access launch, but negative mentions appeared later around balance changes.**\n\n| Period | Positive | Neutral | Negative | Total |\n|---|---:|---:|---:|---:|\n| Before release (Feb 16–Mar 4) | 13 (65%) | 7 (35%) | 0 | 20 |\n| After release (Mar 5–20) | 16 (55%) | 8 (28%) | 5 (17%) | 29 |\n\nThe release date was announced on Feb 19, and the game launched on Mar 5, according to [Mega Crit, Feb 19](https://www.megacrit.com/news/2026-02-19-release-date-trailer/) and [Mega Crit, Mar 5](https://megacrit.com/news/2026-03-05-early-access-launch/).\n\n- **Before launch:** discussion was upbeat about the upcoming game and its new co-op mode; for example, [Thinky Games, Feb 20](https://thinkygames.com/news/slay-the-spire-2-early-access-release-date-revealed-including-new-4-player-co-op-mode/) called co-op “a huge deal” for fans.\n- **After launch:** positive mentions continued, including praise for the game’s early player numbers from [Forbes, Mar 6](https://www.forbes.com/sites/paultassi/2026/03/06/slay-the-spire-2-breaks-two-steam-player-count-records-in-one-day/). The five negative mentions in the stored data were dated Mar 18–20 and focused on difficulty and balance-patch backlash, including [GameSpot, Mar 20](https://www.gamespot.com/articles/slay-the-spire-2-is-becoming-a-little-less-scary-but-players-are-unhappy-with-patchs-nerfs/1100-6538921/).\n\nThe chart above compares the periods. **One chart label is off by one:** its post-release positive bar shows 15, but the stored daily counts sum to **16**. These figures cover the stored mentions through Mar 20, not every online discussion.",
+          "payload": null,
+          "usage": {
+            "inputTokens": 52165,
+            "outputTokens": 8797,
+            "cachedTokens": 23482,
+            "estimatedCostUsd": 0.126759
+          }
+        },
+        {
+          "role": "user",
+          "content": "what was the nature of the negative comments?",
+          "payload": null
+        },
+        {
+          "role": "tool",
+          "content": "getMentions",
+          "payload": null
+        },
+        {
+          "role": "assistant",
+          "content": "**The negative comments were mainly about a March 18–20 beta balance patch that players felt made the game harder and weakened popular strategies.**\n\n- **Nerfs and tougher fights:** Players objected to changes that made infinite combos less accessible, including changes to Silent’s Prepared card, and to stronger enemies such as the Doormaker boss. Some felt the patch went too far. [Polygon, Mar 20](https://www.polygon.com/slay-the-spire-2-patch-infinite-doormaker-prepared-card-changes-steam-reviews/) [GameSpot, Mar 20](https://www.gamespot.com/articles/slay-the-spire-2-is-becoming-a-little-less-scary-but-players-are-unhappy-with-patchs-nerfs/1100-6538921/)\n- **Protest via Steam reviews:** Coverage described players posting negative reviews to object to the upcoming changes rather than using the in-game feedback tool. [Kotaku, Mar 20](https://kotaku.com/slay-the-spire-2-steam-review-bomb-balance-patch-prepared-doormaker-2000680603)\n- **Difficulty and uneven balance:** An earlier negative mention described the game as tough for newcomers and experienced players, while noting that some characters and cards felt stronger than others. [Kotaku, Mar 18](https://kotaku.com/slay-the-spire-2-tips-tricks-beginner-deckbuilding-2000680050)\n\nSo the criticism was less about the game overall and more about **difficulty, specific card/enemy changes, and how players chose to give feedback**. The stored negative mentions are press coverage of player reactions, not a direct sample of individual comments.",
+          "payload": null,
+          "usage": {
+            "inputTokens": 4366,
+            "outputTokens": 582,
+            "cachedTokens": 2792,
+            "estimatedCostUsd": 0.0081365
+          }
+        }
+      ]
+    }
+  ]
+}
