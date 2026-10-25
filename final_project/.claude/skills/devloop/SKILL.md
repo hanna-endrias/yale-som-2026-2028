@@ -17,6 +17,30 @@ Input: `$ARGUMENTS` = path to a plan file. If empty, use the plan from this conv
 
 Never commit or push. Never paste subagent transcripts into the main context.
 
+## Capture-only tasks
+A task with `Files: none (capture only)` (e.g. from the slide-dev skill's `slides/shots.plan.md`) changes no code. Use the capture brief below instead of the implement brief, and skip typecheck/build for it. A plan made only of capture tasks ends with a list of output paths, not a build.
+
+```
+Capture a screenshot of the running app in final_project/. Change no code.
+
+Shot: [name]
+Page: http://localhost:3000[path]
+Login: [email / password]   Theme: [light|dark]   Viewport: [WxH]
+State: [exact UI state]
+Output: [output path]
+Dev server: already running, serverId [id]. Do not start or stop it.
+
+1. preview_resize to the viewport. If not logged in, log in at /login.
+2. Set the theme: preview_eval `document.cookie = 'theme=[theme]; path=/'`, then reload.
+3. Navigate to the page and set up the state (preview_snapshot, preview_click, scrolling via preview_eval).
+   Use seeded data; don't send chat messages unless the state requires a fresh answer.
+   Hide the Next.js dev badge: preview_eval `document.querySelectorAll('nextjs-portal').forEach(e => e.style.display = 'none')`.
+4. preview_screenshot and look at it: state matches, no spinners, no error toasts, nothing cut off. Retry up to 3 times.
+5. Copy the screenshot (the "[Image: source: …]" path) to the output path. preview_resize preset desktop.
+
+Reply in at most 80 words: status, output path, anything that didn't match the requested state.
+```
+
 ## Subagent brief (fill in the brackets)
 ```
 Implement this task in final_project/ (run all commands from there).
