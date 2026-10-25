@@ -5,7 +5,10 @@ import { useState } from 'react';
 import Button from '@/components/common/Button';
 import Input from '@/components/common/Input';
 import Modal from '@/components/common/Modal';
+import SearchCriteriaFields from '@/components/fetch/SearchCriteriaFields';
 import { cancelClass } from '@/components/subjects/SubjectEditForm';
+import { criteriaForEditing, EMPTY_CRITERIA } from '@/lib/searchCriteria';
+import { PROMPT_KIND_LABEL as KIND_LABEL } from '@/lib/validation/prompts';
 import type { PromptItem } from '@/services/promptService';
 
 export type SubjectOption = { id: number; name: string };
@@ -16,21 +19,35 @@ type Props = {
   subjects: SubjectOption[];
   open: boolean;
   onOpenChange: (open: boolean) => void;
+  defaultSubjectIds?: number[]; // a new prompt's scope starts as these trackers instead of all trackers
+  onSaved?: () => void; // after a save or delete (the chat side panel reloads its lists)
 };
 
 const deleteClass =
   'rounded-md border border-destructive px-md py-sm font-medium text-destructive hover:bg-destructive/10 disabled:opacity-60';
 const legendClass = 'mb-xs text-sm font-medium';
 const optionClass = 'flex items-center gap-xs text-sm';
+// Action row pinned to the bottom of the scrolling modal (bleeds over Modal's p-lg), so Save/Cancel stay visible.
+const footerClass = 'sticky -bottom-lg z-10 -mx-lg -mb-lg border-t border-border bg-popover px-lg py-md';
 
-// Create, edit or delete one library prompt. Opened from PromptList.
-export default function PromptEditorModal({ prompt, defaultKind, subjects, open, onOpenChange }: Props) {
+// Create, edit or delete one chat question or saved search criteria. Opened from PromptList.
+// Search criteria use SearchCriteriaFields; a legacy one without structured criteria opens with its text in Notes.
+export default function PromptEditorModal({
+  prompt,
+  defaultKind,
+  subjects,
+  open,
+  onOpenChange,
+  defaultSubjectIds,
+  onSaved,
+}: Props) {
   const router = useRouter();
   const [kind, setKind] = useState(prompt?.kind ?? defaultKind);
   const [title, setTitle] = useState(prompt?.title ?? '');
-  const [body, setBody] = useState(prompt?.body ?? '');
-  const [allSubjects, setAllSubjects] = useState(prompt?.allSubjects ?? true);
-  const [subjectIds, setSubjectIds] = useState<number[]>(prompt?.subjectIds ?? []);
+  const [body, setBody] = useState(prompt?.kind === 'analyst' ? prompt.body : '');
+  const [criteria, setCriteria] = useState(prompt?.kind === 'fetch' ? criteriaForEditing(prompt) : EMPTY_CRITERIA);
+  const [allSubjects, setAllSubjects] = useState(prompt?.allSubjects ?? !defaultSubjectIds?.length);
+  const [subjectIds, setSubjectIds] = useState<number[]>(prompt?.subjectIds ?? defaultSubjectIds ?? []);
   const [error, setError] = useState('');
   const [busy, setBusy] = useState(false);
   const [confirming, setConfirming] = useState(false);
@@ -47,11 +64,18 @@ export default function PromptEditorModal({ prompt, defaultKind, subjects, open,
     const res = await fetch(prompt ? `/api/prompts/${prompt.id}` : '/api/prompts', {
       method: prompt ? 'PATCH' : 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ kind, title, body, allSubjects, subjectIds: allSubjects ? [] : subjectIds }),
+      body: JSON.stringify({
+        kind,
+        title,
+        ...(kind === 'fetch' ? { criteria } : { body }),
+        allSubjects,
+        subjectIds: allSubjects ? [] : subjectIds,
+      }),
     });
     setBusy(false);
     if (!res.ok) return setError((await res.json()).error ?? 'Could not save.');
     onOpenChange(false);
+    onSaved?.();
     router.refresh();
   }
 
@@ -62,12 +86,13 @@ export default function PromptEditorModal({ prompt, defaultKind, subjects, open,
     setBusy(false);
     if (!res.ok) return setError((await res.json()).error ?? 'Could not delete.');
     onOpenChange(false);
+    onSaved?.();
     router.refresh();
   }
 
   return (
-    <Modal open={open} onOpenChange={onOpenChange} title={prompt ? 'Edit prompt' : 'New prompt'}>
-      <form onSubmit={onSave} className="flex flex-col gap-md">
+    <Modal open={open} onOpenChange={onOpenChange} title={`${prompt ? 'Edit' : 'New'} ${KIND_LABEL[kind].toLowerCase()}`}>
+      <form onSubmit={onSave} className="flex flex-col gap-sm">
         <fieldset>
           <legend className={legendClass}>Type</legend>
           <div className="flex flex-wrap gap-md">
@@ -81,7 +106,7 @@ export default function PromptEditorModal({ prompt, defaultKind, subjects, open,
                   onChange={() => setKind(k)}
                   className="accent-button"
                 />
-                {k === 'analyst' ? 'Analyst' : 'Fetcher'}
+                {KIND_LABEL[k]}
               </label>
             ))}
           </div>
@@ -89,23 +114,29 @@ export default function PromptEditorModal({ prompt, defaultKind, subjects, open,
 
         <Input label="Title" id="prompt-title" value={title} onChange={(e) => setTitle(e.target.value)} />
 
-        <label htmlFor="prompt-body" className="flex flex-col gap-xs text-sm font-medium">
-          Prompt
-          <textarea
-            id="prompt-body"
-            rows={4}
-            value={body}
-            onChange={(e) => setBody(e.target.value)}
-            className="resize-y rounded-md border border-border bg-background px-sm py-sm text-base font-normal text-text focus-visible:outline-2 focus-visible:outline-focus"
-          />
-          <span className="text-xs font-normal text-muted-foreground">
-            Analyst prompts are sent as your question. Fetcher prompts are added to the fetch agent&apos;s
-            instructions for that run.
-          </span>
-        </label>
+        {kind === 'analyst' ? (
+          <label htmlFor="prompt-body" className="flex flex-col gap-xs text-sm font-medium">
+            Question
+            <textarea
+              id="prompt-body"
+              rows={4}
+              value={body}
+              onChange={(e) => setBody(e.target.value)}
+              className="resize-y rounded-md border border-border bg-background px-sm py-sm text-base font-normal text-text focus-visible:outline-2 focus-visible:outline-focus"
+            />
+            <span className="text-xs font-normal text-muted-foreground">Sent to the analyst as your question.</span>
+          </label>
+        ) : (
+          <div className="flex flex-col gap-xs">
+            <SearchCriteriaFields value={criteria} onChange={setCriteria} />
+            <span className="text-xs text-muted-foreground">
+              Steers the web search when you fetch with these criteria. Empty fields mean no constraint.
+            </span>
+          </div>
+        )}
 
         <fieldset>
-          <legend className={legendClass}>Subjects</legend>
+          <legend className={legendClass}>Trackers</legend>
           <div className="flex flex-col gap-xs">
             <label className={optionClass}>
               <input
@@ -114,10 +145,10 @@ export default function PromptEditorModal({ prompt, defaultKind, subjects, open,
                 onChange={(e) => setAllSubjects(e.target.checked)}
                 className="accent-button"
               />
-              All subjects
+              All trackers
             </label>
             {subjects.length === 0 ? (
-              <p className="text-sm text-muted-foreground">No subjects yet.</p>
+              <p className="text-sm text-muted-foreground">No trackers yet.</p>
             ) : (
               <div className="flex flex-wrap gap-x-md gap-y-xs">
                 {subjects.map((s) => (
@@ -144,7 +175,7 @@ export default function PromptEditorModal({ prompt, defaultKind, subjects, open,
         )}
 
         {confirming ? (
-          <div className="flex flex-wrap items-center justify-end gap-sm">
+          <div className={`flex flex-wrap items-center justify-end gap-sm ${footerClass}`}>
             <p className="basis-full text-sm">Delete &ldquo;{prompt?.title}&rdquo;?</p>
             <button type="button" onClick={() => setConfirming(false)} className={cancelClass}>
               Cancel
@@ -154,7 +185,7 @@ export default function PromptEditorModal({ prompt, defaultKind, subjects, open,
             </button>
           </div>
         ) : (
-          <div className="flex flex-wrap items-center justify-between gap-sm">
+          <div className={`flex flex-wrap items-center justify-between gap-sm ${footerClass}`}>
             {prompt ? (
               <button
                 type="button"

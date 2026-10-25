@@ -1,6 +1,7 @@
 import { readdirSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 import { and, asc, eq, inArray, notExists } from 'drizzle-orm';
+import { parseStoredCriteria, type SearchCriteria } from '@/lib/searchCriteria';
 import type { Db } from './client';
 import { chatMessages, chatSessions, fetchRuns, mentions, promptSubjects, prompts, subjects, tokenUsage, users } from './schema';
 
@@ -15,7 +16,8 @@ export type SubjectFixture = {
   savedAt: string;
   owner: string; // email of the owning test user
   subject: { name: string; description: string; location: string | null; website: string | null; searchTerms: string };
-  prompts: { kind: 'analyst' | 'fetch'; title: string; body: string }[]; // library prompts scoped to this subject
+  // Library prompts scoped to this subject. criteria: structured search criteria (absent on legacy ones).
+  prompts: { kind: 'analyst' | 'fetch'; title: string; body: string; criteria?: SearchCriteria }[];
   runs: {
     startDate: string;
     endDate: string;
@@ -24,11 +26,26 @@ export type SubjectFixture = {
     usage: Usage[]; // one row per fetched window, as a live run logs them
     mentions: Omit<typeof mentions.$inferInsert, 'id' | 'subjectId' | 'fetchRunId'>[];
   }[];
+  // A started fetch plan card's payload.started.runIds are indexes into `runs` here (run ids change on seed).
   chats: {
     title: string | null;
     messages: { role: 'user' | 'assistant' | 'tool'; content: string; payload: string | null; usage?: Usage }[];
   }[];
 };
+
+// Rewrites a fetch plan card's payload.started.runIds with `map` (live run id <-> index into fixture runs).
+// If any run can't be mapped (e.g. a run that wasn't saved), `started` is dropped and the card falls back to
+// matching its planned gaps.
+function remapStartedRuns(payload: string | null, map: (id: number) => number | undefined): string | null {
+  if (!payload) return payload;
+  const out = JSON.parse(payload);
+  const ids: unknown = out?.started?.runIds;
+  if (!Array.isArray(ids)) return payload;
+  const mapped = ids.map((id) => map(Number(id)));
+  if (mapped.every((id) => id !== undefined)) out.started.runIds = mapped;
+  else delete out.started;
+  return JSON.stringify(out);
+}
 
 export const FIXTURES_DIR = path.resolve(/*turbopackIgnore: true*/ process.cwd(), 'db/fixtures/subjects');
 
@@ -69,8 +86,9 @@ export function exportSubject(db: Db, subjectId: number): { fixture: SubjectFixt
   const { name, description, location, website, searchTerms } = row.subject;
 
   const allRuns = db.select().from(fetchRuns).where(eq(fetchRuns.subjectId, subjectId)).orderBy(asc(fetchRuns.id)).all();
-  const runs = allRuns
-    .filter((r) => r.status === 'done')
+  const doneRuns = allRuns.filter((r) => r.status === 'done');
+  const runIndex = new Map(doneRuns.map((r, i) => [r.id, i]));
+  const runs = doneRuns
     .map((r) => ({
       startDate: r.startDate,
       endDate: r.endDate,
@@ -97,12 +115,16 @@ export function exportSubject(db: Db, subjectId: number): { fixture: SubjectFixt
     }));
 
   const scopedPrompts = db
-    .select({ kind: prompts.kind, title: prompts.title, body: prompts.body })
+    .select({ kind: prompts.kind, title: prompts.title, body: prompts.body, criteria: prompts.criteria })
     .from(prompts)
     .innerJoin(promptSubjects, eq(promptSubjects.promptId, prompts.id))
     .where(and(eq(promptSubjects.subjectId, subjectId), eq(prompts.allSubjects, false)))
     .orderBy(asc(prompts.id))
-    .all();
+    .all()
+    .map(({ criteria, ...p }) => {
+      const parsed = parseStoredCriteria(criteria);
+      return parsed ? { ...p, criteria: parsed } : p;
+    });
 
   const sessions = db.select().from(chatSessions).where(eq(chatSessions.subjectId, subjectId)).orderBy(asc(chatSessions.id)).all();
   const chats = sessions.map((s) => ({
@@ -122,11 +144,12 @@ export function exportSubject(db: Db, subjectId: number): { fixture: SubjectFixt
       .where(eq(chatMessages.chatSessionId, s.id))
       .orderBy(asc(chatMessages.id))
       .all()
-      .map(({ inputTokens, outputTokens, cachedTokens, estimatedCostUsd, ...m }) =>
-        inputTokens === null
+      .map(({ inputTokens, outputTokens, cachedTokens, estimatedCostUsd, payload, ...rest }) => {
+        const m = { ...rest, payload: remapStartedRuns(payload, (id) => runIndex.get(id)) };
+        return inputTokens === null
           ? m
-          : { ...m, usage: { inputTokens, outputTokens: outputTokens ?? 0, cachedTokens: cachedTokens ?? 0, estimatedCostUsd: estimatedCostUsd ?? 0 } },
-      ),
+          : { ...m, usage: { inputTokens, outputTokens: outputTokens ?? 0, cachedTokens: cachedTokens ?? 0, estimatedCostUsd: estimatedCostUsd ?? 0 } };
+      }),
   }));
 
   return {
@@ -151,16 +174,22 @@ export function insertSubject(tx: Tx, ownerId: number, f: SubjectFixture): void 
     .get();
 
   for (const p of f.prompts) {
-    const prompt = tx.insert(prompts).values({ ownerId, ...p }).returning().get();
+    const prompt = tx
+      .insert(prompts)
+      .values({ ownerId, ...p, criteria: p.criteria ? JSON.stringify(p.criteria) : null })
+      .returning()
+      .get();
     tx.insert(promptSubjects).values({ promptId: prompt.id, subjectId: subject.id }).run();
   }
 
+  const runIds: number[] = []; // new id of each fixture run, by index
   for (const { usage, mentions: found, ...r } of f.runs) {
     const run = tx
       .insert(fetchRuns)
       .values({ subjectId: subject.id, ...r, status: 'done' })
       .returning()
       .get();
+    runIds.push(run.id);
     if (found.length) {
       tx.insert(mentions)
         .values(found.map((m) => ({ ...m, subjectId: subject.id, fetchRunId: run.id })))
@@ -172,8 +201,12 @@ export function insertSubject(tx: Tx, ownerId: number, f: SubjectFixture): void 
   // Per-turn token usage keeps ref_id = the new assistant message id, so cost badges show after reload.
   for (const chat of f.chats) {
     const session = tx.insert(chatSessions).values({ subjectId: subject.id, ownerId, title: chat.title }).returning().get();
-    for (const { usage, ...m } of chat.messages) {
-      const row = tx.insert(chatMessages).values({ ...m, chatSessionId: session.id }).returning().get();
+    for (const { usage, payload, ...m } of chat.messages) {
+      const row = tx
+        .insert(chatMessages)
+        .values({ ...m, payload: remapStartedRuns(payload, (i) => runIds[i]), chatSessionId: session.id })
+        .returning()
+        .get();
       if (usage) tx.insert(tokenUsage).values({ scope: 'chat_turn', refId: row.id, ...usage }).run();
     }
   }

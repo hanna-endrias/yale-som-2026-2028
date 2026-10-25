@@ -5,7 +5,7 @@ import { getSubject } from '@/services/subjectService';
 import { parseCreateFetchRunRequest, parseSubjectId } from './request';
 
 type Ctx = { params: Promise<{ subjectId: string }> };
-const notFound = () => NextResponse.json({ error: 'Subject not found.' }, { status: 404 });
+const notFound = () => NextResponse.json({ error: 'Tracker not found.' }, { status: 404 });
 
 export async function GET(_req: Request, { params }: Ctx) {
   const user = await requireUser();
@@ -16,7 +16,7 @@ export async function GET(_req: Request, { params }: Ctx) {
 }
 
 // Returns right away with one pending run per uncovered gap; the fetches run in the background.
-// 409 when every requested date is already fetched with the same prompt.
+// 409 when every requested date is already fetched with the same search criteria.
 export async function POST(req: Request, { params }: Ctx) {
   const user = await requireUser();
   if (user instanceof NextResponse) return user;
@@ -28,7 +28,7 @@ export async function POST(req: Request, { params }: Ctx) {
   if (!result) return notFound();
   if ('covered' in result) {
     return NextResponse.json(
-      { error: 'Those dates are already fetched with this prompt.', skipped: result.covered },
+      { error: 'Those dates are already fetched with these search criteria.', skipped: result.covered },
       { status: 409 },
     );
   }

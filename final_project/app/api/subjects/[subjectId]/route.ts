@@ -4,7 +4,7 @@ import { deleteSubject, getSubject, updateSubject } from '@/services/subjectServ
 import { parseSubjectId, parseUpdateSubjectRequest } from './request';
 
 type Ctx = { params: Promise<{ subjectId: string }> };
-const notFound = () => NextResponse.json({ error: 'Subject not found.' }, { status: 404 });
+const notFound = () => NextResponse.json({ error: 'Tracker not found.' }, { status: 404 });
 
 export async function GET(_req: Request, { params }: Ctx) {
   const user = await requireUser();

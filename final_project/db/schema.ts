@@ -30,7 +30,7 @@ export const fetchRuns = sqliteTable('fetch_runs', {
   cadence: text('cadence').notNull(),
   status: text('status', { enum: ['pending', 'running', 'done', 'failed'] }).notNull().default('pending'),
   error: text('error'), // set when status is `failed`
-  instructions: text('instructions'), // snapshot of the fetcher prompt used, if any
+  instructions: text('instructions'), // snapshot of the rendered search criteria used, if any
   createdAt: createdAt(),
 });
 
@@ -77,7 +77,8 @@ export const prompts = sqliteTable('prompts', {
   ownerId: integer('owner_id').notNull().references(() => users.id, { onDelete: 'cascade' }),
   kind: text('kind', { enum: ['analyst', 'fetch'] }).notNull(),
   title: text('title').notNull(),
-  body: text('body').notNull(),
+  body: text('body').notNull(), // always the rendered text (search criteria: criteriaToInstructions(criteria))
+  criteria: text('criteria'), // JSON SearchCriteria (lib/searchCriteria.ts); only for kind 'fetch', null on legacy rows
   allSubjects: integer('all_subjects', { mode: 'boolean' }).notNull().default(false),
   createdAt: createdAt(),
 });

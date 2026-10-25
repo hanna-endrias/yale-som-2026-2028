@@ -2,10 +2,13 @@
 
 import { useEffect, useState } from 'react';
 import Button from '@/components/common/Button';
+import { criteriaToInstructions, type SearchCriteriaInput } from '@/lib/searchCriteria';
+import { PROMPT_KIND_LABEL } from '@/lib/validation/prompts';
 
 type Kind = 'analyst' | 'fetch';
 type Fields = { kind: Kind; title: string; body: string; allSubjects: boolean; subjectIds: number[] };
 type LibraryPrompt = Fields & { id: number };
+type Patch = Partial<Fields> & { criteria?: SearchCriteriaInput }; // criteria: search criteria (body is re-rendered)
 
 // The updatePrompt tool's output (agents/tools/managePrompts.ts): a proposed change, not yet saved.
 export type PromptUpdate = {
@@ -13,20 +16,21 @@ export type PromptUpdate = {
   subjectId: number;
   subjectName: string;
   before: Fields;
-  patch: Partial<Fields>;
+  patch: Patch;
 };
 
 export const isPromptUpdate = (o: unknown): o is PromptUpdate =>
   typeof o === 'object' && o !== null && 'before' in o && 'patch' in o;
 
-export const KIND_LABEL: Record<Kind, string> = { analyst: 'Analyst', fetch: 'Fetcher' };
+export const KIND_LABEL: Record<Kind, string> = PROMPT_KIND_LABEL;
 const sameIds = (a: number[], b: number[]) => [...a].sort().join() === [...b].sort().join();
 
 // True when the saved prompt already has every field in the patch.
-const matches = (p: LibraryPrompt, patch: Partial<Fields>) =>
+const matches = (p: LibraryPrompt, patch: Patch) =>
   (patch.kind === undefined || p.kind === patch.kind) &&
   (patch.title === undefined || p.title === patch.title) &&
   (patch.body === undefined || p.body === patch.body) &&
+  (patch.criteria === undefined || p.body === criteriaToInstructions(patch.criteria)) &&
   (patch.allSubjects === undefined ||
     (p.allSubjects === patch.allSubjects && (patch.allSubjects || sameIds(p.subjectIds, patch.subjectIds ?? []))));
 
@@ -40,10 +44,10 @@ export default function PromptUpdateCard({ update }: { update: PromptUpdate }) {
 
   const scopeLabel = (allSubjects: boolean, subjectIds: number[]) =>
     allSubjects
-      ? 'All subjects'
+      ? 'All trackers'
       : sameIds(subjectIds, [update.subjectId])
         ? `${update.subjectName} only`
-        : `${subjectIds.length} ${subjectIds.length === 1 ? 'subject' : 'subjects'}`;
+        : `${subjectIds.length} ${subjectIds.length === 1 ? 'tracker' : 'trackers'}`;
 
   useEffect(() => {
     let cancelled = false;
@@ -84,13 +88,16 @@ export default function PromptUpdateCard({ update }: { update: PromptUpdate }) {
       from: scopeLabel(before.allSubjects, before.subjectIds),
       to: scopeLabel(patch.allSubjects, patch.subjectIds ?? []),
     });
-  if (patch.body !== undefined) rows.push({ label: 'Body', from: before.body, to: patch.body });
+  if (patch.body !== undefined) rows.push({ label: 'Question', from: before.body, to: patch.body });
+  if (patch.criteria !== undefined)
+    rows.push({ label: 'Search criteria', from: before.body, to: criteriaToInstructions(patch.criteria) });
+  const unchangedLabel = (patch.kind ?? before.kind) === 'fetch' ? 'Search criteria' : 'Question';
 
-  const done = { saved: 'Saved.', gone: 'Prompt no longer exists.', cancelled: 'Not changed.' } as const;
+  const done = { saved: 'Saved.', gone: 'It no longer exists.', cancelled: 'Not changed.' } as const;
 
   return (
     <section className="w-full overflow-hidden rounded-md border border-border text-sm" data-testid="prompt-update-card">
-      <header className="border-b border-border bg-panel px-sm py-xs text-xs font-semibold">Update prompt?</header>
+      <header className="border-b border-border bg-panel px-sm py-xs text-xs font-semibold">Update {KIND_LABEL[before.kind].toLowerCase()}?</header>
       <div className="flex flex-col gap-xs px-sm py-sm">
         <p className="text-muted-foreground">
           {KIND_LABEL[before.kind]} · #{id}
@@ -106,9 +113,9 @@ export default function PromptUpdateCard({ update }: { update: PromptUpdate }) {
               </dd>
             </div>
           ))}
-          {patch.body === undefined && (
+          {patch.body === undefined && patch.criteria === undefined && (
             <>
-              <dt className="font-medium">Body:</dt>
+              <dt className="font-medium">{unchangedLabel}:</dt>
               <dd className="text-muted-foreground">(unchanged)</dd>
             </>
           )}

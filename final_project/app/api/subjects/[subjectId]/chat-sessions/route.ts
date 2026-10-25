@@ -12,5 +12,5 @@ export async function POST(_req: Request, { params }: Ctx) {
   const session = id && createChatSession(user.id, id);
   return session
     ? NextResponse.json({ session }, { status: 201 })
-    : NextResponse.json({ error: 'Subject not found.' }, { status: 404 });
+    : NextResponse.json({ error: 'Tracker not found.' }, { status: 404 });
 }
