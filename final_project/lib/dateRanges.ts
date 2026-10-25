@@ -37,3 +37,11 @@ export function formatRange({ start, end }: DateRange): string {
     new Date(`${iso}T00:00:00Z`).toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' });
   return `${fmt(start)}–${fmt(end)}`;
 }
+
+// "Sep 1–Nov 23, 2025", or "Sep 1, 2025–Mar 31, 2026" when the range spans years.
+export function formatRangeWithYear(range: DateRange): string {
+  const [startYear, endYear] = [range.start.slice(0, 4), range.end.slice(0, 4)];
+  if (startYear === endYear) return `${formatRange(range)}, ${endYear}`;
+  const [start, end] = formatRange(range).split('–');
+  return `${start}, ${startYear}–${end}, ${endYear}`;
+}

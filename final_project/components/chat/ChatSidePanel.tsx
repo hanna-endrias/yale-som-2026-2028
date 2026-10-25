@@ -164,6 +164,14 @@ function nextFetch(runs: Run[] | null, p: PromptItem): SetupPrefill {
   return { promptId: p.id, startDate, endDate: yesterday, cadence };
 }
 
+// A run's criteria by saved name when its snapshot matches one (full text in the tooltip), else one-time or none.
+function criteriaLabel(r: Run, saved: PromptItem[] | null) {
+  const text = (r.instructions ?? '').trim();
+  if (!text) return 'No search criteria';
+  if (!saved) return 'Search criteria'; // still loading: don't flash "One-time"
+  return saved.find((p) => p.body.trim() === text)?.title ?? 'One-time search criteria';
+}
+
 const rowClass = 'group flex items-center border-b border-border';
 const rowButtonClass =
   'flex min-w-0 flex-1 items-center gap-sm px-sm py-sm text-left hover:bg-panel focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-focus';
@@ -320,7 +328,7 @@ function PanelBody({ subjectId, subjects, run }: Props & { run: (fn: () => void)
                     <span className={`text-xs font-medium ${statusClass[r.status]}`}>{statusLabel(r.status)}</span>
                   </div>
                   <p className="truncate text-xs text-muted-foreground" title={r.instructions ?? undefined}>
-                    {r.cadence} · Criteria: {r.instructions?.trim().split('\n')[0] || 'None'}
+                    {r.cadence} · {criteriaLabel(r, criteria)}
                   </p>
                   <div className="flex flex-wrap items-center gap-x-sm text-xs">
                     <span>
