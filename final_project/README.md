@@ -4,7 +4,7 @@ Track what people say about a business, brand, or handle. See [`docs/PRODUCT.md`
 
 ## Local dev
 
-Requires Node 20+.
+Requires Node 22+ (the SQLite driver, `better-sqlite3`, needs it). Check with `node -v`.
 
 1. Get the code. The app is in the `final_project/` folder of this repo:
 
@@ -24,6 +24,8 @@ Requires Node 20+.
    npm run check:env   # expect: ✓ gpt-6-luna replied "pong" (...)
    npm run dev         # http://localhost:3000
    ```
+
+   If port 3000 is already in use, run `npx next dev -p 3005` instead and open http://localhost:3005.
 
    On first start the database is created and seeded automatically. On npm 11, `npm install` may print `npm warn install-scripts … better-sqlite3 …`; that's expected and harmless (better-sqlite3 ships a prebuilt binary), so nothing needs to be done.
 4. Log in with a test account:
