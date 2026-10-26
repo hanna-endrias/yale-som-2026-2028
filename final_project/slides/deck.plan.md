@@ -11,19 +11,19 @@ One-line pitch: Ask an AI analyst how your launch landed online, for the cost of
 - Visual: none (title slide)
 - Numbers: none
 
-### 2. Launch read-outs cost an agency or a sales call
-- Points: also creators and public figures
+### 2. Small businesses use AI to market, but can't see what it did
+- Points: also creators; 36.2M U.S. small businesses, 82% no employees (SBA)
 - Visual: stats
-- Numbers: 36.2M U.S. small businesses, 82% no employees (SBA); ReviewTrackers ~$89/location/month (G2); Birdeye and Podium "Contact us" (G2)
+- Numbers: 58% use generative AI, up from 23% in 2023 (U.S. Chamber 2025); 74% used no tool to measure online marketing (Thrive Analytics 2016, via Search Engine Land); Brand24 $199+/month (billed yearly)
 
 ### 3. Open source, event-based, and you just ask
-- Points: bring your own key; around an event; any subject; a chat analyst
+- Points: your model, your key (one config file); around an event; any subject; a chat analyst
 - Visual: cards (2x2)
 - Numbers: none
 
 ### 4. A fetch agent stores, an analyst answers
 - Points: none
-- Visual: diagram — owner → fetch agent → web search → SQLite mentions; owner → analyst agent → 5 data tools → visualizer LLM → sandboxed chart; gpt-6-luna via Portkey
+- Visual: diagram — owner → fetch agent → web search → SQLite mentions; owner → analyst agent → 11 tools (data: mentions · sentiment · themes · sources; actions: chart · fetch plan · saved criteria) → visualizer LLM → sandboxed chart; fetch plan → confirm card → fetch agent (owner clicks); gpt-6-luna via Portkey
 - Numbers: none
 
 ### 5. Backfill a launch window in one run
@@ -36,23 +36,23 @@ One-line pitch: Ask an AI analyst how your launch landed online, for the cost of
 - Visual: screenshot — chat-chart
 - Numbers: none
 
-### 7. A 12-week backfill costs about a dollar
-- Points: lever: coarser cadence = fewer searches
+### 7. A 12-week backfill costs 7 cents
+- Points: cadence experiment, daily vs weekly on the same launch week
 - Visual: stats
-- Numbers: 646K tokens / ~$0.96 per fetch run; ~$0.10 per chat turn (5 turns, 221K tokens); TODO confirm gpt-6-luna prices in config/llm.ts
+- Numbers: 7¢ fetch (622K input / 55K cached / 24K output); <1¢ per chart question, 50% of chat input cached; 14¢ per owner per month, ~$14/month for 100 owners; experiment daily 2.25¢ vs weekly 0.76¢ on Portkey, 7 mentions each; prices fitted to Portkey logs ($0.10 in / $0.01 cached / $0.50 out per 1M)
 
 ### 8. Web content is data, never instructions
 - Points: injection refused; tools scoped server-side; no-network chart sandbox; unstored URLs flagged ⚠
 - Visual: screenshot — safety-injection, plus four one-word cards
 - Numbers: none
 
-### 9. A launch read-out for the price of a coffee
+### 9. A launch read-out for a dime
 - Points: none
 - Visual: stats
-- Numbers: ~$1 vs $89+/month; TODO time before vs after (real user); TODO user quote
+- Numbers: ~10¢ per launch read-out vs $199+/month (Brand24); TODO time before vs after (real user); TODO user quote
 
 ### 10. From backfill to always-ready
-- Points: scheduled fetches; platform APIs (Reddit, Yelp, X, Google Reviews); teams; close with "Thank you. Questions?"
+- Points: hosted bring-your-own-key version with a budget cap; weekly digest (scheduled fetches); reply inbox; close with "Thank you. Questions?"
 - Visual: cards
 - Numbers: none
 
@@ -61,4 +61,4 @@ One-line pitch: Ask an AI analyst how your launch landed online, for the cost of
 |---|---|---|
 | fetch-runs | Friend seeded chat → side panel → Fetches tab | Seeded weekly run with mention count and token cost |
 | chat-chart | Friend seeded chat | Sentiment chart fully visible, no new messages |
-| safety-injection | reused from .devloop/screenshots/step6-chat/03-injection-test.jpg | Analyst refusing the injected review |
+| safety-injection | reused from .devloop/screenshots/step6-chat/03-injection-test.jpg (kept: the injected review isn't in the seed data, so it can't be re-shot without a new fetch) | Analyst refusing the injected review |

@@ -9,20 +9,20 @@
 
 <section>
   <div class="eyebrow">The problem</div>
-  <h2>Launch read-outs cost an agency or a sales call</h2>
+  <h2>Small businesses use AI to market, but can't see what it did</h2>
   <div class="cards">
-    <div class="card"><div class="stat">36.2M</div><p class="muted">U.S. small businesses; 82% have no employees (SBA)</p></div>
-    <div class="card"><div class="stat">$89</div><p class="muted">per location / month for ReviewTrackers (G2)</p></div>
-    <div class="card"><div class="stat">No price</div><p class="muted">listed by Birdeye or Podium: "Contact us" (G2)</p></div>
+    <div class="card"><div class="stat">58%</div><p class="muted">of small businesses use generative AI, up from 23% in 2023 (U.S. Chamber)</p></div>
+    <div class="card"><div class="stat">74%</div><p class="muted">used no tool to measure online marketing (Thrive Analytics, 2016)</p></div>
+    <div class="card"><div class="stat">$199+</div><p class="muted">a month for an entry social-listening plan (Brand24)</p></div>
   </div>
-  <p>Plus creators and public figures who want to know how a post landed.</p>
+  <p>36.2M U.S. small businesses, 82% with no employees (SBA), and creators asking "how did that land?"</p>
 </section>
 
 <section>
   <div class="eyebrow">What's new</div>
   <h2>Open source, event-based, and you just ask</h2>
   <div class="cols" style="align-items:stretch">
-    <div class="card"><h3>Bring your own key</h3><p>Clone, add a key, pay only for tokens.</p></div>
+    <div class="card"><h3>Your model, your key</h3><p>Pay only for tokens; swap models in one config file.</p></div>
     <div class="card"><h3>Around an event</h3><p>Backfill a launch window, not an always-on dashboard.</p></div>
     <div class="card"><h3>Any subject</h3><p>A business, a brand, or a personal handle.</p></div>
     <div class="card"><h3>A chat analyst</h3><p>Plain-language questions over your own data.</p></div>
@@ -47,9 +47,9 @@
       <rect x="210" y="40" width="290" height="120" rx="16" fill="var(--brand-color-panel)" stroke="var(--brand-palette-primary)" stroke-width="3"/>
       <text x="355" y="92" text-anchor="middle" font-weight="700">Fetch agent</text>
       <text x="355" y="128" text-anchor="middle" font-size="20" fill="var(--brand-color-muted)">one search per week</text>
-      <rect x="570" y="40" width="260" height="120" rx="16" fill="var(--brand-color-panel)" stroke="var(--brand-color-border)" stroke-width="2"/>
-      <text x="700" y="92" text-anchor="middle" font-weight="700">Web search</text>
-      <text x="700" y="128" text-anchor="middle" font-size="20" fill="var(--brand-color-muted)">hosted tool</text>
+      <rect x="545" y="40" width="300" height="120" rx="16" fill="var(--brand-color-panel)" stroke="var(--brand-color-border)" stroke-width="2"/>
+      <text x="695" y="92" text-anchor="middle" font-weight="700">Web search</text>
+      <text x="695" y="128" text-anchor="middle" font-size="20" fill="var(--brand-color-muted)">hosted tool</text>
 
       <!-- DB -->
       <rect x="900" y="170" width="290" height="130" rx="16" fill="var(--brand-color-panel)" stroke="var(--brand-color-border)" stroke-width="2"/>
@@ -60,11 +60,15 @@
       <!-- Analyst path (bottom) -->
       <rect x="210" y="320" width="290" height="120" rx="16" fill="var(--brand-color-panel)" stroke="var(--brand-palette-primary)" stroke-width="3"/>
       <text x="355" y="372" text-anchor="middle" font-weight="700">Analyst agent</text>
-      <text x="355" y="408" text-anchor="middle" font-size="20" fill="var(--brand-color-muted)">scoped to one subject</text>
-      <rect x="570" y="320" width="260" height="120" rx="16" fill="var(--brand-color-panel)" stroke="var(--brand-color-border)" stroke-width="2"/>
-      <text x="700" y="362" text-anchor="middle" font-weight="700">5 data tools</text>
-      <text x="700" y="394" text-anchor="middle" font-size="20" fill="var(--brand-color-muted)">mentions · sentiment</text>
-      <text x="700" y="420" text-anchor="middle" font-size="20" fill="var(--brand-color-muted)">themes · sources · chart</text>
+      <text x="355" y="408" text-anchor="middle" font-size="20" fill="var(--brand-color-muted)">scoped to one tracker</text>
+      <rect x="545" y="320" width="300" height="120" rx="16" fill="var(--brand-color-panel)" stroke="var(--brand-color-border)" stroke-width="2"/>
+      <text x="695" y="362" text-anchor="middle" font-weight="700">11 tools</text>
+      <text x="695" y="394" text-anchor="middle" font-size="20" fill="var(--brand-color-muted)">mentions · sentiment · themes</text>
+      <text x="695" y="420" text-anchor="middle" font-size="20" fill="var(--brand-color-muted)">chart · fetch plan · criteria</text>
+
+      <!-- Confirm card: the LLM plans a fetch, the owner starts it -->
+      <text x="590" y="232" font-size="22" fill="var(--brand-palette-primary)">confirm card:</text>
+      <text x="590" y="262" font-size="22" fill="var(--brand-palette-primary)">you click Start</text>
 
       <!-- Visualizer -->
       <rect x="900" y="340" width="290" height="100" rx="16" fill="var(--brand-color-panel)" stroke="var(--brand-palette-primary)" stroke-width="3"/>
@@ -75,44 +79,43 @@
     </g>
     <g stroke="var(--brand-palette-secondary)" stroke-width="3" fill="none" marker-end="url(#arrow)">
       <path d="M160,215 C190,150 180,100 206,100"/>
-      <path d="M500,100 L566,100"/>
-      <path d="M830,100 C900,100 1010,110 1040,166"/>
+      <path d="M500,100 L541,100"/>
+      <path d="M845,100 C910,100 1010,110 1040,166"/>
       <path d="M160,265 C190,330 180,380 206,380"/>
-      <path d="M500,380 L566,380"/>
-      <path d="M830,350 C870,350 860,250 896,250"/>
-      <path d="M830,400 L896,400"/>
+      <path d="M500,380 L541,380"/>
+      <path d="M845,350 C875,350 865,250 896,250"/>
+      <path d="M845,400 L896,400"/>
     </g>
+    <path d="M600,316 C600,250 450,230 430,166" stroke="var(--brand-palette-secondary)" stroke-width="3" stroke-dasharray="8 6" fill="none" marker-end="url(#arrow)"/>
   </svg>
 </section>
 
 <section>
   <div class="eyebrow">Demo · fetch</div>
   <h2>Backfill a launch window in one run</h2>
-  <div class="cols wide-right">
-    <p>Friend (the AI pendant), around its NYC subway ads: <strong>12 weekly searches</strong>, <strong>50 real mentions</strong> with sources and sentiment.</p>
-    <img class="shot" src="shots/fetch-runs.jpg" alt="Fetch runs tab for Friend">
-  </div>
+  <p>Friend (the AI pendant), around its NYC subway ads: <strong>12 weekly searches</strong>, <strong>50 real mentions</strong> with sources and sentiment.</p>
+  <img class="shot" src="shots/fetch-runs.jpg" alt="Fetch runs tab for Friend" style="width:720px;margin-top:var(--brand-space-lg)">
 </section>
 
 <section>
   <div class="eyebrow">Demo · analyst</div>
   <h2>Ask in plain words, get a chart of your data</h2>
-  <div class="cols wide-right">
-    <p>"How did sentiment shift before, during and after the subway ads?" The analyst calls its tools and draws a <strong>weekly chart</strong>.</p>
-    <img class="shot" src="shots/chat-chart.jpg" alt="Analyst chat with sentiment chart">
+  <div class="cols" style="grid-template-columns:1fr 2fr">
+    <p>Ask how sentiment shifted around the subway ads. The analyst calls its tools and draws a <strong>weekly chart</strong>.</p>
+    <img class="shot" src="shots/chat-chart.jpg" alt="Analyst chat with sentiment chart" style="width:100%">
   </div>
 </section>
 
 <section>
   <div class="eyebrow">Cost to run</div>
-  <h2>A 12-week backfill costs about a dollar</h2>
+  <h2>A 12-week backfill costs 7 cents</h2>
   <div class="cards">
-    <div class="card"><div class="stat">646K</div><p class="muted">tokens for the Friend fetch run (12 windows)</p></div>
-    <div class="card"><div class="stat">~$0.96</div><p class="muted">per fetch run</p></div>
-    <div class="card"><div class="stat">~$0.10</div><p class="muted">per chat turn (5 turns, 221K tokens)</p></div>
+    <div class="card"><div class="stat">7¢</div><p class="muted">12-week fetch: 622K input · 55K cached · 24K output tokens</p></div>
+    <div class="card"><div class="stat">&lt;1¢</div><p class="muted">per chart question; 50% of chat input cached</p></div>
+    <div class="card"><div class="stat">14¢</div><p class="muted">per owner per month; ~$14/mo for 100 owners</p></div>
   </div>
-  <p class="muted">Measured from logged token usage. Lever: coarser cadence = fewer searches.</p>
-  <p><span class="todo">TODO: confirm gpt-6-luna prices in config/llm.ts</span></p>
+  <p><strong>Experiment:</strong> one launch week fetched daily cost 3x as much as weekly (2.25¢ vs 0.76¢ on Portkey) and found the same number of mentions (7).</p>
+  <p class="muted small">Logged tokens × gpt-6-luna prices fitted to Portkey's bill ($0.10 in · $0.50 out per 1M).</p>
 </section>
 
 <section>
@@ -122,7 +125,7 @@
   <div class="caption">Live test: the stored Oct 17 review hides a prompt injection</div>
   <div class="cards" style="margin-top:var(--brand-space-xl)">
     <div class="card"><h3>Refused</h3><p>Injected text is ignored</p></div>
-    <div class="card"><h3>Scoped</h3><p>Tools see one subject</p></div>
+    <div class="card"><h3>Scoped</h3><p>Tools see one tracker</p></div>
     <div class="card"><h3>Sandboxed</h3><p>Charts get no network</p></div>
     <div class="card"><h3>Flagged</h3><p>Unstored URLs get ⚠</p></div>
   </div>
@@ -130,9 +133,9 @@
 
 <section>
   <div class="eyebrow">Impact</div>
-  <h2>A launch read-out for the price of a coffee</h2>
+  <h2>A launch read-out for a dime</h2>
   <div class="cards">
-    <div class="card"><div class="stat">~$1</div><p class="muted">per backfill vs $89+/month per location</p></div>
+    <div class="card"><div class="stat">~10¢</div><p class="muted">per launch read-out vs $199+/month for listening tools</p></div>
     <div class="card"><div class="stat"><span class="todo">TODO</span></div><p class="muted">time to answer: before vs after (real user)</p></div>
     <div class="card"><div class="stat"><span class="todo">TODO</span></div><p class="muted">user quote from a trial</p></div>
   </div>
@@ -143,9 +146,9 @@
   <div class="eyebrow">What's next</div>
   <h2>From backfill to always-ready</h2>
   <div class="cards">
-    <div class="card"><h3>Scheduled fetches</h3><p>A recurring job, not on-demand backfill.</p></div>
-    <div class="card"><h3>Platform APIs</h3><p>Reddit, Yelp, X and Google Reviews.</p></div>
-    <div class="card"><h3>Teams</h3><p>Shared access to one subject.</p></div>
+    <div class="card"><h3>Hosted, your key</h3><p>Sign up and paste a key, with a monthly budget cap.</p></div>
+    <div class="card"><h3>Weekly digest</h3><p>Scheduled fetches that email what changed.</p></div>
+    <div class="card"><h3>Reply inbox</h3><p>Posts that need an answer, flagged.</p></div>
   </div>
   <p class="lead" style="margin-top:var(--brand-space-xl)">Thank you. Questions?</p>
 </section>

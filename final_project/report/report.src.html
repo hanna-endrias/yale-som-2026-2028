@@ -1,0 +1,318 @@
+<!-- Report source. Build with `npm run report:build` → ../report.html (images inlined, brand styles added). -->
+
+<div class="eyebrow">MGT 409 · AI Foundations for Managers · Final project report</div>
+<h1>Perspectives</h1>
+<p class="lead">An open-source AI analyst that tells a small business owner how their launch, campaign or announcement landed online, for about ten cents on the AI model of their choice.</p>
+
+<dl class="meta">
+  <dt>Author</dt><dd>Hanna Endrias</dd>
+  <dt>Repository</dt><dd><a href="https://github.com/hanna-endrias/yale-som-2026-2028/tree/main/final_project">github.com/hanna-endrias/yale-som-2026-2028/tree/main/final_project</a></dd>
+  <dt>App</dt><dd>Runs locally from a fresh clone (README, about 5 minutes); not hosted online.</dd>
+  <dt>Model</dt><dd>gpt-6-luna through Portkey (the course key)</dd>
+</dl>
+
+<p><strong>What it does, in one sentence:</strong> a Fetch Agent web-searches for what people said about a business, brand or handle over a chosen date range, week by week, and stores every mention with its source, quote and sentiment; an Analyst Agent then answers the owner's plain-language questions about that stored data with cited links and charts.</p>
+
+<ol class="toc">
+  <li>Motivation</li><li>What is new here</li><li>The agents</li><li>Tokenomics</li>
+  <li>Safety</li><li>Impact</li><li>Limits and next steps</li>
+</ol>
+
+<!-- ───────────────────────────────────────────── -->
+<h2>1. Motivation</h2>
+
+<h3>Small businesses are using AI to market, but not to see what it did</h3>
+<p>Small business owners are adopting AI quickly, and mostly to <em>produce</em> marketing: posts, captions, ad copy, emails. The U.S. Chamber of Commerce found that <strong>58% of small businesses used generative AI in 2025, up from 40% in 2024 and 23% in 2023</strong> [1]. Among newer small businesses, <strong>72% planned to use AI for marketing</strong> in 2025, mostly for content creation (37%) [2]. Stricter government measures are lower (the Census Bureau finds under 20% of firms with four or fewer employees using AI in any business function [3]), but the direction is the same.</p>
+
+<p>That marketing happens online. <strong>63% of new small businesses rely on social media as their main marketing channel</strong>, and 73% say social posts are their biggest revenue driver [2]. In a separate survey of 1,006 small business owners and marketing leaders, 75% rated social media effective, the top channel by 18 points; their average advertising budget was about <strong>$78,000 a year</strong>, and 51% planned to increase it [4]. Customers look: only <strong>4% of U.S. consumers never read online reviews</strong> of local businesses [5].</p>
+
+<h3>The gap: owners can count clicks, not what people say</h3>
+<p>Owners mostly feel they can measure what their <em>ads</em> return (9 in 10 say so [4]). What they can't easily see is the conversation their effort started: press coverage, Reddit threads, reviews, creator posts, what people praised or complained about, and whether the tone shifted after a launch. Older survey data shows how this is usually handled: <strong>74% of U.S. small businesses used no tools to measure their online marketing, and about 60% simply asked customers "How did you hear about us?"</strong> [6] (2016 data; I found no newer survey on this question). Owners' skill with online marketing varies widely, so many never get a read-out at all.</p>
+
+<p>Reading hundreds of posts and judging their tone is a task AI is good at. The tools that do it today are built for marketing teams: social-listening subscriptions start around <strong>$199–$599 a month</strong> [7], review platforms are priced per location (ReviewTrackers about $89 per location per month) or only through a sales call (Birdeye, Podium) [8]. For the <strong>36.2 million U.S. small businesses, 82% of which have no employees</strong> [9], that is a lot to pay to answer "how did our launch land?" a few times a year.</p>
+
+<div class="callout">
+  <p><strong>Who this is for.</strong> A small business owner, founder or creator who just did something public (a launch, an opening, a campaign, a press mention) and wants to know how it landed, without an agency or a subscription. The selling points are <strong>price</strong> (about 10 cents per launch read-out on their own API key) and <strong>model flexibility</strong> (bring your own key; the provider and model are set in one config file).</p>
+</div>
+
+<h3>A real owner</h3>
+<p><span class="todo">TODO: Owner/founder from the user test (role, business, event). How they track reactions today, how long it takes, what it costs, what they wish they knew. Quote.</span></p>
+
+<p class="small muted">Sources: [1] U.S. Chamber of Commerce, <a href="https://www.uschamber.com/technology/empowering-small-business-the-impact-of-technology-on-u-s-small-business"><em>Empowering Small Business</em></a>, Aug 2025 (with Teneo). [2] Constant Contact, <a href="https://news.constantcontact.com/2025-03-04-New-Wave-of-SMBs-is-Social-First,-Technology-Driven,-and-Highly-Adaptable"><em>Small Business Now</em></a>, Mar 2025 (1,600+ owners of businesses under 100 employees and up to 8 years old; US, UK, Canada, Australia, New Zealand). [3] U.S. Census Bureau, <a href="https://census.gov/library/stories/2026/05/ai-use-businesses.html">Business Trends and Outlook Survey</a>, May 2026. [4] Intuit SMB MediaLabs, <a href="https://quickbooks.intuit.com/r/small-business-data/advertising-trends-2025/"><em>Small Business Advertising Trends</em></a>, Mar 2025 (1,006 respondents). [5] BrightLocal, <a href="https://www.brightlocal.com/research/local-consumer-review-survey-2025/"><em>Local Consumer Review Survey 2025</em></a> (1,026 U.S. adults). [6] Thrive Analytics, reported by <a href="https://searchengineland.com/survey-local-search-marketing-top-channel-smbs-large-number-not-tracking-roi-255307">Search Engine Land</a>, 2016. [7] <a href="https://brand24.com/prices/">Brand24 pricing</a>, billed yearly, checked Oct 2026. [8] G2 listings (<a href="https://www.g2.com/compare/birdeye-vs-reviewtrackers-vs-brightlocal">Birdeye vs ReviewTrackers</a>, <a href="https://www.g2.com/compare/podium-vs-quo-quo-vs-birdeye">Podium vs Birdeye</a>), third-party prices, directional. [9] <a href="https://advocacy.sba.gov/?p=30239">SBA Office of Advocacy</a>.</p>
+
+<!-- ───────────────────────────────────────────── -->
+<h2>2. What is new here</h2>
+
+<p>Social listening is not a new idea, and AI chat isn't either. What is different is the combination, and who can afford it.</p>
+
+<table>
+  <thead><tr><th></th><th>Price</th><th>What it watches</th><th>A past window, after the fact</th><th>Ask in plain words</th><th>Choose the model</th><th>Open source</th></tr></thead>
+  <tbody>
+    <tr class="us"><td><strong>Perspectives</strong></td><td>~10¢ per launch read-out, on your own key</td><td>Web search: news, Reddit, blogs, YouTube, reviews it can reach</td><td>Yes, daily, weekly or monthly windows</td><td>Yes, chat analyst with charts</td><td>Yes (one config file)</td><td>Yes</td></tr>
+    <tr><td>Google Alerts</td><td>Free</td><td>New web pages</td><td>No, new results only</td><td>No</td><td>—</td><td>No</td></tr>
+    <tr><td>Brand24</td><td>$199–$599/month (yearly; 3–25 keywords)</td><td>Social, news, blogs, forums, reviews</td><td>Not stated on its pricing page</td><td>AI insights on higher plans</td><td>No</td><td>No</td></tr>
+    <tr><td>ReviewTrackers</td><td>~$89 per location/month (G2)</td><td>Review sites</td><td>Reviews only</td><td>No</td><td>No</td><td>No</td></tr>
+    <tr><td>Birdeye, Podium</td><td>"Contact us" (G2)</td><td>Reviews, customer messaging</td><td>Reviews only</td><td>Vendor AI features</td><td>No</td><td>No</td></tr>
+    <tr><td>Brandwatch, Meltwater</td><td>Enterprise quote</td><td>Social firehose, news</td><td>Yes</td><td>Vendor AI features</td><td>No</td><td>No</td></tr>
+    <tr><td>ChatGPT with search</td><td>Free and paid plans</td><td>Whatever one search returns</td><td>One answer; nothing is stored</td><td>Yes</td><td>No, one vendor</td><td>No</td></tr>
+  </tbody>
+</table>
+
+<p><strong>What Perspectives does that these don't:</strong></p>
+<ul>
+  <li><strong>It costs about a dime, not a subscription.</strong> It's open source and bring-your-own-key: the owner pays only the AI tokens a read-out uses. A 12-week backfill plus five chat questions cost about $0.10 in measured tokens (Section 4).</li>
+  <li><strong>It backfills a past window, week by week.</strong> Most monitoring tools start counting the day you sign up. An owner usually thinks of this after the launch. Perspectives runs one search per day, week or month of the window, so the read-out covers before, during and after.</li>
+  <li><strong>The answer is grounded in stored data.</strong> Unlike asking ChatGPT, every mention is saved with its URL, date, quote and sentiment, so follow-up questions use the same evidence, the analyst cites it, and links it didn't store are flagged.</li>
+  <li><strong>The owner picks the model.</strong> The provider and model live in <code>config/llm.ts</code>. Today only Portkey/OpenAI is wired up; adding another provider is one entry there plus one <code>case</code> in <code>lib/ai.ts</code>. This matters as model prices keep falling.</li>
+  <li><strong>Any public subject:</strong> a storefront, a brand, a product or a personal handle.</li>
+</ul>
+
+<h3>Compared with just asking ChatGPT</h3>
+<p>I asked free ChatGPT, with search on, the same question used in Section 3's walkthrough: <em>"How did sentiment about Friend … shift before, during and after its fall 2025 New York City subway ad campaign? Give me a weekly table with example sources and quotes."</em> It gave a good, well-hedged answer: a 12-week table with a phase label, one quote and one or two sources per week, and its own caveat that the weekly pattern is "reconstructed from dated reporting … not a continuous sentiment dataset."</p>
+<figure><img src="shots/chatgpt_chat_2.png" alt="ChatGPT weekly sentiment timeline"><figcaption>Figure 1. ChatGPT's weekly table for the same question (Oct 25, 2026). Each week gets one quote; several are the founder's own words.</figcaption></figure>
+<table>
+  <thead><tr><th></th><th>ChatGPT with search</th><th>Perspectives</th></tr></thead>
+  <tbody>
+    <tr><td>Evidence per week</td><td>1–2 cited sources per week</td><td>All stored mentions for the week, counted by sentiment (50 in total)</td></tr>
+    <tr><td>Whose voice</td><td>7 of 12 weekly quotes are from the founder, Avi Schiffmann</td><td>Press, reviews and other coverage about the product; founder statements are labeled as such</td></tr>
+    <tr><td>Dated to the week?</td><td>Oct 20 – Nov 16 all cite one Nov 16 retrospective article</td><td>Each mention's publish date falls inside its week; anything outside the window is dropped</td></tr>
+    <tr><td>Sentiment</td><td>A phase label per week ("peak early backlash")</td><td>Counts per week (e.g. launch week: 6 negative, 2 neutral) and a chart</td></tr>
+    <tr><td>Links</td><td>Most opened; at least one did not</td><td>Every cited link checked against stored mentions; unknown links flagged ⚠</td></tr>
+    <tr><td>Follow-up questions</td><td>New searches, possibly different sources</td><td>Same stored evidence every time</td></tr>
+    <tr><td>Context and narrative</td><td><strong>Better:</strong> ad volume, founder strategy, cultural framing</td><td>Thinner; sticks to what the stored mentions say</td></tr>
+  </tbody>
+</table>
+<p>For a one-time "what happened?", ChatGPT is a fine, free answer. For an owner who wants to <em>measure</em> how a launch landed, compare weeks and come back with follow-ups, the stored, counted and dated evidence is the difference.</p>
+
+<p><strong>What it doesn't do (honestly):</strong> it sees only what web search reaches, with no direct X, Instagram, TikTok or Yelp feeds, so coverage is thinner than Brandwatch's. It isn't always-on; Google Alerts is better for new mentions going forward. Sentiment is tagged by the model and hasn't been checked against human labels. A small business with little press may get few results. And today someone has to clone the repo and add a key. Section 7 covers what would fix each.</p>
+
+<!-- ───────────────────────────────────────────── -->
+<h2>3. The agents</h2>
+
+<p>Perspectives has two agents and one helper call. They never talk to each other directly: <strong>the Fetch Agent writes to the database and the Analyst Agent reads from it.</strong> The only hand-off from the analyst back to the fetcher goes through the owner, who has to click a button. That keeps the expensive agent (web search) under the owner's control.</p>
+
+<svg class="diagram" viewBox="0 0 1200 490" role="img" aria-label="Agent diagram: owner, fetch agent, web search, mentions database, analyst agent, tools, visualizer">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--brand-color-accent-text)"/>
+    </marker>
+  </defs>
+  <g font-size="26" fill="var(--brand-color-text)">
+    <rect x="10" y="190" width="150" height="100" rx="16" fill="var(--brand-color-panel)" stroke="var(--brand-color-border)" stroke-width="2"/>
+    <text x="85" y="249" text-anchor="middle" font-weight="700">Owner</text>
+    <rect x="210" y="40" width="290" height="120" rx="16" fill="var(--brand-color-panel)" stroke="var(--brand-color-accent-text)" stroke-width="3"/>
+    <text x="355" y="92" text-anchor="middle" font-weight="700">Fetch agent</text>
+    <text x="355" y="128" text-anchor="middle" font-size="20" fill="var(--brand-color-muted)">one search per window</text>
+    <rect x="545" y="40" width="300" height="120" rx="16" fill="var(--brand-color-panel)" stroke="var(--brand-color-border)" stroke-width="2"/>
+    <text x="695" y="92" text-anchor="middle" font-weight="700">Web search</text>
+    <text x="695" y="128" text-anchor="middle" font-size="20" fill="var(--brand-color-muted)">hosted tool</text>
+    <rect x="900" y="170" width="290" height="130" rx="16" fill="var(--brand-color-panel)" stroke="var(--brand-color-border)" stroke-width="2"/>
+    <text x="1045" y="216" text-anchor="middle" font-weight="700">SQLite: mentions</text>
+    <text x="1045" y="250" text-anchor="middle" font-size="20" fill="var(--brand-color-muted)">URL · quote · date</text>
+    <text x="1045" y="276" text-anchor="middle" font-size="20" fill="var(--brand-color-muted)">sentiment · themes</text>
+    <rect x="210" y="320" width="290" height="120" rx="16" fill="var(--brand-color-panel)" stroke="var(--brand-color-accent-text)" stroke-width="3"/>
+    <text x="355" y="372" text-anchor="middle" font-weight="700">Analyst agent</text>
+    <text x="355" y="408" text-anchor="middle" font-size="20" fill="var(--brand-color-muted)">scoped to one tracker</text>
+    <rect x="545" y="320" width="300" height="120" rx="16" fill="var(--brand-color-panel)" stroke="var(--brand-color-border)" stroke-width="2"/>
+    <text x="695" y="362" text-anchor="middle" font-weight="700">11 tools</text>
+    <text x="695" y="394" text-anchor="middle" font-size="20" fill="var(--brand-color-muted)">mentions · sentiment · themes</text>
+    <text x="695" y="420" text-anchor="middle" font-size="20" fill="var(--brand-color-muted)">chart · fetch plan · criteria</text>
+    <text x="590" y="232" font-size="22" fill="var(--brand-color-accent-text)">confirm card:</text>
+    <text x="590" y="262" font-size="22" fill="var(--brand-color-accent-text)">owner clicks Start</text>
+    <rect x="900" y="340" width="290" height="100" rx="16" fill="var(--brand-color-panel)" stroke="var(--brand-color-accent-text)" stroke-width="3"/>
+    <text x="1045" y="382" text-anchor="middle" font-weight="700">Visualizer call</text>
+    <text x="1045" y="416" text-anchor="middle" font-size="20" fill="var(--brand-color-muted)">sandboxed HTML chart</text>
+    <text x="600" y="482" text-anchor="middle" font-size="20" fill="var(--brand-color-muted)">All calls: gpt-6-luna via Portkey (set in config/llm.ts)</text>
+  </g>
+  <g stroke="var(--brand-color-accent-text)" stroke-width="3" fill="none" marker-end="url(#arrow)">
+    <path d="M160,215 C190,150 180,100 206,100"/>
+    <path d="M500,100 L541,100"/>
+    <path d="M845,100 C910,100 1010,110 1040,166"/>
+    <path d="M160,265 C190,330 180,380 206,380"/>
+    <path d="M500,380 L541,380"/>
+    <path d="M845,350 C875,350 865,250 896,250"/>
+    <path d="M845,400 L896,400"/>
+  </g>
+  <path d="M600,316 C600,250 450,230 430,166" stroke="var(--brand-color-accent-text)" stroke-width="3" stroke-dasharray="8 6" fill="none" marker-end="url(#arrow)"/>
+</svg>
+
+<table>
+  <thead><tr><th>Agent</th><th>Job</th><th>Tools</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Fetch Agent</strong><br><span class="small muted">agents/fetchAgent.ts</span></td>
+      <td>For one date window, finds what was published about the tracker and returns structured mentions: source, URL, title, one-line gist, 2–4 sentence summary, a verbatim quote, 2–4 themes, author type (press, social, forum, review…), date and sentiment. A wrapper splits the owner's range into daily, weekly or monthly windows (at most 31) and runs them one after another. Anything dated outside the window is dropped.</td>
+      <td>Hosted web search (<code>web_search_preview</code>), structured output (a Zod schema), at most 15 mentions per window.</td></tr>
+    <tr><td><strong>Analyst Agent</strong><br><span class="small muted">agents/analystAgent.ts</span></td>
+      <td>Answers the owner's questions about one tracker's stored mentions, cites them, and draws charts. Up to 12 tool steps per turn. Its system prompt is rebuilt every turn with the dates already fetched and the saved search criteria, so it knows what data exists.</td>
+      <td><strong>Data:</strong> <code>getMentions</code>, <code>getSentimentSummary</code>, <code>getThemes</code>, <code>getTopSources</code>, <code>listFetchRuns</code>. <strong>Actions:</strong> <code>createVisualization</code>, <code>planFetchRun</code>, <code>listPrompts</code>, <code>createPrompt</code>, <code>updatePrompt</code>, <code>deletePrompt</code>.</td></tr>
+    <tr><td><strong>Visualizer</strong><br><span class="small muted">a second call inside createVisualization</span></td>
+      <td>Writes a self-contained HTML/SVG chart from the stored data the analyst passes it. Any link not in the stored mentions is rewritten to <code>#</code>, and the chart runs in a sandboxed frame with no network.</td>
+      <td>None.</td></tr>
+  </tbody>
+</table>
+
+<p><strong>Design choices.</strong> The summary tools (<code>getSentimentSummary</code>, <code>getThemes</code>, <code>getTopSources</code>) are plain database queries that return counts, so the model doesn't read every mention to answer "how did sentiment change?". Three of the actions (<code>planFetchRun</code>, <code>updatePrompt</code>, <code>deletePrompt</code>) don't act at all: they return a <strong>card</strong> the owner confirms. If someone asks about dates that were never fetched, the analyst doesn't invent an answer or chart empty data. It shows a pre-filled fetch card for just the missing dates, and it answers the original question after the fetch finishes.</p>
+
+<p><strong>Model.</strong> Every call uses <strong>gpt-6-luna through Portkey</strong>, because the course key allows only that model. It also supports the hosted web search tool through Portkey, which the fetch agent needs (tested before building: a single call ran two real searches and returned a correctly cited, current result). The model is not hard-coded anywhere else: <code>config/llm.ts</code> holds the provider, model and prices, and <code>lib/ai.ts</code> is the only file that builds the model.</p>
+
+<h3>One real run, step by step: Friend and its subway ads</h3>
+<p>Friend is an AI companion pendant whose fall 2025 New York City subway ad campaign drew wide backlash. The question: how did sentiment shift before, during and after the ads?</p>
+
+<p><strong>Step 1 — Add a tracker.</strong> The owner gives a name, a description that tells the search what it is (so "Friend" isn't confused with every other friend), and optional location, website and search terms.</p>
+<p><strong>Step 2 — Set up the first fetch.</strong> A new tracker's chat opens with a setup card (no AI call yet): dates, cadence and optional search criteria. A question picked now is asked automatically when the fetch finishes.</p>
+<div class="pair">
+<figure><img src="shots/new-tracker.jpg" alt="New tracker form"><figcaption>Figure 2. The new tracker form. The description and search terms steer the fetch agent.</figcaption></figure>
+<figure><img src="shots/first-fetch.jpg" alt="Set up your first fetch card"><figcaption>Figure 3. The first-fetch card for a new tracker, with starter questions below.</figcaption></figure>
+</div>
+
+<p><strong>Step 3 — The Fetch Agent runs.</strong> For Friend, Sep 1 – Nov 23, 2025 weekly with saved criteria ("cover news, reviews, Reddit and X reactions, and commentary on the ad campaign") became <strong>12 weekly windows</strong>. Each window is one web-search call that returns structured mentions. In total: <strong>50 mentions</strong>, 645,798 tokens, about $0.07. The side panel shows each run with its mention count and cost.</p>
+<figure><img src="shots/fetches-tab.jpg" alt="Fetches tab with run costs"><figcaption>Figure 4. Fetch history for Friend (right): the 12-week run found 50 mentions for ~$0.07. A later monthly run for March 2026 found none (~$0.003).</figcaption></figure>
+
+<p><strong>Step 4 — The owner asks.</strong> "How did sentiment shift before, during and after the subway ads? Give me a weekly table with example sources and quotes." The Analyst Agent called <code>getMentions</code>, <code>getSentimentSummary</code>, <code>getThemes</code> and <code>createVisualization</code>; the chat shows this as one line ("Checked mentions, sentiment, themes and chart"). The visualizer drew a weekly chart, marking the campaign launch on Sep 26 itself.</p>
+<figure><img src="shots/chat-start.jpg" alt="Question, tool activity line and weekly chart"><figcaption>Figure 5. The question, the tool activity line, and the sandboxed chart made by the visualizer call.</figcaption></figure>
+
+<p><strong>Step 5 — The answer.</strong> Sentiment was already negative before the ads and stayed negative after; the launch week brought attention, not a better tone. The analyst explains which week it treated as the launch and why, gives a weekly table with a dated quote per week, and every source is a link to a stored mention.</p>
+<figure><img src="shots/chat-table.jpg" alt="Weekly table with quotes and cited sources"><figcaption>Figure 6. The weekly table: counts by sentiment, an example quote and a cited source per week. This turn: 37,119 input tokens (8,464 cached), 6,418 output, ~$0.006.</figcaption></figure>
+
+<p><strong>Step 6 — Follow-ups use the same data.</strong> Asked to list press versus other coverage, it grouped all 50 mentions by month with citation pills (long lists collapse into "+N more sources").</p>
+<p><strong>Step 7 — Asking for more data goes through the owner.</strong> When an owner asks to fetch more, the analyst checks the fetch history, asks for any missing choice, and returns a <strong>fetch plan card</strong>. Only the owner's click on Start fetch runs it.</p>
+<div class="pair">
+<figure><img src="shots/citations.jpg" alt="Citations grouped by month"><figcaption>Figure 7. Every cited link points to a stored mention; 41 of the 50 were press.</figcaption></figure>
+<figure><img src="shots/fetch-plan.jpg" alt="Fetch plan card"><figcaption>Figure 8. A fetch plan card for Slay the Spire 2 (a second seeded tracker): one daily window, started by the owner, 5 mentions for under half a cent.</figcaption></figure>
+</div>
+
+<!-- ───────────────────────────────────────────── -->
+<h2>4. Tokenomics</h2>
+
+<p>Every AI call's token usage is stored: one row per fetch window and one per chat turn (all tool steps plus the visualizer call). The app shows the cost under every answer and next to every fetch run (Figures 4, 6 and 8). All numbers below come from those logged rows for real runs.</p>
+
+<div class="callout"><p><strong>Prices, from the provider's own bill.</strong> Portkey's logs show each request's total tokens and cost, but not the input/output split, so I matched the 8 requests from the cadence experiment (below) to the app's logged rows (all 8 token totals match exactly) and fitted the prices: <strong>$0.10 per 1M input tokens, $0.01 per 1M cached input, $0.50 per 1M output</strong> for gpt-6-luna. These reproduce Portkey's cost to within 0.02 cents on all 8 requests (6 exactly), and they are now the prices in <code>config/llm.ts</code>. OpenAI's hosted web search may carry a per-call fee that neither Portkey's figure nor mine includes.</p></div>
+<figure><img src="shots/portkey-log.png" alt="Portkey request log"><figcaption>Figure 9. Portkey's log for the experiment's 8 fetch requests (7:53–7:55 pm, Oct 25): e.g. the weekly window, 63.4K tokens for 0.76 cents.</figcaption></figure>
+
+<h3>One typical run</h3>
+<table>
+  <thead><tr><th>Run</th><th class="num">Calls</th><th class="num">Input</th><th class="num">Cached input</th><th class="num">Output</th><th class="num">Cost</th></tr></thead>
+  <tbody>
+    <tr><td>Friend fetch, 12 weekly windows (50 mentions)</td><td class="num">12</td><td class="num">621,691</td><td class="num">54,560</td><td class="num">24,107</td><td class="num">$0.069</td></tr>
+    <tr><td>&nbsp;&nbsp;per window (average)</td><td class="num">1</td><td class="num">51,808</td><td class="num">4,547</td><td class="num">2,009</td><td class="num">$0.0058</td></tr>
+    <tr><td>Friend chat, 5 turns with 2 charts</td><td class="num">5</td><td class="num">187,528</td><td class="num">78,406</td><td class="num">33,464</td><td class="num">$0.028</td></tr>
+    <tr><td>&nbsp;&nbsp;per turn (average)</td><td class="num">1</td><td class="num">37,506</td><td class="num">15,681</td><td class="num">6,693</td><td class="num">$0.0057</td></tr>
+    <tr><td>Slay the Spire 2 chat, 4 short turns (no charts)</td><td class="num">4</td><td class="num">14,517</td><td class="num">12,029</td><td class="num">469</td><td class="num">$0.0006</td></tr>
+  </tbody>
+</table>
+<p>A fetch window is mostly <strong>input</strong>: the web search results the model reads. A chat turn's cost depends on what's asked: the most expensive Friend turn (a chart plus a list of 50 sources) cost 1.5 cents, a short question about stored data a few hundredths of a cent. <strong>One launch read-out (the 12-week backfill plus five questions) cost about 10 cents.</strong></p>
+
+<h3>Per user per month, and at scale</h3>
+<table>
+  <thead><tr><th>Profile</th><th>Assumed use per month</th><th class="num">Per owner</th><th class="num">100 owners</th><th class="num">10,000 owners</th></tr></thead>
+  <tbody>
+    <tr><td>Launch month</td><td>One 12-week weekly backfill + 10 chart-style questions</td><td class="num">$0.13</td><td class="num">$13</td><td class="num">$1,262</td></tr>
+    <tr><td>Always-ready</td><td>A weekly fetch (4.33 windows) + 20 chart-style questions</td><td class="num">$0.14</td><td class="num">$14</td><td class="num">$1,387</td></tr>
+  </tbody>
+</table>
+<p>There are two ways to read the scale columns. With bring-your-own-key, <strong>each owner pays their own ~13–14 cents a month</strong>, so the cost per owner stays flat no matter how many people use it, and there is no central bill. If one organization runs it for everyone (an accelerator for its founders, a small business development center, or the hosted version in Section 7), the totals above are its monthly AI bill: about <strong>$150–$170 a year for 100 owners</strong>, compared with $2,388 a year for <em>one</em> Brand24 seat [7]. At this scale the AI is no longer the main cost; hosting and support would be.</p>
+
+<h3>What keeps cost down</h3>
+<ul>
+  <li><strong>Never pay twice for the same dates.</strong> A date already covered by a run with the same search criteria is skipped; only the gaps are fetched, and a request with no gaps is refused before any AI call (Section 5, test 4).</li>
+  <li><strong>Cadence is the main lever.</strong> One search per week instead of per day is about 3x cheaper for the same dates (experiment below). Monthly is cheaper still.</li>
+  <li><strong>Hard caps:</strong> at most 31 windows per fetch, 15 mentions per window, 12 tool steps per chat turn, one chart per turn.</li>
+  <li><strong>Summaries in the database, not the prompt.</strong> Sentiment, theme and source counts come from SQL queries, so the model reads a small table instead of every mention.</li>
+  <li><strong>Prompt caching.</strong> The system prompt and tool definitions come first and barely change between turns, so repeat context is billed at the cached rate: <strong>42–83% of chat input tokens were cache hits</strong> (50% overall across the three seeded chats; only ~9% for fetch windows, whose search results differ each time).</li>
+  <li><strong>Chat history loads from the database,</strong> and only text is resent, not tool outputs or chart HTML.</li>
+</ul>
+
+<h3>Did cutting cost hurt quality? An experiment</h3>
+<p>To test the cadence lever directly, I created two identical Friend trackers on a separate account and fetched the campaign's launch week (Sep 22–28, 2025) with the same search criteria, once daily and once weekly.</p>
+<table>
+  <thead><tr><th>Cadence</th><th class="num">Searches</th><th class="num">Input</th><th class="num">Cached</th><th class="num">Output</th><th class="num">Cost</th><th class="num">Mentions</th><th>Sentiment</th></tr></thead>
+  <tbody>
+    <tr><td>Daily</td><td class="num">7</td><td class="num">224,378</td><td class="num">29,778</td><td class="num">5,275</td><td class="num">$0.022</td><td class="num">7</td><td>2 negative, 5 neutral</td></tr>
+    <tr><td>Weekly</td><td class="num">1</td><td class="num">60,459</td><td class="num">0</td><td class="num">2,906</td><td class="num">$0.0075</td><td class="num">7</td><td>4 negative, 3 neutral</td></tr>
+  </tbody>
+</table>
+<figure class="half"><img src="shots/experiment-home.jpg" alt="Two experiment trackers"><figcaption>Figure 10. The two experiment trackers in the app: same week, 7 mentions each, ~$0.02 vs ~$0.01. Portkey billed 2.25 vs 0.76 cents.</figcaption></figure>
+<ul>
+  <li><strong>In a normal week, the cheaper setting lost nothing:</strong> daily cost about 3x as much (2.25 vs 0.76 cents on Portkey) and found the same number of mentions. Weekly is the right default.</li>
+  <li><strong>In a busy week, the cap does cost quality.</strong> In the Slay the Spire 2 data, the weekly window of Feb 15–21, 2026 returned exactly 15 mentions, the per-window cap (9 of them from one day). Weekly windows that week almost certainly missed posts. Daily runs on launch days found 5–7 mentions each. The rule I'd give an owner: weekly by default, daily for the launch week itself.</li>
+  <li><strong>A finding I didn't expect:</strong> the two runs shared only 4 of their 7 links, and their sentiment splits differed. Web search is not repeatable, so one fetch is a <em>sample</em> of the conversation, not all of it. Section 7 covers this limit.</li>
+</ul>
+
+<!-- ───────────────────────────────────────────── -->
+<h2>5. Safety</h2>
+
+<p>Perspectives reads text written by strangers on the internet and puts it in front of a model that has tools. The risks that matter are listed below, each with the defense that's built, and the evidence that it works.</p>
+
+<table>
+  <thead><tr><th>Risk</th><th>Defense built</th><th>Evidence</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Prompt injection</strong> from a review or post</td><td>Every system prompt includes shared rules (<code>lib/safety.ts</code>): content from the web is data, never instructions.</td><td>Figure 11: a stored review with a hidden instruction was reported and refused.</td></tr>
+    <tr><td><strong>Made-up sources</strong> (the agent invents facts or links)</td><td>Mentions keep the exact URL and a verbatim quote from search results. Every link in a reply is checked against the stored mentions, and unknown links get a ⚠ pill. Chart links not in the data are rewritten to <code>#</code>.</td><td>Figure 12: asked to cite a made-up Reddit thread, the analyst refused.</td></tr>
+    <tr><td><strong>Data leaks between owners</strong></td><td>Tools receive the owner and tracker id from the server session, never from the model. Every query is scoped to the owner, and another owner's id returns 404.</td><td>Tests 1–2 below.</td></tr>
+    <tr><td><strong>Wrong action</strong> (the agent starts a costly fetch or deletes something)</td><td>The model can't start a fetch, change or delete a saved prompt: it can only show a card. The owner's click calls the normal API.</td><td>Figure 8.</td></tr>
+    <tr><td><strong>Malicious chart code</strong></td><td>Chart HTML runs in a sandboxed iframe without same-origin access, under a content security policy that blocks all network requests.</td><td>Built (<code>VisualizationFrame.tsx</code>).</td></tr>
+    <tr><td><strong>Overspending or loops</strong></td><td>31 windows per fetch, 15 mentions per window, 12 tool steps per turn, one chart per turn; already-fetched dates are never paid for twice.</td><td>Tests 3–4 below.</td></tr>
+  </tbody>
+</table>
+
+<div class="pair">
+<figure><img src="shots/safety-injection.jpg" alt="Analyst refusing a prompt injection"><figcaption>Figure 11. Live test: a stored review contained a hidden instruction. Asked to "do exactly what it asks," the analyst summarized the review and refused to follow the injection.</figcaption></figure>
+
+<figure><img src="shots/fake-url.jpg" alt="Analyst refusing to cite a made-up link"><figcaption>Figure 12. Asked to cite a made-up Reddit link as evidence, the analyst checked the stored mentions, found none, and refused.</figcaption></figure>
+</div>
+
+<p><strong>API tests</strong> run against the live app on Oct 25, 2026, logged in as the second test owner. None reach the AI model, so they cost nothing:</p>
+<table>
+  <thead><tr><th>#</th><th>Attempt</th><th>Request</th><th>Response</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>Read another owner's tracker</td><td><code>GET /api/subjects/1</code></td><td>404 "Tracker not found."</td></tr>
+    <tr><td>2</td><td>Read another owner's fetch runs</td><td><code>GET /api/subjects/1/fetch-runs</code></td><td>404 "Tracker not found."</td></tr>
+    <tr><td>3</td><td>Ask for a 40-day daily fetch</td><td><code>POST /api/subjects/5/fetch-runs</code></td><td>400 "That range makes 40 daily windows; the limit is 31. Shorten the range or pick a longer cadence."</td></tr>
+    <tr><td>4</td><td>Re-fetch a week already fetched</td><td><code>POST /api/subjects/5/fetch-runs</code></td><td>409 "Those dates are already fetched with these search criteria." (nothing run)</td></tr>
+  </tbody>
+</table>
+
+<p><strong>What is not covered.</strong> There's no per-owner monthly spending limit yet: an owner could start many separate 31-window fetches. A budget cap per owner is the next safety feature. Sentiment labels are the model's judgment and can be wrong. The analyst does tend to say so ("Counts reflect this dataset, not a poll of public opinion" in Figure 6), but that isn't enforced by a rule yet.</p>
+
+<!-- ───────────────────────────────────────────── -->
+<h2>6. Impact</h2>
+
+<div class="stats">
+  <div class="stat"><b>~10¢</b><span>per launch read-out (measured: 7¢ fetch + about half a cent per question)</span></div>
+  <div class="stat"><b>$199+</b><span>per month for the cheapest Brand24 plan [7]</span></div>
+  <div class="stat"><b>50</b><span>sourced mentions in 12 weeks for Friend, from one fetch</span></div>
+  <div class="stat"><b><span class="todo">TODO</span></b><span>minutes to an answer, before vs after (user test)</span></div>
+</div>
+
+<h3>Cost</h3>
+<p>For an owner who wants a read-out after each launch, the measured cost is about 13 cents a month (Section 4), against $199–$599 a month for an entry-level listening tool [7] or ~$89 per location per month for a review platform [8]. That's <strong>more than 1,000x cheaper</strong> than the cheapest subscription for the same "how did it land?" question, with no contract and no sales call.</p>
+
+<h3>Time and quality: a real user</h3>
+<p><span class="todo">TODO: User test results. Who (role/business), the event, how they did it before (minutes, posts found), with Perspectives (minutes from adding a tracker to a usable answer, mentions found, cost), what they found that they hadn't seen, and their quote.</span></p>
+
+<h3>What becomes possible</h3>
+<p>Before Perspectives, an owner without a marketing team had two options after a launch: Google themselves for an hour, or pay for a subscription they'd mostly not use. Now they can look back at any past window after the fact, with every claim linked to its source. The Friend example shows the shape of the answer: the week the campaign launched, a dated quote per week, and an honest note that the tone didn't improve.</p>
+
+<!-- ───────────────────────────────────────────── -->
+<h2>7. Limits and next steps</h2>
+
+<h3>What doesn't work yet</h3>
+<ul>
+  <li><strong>One fetch is a sample.</strong> Web search returns different results on different runs (the experiment's two runs shared 4 of 7 links), and each window keeps at most 15 mentions. Counts and sentiment splits describe what was found, not all public opinion.</li>
+  <li><strong>Web search only.</strong> No direct access to X, Instagram, TikTok or Yelp/Google review text, so creator posts and reviews are under-covered.</li>
+  <li><strong>Sentiment isn't validated.</strong> It's the model's label; I haven't compared it with human labels.</li>
+  <li><strong>Not always-on.</strong> Fetches are started by the owner; there's no schedule or alert.</li>
+  <li><strong>Setup needs a technical person.</strong> It runs locally from a clone with an API key, which most solo owners won't do.</li>
+  <li><strong>Costs leave out any per-search fee.</strong> They're computed from logged tokens at prices fitted to Portkey's bill; a hosted web-search fee, if charged, isn't in either figure.</li>
+</ul>
+
+<h3>What I'd build next, with another month</h3>
+<ol>
+  <li><strong>A hosted, bring-your-own-key version</strong> with a monthly budget cap per owner, so an owner signs up and pastes a key instead of cloning a repo.</li>
+  <li><strong>Scheduled fetches and a weekly digest:</strong> "fetch every Monday and email me what changed." This is the first thing an owner would ask for after a one-off read-out.</li>
+  <li><strong>A tracker overview with no AI cost:</strong> mentions this week vs last, sentiment split, top themes and sources, computed straight from the database.</li>
+  <li><strong>A "needs a reply" inbox:</strong> negative reviews and direct questions the analyst flags, with Mark handled and Draft a reply.</li>
+  <li><strong>Key dates on the tracker</strong> (e.g. "Sep 26 · subway campaign launch"), drawn on every chart so before/after questions are anchored.</li>
+  <li><strong>Platform APIs</strong> (Reddit, YouTube, Google Business reviews) to cover what web search misses, and <strong>repeat sampling</strong> (two searches per window, merged) to make counts more stable.</li>
+  <li><strong>Competitor comparison:</strong> share of voice and sentiment side by side for two trackers.</li>
+</ol>

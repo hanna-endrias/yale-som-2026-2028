@@ -20,31 +20,31 @@
           "inputTokens": 38519,
           "outputTokens": 4594,
           "cachedTokens": 0,
-          "estimatedCostUsd": 0.09408875
+          "estimatedCostUsd": 0.0061489
         },
         {
           "inputTokens": 53224,
           "outputTokens": 2321,
           "cachedTokens": 4862,
-          "estimatedCostUsd": 0.08427025
+          "estimatedCostUsd": 0.00604532
         },
         {
           "inputTokens": 51088,
           "outputTokens": 3024,
           "cachedTokens": 4862,
-          "estimatedCostUsd": 0.08863025
+          "estimatedCostUsd": 0.0061832200000000006
         },
         {
           "inputTokens": 48429,
           "outputTokens": 3279,
           "cachedTokens": 4862,
-          "estimatedCostUsd": 0.0878565
+          "estimatedCostUsd": 0.006044819999999999
         },
         {
           "inputTokens": 62720,
           "outputTokens": 4457,
           "cachedTokens": 4862,
-          "estimatedCostUsd": 0.11750025
+          "estimatedCostUsd": 0.00806292
         }
       ],
       "mentions": [
@@ -697,7 +697,7 @@
           "inputTokens": 38223,
           "outputTokens": 2320,
           "cachedTokens": 0,
-          "estimatedCostUsd": 0.07097875
+          "estimatedCostUsd": 0.0049823
         }
       ],
       "mentions": [
@@ -804,7 +804,7 @@
           "inputTokens": 29806,
           "outputTokens": 1971,
           "cachedTokens": 4862,
-          "estimatedCostUsd": 0.05149775
+          "estimatedCostUsd": 0.00352852
         }
       ],
       "mentions": [
@@ -885,13 +885,13 @@
           "inputTokens": 46175,
           "outputTokens": 2820,
           "cachedTokens": 4862,
-          "estimatedCostUsd": 0.080449
+          "estimatedCostUsd": 0.00558992
         },
         {
           "inputTokens": 74050,
           "outputTokens": 3928,
           "cachedTokens": 4862,
-          "estimatedCostUsd": 0.12637275
+          "estimatedCostUsd": 0.00893142
         }
       ],
       "mentions": [
@@ -1176,7 +1176,7 @@
             "inputTokens": 52165,
             "outputTokens": 8797,
             "cachedTokens": 23482,
-            "estimatedCostUsd": 0.126759
+            "estimatedCostUsd": 0.0075016200000000005
           }
         },
         {
@@ -1197,7 +1197,7 @@
             "inputTokens": 4366,
             "outputTokens": 582,
             "cachedTokens": 2792,
-            "estimatedCostUsd": 0.0081365
+            "estimatedCostUsd": 0.00047631999999999997
           }
         },
         {
@@ -1223,7 +1223,7 @@
             "inputTokens": 6379,
             "outputTokens": 455,
             "cachedTokens": 3046,
-            "estimatedCostUsd": 0.009097
+            "estimatedCostUsd": 0.00059126
           }
         },
         {
@@ -1249,7 +1249,7 @@
             "inputTokens": 6720,
             "outputTokens": 279,
             "cachedTokens": 6274,
-            "estimatedCostUsd": 0.00413175
+            "estimatedCostUsd": 0.00024684
           }
         },
         {
@@ -1275,7 +1275,7 @@
             "inputTokens": 6976,
             "outputTokens": 228,
             "cachedTokens": 6584,
-            "estimatedCostUsd": 0.003593
+            "estimatedCostUsd": 0.00021904000000000002
           }
         },
         {
@@ -1296,7 +1296,7 @@
             "inputTokens": 7103,
             "outputTokens": 208,
             "cachedTokens": 6775,
-            "estimatedCostUsd": 0.003336875
+            "estimatedCostUsd": 0.00020455
           }
         },
         {
@@ -1337,7 +1337,7 @@
             "inputTokens": 24236,
             "outputTokens": 4404,
             "cachedTokens": 14446,
-            "estimatedCostUsd": 0.05808325
+            "estimatedCostUsd": 0.00332546
           }
         }
       ]
@@ -1363,7 +1363,7 @@
             "inputTokens": 3342,
             "outputTokens": 146,
             "cachedTokens": 1592,
-            "estimatedCostUsd": 0.0038465
+            "estimatedCostUsd": 0.00026391999999999995
           }
         },
         {
@@ -1384,7 +1384,7 @@
             "inputTokens": 3578,
             "outputTokens": 166,
             "cachedTokens": 3288,
-            "estimatedCostUsd": 0.0024335
+            "estimatedCostUsd": 0.00014488
           }
         },
         {
@@ -1405,7 +1405,7 @@
             "inputTokens": 3734,
             "outputTokens": 79,
             "cachedTokens": 3493,
-            "estimatedCostUsd": 0.001527875
+            "estimatedCostUsd": 0.00009853000000000001
           }
         },
         {
@@ -1426,7 +1426,7 @@
             "inputTokens": 3863,
             "outputTokens": 78,
             "cachedTokens": 3656,
-            "estimatedCostUsd": 0.00149575
+            "estimatedCostUsd": 0.00009626
           }
         }
       ]
