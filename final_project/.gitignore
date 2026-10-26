@@ -31,3 +31,6 @@ data/
 
 # User-test raw transcript and photo (kept local; only docs/user-test/summary.md is committed)
 docs/user-test/private/
+
+# Written by `next dev` on start
+AGENTS.md

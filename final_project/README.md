@@ -25,18 +25,20 @@ Requires Node 20+.
    npm run dev         # http://localhost:3000
    ```
 
-   On first start the database is created and seeded automatically.
+   On first start the database is created and seeded automatically. On npm 11, `npm install` may print `npm warn install-scripts … better-sqlite3 …`; that's expected and harmless (better-sqlite3 ships a prebuilt binary), so nothing needs to be done.
 4. Log in with a test account:
    - `owner1@test.com` / `test1234`: has the **Friend** tracker (the AI pendant and its fall 2025 NYC subway ads), seeded from one real weekly fetch run (Sep 1 – Nov 23, 2025) plus one example chat showing weekly tables, cited sources and charts, a **Slay the Spire 2** tracker with its own runs and chats, and **Malleable AI** from the user test (0 mentions; see `docs/user-test/summary.md`). All three are saved in `db/fixtures/subjects/`. Starting the app spends no tokens.
    - `owner2@test.com` / `test1234`: empty account.
+
+A fresh clone needs nothing else. The Developers section below is only for working on the app.
+
+## Developers
 
 Database scripts (stop the dev server first, since it holds the DB open):
 - `npm run db:reset`: delete the database. It is recreated and reseeded on the next start.
 - `npm run db:seed`: delete, recreate, and reseed it right away.
 
-After pulling, run `npm run db:reset`: the new `prompts.criteria` migration (structured search criteria) needs a fresh database, and the seed data reloads on the next start.
-
-The default starter questions are seeded per user, so existing accounts keep their old ones: run `npm run db:reset` (dev server stopped) to get the new defaults. This deletes any tracker not saved with `npm run fixture:save -- <subjectId>`, so save a live tracker you want to keep (e.g. "honest tea") first; `npm run fixture:list` shows the ids.
+Updating an older local copy: after pulling, run `npm run db:reset` (dev server stopped). The `prompts.criteria` migration needs a fresh database, and starter questions are seeded per user, so existing accounts only get the new defaults after a reset. A reset deletes any tracker not saved with `npm run fixture:save -- <subjectId>`, so save the ones you want to keep first (`npm run fixture:list` shows the ids).
 
 Seed data scripts (no tokens spent):
 - `npm run fixture:list`: saved seed subjects and the subjects in your local database.
