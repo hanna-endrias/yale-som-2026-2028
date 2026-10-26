@@ -1,0 +1,244 @@
+{
+  "savedAt": "2026-10-26T02:24:15.167Z",
+  "owner": "owner1@test.com",
+  "subject": {
+    "name": "Malleable AI",
+    "description": "ai services firm",
+    "location": null,
+    "website": "https://www.malleable.ai/",
+    "searchTerms": ""
+  },
+  "prompts": [
+    {
+      "kind": "fetch",
+      "title": "Malleable_AI_1",
+      "body": "Notes: search for branding, product launch",
+      "criteria": {
+        "sources": [],
+        "topics": [],
+        "excludeKeywords": [],
+        "region": "",
+        "language": "",
+        "notes": "search for branding, product launch"
+      }
+    }
+  ],
+  "runs": [
+    {
+      "startDate": "2026-09-01",
+      "endDate": "2026-10-24",
+      "cadence": "weekly",
+      "instructions": "Notes: search for branding, product launch",
+      "usage": [
+        {
+          "inputTokens": 29720,
+          "outputTokens": 409,
+          "cachedTokens": 0,
+          "estimatedCostUsd": 0.0031765
+        },
+        {
+          "inputTokens": 28732,
+          "outputTokens": 639,
+          "cachedTokens": 4872,
+          "estimatedCostUsd": 0.00275422
+        },
+        {
+          "inputTokens": 29208,
+          "outputTokens": 475,
+          "cachedTokens": 4872,
+          "estimatedCostUsd": 0.0027198199999999995
+        },
+        {
+          "inputTokens": 27194,
+          "outputTokens": 324,
+          "cachedTokens": 4872,
+          "estimatedCostUsd": 0.00244292
+        },
+        {
+          "inputTokens": 17804,
+          "outputTokens": 359,
+          "cachedTokens": 4872,
+          "estimatedCostUsd": 0.00152142
+        },
+        {
+          "inputTokens": 29339,
+          "outputTokens": 455,
+          "cachedTokens": 4872,
+          "estimatedCostUsd": 0.00272292
+        },
+        {
+          "inputTokens": 29692,
+          "outputTokens": 431,
+          "cachedTokens": 4872,
+          "estimatedCostUsd": 0.0027462199999999997
+        },
+        {
+          "inputTokens": 33564,
+          "outputTokens": 600,
+          "cachedTokens": 4872,
+          "estimatedCostUsd": 0.00321792
+        }
+      ],
+      "mentions": []
+    },
+    {
+      "startDate": "2026-09-01",
+      "endDate": "2026-10-24",
+      "cadence": "weekly",
+      "instructions": "Notes: Include LinkedIn.",
+      "usage": [
+        {
+          "inputTokens": 29113,
+          "outputTokens": 405,
+          "cachedTokens": 0,
+          "estimatedCostUsd": 0.0031138000000000003
+        },
+        {
+          "inputTokens": 31625,
+          "outputTokens": 563,
+          "cachedTokens": 4870,
+          "estimatedCostUsd": 0.0030056999999999996
+        },
+        {
+          "inputTokens": 11921,
+          "outputTokens": 350,
+          "cachedTokens": 4870,
+          "estimatedCostUsd": 0.0009288
+        },
+        {
+          "inputTokens": 24420,
+          "outputTokens": 498,
+          "cachedTokens": 4870,
+          "estimatedCostUsd": 0.0022527
+        },
+        {
+          "inputTokens": 27854,
+          "outputTokens": 595,
+          "cachedTokens": 4870,
+          "estimatedCostUsd": 0.0026446
+        },
+        {
+          "inputTokens": 27205,
+          "outputTokens": 528,
+          "cachedTokens": 4870,
+          "estimatedCostUsd": 0.0025461999999999998
+        },
+        {
+          "inputTokens": 29122,
+          "outputTokens": 471,
+          "cachedTokens": 4870,
+          "estimatedCostUsd": 0.0027094000000000003
+        },
+        {
+          "inputTokens": 27770,
+          "outputTokens": 425,
+          "cachedTokens": 4870,
+          "estimatedCostUsd": 0.0025512
+        }
+      ],
+      "mentions": []
+    }
+  ],
+  "chats": [
+    {
+      "title": "Where are people talking about us? Show",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Where are people talking about us? Show the top sources and what each one is saying.",
+          "payload": null
+        },
+        {
+          "role": "tool",
+          "content": "getTopSources",
+          "payload": null
+        },
+        {
+          "role": "tool",
+          "content": "getMentions",
+          "payload": null
+        },
+        {
+          "role": "assistant",
+          "content": "The tracker has no stored mentions for Sep 1–Oct 24, 2026, so there are no sources or comments to show.",
+          "payload": null,
+          "usage": {
+            "inputTokens": 7368,
+            "outputTokens": 139,
+            "cachedTokens": 3644,
+            "estimatedCostUsd": 0.00047834000000000006
+          }
+        },
+        {
+          "role": "user",
+          "content": "can you do a fetch for Malleable AI in Linkedin?",
+          "payload": null
+        },
+        {
+          "role": "assistant",
+          "content": "What date range and cadence (daily, weekly, or monthly) should I use? Also choose search criteria: saved **Malleable_AI_1**, new criteria, or none. LinkedIn isn’t a selectable source category, but I can include it in the notes for new criteria. The tracker already has data for **Sep 1–Oct 24, 2026**.",
+          "payload": null,
+          "usage": {
+            "inputTokens": 3699,
+            "outputTokens": 383,
+            "cachedTokens": 3644,
+            "estimatedCostUsd": 0.00023344
+          }
+        },
+        {
+          "role": "user",
+          "content": "use the same dates",
+          "payload": null
+        },
+        {
+          "role": "assistant",
+          "content": "I’ll use **Sep 1–Oct 24, 2026**. What cadence should I use—daily, weekly, or monthly—and which search criteria: saved **Malleable_AI_1**, new criteria with LinkedIn noted (LinkedIn isn’t a selectable source), or none?",
+          "payload": null,
+          "usage": {
+            "inputTokens": 3791,
+            "outputTokens": 414,
+            "cachedTokens": 3696,
+            "estimatedCostUsd": 0.00025346
+          }
+        },
+        {
+          "role": "user",
+          "content": "weekly",
+          "payload": null
+        },
+        {
+          "role": "assistant",
+          "content": "Which search criteria should I use: saved **Malleable_AI_1**, new criteria with LinkedIn mentioned in the notes (LinkedIn isn’t a selectable source), or none? The dates **Sep 1–Oct 24, 2026** are already fetched.",
+          "payload": null,
+          "usage": {
+            "inputTokens": 3863,
+            "outputTokens": 127,
+            "cachedTokens": 3788,
+            "estimatedCostUsd": 0.00010888
+          }
+        },
+        {
+          "role": "user",
+          "content": "add Linkedin in the notes",
+          "payload": null
+        },
+        {
+          "role": "tool",
+          "content": "planFetchRun",
+          "payload": "{\"subjectId\":8,\"subjectName\":\"Malleable AI\",\"startDate\":\"2026-09-01\",\"endDate\":\"2026-10-24\",\"cadence\":\"weekly\",\"criteria\":{\"sources\":[],\"topics\":[],\"excludeKeywords\":[],\"region\":\"\",\"language\":\"\",\"notes\":\"Include LinkedIn.\"},\"gaps\":[{\"start\":\"2026-09-01\",\"end\":\"2026-10-24\",\"windows\":8}],\"skipped\":[],\"totalWindows\":8,\"instructions\":\"Notes: Include LinkedIn.\",\"toolCallId\":\"call_bJANbTA85xf04tDKa47pvuWl\",\"started\":{\"runIds\":[1],\"startDate\":\"2026-09-01\",\"endDate\":\"2026-10-24\",\"cadence\":\"weekly\",\"criteriaLabel\":\"“Notes: Include LinkedIn.”\",\"edited\":false}}"
+        },
+        {
+          "role": "assistant",
+          "content": "Review the fetch plan and click **Start fetch** to search Sep 1–Oct 24, 2026, weekly, with LinkedIn included in the notes.",
+          "payload": null,
+          "usage": {
+            "inputTokens": 8167,
+            "outputTokens": 218,
+            "cachedTokens": 7791,
+            "estimatedCostUsd": 0.00022451
+          }
+        }
+      ]
+    }
+  ]
+}

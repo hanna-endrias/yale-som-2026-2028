@@ -28,3 +28,6 @@ next-env.d.ts
 
 # SQLite database
 data/
+
+# User-test raw transcript and photo (kept local; only docs/user-test/summary.md is committed)
+docs/user-test/private/

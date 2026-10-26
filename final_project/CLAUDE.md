@@ -23,7 +23,7 @@ npm run slides:build [-- --theme dark]  # slides/deck.html → self-contained sl
 npm run report:build                 # report/report.src.html → self-contained report.html (light theme, images inlined)
 ```
 
-Stop the dev server before `db:reset` / `db:seed` (it holds the SQLite file open). Test logins: `owner1@test.com` / `test1234` (seeded subjects from `db/fixtures/subjects/` — Friend + example chat, Slay the Spire 2 — no tokens spent on start) and `owner2@test.com` / `test1234` (empty; use for tenant-isolation checks). `.claude/launch.json` defines `perspectives-dev` (port 3000) and `slides-preview` (port 4000) for the preview tools.
+Stop the dev server before `db:reset` / `db:seed` (it holds the SQLite file open). Test logins: `owner1@test.com` / `test1234` (seeded subjects from `db/fixtures/subjects/` — Friend + example chat, Slay the Spire 2, Malleable AI user test — no tokens spent on start) and `owner2@test.com` / `test1234` (empty; use for tenant-isolation checks). `.claude/launch.json` defines `perspectives-dev` (port 3000) and `slides-preview` (port 4000) for the preview tools.
 
 ## Architecture
 

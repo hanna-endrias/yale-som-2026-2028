@@ -35,8 +35,8 @@
   <p><strong>Who this is for.</strong> A small business owner, founder or creator who just did something public (a launch, an opening, a campaign, a press mention) and wants to know how it landed, without an agency or a subscription. The selling points are <strong>price</strong> (about 10 cents per launch read-out on their own API key) and <strong>model flexibility</strong> (bring your own key; the provider and model are set in one config file).</p>
 </div>
 
-<h3>A real owner</h3>
-<p><span class="todo">TODO: Owner/founder from the user test (role, business, event). How they track reactions today, how long it takes, what it costs, what they wish they knew. Quote.</span></p>
+<h3>A real founder</h3>
+<p>A co-founder of <strong>Malleable AI</strong>, a boutique AI services firm, tried Perspectives on their own firm in October 2026. All of the firm's marketing is LinkedIn posts: new products, what the team has built, open roles. They had just rebranded their website and had no way to see whether anyone noticed: <em>"We don't really have any tools to capture the impact. And all of our marketing is just LinkedIn posts."</em> That is the 74% above, in one sentence. The test results are in Section 6.</p>
 
 <p class="small muted">Sources: [1] U.S. Chamber of Commerce, <a href="https://www.uschamber.com/technology/empowering-small-business-the-impact-of-technology-on-u-s-small-business"><em>Empowering Small Business</em></a>, Aug 2025 (with Teneo). [2] Constant Contact, <a href="https://news.constantcontact.com/2025-03-04-New-Wave-of-SMBs-is-Social-First,-Technology-Driven,-and-Highly-Adaptable"><em>Small Business Now</em></a>, Mar 2025 (1,600+ owners of businesses under 100 employees and up to 8 years old; US, UK, Canada, Australia, New Zealand). [3] U.S. Census Bureau, <a href="https://census.gov/library/stories/2026/05/ai-use-businesses.html">Business Trends and Outlook Survey</a>, May 2026. [4] Intuit SMB MediaLabs, <a href="https://quickbooks.intuit.com/r/small-business-data/advertising-trends-2025/"><em>Small Business Advertising Trends</em></a>, Mar 2025 (1,006 respondents). [5] BrightLocal, <a href="https://www.brightlocal.com/research/local-consumer-review-survey-2025/"><em>Local Consumer Review Survey 2025</em></a> (1,026 U.S. adults). [6] Thrive Analytics, reported by <a href="https://searchengineland.com/survey-local-search-marketing-top-channel-smbs-large-number-not-tracking-roi-255307">Search Engine Land</a>, 2016. [7] <a href="https://brand24.com/prices/">Brand24 pricing</a>, billed yearly, checked Oct 2026. [8] G2 listings (<a href="https://www.g2.com/compare/birdeye-vs-reviewtrackers-vs-brightlocal">Birdeye vs ReviewTrackers</a>, <a href="https://www.g2.com/compare/podium-vs-quo-quo-vs-birdeye">Podium vs Birdeye</a>), third-party prices, directional. [9] <a href="https://advocacy.sba.gov/?p=30239">SBA Office of Advocacy</a>.</p>
 
@@ -281,14 +281,15 @@
   <div class="stat"><b>~10¢</b><span>per launch read-out (measured: 7¢ fetch + about half a cent per question)</span></div>
   <div class="stat"><b>$199+</b><span>per month for the cheapest Brand24 plan [7]</span></div>
   <div class="stat"><b>50</b><span>sourced mentions in 12 weeks for Friend, from one fetch</span></div>
-  <div class="stat"><b><span class="todo">TODO</span></b><span>minutes to an answer, before vs after (user test)</span></div>
+  <div class="stat"><b>~4 min</b><span>from a new tracker to an answer in the user test (before: no tool at all)</span></div>
 </div>
 
 <h3>Cost</h3>
 <p>For an owner who wants a read-out after each launch, the measured cost is about 13 cents a month (Section 4), against $199–$599 a month for an entry-level listening tool [7] or ~$89 per location per month for a review platform [8]. That's <strong>more than 1,000x cheaper</strong> than the cheapest subscription for the same "how did it land?" question, with no contract and no sales call.</p>
 
 <h3>Time and quality: a real user</h3>
-<p><span class="todo">TODO: User test results. Who (role/business), the event, how they did it before (minutes, posts found), with Perspectives (minutes from adding a tracker to a usable answer, mentions found, cost), what they found that they hadn't seen, and their quote.</span></p>
+<p>The Malleable AI co-founder from Section 1 watched while I ran the test, about 15 minutes on a call. They chose the period (Sep 1 – Oct 24, around the site rebrand), weekly cadence and the criteria "branding, product launch". Before, they had no read-out at all. With Perspectives, it took <strong>about 4 minutes from adding the tracker to an answer</strong>, and the test cost <strong>4 cents</strong> (two fetches at 2¢ each, five chat turns at a tenth of a cent together). The answer was <strong>zero mentions</strong>. They asked for a second fetch "in LinkedIn" through the chat, and that also found zero. Hosted web search doesn't reach LinkedIn posts, and the firm has almost no presence elsewhere. The co-founder expected this: <em>"I don't think it's gonna be able to search LinkedIn with just basic web fetch."</em></p>
+<p>The test showed three things. The analyst said there was no data instead of inventing sources. Asking for a fetch in chat took four messages, because the analyst asked for each missing choice one at a time. And the co-founder liked the one-screen design: <em>"I like the chat experience … there's just one simple screen to interact with."</em> Their ideas were to suggest next steps when nothing is found (how to build a presence, maybe from a marketing playbook) and to grow into an all-in-one assistant that runs campaigns and tracks how they land. The barrier they named was <strong>using their own API key</strong>. <em>Caveat:</em> the tester knows me personally and had seen earlier versions, so the positive feedback may lean generous; the measured results (zero mentions, cost, time, extra chat turns) don't depend on opinion. We also skipped a timed manual search, so there is no measured "before" time. A test with users who have no tie to the project is still needed.</p>
 
 <h3>What becomes possible</h3>
 <p>Before Perspectives, an owner without a marketing team had two options after a launch: Google themselves for an hour, or pay for a subscription they'd mostly not use. Now they can look back at any past window after the fact, with every claim linked to its source. The Friend example shows the shape of the answer: the week the campaign launched, a dated quote per week, and an honest note that the tone didn't improve.</p>
@@ -299,7 +300,8 @@
 <h3>What doesn't work yet</h3>
 <ul>
   <li><strong>One fetch is a sample.</strong> Web search returns different results on different runs (the experiment's two runs shared 4 of 7 links), and each window keeps at most 15 mentions. Counts and sentiment splits describe what was found, not all public opinion.</li>
-  <li><strong>Web search only.</strong> No direct access to X, Instagram, TikTok or Yelp/Google review text, so creator posts and reviews are under-covered.</li>
+  <li><strong>Web search only.</strong> No direct access to X, Instagram, TikTok, LinkedIn or Yelp/Google review text, so creator posts and reviews are under-covered. The user test hit this directly: a firm that markets only on LinkedIn got zero mentions.</li>
+  <li><strong>Asking for a fetch in chat takes several turns.</strong> The analyst asks for each missing choice (dates, cadence, criteria) one at a time; in the user test that took four messages.</li>
   <li><strong>Sentiment isn't validated.</strong> It's the model's label; I haven't compared it with human labels.</li>
   <li><strong>Not always-on.</strong> Fetches are started by the owner; there's no schedule or alert.</li>
   <li><strong>Setup needs a technical person.</strong> It runs locally from a clone with an API key, which most solo owners won't do.</li>
@@ -308,11 +310,12 @@
 
 <h3>What I'd build next, with another month</h3>
 <ol>
-  <li><strong>A hosted, bring-your-own-key version</strong> with a monthly budget cap per owner, so an owner signs up and pastes a key instead of cloning a repo.</li>
+  <li><strong>A hosted, bring-your-own-key version</strong> with a monthly budget cap per owner, so an owner signs up and pastes a key instead of cloning a repo. This was the barrier the user test named.</li>
   <li><strong>Scheduled fetches and a weekly digest:</strong> "fetch every Monday and email me what changed." This is the first thing an owner would ask for after a one-off read-out.</li>
   <li><strong>A tracker overview with no AI cost:</strong> mentions this week vs last, sentiment split, top themes and sources, computed straight from the database.</li>
   <li><strong>A "needs a reply" inbox:</strong> negative reviews and direct questions the analyst flags, with Mark handled and Draft a reply.</li>
   <li><strong>Key dates on the tracker</strong> (e.g. "Sep 26 · subway campaign launch"), drawn on every chart so before/after questions are anchored.</li>
   <li><strong>Platform APIs</strong> (Reddit, YouTube, Google Business reviews) to cover what web search misses, and <strong>repeat sampling</strong> (two searches per window, merged) to make counts more stable.</li>
   <li><strong>Competitor comparison:</strong> share of voice and sentiment side by side for two trackers.</li>
+  <li><strong>Next steps when nothing is found</strong> (the user test's suggestion): how to build a presence online, optionally from the owner's marketing playbook.</li>
 </ol>
