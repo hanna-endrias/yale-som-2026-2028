@@ -14,7 +14,8 @@
     "fixture:list": "tsx scripts/fixtures.ts list",
     "fixture:save": "tsx scripts/fixtures.ts save",
     "fixture:remove": "tsx scripts/fixtures.ts remove",
-    "slides:build": "tsx scripts/build-slides.ts"
+    "slides:build": "tsx scripts/build-slides.ts",
+    "report:build": "tsx scripts/build-report.ts"
   },
   "dependencies": {
     "@ai-sdk/openai": "^4.0.102",

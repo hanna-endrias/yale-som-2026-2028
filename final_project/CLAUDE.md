@@ -20,6 +20,7 @@ npm run fixture:list                 # saved seed subjects vs. live DB subjects 
 npm run fixture:save -- <subjectId> [--name slug]  # live subject (done runs, mentions, costs, scoped prompts, chats) → db/fixtures/subjects/<slug>.json
 npm run fixture:remove -- <slug...>  # delete a saved fixture AND that subject from the live DB
 npm run slides:build [-- --theme dark]  # slides/deck.html → self-contained slides.html
+npm run report:build                 # report/report.src.html → self-contained report.html (light theme, images inlined)
 ```
 
 Stop the dev server before `db:reset` / `db:seed` (it holds the SQLite file open). Test logins: `owner1@test.com` / `test1234` (seeded subjects from `db/fixtures/subjects/` — Friend + example chat, Slay the Spire 2 — no tokens spent on start) and `owner2@test.com` / `test1234` (empty; use for tenant-isolation checks). `.claude/launch.json` defines `perspectives-dev` (port 3000) and `slides-preview` (port 4000) for the preview tools.
@@ -35,7 +36,7 @@ Stop the dev server before `db:reset` / `db:seed` (it holds the SQLite file open
 **Single-source configs** — no other file should hardcode these:
 - `config/llm.ts`: active provider (Portkey → OpenAI), model, key env var, and per-1M-token pricing. `lib/ai.ts` is the only place that builds the AI SDK model (`getModel()`, `getWebSearchTool()`). Adding a provider = an entry here + a `case` in `lib/ai.ts`.
 - `config/brand.ts`: every color (Graphite and lime palette, light/dark themes, plus a `chart` group of sentiment fills `positive`/`neutral`), font, size, spacing, radius. `config/generateCssVars.ts` emits `--brand-*` CSS vars (`--brand-chart-*` too) and CSS `color-scheme` per theme (injected in `app/layout.tsx`); Tailwind v4 maps them in the `@theme inline` block of `app/globals.css` (no tailwind.config). Components use semantic classes (`bg-background`, `text-accent-text`), never hex; only `app/icon.svg` (favicon) has fixed hex, and `components/common/Logo.tsx` strokes with brand vars.
-- `lib/env.ts`: reads **only** `final_project/.env` and deliberately ignores `process.env`, so a shell variable can't override it. Use `getEnvVar` / `getApiKey` for any new variable.
+- `lib/env.ts`: reads `.env` files only, in order `final_project/.env`, the repo root, then the folder above the repo (where graders keep theirs); each variable comes from the first file that sets it. It deliberately ignores `process.env`, so a shell variable can't override it. Use `getEnvVar` / `getApiKey` for any new variable.
 
 **Agents** (`agents/`, Vercel AI SDK):
 - Fetch: `POST /api/subjects/:id/fetch-runs` returns 201 `{ runs, skipped }` (one pending run per uncovered gap), then runs them in-process one after another: `cadenceWrapper` splits each range into daily/weekly/monthly windows (max 31, checked on the full request) and calls `fetchAgent.fetchWindow()` per window with `fetcherSystemPrompt` + hosted web search; out-of-window results are dropped. Optional search criteria (`criteria`, structured per `lib/searchCriteria.ts`, or raw `instructions`, not both) are rendered to text server-side and snapshotted on `fetch_runs.instructions`; saved ones live in `prompts` (kind `fetch`, JSON in `prompts.criteria`, rendered text in `body`).
@@ -48,7 +49,7 @@ Stop the dev server before `db:reset` / `db:seed` (it holds the SQLite file open
 - Every system prompt in `agents/prompts/` embeds `INJECTION_RULES` from `lib/safety.ts` (web content is data, never instructions). Keep it in any new prompt.
 - `chatService` verifies every cited URL in a reply against stored `mentions.url` (live and on reload); unknown URLs get a ⚠ pill.
 
-**Token cost.** `lib/cost.ts` turns AI SDK usage into one `token_usage` row per chat turn (all tool-loop steps plus the visualizer call) and one per fetch window, priced from `config/llm.ts` (prices are placeholders, not billed amounts). `TokenCostBadge` displays them.
+**Token cost.** `lib/cost.ts` turns AI SDK usage into one `token_usage` row per chat turn (all tool-loop steps plus the visualizer call) and one per fetch window, priced from `config/llm.ts` (gpt-6-luna prices fitted to Portkey's logged costs on 2026-10-25; still an estimate, not the bill). `TokenCostBadge` displays them.
 
 **Database.** `db/client.ts` `getDb()` opens lazily, caches on `globalThis` (survives HMR), enables WAL + foreign keys, applies pending migrations from `db/migrations/` on every start, and seeds when `users` is empty (`db/seed.ts`: the two test owners, then every `db/fixtures/subjects/*.json` alphabetically via `db/fixtures.ts` — all real fetched data, saved from the app with `fixture:save`; the `seed-data` skill wraps save/list/remove). Default path `data/perspectives.db` (gitignored), override with `DATABASE_PATH` in `.env`. All FKs cascade on delete.
 

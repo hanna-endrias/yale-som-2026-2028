@@ -64,7 +64,7 @@ export const llmConfig = {
   provider: 'portkey',                      // the active provider
   providers: {
     portkey: {
-      envVar: 'PORTKEY_API_KEY',            // read from final_project/.env
+      envVar: 'PORTKEY_API_KEY',            // read from .env (final_project/, then up to two folders above)
       baseURL: 'https://api.portkey.ai/v1',
       headers: { 'x-portkey-provider': 'openai' },
       model: 'gpt-6-luna',
@@ -73,12 +73,12 @@ export const llmConfig = {
   },
   // USD per 1M tokens, used by lib/cost.ts (§3). Placeholder values until checked against the price list.
   pricing: {
-    'gpt-6-luna': { input: 1.25, output: 10, cached: 0.125 },
+    'gpt-6-luna': { input: 0.1, output: 0.5, cached: 0.01 },
   },
 } as const;
 ```
 
-- `lib/env.ts` — `getEnvVar(name)` / `getApiKey(envVar)` read variables **only** from `final_project/.env` (shell environment is ignored, so a stray shell key never wins). The same reader is used for `SESSION_SECRET` (§4b) and `DATABASE_PATH` (§7).
+- `lib/env.ts` — `getEnvVar(name)` / `getApiKey(envVar)` read variables only from `.env` files, in order `final_project/.env`, `../.env` (repo root), `../../.env` (the folder above the repo, where the teaching staff keep theirs); the first file that sets a variable wins. The shell environment is ignored, so a stray shell key never wins. The same reader is used for `SESSION_SECRET` (§4b) and `DATABASE_PATH` (§7).
 - `lib/ai.ts` — `getModel()` looks up `llmConfig.providers[llmConfig.provider]` and builds the Vercel AI SDK model from it (Responses API); `getWebSearchTool()` returns the provider's hosted web search (`web_search_preview`); `getActiveLlm()` returns `{ provider, model }` for display. No other file names a provider, key variable, or model.
 - `instrumentation.ts` (Next.js startup hook) — on `next dev` / `next start`, verifies the active provider's `envVar` is present in `.env` and logs a clear error (variable name + file path) if not, so a missing key surfaces at startup rather than on the first chat. It also warns when `SESSION_SECRET` is missing.
 - `lib/healthCheck.ts` — `pingModel()`, one tiny call to the active model, shared by `scripts/check-env.ts` (`npm run check:env`) and `GET /api/health/ai`; the result includes `provider`, `model`, and latency or the error. The same check is exposed in the UI as **Test connection** in the user menu (§5).
@@ -125,7 +125,7 @@ final_project/
 ├── lib/
 │   ├── auth.ts                 # scrypt password hashing + signed session cookie (§4b)
 │   ├── session.ts              # getCurrentUser() / requireUser() for server components and routes
-│   ├── env.ts                  # getEnvVar / getApiKey: read final_project/.env only
+│   ├── env.ts                  # getEnvVar / getApiKey: read .env (final_project/, then up to two folders above)
 │   ├── ai.ts                   # getModel(), getWebSearchTool(), getActiveLlm() from config/llm.ts
 │   ├── healthCheck.ts          # pingModel(): shared by /api/health/ai and check:env
 │   ├── cost.ts                 # estimateCost() / usageRow(): token_usage rows with a USD estimate (§3)
@@ -291,7 +291,7 @@ All FKs cascade on delete (deleting a user, subject, prompt or session removes e
 
 **Token cost.** `lib/cost.ts` `usageRow()` turns an AI SDK usage object into a `token_usage` row, and `estimateCost()` computes `estimated_cost_usd` at log time from `config/llm.ts` pricing (cached input tokens at the cached rate). One row is written per chat turn (ref_id = the assistant message; summed over every step of the tool loop plus any LLM call made inside a tool, i.e. the visualizer) and one per fetch window (ref_id = the fetch run; summed per run). `components/common/TokenCostBadge.tsx` renders `~$0.96 · 645.8K tokens` (exact count in a tooltip; `—` when no cost was recorded) under each assistant message — from the stream's finish metadata live, and from a `token_usage` join on reload — and on each fetch-history row.
 
-**Where cost comes from, and how to extend it.** Cost is an estimate, not a billed amount: the token counts the model returns with each call, multiplied by the per-1M-token prices in `config/llm.ts` `pricing`, keyed by model name. Those prices are placeholders until they're checked against the provider's price list. To extend it:
+**Where cost comes from, and how to extend it.** Cost is an estimate, not a billed amount: the token counts the model returns with each call, multiplied by the per-1M-token prices in `config/llm.ts` `pricing`, keyed by model name. The gpt-6-luna prices were fitted to Portkey's logged cost for 8 fetch requests (2026-10-25; all within 0.02 cents). Stored rows keep the cost from when they were written, so a price change needs the stored `estimated_cost_usd` (and the fixtures' `estimatedCostUsd`) recomputed. To extend it:
 - **New model or provider:** add its prices to `pricing` under the model name. `estimateCost()` looks up the active model, so nothing else changes.
 - **Different cost source** (e.g. per-request cost from Portkey's analytics/logs API): replace the body of `estimateCost()` / `usageRow()`. `token_usage.estimated_cost_usd` is the only stored cost field, so the badge and per-run totals pick it up unchanged.
 

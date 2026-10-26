@@ -1,0 +1,60 @@
+# How sentiment toward Friend shifted during its fall 2025 NYC subway campaign
+
+The main shift was from relative obscurity and curiosity to highly visible public hostility, followed by a more complicated debate over whether the backlash was a marketing success or a sign of genuine distrust of AI companionship.
+
+Friend, created by Avi Schiffmann, is a $129 wearable pendant with an always-on microphone that processes ambient conversations and sends the wearer messages through a connected AI companion. Its New York campaign, which became prominent in late summer and September 2025, blanketed subway cars and stations with intimate promises such as “I’ll never bail on our dinner plans.” Rather than simply advertising the device, the campaign turned public space into a debate about loneliness, surveillance, and the meaning of friendship.
+
+Fast Company
+
++2
+
+One important distinction: the evidence below tracks publicly expressed sentiment in reporting, graffiti, online reactions, and commentary. It is not a representative weekly poll of New Yorkers, so it shows how the public conversation changed, not the exact percentage of people who supported or opposed Friend.
+
+## Weekly sentiment timeline
+
+The weeks are grouped by the clearest documented changes in the public conversation. Where evidence is sparse, especially before the large-scale rollout, I label that limitation rather than infer a level of public support.
+
+| Week | Phase and apparent sentiment | Example source and quote | What it tells us |
+| --- | --- | --- | --- |
+| Aug. 25–31 | Early rollout: curiosity, with limited evidence of broad reaction. | [Observer, October retrospective](<https://observer.com/2025/10/avi-schiffmann-ceo-ai-startup-friend-backlash/?utm_source=chatgpt.com>): the posters “began appearing across New York City’s five boroughs in August.” <br>Observer | The campaign was already visible, but the available reporting doesn't establish a representative baseline of public sentiment before the subway takeover. |
+| Sept. 1–7 | Pre-viral phase: the product's central proposition remained companionship. | [Observer](<https://observer.com/2025/10/avi-schiffmann-ceo-ai-startup-friend-backlash/?utm_source=chatgpt.com>): Schiffmann described Friend as “a product I built for myself to use.” <br>Observer | The founder framed the device as a personal companion. The later controversy would challenge whether an always-listening device could credibly fulfill that role. |
+| Sept. 8–14 | Growing exposure; sentiment still difficult to measure. | [TechCrunch, Sept. 27](<https://techcrunch.com/2025/09/27/ai-startup-friend-spent-more-than-1m-on-all-those-subway-ads/?utm_source=chatgpt.com>): Schiffmann called the campaign “a huge gamble.” <br>TechCrunch | The high-cost takeover was a deliberate attempt to make Friend impossible to ignore. This quote describes the founder's risk assessment, not public approval. |
+| Sept. 15–21 | Anticipation and provocation. | [Fast Company, Oct. 1](<https://www.fastcompany.com/91413814/friend-ai-ad-campaign-founder-qa?utm_source=chatgpt.com>): Schiffmann explained that to “purchase the zeitgeist,” you had to “go for the jugular.” <br>Fast Company | The marketing strategy prioritized cultural attention and emotional reaction over conventional product promotion. |
+| Sept. 22–28 | Campaign explosion: skepticism turns into visible backlash. | [TechCrunch, Sept. 27](<https://techcrunch.com/2025/09/27/ai-startup-friend-spent-more-than-1m-on-all-those-subway-ads/?utm_source=chatgpt.com>): graffiti called the product “surveillance capitalism” and urged riders to “get real friends.” <br>TechCrunch | The Sept. 25 mass rollout—more than 11,000 subway-car cards, 1,000 platform posters and 130 urban panels—gave critics a common target. Privacy and the replacement of human relationships became central themes. |
+| Sept. 29–Oct. 5 | Peak early backlash: the ads become protest surfaces. | [Fortune, Oct. 1](<https://fortune.com/2025/10/01/who-is-avi-schiffmann-friend-ai-pendant-necklace/?utm_source=chatgpt.com>): Schiffmann called the vandalism “artistically validating.” <br>Fortune | Graffiti and torn posters spread the controversy beyond the original ads. The founder publicly embraced the negative reactions as part of the creative concept. |
+| Oct. 6–12 | Backlash becomes a broader cultural debate. | [The Atlantic, Oct. 6](<https://archive.ph/48XMk?utm_source=chatgpt.com>): Schiffmann said, “The picture of the billboard is the billboard.” [Ars Technica, Oct. 8](<https://arstechnica.com/tech-policy/2025/10/vandals-deface-ads-for-ai-necklaces-that-listen-to-all-your-conversations/?utm_source=chatgpt.com>): a critic wrote, “Human connection is sacred.” <br>The Atlantic<br>+1 | Two competing interpretations crystallized: Schiffmann saw the defacement as the campaign's intended artwork; critics saw it as a rejection of AI-mediated intimacy and surveillance. |
+| Oct. 13–19 | Polarization deepens; some observers treat the campaign as performance art. | [The New York Times, Oct. 7–8, via a reproduced article](<https://www.thepsychopath.org/wp-content/uploads/2025/10/AI-Companion-Ads-for-Friendcom-Flood-NYC-Subway-Fueling-Backlash-and-Vandalism.pdf?utm_source=chatgpt.com>): online reactions included a “materialisation of the anxiety about this transformation,” according to digital-vandalism site creator Marc Mueller. <br>The New York Times<br>+1 | The campaign became a vehicle for expressing anxiety about AI more broadly. Not all responses were simple product dislike: some people appreciated the public spectacle even while criticizing its subject. |
+| Oct. 20–26 | The debate moves from graffiti to direct protest and accountability. | [CNN Business, Nov. 16 retrospective](<https://tech.yahoo.com/ai/meta-ai/articles/tiny-device-became-symbol-backlash-100002672.html?utm_source=chatgpt.com>): at an anti-Friend protest, Schiffmann signed a makeshift agreement not to sell Friend to a big tech company that could exploit personal data. <br>Yahoo Tech | The concerns were no longer just about irritating ads. They included who might control intimate personal data and how the business might evolve. This week’s evidence is retrospective rather than a contemporaneous weekly sentiment measure. |
+| Oct. 27–Nov. 2 | The campaign becomes a symbol of resistance to AI companionship. | [CNN Business, Nov. 16](<https://tech.yahoo.com/ai/meta-ai/articles/tiny-device-became-symbol-backlash-100002672.html?utm_source=chatgpt.com>): a subway message read, “Computers and corporations don't want to be your friend – they want your data and $$$.” <br>Yahoo Tech | The criticism fused concerns about corporate incentives, privacy and the commercialization of loneliness. The public meaning of Friend extended beyond the pendant's practical features. |
+| Nov. 3–9 | Mixed reception: criticism persists, while the founder argues for coexistence. | [CNN Business, Nov. 16](<https://tech.yahoo.com/ai/meta-ai/articles/tiny-device-became-symbol-backlash-100002672.html?utm_source=chatgpt.com>): Schiffmann argued that “the prejudice of it will kind of go away over time.” <br>Yahoo Tech | The founder's position was that AI companionship would eventually normalize. Critics' privacy and human-connection concerns remained unresolved, so widespread attention did not equate to widespread acceptance. |
+| Nov. 10–16 | Aftermath: Friend is now a proxy for the larger AI-companion debate. | [CNN Business, Nov. 16](<https://tech.yahoo.com/ai/meta-ai/articles/tiny-device-became-symbol-backlash-100002672.html?utm_source=chatgpt.com>): Schiffmann said, “It's a responsibility, but it's something I'm going to continue working on for the next decade.” <br>Yahoo Tech | The conversation shifted toward the long-term social responsibility of AI companions, including privacy, emotional dependence and potential benefits. The controversy persisted after the initial ad shock. |
+
+## What drove the shift?
+
+Three changes stand out across the timeline.
+
+- 1. From an abstract product to an intrusive public presence. Before the mass rollout, Friend was a niche AI hardware product. Thousands of ads promising unwavering companionship made the idea unavoidable for subway riders, amplifying both curiosity and irritation.
+
+TechCrunch
+
++1
+
+- 2. From product skepticism to a critique of the AI industry. The most visible objections weren't just that the pendant was awkward or unnecessary. Messages about surveillance, data extraction, environmental costs and human connection made Friend a stand-in for broader anxieties about AI.
+
+Ars Technica
+
++1
+
+- 3. From negative publicity to an ambiguous marketing outcome. Schiffmann said the graffiti was part of the intended conversation and embraced it as art. But the campaign's visibility cannot itself establish whether customers became more willing to buy the product or whether trust in the brand improved.
+
+The Atlantic
+
++1
+
+### Bottom line
+
+Friend's NYC campaign did not simply turn people against a previously popular product. It made a contentious idea—wearing an always-listening AI companion—into a highly visible public argument. The clearest documented sentiment shift was from limited visibility to conspicuous, often hostile criticism, followed by a more nuanced debate over privacy, loneliness, artistic provocation and the future of human–AI relationships.
+
+The main evidence limitation is that the weekly pattern is reconstructed from dated reporting and public examples, not a continuous sentiment dataset. The strongest conclusions concern the themes and visibility of reactions, rather than their precise prevalence.
+
+For a deeper analysis, I can also prepare a  source-by-source evidence audit or a  quantitative sentiment analysis.

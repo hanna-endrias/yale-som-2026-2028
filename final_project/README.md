@@ -6,11 +6,18 @@ Track what people say about a business, brand, or handle. See [`docs/PRODUCT.md`
 
 Requires Node 20+.
 
-1. Copy `.env.example` to `.env` and fill in:
-   - `PORTKEY_API_KEY`: your Portkey key.
-   - `SESSION_SECRET`: any long random string (signs the login cookie), e.g. `openssl rand -hex 32`.
+1. Get the code. The app is in the `final_project/` folder of this repo:
+
+   ```bash
+   git clone https://github.com/hanna-endrias/yale-som-2026-2028.git
+   cd yale-som-2026-2028/final_project
+   ```
+
+2. Provide the keys in a `.env` file. The app looks in `final_project/.env` first, then the repo root, then **the folder above the repo** (e.g. `submissions/.env` next to the cloned `yale-som-2026-2028/`), and takes each value from the first file that has it. Only `PORTKEY_API_KEY` is required; `.env.example` lists them all:
+   - `PORTKEY_API_KEY`: your Portkey key (model `gpt-6-luna`).
+   - `SESSION_SECRET` (optional for `npm run dev`): any long random string that signs the login cookie, e.g. `openssl rand -hex 32`. Without it, dev mode uses an insecure built-in secret and logs a warning.
    - `DATABASE_PATH` (optional): SQLite file, default `data/perspectives.db`.
-2. Install, check the LLM connection, and start the dev server:
+3. Install, check the LLM connection, and start the dev server:
 
    ```bash
    npm install
@@ -19,7 +26,7 @@ Requires Node 20+.
    ```
 
    On first start the database is created and seeded automatically.
-3. Log in with a test account:
+4. Log in with a test account:
    - `owner1@test.com` / `test1234`: has the **Friend** tracker (the AI pendant and its fall 2025 NYC subway ads), seeded from one real weekly fetch run (Sep 1 – Nov 23, 2025) plus one example chat showing weekly tables, cited sources and charts, and a **Slay the Spire 2** tracker with its own runs and chats. Both are saved in `db/fixtures/subjects/`. Starting the app spends no tokens.
    - `owner2@test.com` / `test1234`: empty account.
 
