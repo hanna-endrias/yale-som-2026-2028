@@ -49,7 +49,8 @@ One-line pitch: Ask an AI analyst how your launch landed online, for the cost of
 ### 9. A launch read-out for a dime
 - Points: none
 - Visual: stats
-- Numbers: ~10¢ per launch read-out vs $199+/month (Brand24); TODO time before vs after (real user); TODO user quote
+- Points: user test with a Malleable AI co-founder (docs/user-test/summary.md): 0 mentions, the firm markets only on LinkedIn, which web search can't reach; bias caveat (the tester knows me personally)
+- Numbers: ~10¢ per launch read-out vs $199+/month (Brand24); ~4 min from a new tracker to an answer, 4¢ for the whole test; "before" quote: "We don't really have any tools to capture the impact."; Friend 12 weeks, 50 mentions
 
 ### 10. From backfill to always-ready
 - Points: hosted bring-your-own-key version with a budget cap; weekly digest (scheduled fetches); reply inbox; close with "Thank you. Questions?"

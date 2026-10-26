@@ -27,7 +27,7 @@ Requires Node 20+.
 
    On first start the database is created and seeded automatically.
 4. Log in with a test account:
-   - `owner1@test.com` / `test1234`: has the **Friend** tracker (the AI pendant and its fall 2025 NYC subway ads), seeded from one real weekly fetch run (Sep 1 – Nov 23, 2025) plus one example chat showing weekly tables, cited sources and charts, and a **Slay the Spire 2** tracker with its own runs and chats. Both are saved in `db/fixtures/subjects/`. Starting the app spends no tokens.
+   - `owner1@test.com` / `test1234`: has the **Friend** tracker (the AI pendant and its fall 2025 NYC subway ads), seeded from one real weekly fetch run (Sep 1 – Nov 23, 2025) plus one example chat showing weekly tables, cited sources and charts, a **Slay the Spire 2** tracker with its own runs and chats, and **Malleable AI** from the user test (0 mentions; see `docs/user-test/summary.md`). All three are saved in `db/fixtures/subjects/`. Starting the app spends no tokens.
    - `owner2@test.com` / `test1234`: empty account.
 
 Database scripts (stop the dev server first, since it holds the DB open):

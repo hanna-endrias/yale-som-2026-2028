@@ -76,3 +76,29 @@ Priority-ordered so a working app is protected even if time runs short:
 - No real cron/scheduled job — cadence is proven via the backfill wrapper, not an actual recurring task.
 - No per-platform APIs (Yelp, Reddit, X/Twitter, Google Reviews) — web search only for the MVP; named as a next step.
 - No shared/team access to a single subject — one owner account per subject, though one owner may track several subjects.
+
+## 9. Roadmap from owner feedback
+
+From a walkthrough of the running app as a business owner would use it (2026-10-25, Friend and Slay the Spire 2 trackers). The chat answers are good: the Friend before/during/after table, with a dated quote per week, is what an owner wants after a launch. But an owner has to ask before seeing *anything*, and their next questions ("which posts need a reply?", "what do I tell my team?") have no home in the app. Most items below come down to **glanceable status**, **actionable lists** and **something to hand off**. The UI quick wins from the same review (tracker cards on the home screen, tracker form hints, dollars-first costs, criteria names on fetches, collapsed citation lists) are built.
+
+Effort: S = under an hour, M = a few hours, L = a feature in its own right.
+
+**Making it more useful**
+1. **Tracker overview with no AI cost (M).** A header strip above the chat: mentions in the newest period and the change from the previous one, % positive / neutral / negative with a sparkline, top 3 themes and sources, "Last fetched … · N mentions · ~$X". Reuses the plain DB queries behind `getSentimentSummary`, `getThemes` and `getTopSources`. The home tracker cards cover part of this (sentiment split, spend), but not the change, themes or sources.
+2. **Browsable mentions (M).** A Mentions tab in the side panel to scroll, filter by sentiment / source / date / theme, and click out, without spending tokens ("show me the 26 negative ones").
+3. **"Needs a reply" inbox (M–L).** Mentions the analyst flags (negative reviews, direct questions, misinformation) with **Mark handled** and **Draft a reply**, turning a report into a to-do list. The most valuable item for a small business.
+4. **Key dates on the tracker (S–M).** Optional dated events ("Sep 26 · Subway campaign launch"), passed to the analyst prompt and drawn on charts, so before/after questions are anchored instead of inferred.
+5. **Customers vs. press (S–M).** Of Friend's 50 mentions, 41 are press. A "Customers only / Press only / All" toggle using the stored author type, plus an analyst prompt line that splits the two when asked about "customers".
+6. **De-duplicate syndicated stories (M).** Group reposts (e.g. Yahoo copies of CNN and Tom's Guide pieces) by normalized title/snippet and show "+2 reposts", so one article doesn't look like a trend.
+7. **Something to hand off (S–M).** **Copy as summary** on an answer (bullets + links), **Export mentions CSV**, later a one-page launch report (overview + top chart + top quotes).
+8. **Cost before you spend (S).** "~31 windows · est. $0.18" on the fetch plan card before **Start fetch**, from the average cost per window in past `token_usage` rows, plus a running total per tracker.
+9. **Recurring fetch and weekly digest (L).** "Fetch every Monday and email me what changed." The first thing an owner asks for after a one-off read-out (see §8).
+10. **Compare against a competitor (L).** Share of voice and sentiment side by side for two trackers.
+11. **Starter questions that fit the tracker type (S).** The defaults say "customers" and "reviews"; for a handle or a game, "people", "fans" or "players" fit better. Use neutral wording or one set per tracker type.
+12. **Hosted bring-your-own-key version with a per-owner budget cap (L).** Today someone has to clone the repo; most solo owners won't.
+
+**UI (M)**
+- **Visible fetch status:** a progress chip in the chat header ("Fetching 12/31 windows…"), not only in the side panel's Fetches tab.
+- **Chart actions:** charts in the sandboxed iframe can't be copied or saved; add **Open in new tab** (the `srcdoc`) first, then **Download PNG**.
+- **Side panel defaults:** remember the last tab per tracker and open the panel automatically on wide screens. (Once, the first click on **Show side panel** did nothing and a second worked; not reproduced, possibly a click before hydration.)
+- **Mobile pass:** the chat works at narrow widths, but trackers, the side panel and cards need a pass for owners checking on a phone.
